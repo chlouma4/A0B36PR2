@@ -7,9 +7,12 @@ package Semestralka1;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -171,45 +174,26 @@ public class Slovník {
         return A;
     }
 
-    public void uloz(Slovník A) {  // Meotda ktera ulozi slovnik do souboru i s daty potrebnymi pro jeho budouci nacteni.
-        int B[] = new int[1];
-        B[0] = A.pocetDvojic() + 1; // zapiseme do pole velikost seznamu+1 
-        String PA[][] = new String[B[0]][2];
-        for (int i = 1; i < PA.length; i++) {     // cykl ktery prevede spojovy seznam na pole
-            for (int j = 0; j < PA[i].length; j++) {
-                PA[i][0] = A.aj(i);
-                PA[i][1] = A.cj(i);
+    public void uloz(Slovník A)   {  // Meotda ktera ulozi slovnik do souboru i s daty potrebnymi pro jeho budouci nacteni.
+       FileWriter out=null;
+        try {
+            out = new FileWriter("slovnik.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 1; i <=pocetDvojic() ; i++) {
+            try {
+                out.write(cj(i)+","+aj(i)+System.lineSeparator());
+            } catch (IOException ex) {
+                Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         try {
-            FileOutputStream s = new FileOutputStream("slovicka.bin"); // ulozen pole PA
-            try {
-                ObjectOutputStream s1 = new ObjectOutputStream(s);
-                for (int i = 1; i < PA.length; i++) {
-                    for (int j = 0; j < PA[0].length; j++) {
-                        s1.writeObject(PA[i][j]);
-                    }
-                }
-                s.close();
-            } catch (IOException e) {
-                System.out.println("Program nemuze ulozit informace do souboru slovicka.bin");
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Soubor slovicka.bin nebyl  nalezen. Prosim zkontrolujte umisteni souboru ");
+            out.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        try {
-            FileOutputStream pp1 = new FileOutputStream("pocet.bin"); // ukladani pole B - je ho neutne uloyit jinak nebude mozne nacist pole PA
-            try {
-                ObjectOutputStream pp = new ObjectOutputStream(pp1);
-                pp.writeObject(B[0]);
-                pp1.close();
-                System.out.println("Změna Ulozena");
-            } catch (IOException e) {
-                System.out.println("Program nemuze ulozit informace do souboru pocet.bin");
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Soubor pocet.bin nebyl  nalezen. Prosim zkontrolujte umisteni souboru");
-        }
-    }
+        System.out.println("Ulozeno");
 }
+}
+ 
