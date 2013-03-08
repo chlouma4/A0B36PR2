@@ -4,13 +4,11 @@
  */
 package Semestralka1;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -99,94 +97,70 @@ public class Slovník {
         System.out.println("Dana dvojce byla smazana");
     }
 
-    public String aj(int x) { // Metoda ktera vrati anglicke slovicko z bunky x.
-        int z = 0;
-        String a = null;
+    public String getObsahBunky(int cisloBunky, int cj1Aj2) { // metoda ktera vrati z bunky cj nebo aj slovo 
+        int citac = 0;
+        String slovo = null;
         Bunka pom = prvni;
         while (pom != null) {
-            z = z + 1;
-            if (z == x) {
-                a = pom.slovicka.getAj();
-            }
-            pom = pom.dalsi;
-        }
-        return a;
-    }
-
-    public String cj(int x) { // Metoda ktera vrati ceske slovicko z bunky x.
-        int z = 0;
-        String a = null;
-        Bunka pom = prvni;
-        while (pom != null) {
-            z = z + 1;
-            if (z == x) {
-                a = pom.slovicka.getCj();
-            }
-            pom = pom.dalsi;
-        }
-        return a;
-    }
-
-    public Slovník nacti() { // Metoda ktera nacte slovnik ze souboru
-        int B[] = new int[1];
-        Slovník A = new Slovník();
-        try {
-            FileInputStream po = new FileInputStream("pocet.bin"); // nacteme se souboru pole ktere je vždy o vekosti 1
-            try {
-                ObjectInputStream po1 = new ObjectInputStream(po); // toto pole nám řekne kolik dvojic sloviček je v soubouru                                                                            
-                try {
-                    B[0] = (int) po1.readObject();
-                    po.close();
-                } catch (ClassNotFoundException e) {
-                    System.out.println("Program nenalezl tridu.");
+            citac++;
+            if (citac == cisloBunky) {
+                if (cj1Aj2 == 1) {
+                    slovo = pom.slovicka.getCj();
+                    break;
+                } else {
+                    slovo = pom.slovicka.getAj();
+                    break;
                 }
-            } catch (IOException e) {
-                System.out.println("Program nemuze nacist informace ze souboru pocet.bin .");
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("Soubor pocet.bin nebyl nalezen. Prosim zkontrolujte umisteni souboru.");
         }
-        String PD[][] = new String[B[0]][2];                          // vytvoření pole do ktereho se načtou uložene informace
-        try {
-            FileInputStream sl = new FileInputStream("slovicka.bin");
-            try {
-                ObjectInputStream so = new ObjectInputStream(sl);
-                try {
-                    for (int i = 1; i < PD.length; i++) {
-                        for (int j = 0; j < PD[i].length; j++) {
-                            PD[i][j] = (String) so.readObject();
-                        }
-                    }
-                    sl.close();
-                } catch (ClassNotFoundException e) {
-                    System.out.println("Program nenalezl tridu.");
-                }
-            } catch (IOException e) {
-                System.out.println("Program nemuze nacist informace ze souboru slovicka.bin .");
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Soubor slovicka.bin nebyl nalezen. Prosim zkontrolujte umisteni souboru.");
-        }
-        for (int i = 1; i < PD.length; i++) {                    // prevedeme pole na spojovy seznam a ten vratime
-            A.vlozNaKonec(PD[i][0], PD[i][1]);
+        return slovo;
 
-        }
-        return A;
     }
 
-    public void uloz(Slovník A)   {  // Meotda ktera ulozi slovnik do souboru i s daty potrebnymi pro jeho budouci nacteni.
-       FileWriter out=null;
+    public Slovník nacti() { 
+        Slovník slovnik = new Slovník();
+       boolean a;
+        String cj, aj;
+        Scanner scan = null;
+        try {
+            scan = new Scanner(new FileReader("slovnik.txt"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         while(true){
+             a=scan.hasNext();
+             if(a == true){
+                 cj=scan.next();
+                 aj=scan.next();
+                 aj=scan.next();
+                 slovnik.vlozNaKonec(aj, cj);
+             }else{
+                 break;
+             }
+         }
+        
+            
+       return slovnik;
+    }
+
+    public void uloz() {  // Meotda ktera ulozi slovnik do souboru 
+        FileWriter out = null;
         try {
             out = new FileWriter("slovnik.txt");
         } catch (IOException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
-        for (int i = 1; i <=pocetDvojic() ; i++) {
+        for (int i = 1; i <= pocetDvojic(); i++) {
             try {
-                out.write(cj(i)+","+aj(i)+System.lineSeparator());
+                out.write(getObsahBunky(i, 1) + "," + getObsahBunky(i, 2) + System.lineSeparator());
             } catch (IOException ex) {
                 Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        try {
+            out.write("End.");
+        } catch (IOException ex) {
+            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             out.close();
@@ -194,6 +168,5 @@ public class Slovník {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("Ulozeno");
+    }
 }
-}
- 

@@ -16,7 +16,7 @@ import java.util.Set;
  *
  * @author Marco
  */
-public class Semestralka {
+public class Menu {
 
     /**
      * @param args the command line arguments
@@ -66,16 +66,16 @@ public class Semestralka {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         String aj, cj, kon = null, preklad;
         double procenta;
         boolean kontrola = false;
-        Slovník A = new Slovník();
+        Slovník slovnik = new Slovník();
         int ukon, velikostSlovniku, z = 0, e, pom;
         ArrayList spatneOdpovedi = new ArrayList();
         Scanner sc = new Scanner(System.in);
-        A = A.nacti();
-        velikostSlovniku = A.pocetDvojic();
+        slovnik=slovnik.nacti();
+        velikostSlovniku = slovnik.pocetDvojic();
         System.out.println("Upozorneni: Pokud nebude program radne ukoncen tak provedene zmeny nebudou ulozeny.");
         while (true) {
             while (true) {
@@ -129,14 +129,14 @@ public class Semestralka {
                         }
                     }
                     Integer pom1[] = new Integer[e];
-                    pom1 = generatorNahodnychCisel(e, A.pocetDvojic(), spatneOdpovedi);
+                    pom1 = generatorNahodnychCisel(e, slovnik.pocetDvojic(), spatneOdpovedi);
                     spatneOdpovedi.clear();
                     for (int i = 0; i < pom1.length; i++) {
                         if (z == 1) {
-                            System.out.print("(" + (pom1[i]) + ") " + A.cj(pom1[i]) + " prelozte slovicko do anglictiny ");
+                            System.out.print("(" + (pom1[i]) + ") " + slovnik.getObsahBunky(pom1[i],1) + " prelozte slovicko do anglictiny ");
                         }
                         if (z == 2) {
-                            System.out.print("(" + (pom1[i]) + ") " + A.aj(pom1[i]) + " prelozte slovicko do cestiny ");
+                            System.out.print("(" + (pom1[i]) + ") " + slovnik.getObsahBunky(pom1[i], 2) + " prelozte slovicko do cestiny ");
                         }
                         if (i == 0) {
                             preklad = sc.nextLine();
@@ -146,10 +146,10 @@ public class Semestralka {
                         }
                         preklad = preklad.toLowerCase();
                         if (z == 1) {
-                            kontrola = preklad.equals(A.aj(pom1[i]).toLowerCase());
+                            kontrola = preklad.equals(slovnik.getObsahBunky(pom1[i],2).toLowerCase());
                         }
                         if (z == 2) {
-                            kontrola = preklad.equals(A.cj(pom1[i]).toLowerCase());
+                            kontrola = preklad.equals(slovnik.getObsahBunky(pom1[i],1).toLowerCase());
                         }
                         if (kontrola == false) {
                             spatneOdpovedi.add(pom1[i]);  // pokud bude odpoved spatna zapiseme ji 
@@ -170,7 +170,7 @@ public class Semestralka {
                     }
                     System.out.println("Slovicka na ktera jste zodpovedel/a spatne ve spravnem prekladu.");
                     for (int k = 0; k < D.length; k++) {
-                        A.vypisX(D[k]);
+                        slovnik.vypisX(D[k]);
                     }
                     break;
 
@@ -183,8 +183,8 @@ public class Semestralka {
                     aj = sc.nextLine();
                     System.out.println("Zadejte jeho cesky preklad");
                     cj = sc.nextLine();
-                    A.vlozNaKonec(aj, cj);
-                    if (velikostSlovniku != A.pocetDvojic()) {
+                    slovnik.vlozNaKonec(aj, cj);
+                    if (velikostSlovniku != slovnik.pocetDvojic()) {
                         velikostSlovniku++;
                         System.out.println("Pamatujte pri pristim spusteni se tato zmena projevy jen pokud bude program radne ukoncen.");
                     } else {
@@ -195,10 +195,10 @@ public class Semestralka {
                 case 3: {
                     System.out.println("Bylo zadano cislo 3-Smazani slovicek");
                     while (true) {
-                        if (A.pocetDvojic() == 1) {
+                        if (slovnik.pocetDvojic() == 1) {
                             System.out.println("Zadejte cislo jedna pokud chcete smazat posledni dvojci slovicek.");
 
-                        } else if (A.pocetDvojic() == 0) {
+                        } else if (slovnik.pocetDvojic() == 0) {
                             System.out.println("Program nezna zadnou dvojci slovicek a proto nemuze zadnou smazat.");
                             break;
                         } else {
@@ -216,13 +216,13 @@ public class Semestralka {
                             sc.next();
                         }
                     }
-                    if (A.pocetDvojic() == 0) {
+                    if (slovnik.pocetDvojic() == 0) {
                         break;
                     }
                     e = z; // prepsani z od pomocne promene e , jinka by radek 256 nefungoval spravne -mayalo bz jse vydz prvni dvojce
                     while (true) {
                         System.out.println("Chcete opravdu smazat? 1-ANO 2-NE");
-                        A.vypisX(z);
+                        slovnik.vypisX(z);
                         try {
                             pom = sc.nextInt();
                             if (pom == 1 | pom == 2) {
@@ -239,8 +239,8 @@ public class Semestralka {
                         break;
                     }
                     if (pom == 1) {
-                        A.smaz(e);
-                        velikostSlovniku = A.pocetDvojic();
+                        slovnik.smaz(e);
+                        velikostSlovniku = slovnik.pocetDvojic();
                         System.out.println("Pamatujte pri pristim spusteni se tato zmena projevy jen pokud bude program radne ukoncen.");
                         break;
                     }
@@ -269,9 +269,9 @@ public class Semestralka {
                     while (true) {
                         e = z; // prepsani promene z do pomocne promene e - jinak bz spravne nefungoval radek  291
                         if (z == velikostSlovniku + 1) {
-                            A.vypis();
+                            slovnik.vypis();
                         } else {
-                            A.vypisX(e);
+                            slovnik.vypisX(e);
                         }
                         while (true) {
                             System.out.println("Chcete pokracovat v zobrazovani slovicek? 1-ANO 2-NE");
@@ -311,7 +311,7 @@ public class Semestralka {
                     break;
                 }
                 case 5: {
-                    A.uloz(A); // ulozeni seznamu
+                    slovnik.uloz(); // ulozeni seznamu
                     System.exit(0);
                     break;
                 }

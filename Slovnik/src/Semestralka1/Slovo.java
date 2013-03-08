@@ -11,6 +11,24 @@ package Semestralka1;
 public class Slovo {
    private String aj;
     private String cj;
+    private  int  pocetSpravnychOdpovedi;
+    private int    pocetSpatnychOdpovedi;
+
+    public int getPocetSpravnychOdpovedi() {
+        return pocetSpravnychOdpovedi;
+    }
+
+    public void setPocetSpravnychOdpovedi(int pocetSpravnychOdpovedi) {
+        this.pocetSpravnychOdpovedi = pocetSpravnychOdpovedi;
+    }
+
+    public int getPocetSpatnychOdpovedi() {
+        return pocetSpatnychOdpovedi;
+    }
+
+    public void setPocetSpatnychOdpovedi(int pocetSpatnychOdpovedi) {
+        this.pocetSpatnychOdpovedi = pocetSpatnychOdpovedi;
+    }
     
     public Slovo(String aj, String cj){
         this.aj=aj;
