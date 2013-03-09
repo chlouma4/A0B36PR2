@@ -112,12 +112,14 @@ public class Slovník {
                     break;
                 }
             }
+            pom=pom.dalsi;
         }
+        System.out.println("slovo"+slovo);
         return slovo;
 
     }
 
-    public Slovník nacti() { 
+    public Slovník nacti() { // Metoda ktera nacte slova ze souboru
         Slovník slovnik = new Slovník();
        boolean a;
         String cj, aj;
@@ -152,15 +154,10 @@ public class Slovník {
         }
         for (int i = 1; i <= pocetDvojic(); i++) {
             try {
-                out.write(getObsahBunky(i, 1) + "," + getObsahBunky(i, 2) + System.lineSeparator());
+                out.write(getObsahBunky(i, 1) + " , " + getObsahBunky(i, 2) + System.lineSeparator());
             } catch (IOException ex) {
                 Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        try {
-            out.write("End.");
-        } catch (IOException ex) {
-            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             out.close();
