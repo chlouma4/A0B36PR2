@@ -24,10 +24,10 @@ public class Slovník {
     public Slovník() {
     }
 
-    public void vlozNaKonec(String aj, String cj) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
+    public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
         if (cj != null && aj != null) {
-            Slovo slova = new Slovo(aj, cj);
-            Bunka bunka = new Bunka(slova, null);
+            Slovo slovo = new Slovo(aj,cj,spravneOdpovedi,spatneOdpovedi);
+            Bunka bunka = new Bunka(slovo, null);
             if (prvni == null) {
                 prvni = bunka;
                 volna = prvni;
@@ -96,31 +96,37 @@ public class Slovník {
         }
         System.out.println("Dana dvojce byla smazana");
     }
-
-    public String getObsahBunky(int cisloBunky, int cj1Aj2) { // metoda ktera vrati z bunky cj nebo aj slovo 
+ /** Metoda vrátí jednu polozku z bunky. Proměnnou cisloBunky zvolíme ze které bunky spojevého seznamu chceme vytáhnout data.
+  * Proměnnou polozka volíme kterou plozku chceme z bunky vytáhnouta to tak že 1-vrátí cj výraz 2-vrátí anglický výraz 3- vrátí pocet spatnych odpovedi
+  * 4- vrátí pocet spravnych odpovedi.*/
+    public String getObsahBunky(int cisloBunky, int polozka) { 
         int citac = 0;
         String slovo = null;
         Bunka pom = prvni;
         while (pom != null) {
             citac++;
             if (citac == cisloBunky) {
-                if (cj1Aj2 == 1) {
+                if (polozka == 1) {
                     slovo = pom.slovicka.getCj();
                     break;
-                } else {
+                } else if(polozka==2){
                     slovo = pom.slovicka.getAj();
                     break;
+                }else if(polozka==3){
+                   slovo =String.valueOf(pom.slovicka.getPocetSpatnychOdpovedi());
+                }else{
+                    slovo=String.valueOf(pom.slovicka.getPocetSpravnychOdpovedi());
                 }
             }
             pom=pom.dalsi;
         }
-        System.out.println("slovo"+slovo);
         return slovo;
 
     }
 
     public Slovník nacti() { // Metoda ktera nacte slova ze souboru
         Slovník slovnik = new Slovník();
+        int spravneOdpovedi, spatneOdpovedi;
        boolean a;
         String cj, aj;
         Scanner scan = null;
@@ -132,10 +138,15 @@ public class Slovník {
          while(true){
              a=scan.hasNext();
              if(a == true){
+                 try{
                  cj=scan.next();
                  aj=scan.next();
-                 aj=scan.next();
-                 slovnik.vlozNaKonec(aj, cj);
+                 spravneOdpovedi=scan.nextInt();
+                 spatneOdpovedi=scan.nextInt();
+                   slovnik.vlozNaKonec(aj, cj, spravneOdpovedi, spatneOdpovedi);
+                 }catch(Exception e){
+                     System.out.println("Ze souboru nebylo mozne nacit data.Soubor je pravdepodobne pozkozen.");
+                 }
              }else{
                  break;
              }
@@ -154,7 +165,7 @@ public class Slovník {
         }
         for (int i = 1; i <= pocetDvojic(); i++) {
             try {
-                out.write(getObsahBunky(i, 1) + " , " + getObsahBunky(i, 2) + System.lineSeparator());
+                out.write(getObsahBunky(i, 1) + " " + getObsahBunky(i, 2) +" "+getObsahBunky(i,3)+" "+getObsahBunky(i,4)+System.lineSeparator());
             } catch (IOException ex) {
                 Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
             }
