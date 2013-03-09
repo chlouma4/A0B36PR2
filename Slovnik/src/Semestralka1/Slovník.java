@@ -20,6 +20,7 @@ public class Slovník {
 
     Bunka prvni;
     Bunka volna;
+    String typSlovniku;
 
     public Slovník() {
     }
@@ -96,6 +97,28 @@ public class Slovník {
         }
         System.out.println("Dana dvojce byla smazana");
     }
+    public void vyberSlovnik(){
+        int volba;
+        Scanner scan=new Scanner(System.in);
+        while(true){
+        System.out.println("Prosim vzberte slovnik s kterym chcete pracovat");
+        System.out.println("1.Zakladni slovnik");
+            try {
+                    volba = scan.nextInt();
+                    if (volba > 0 && volba < 2) {
+                        break;
+                    } else {
+                        System.out.println("Chyba! Zadano spatne cislo. Opakujte prosim zadani.");
+                    }
+                } catch (Exception f) {
+                    System.out.println("Chyba! Zadan spatny znak. Opakujte prosim zadani.");
+                    scan.next();
+                }
+        }
+        if(volba==1){
+            typSlovniku="Zakladni";
+        }
+    }
  /** Metoda vrátí jednu polozku z bunky. Proměnnou cisloBunky zvolíme ze které bunky spojevého seznamu chceme vytáhnout data.
   * Proměnnou polozka volíme kterou plozku chceme z bunky vytáhnouta to tak že 1-vrátí cj výraz 2-vrátí anglický výraz 3- vrátí pocet spatnych odpovedi
   * 4- vrátí pocet spravnych odpovedi.*/
@@ -123,15 +146,16 @@ public class Slovník {
         return slovo;
 
     }
-
-    public Slovník nacti() { // Metoda ktera nacte slova ze souboru
+    
+    public Slovník nactiSlovnik() { // Metoda ktera nacte slova ze souboru
         Slovník slovnik = new Slovník();
         int spravneOdpovedi, spatneOdpovedi;
        boolean a;
         String cj, aj;
         Scanner scan = null;
+        vyberSlovnik();
         try {
-            scan = new Scanner(new FileReader("slovnik.txt"));
+            scan = new Scanner(new FileReader(typSlovniku+".txt"));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -156,10 +180,10 @@ public class Slovník {
        return slovnik;
     }
 
-    public void uloz() {  // Meotda ktera ulozi slovnik do souboru 
+    public void ulozSlovnik() {  // Meotda ktera ulozi typSlovniku do souboru 
         FileWriter out = null;
         try {
-            out = new FileWriter("slovnik.txt");
+            out = new FileWriter(typSlovniku+".txt");
         } catch (IOException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
