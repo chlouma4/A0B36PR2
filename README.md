@@ -23,3 +23,6 @@ správný překlad slova které bude náhodně vybráno)
 
 Pozn.: některé funkce i když jsou již plně funkční tak nejsou dostupné při spušění. Budou zpřístupněny po
 přeprogramování třídy Menu)
+
+Pozn.2: neěkteré metody jsou zcela nesmyslné a  budou předělány. (jejich existence je zapříčiněna tím že jsem potřeboval 
+odzkoušet jinné metody a zárověň jsme se nechtěl zdržovat úpravou třídy Menu) 
