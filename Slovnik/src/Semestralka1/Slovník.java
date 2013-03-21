@@ -158,6 +158,33 @@ public class Slovník {
         setTypSlovniku(nazev);
         ulozSeznam(nazev);
     }
+    
+    public void smazSlovnik(){
+         int volba;
+        ArrayList seznam = new ArrayList();
+        Scanner scan = new Scanner(System.in);
+        seznam = nactiSeznam();
+        while (true) {
+            System.out.println("Prosim vzberte slovnik s kterym chcete pracovat");
+            for (int i = 0; i < seznam.size(); i++) {
+                System.out.println((i + 1) + ". " + seznam.get(i));
+            }
+            System.out.println("Nebo zadejte 0. Pokud chcete vztvo5it nový slovník");
+            try {
+                volba = scan.nextInt();
+                if (volba > 0 && volba < seznam.size() + 1) {
+                    break;
+                } else {
+                    System.out.println("Chyba! Zadano spatne cislo. Opakujte prosim zadani.");
+                }
+            } catch (Exception f) {
+                System.out.println("Chyba! Zadan spatny znak. Opakujte prosim zadani.");
+                scan.next();
+            }
+        }
+        seznam.remove(volba);
+        // musi se zacit predelavat menu
+    }
 
     /**
      * Metoda vrátí jednu polozku z bunky. Proměnnou cisloBunky zvolíme ze které
