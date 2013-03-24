@@ -162,7 +162,21 @@ public class Hrac {
       
     }
 
+    /**Metoda rozsifrujHeslo() rozsifruje heslo ulozene v tridni promenne heslo.
+     * Pravadi opak metody zasifrujHeslo();
+     * 
+     * @return 
+     */
     public String rozsifrujHeslo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String heslo0,a,b,c;
+        heslo0=this.heslo;
+        a=heslo0.substring(1, 2);
+        b=heslo0.substring(3, 4);
+        if(heslo0.length()==4){
+          return b+a;
+            }else{
+            c=heslo0.substring(5,6);
+            return b+c+a;
+        }
     }
 }
