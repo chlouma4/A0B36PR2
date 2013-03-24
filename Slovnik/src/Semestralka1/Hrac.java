@@ -95,7 +95,6 @@ public class Hrac {
                 stare = scan.next();
                 a = this.overHeslo(stare);
                 if (a == false) {
-                    this.pokusy();
                     System.out.println("Heslo neni spravne. Pocet zbyvajicich pokusu"+(3-this.pokusy));
                 }else{
                     break;
@@ -118,7 +117,8 @@ public class Hrac {
     /** Metoda overHeslo porovnava zadane heslo se spravnym heslem a na zaklade porovnani 
      * vrati true nebo false.
      * Zdane heslo dostane metoda parametrem heslo a spravne heslo dostane od
-     * metody roysifruj heslo.
+     * metody rozsifrujHeslo(). Pokud je porovnani vzhodnoceno jako false tak metoda
+     * zavola metodu pokusy() a pote vrati false.
      * 
      * @param heslo
      * @return 
@@ -129,11 +129,19 @@ public class Hrac {
         if(spravneHeslo.equals(heslo)){
             return true;
         }else{
+            this.pokusy();
            return false; 
         } 
     }
+    /**Metoda pokusy()  pocita neplatne pokusy o zadani hesla.
+     * Pokud je pocet roven 3 tak ukonci okamzite program.
+     * 
+     */
     public void pokusy(){
-         throw new UnsupportedOperationException("Not supported yet.");
+        this.pokusy++;
+        if(this.pokusy==3){
+            System.exit(0);
+        }
     }
 
     public void zasifrujHeslo() {
