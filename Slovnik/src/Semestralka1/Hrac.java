@@ -95,12 +95,13 @@ public class Hrac {
         ArrayList hraci = new ArrayList();
         hraci = this.nactiHrace();
         System.out.println("Vyberte prosim svuj ucet");
-        for (int i = 0; i < (hraci.size() / 2); i = i + 2) {
+        for (int i = 0; i <= (hraci.size() / 2); i = i + 2) {
             System.out.println((i / 2 + 1) + ". " + hraci.get(i));
         }
         System.out.println("Pokud chete vztvo5it novy ucet zvolte 0.");
         volba = scan.nextInt();
         if (volba == 0) {
+            System.out.println("Zadejte sve jmeno.");
             this.jmeno = scan.next();
             nastavHeslo(0);
             vytvorHrace();
@@ -157,7 +158,7 @@ public class Hrac {
             System.out.println("Zadejte nove heslo znovu");
             nove1 = scan.next();
             if (nove.equals(nove1) && nove.length() == 4 | nove.length() == 6) {
-                this.heslo = nove;
+                zasifrujHeslo(nove);
                 System.out.println(" Heslo zmeneno.");
                 break;
             } else {
@@ -207,12 +208,13 @@ public class Hrac {
      */
     public void zasifrujHeslo(String heslo0) {
         String a, b, c;
-        a = heslo0.substring(1, 2);
-        b = heslo0.substring(3, 4);
+        a = heslo0.substring(0, 2);
+        b = heslo0.substring(2, 4);
+        System.out.println(""+a+b);
         if (heslo0.length() == 4) {
             this.heslo = "" + b + a + "";
         } else {
-            c = heslo0.substring(5, 6);
+            c = heslo0.substring(4, 6);
             this.heslo = "" + c + a + b + "";
         }
 
@@ -227,12 +229,12 @@ public class Hrac {
     public String rozsifrujHeslo() {
         String heslo0, a, b, c;
         heslo0 = this.heslo;
-        a = heslo0.substring(1, 2);
-        b = heslo0.substring(3, 4);
+        a = heslo0.substring(0, 2);
+        b = heslo0.substring(2, 4);
         if (heslo0.length() == 4) {
             return b + a;
         } else {
-            c = heslo0.substring(5, 6);
+            c = heslo0.substring(4, 6);
             return b + c + a;
         }
     }
