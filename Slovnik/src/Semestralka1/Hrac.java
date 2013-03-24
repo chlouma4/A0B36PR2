@@ -120,13 +120,13 @@ public class Hrac {
      * metody rozsifrujHeslo(). Pokud je porovnani vzhodnoceno jako false tak metoda
      * zavola metodu pokusy() a pote vrati false.
      * 
-     * @param heslo
+     * @param heslo0
      * @return 
      */
-    public boolean overHeslo(String heslo) {
+    public boolean overHeslo(String heslo0) {
         String spravneHeslo;
         spravneHeslo=rozsifrujHeslo();
-        if(spravneHeslo.equals(heslo)){
+        if(spravneHeslo.equals(heslo0)){
             return true;
         }else{
             this.pokusy();
@@ -144,8 +144,22 @@ public class Hrac {
         }
     }
 
-    public void zasifrujHeslo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    /** Metoda zasifrujHeslo() zasifruje retezec heslo0 ktery dostane v argumentu.
+     * Vysledek zapise do tridni promenne heslo;
+     * 
+     * @param heslo0 
+     */
+    public void zasifrujHeslo( String heslo0) {
+        String a,b,c;
+            a=heslo0.substring(1, 2);
+            b=heslo0.substring(3, 4);
+            if(heslo0.length()==4){
+            this.heslo=""+b+a+"";
+            }else{
+            c=heslo0.substring(5,6);
+            this.heslo=""+c+a+b+"";
+        }
+      
     }
 
     public String rozsifrujHeslo() {
