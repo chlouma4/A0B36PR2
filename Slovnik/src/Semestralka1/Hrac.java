@@ -75,11 +75,11 @@ public class Hrac {
     }
 
     /**
-     * Metoda nastavHeslo slouzi k nastaveni hesla. Promenna prepinac slouzi pro
-     * rozliseni kdo chce nastavit nebo zmenit heslo. Pokud bude prepinac=0 tak
-     * se nastavy heslo pro noveho uzivatele. Pokud bude preponac=1 tak se
-     * nastavy nove heslo stavajiciho uzivatele pote co spravne zada sve doposud
-     * platne heslo.
+     * Metoda nastavHeslo slouzi k nastaveni hesla , ktere je 4 nebo 6 ynaku dlouhe.
+     * Promenna prepinac slouzi pro rozliseni kdo chce nastavit nebo zmenit heslo. 
+     * Pokud bude prepinac=0 tak se nastavy heslo pro noveho uzivatele. 
+     * Pokud bude preponac=1 tak se nastavy nove heslo stavajiciho uzivatele 
+     * pote co spravne zada sve doposud platne heslo.
      *
      * @param prepinac
      */
@@ -103,11 +103,11 @@ public class Hrac {
             }
         }
         while(true){
-        System.out.println("Zadejte nove heslo");
+        System.out.println("Zadejte nove heslo. Musi byt 4 nebo 6 znaku dlouhe");
         nove=scan.next();
         System.out.println("Zadejte nove heslo znovu");
         nove1=scan.next();
-        if(nove.equals(nove1)){
+        if(nove.equals(nove1) && nove.length()==4 | nove.length()==6){
             this.heslo=nove;
             break;
         }else{
@@ -115,9 +115,22 @@ public class Hrac {
         }
         }
     }
-
+    /** Metoda overHeslo porovnava zadane heslo se spravnym heslem a na zaklade porovnani 
+     * vrati true nebo false.
+     * Zdane heslo dostane metoda parametrem heslo a spravne heslo dostane od
+     * metody roysifruj heslo.
+     * 
+     * @param heslo
+     * @return 
+     */
     public boolean overHeslo(String heslo) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String spravneHeslo;
+        spravneHeslo=rozsifrujHeslo();
+        if(spravneHeslo.equals(heslo)){
+            return true;
+        }else{
+           return false; 
+        } 
     }
     public void pokusy(){
          throw new UnsupportedOperationException("Not supported yet.");
@@ -127,7 +140,7 @@ public class Hrac {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public void rozsifrujHeslo() {
+    public String rozsifrujHeslo() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
