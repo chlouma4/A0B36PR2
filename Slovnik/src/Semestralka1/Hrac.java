@@ -6,6 +6,8 @@ package Semestralka1;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -21,8 +23,30 @@ public class Hrac {
     private String heslo;
     private int pokusy;
 
-    public void vytvorHrace(String nick, String heslo) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    /**Metoda vytvorHrace() ulozi noveho hrace do souboru.
+     * Jmeno hrace a jeho heslo zaska z tridnich promenich.
+     * 
+     */
+    public void vytvorHrace() {
+        ArrayList seznam = new ArrayList();
+        seznam=nactiHrace();
+        seznam.add(this.jmeno);
+        seznam.add(this.heslo);
+        FileWriter out = null;
+        try {
+            out = new FileWriter("Hraci.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try{
+        for (int i = 0; i < seznam.size(); i++) {
+            out.write(seznam.get(i) +""+System.lineSeparator());
+        }
+        out.close();
+        }catch(Exception e){
+            System.out.println("Chyba: Nebylo mozne provest yapis do souboru Hraci.txt");
+        }
+        
     }
 
     public void smazHrace() {
@@ -63,14 +87,15 @@ public class Hrac {
         ArrayList hraci = new ArrayList();
         hraci = this.nactiHrace();
         System.out.println("Vyberte prosim svuj ucet");
-        for (int i = 0; i < hraci.size(); i++) {
-            System.out.println((i + 1) + ". " + hraci.get(i));
+        for (int i = 0; i < (hraci.size()/2); i=i+2) {
+            System.out.println((i/2 + 1) + ". " + hraci.get(i));
         }
         System.out.println("Pokud chete vztvo5it novy ucet zvolte 0.");
         volba = scan.nextInt();
         if (volba == 0) {
             this.jmeno = scan.next();
             nastavHeslo(0);
+            vytvorHrace();
         }
     }
 
@@ -108,6 +133,7 @@ public class Hrac {
         nove1=scan.next();
         if(nove.equals(nove1) && nove.length()==4 | nove.length()==6){
             this.heslo=nove;
+            System.out.println(" Heslo zmeneno.");
             break;
         }else{
             System.out.println("Zadana hesla se neshoduji. Prosim opakujte zadani");
