@@ -11,7 +11,7 @@ Budou provedeny následující změny:
 2. Přeprogramování a rozšíření Menu
 3. Přidání Statistik(Hotovo , ale chci udělat další)
 4. Změna způsobu ukládání(Hotovo)
-5. Rozčlenění slov do jednotlivých slovníků a přidání nových slov(Hotovo , až na ta slova)
+5. Rozčlenění slov do jednotlivých slovníků a přidání nových slov(Hotovo , až na to přidání)
 6. Přidávání nových slovníku a mazaní (Hotovo)
 
 Následující změny chci provést ale nevím jestly je dokončím ( výše uvedené změny budou mít přednost):
