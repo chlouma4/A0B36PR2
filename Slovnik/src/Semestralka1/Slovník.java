@@ -272,10 +272,12 @@ public class Slovník {
 
     public Slovník nactiSlovnik() {
         Slovník slovnik = new Slovník();
-        int spravneOdpovedi, spatneOdpovedi;
+        int spravneOdpovedi, spatneOdpovedi,hrac,i=0;
         boolean test;
         String cj, aj;
         Scanner scan = null;
+            Hrac a=new Hrac();
+            hrac=a.vyberHrace();
         vyberSlovnik();
         try {
             scan = new Scanner(new FileReader(getTypSlovniku() + ".txt"));
@@ -288,8 +290,11 @@ public class Slovník {
                 try {
                     cj = scan.next();
                     aj = scan.next();
+                    do{
                     spravneOdpovedi = scan.nextInt();
                     spatneOdpovedi = scan.nextInt();
+                    i++;
+                    }while(i==hrac);
                     slovnik.vlozNaKonec(aj, cj, spravneOdpovedi, spatneOdpovedi);
                 } catch (Exception e) {
                     System.out.println("Ze souboru nebylo mozne nacit data.Soubor je pravdepodobne pozkozen.");

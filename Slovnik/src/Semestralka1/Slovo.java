@@ -13,6 +13,14 @@ public class Slovo {
     private String cj;
     private  int  pocetSpravnychOdpovedi;
     private int    pocetSpatnychOdpovedi;
+    
+        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi){
+        this.aj=aj;
+        this.cj=cj;
+        this.pocetSpatnychOdpovedi=pocetSpatnychOdpovedi;
+        this.pocetSpravnychOdpovedi=pocetSpravnychOdpovedi;
+    }   
+
 
     public int getPocetSpravnychOdpovedi() {
         return pocetSpravnychOdpovedi;
@@ -30,10 +38,6 @@ public class Slovo {
         this.pocetSpatnychOdpovedi = pocetSpatnychOdpovedi;
     }
     
-    public Slovo(String aj, String cj){
-        this.aj=aj;
-        this.cj=cj;
-    }   
 
     public String getAj() {
         return aj;

@@ -12,16 +12,20 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
+/* pridat vybet jestly ma nove vztvorenz slovnik vzdet jenom sam utivatel nebo i ostatni.
+ * Problem s ukladanim ... Kazdy slovnik ma svuj soubor kde jsou ve sloupci ulozeny slova
+ * v dalsim sloupci jsou statistiky techto slov pro kazdeho hrace vlastni. Kdyz nactu do
+ * spojoveho seznamu slova s jejich statistikami pro prislusneho hrace a pote ulozim tak
+ * ztratim statistiky ostatnich hracu
+ */
+
 /**
  *
  * @author Marco
  */
 public class Menu {
 
-    /**
-     * @param args the command line arguments
-     *
-     */
+    
     static private Integer[] generatorNahodnychCisel(int pocet, int max, ArrayList arrayA) { // (Integer je zde pouzit misto int protoze int je promitivni datovy typ a s nim by tato metoda nefungovala)
         //Tato metoda generuje  cisla v zavislosti na promench pocet(udava kolik cisel chceme navratit), max (udava jake nejvissi cislo muze byt navraceno), arrayA(rikame generatoru ze tato cisla museji
         // byt mezi navracenimy. Metoda vraci pole s nahodne vygenerovanymi a prehazenimy cisli.
@@ -74,7 +78,7 @@ public class Menu {
         int ukon, velikostSlovniku, z = 0, e, pom;
         ArrayList spatneOdpovedi = new ArrayList();
         Scanner sc = new Scanner(System.in);
-        slovnik=slovnik.nacti();
+        slovnik=slovnik.nactiSlovnik();
         velikostSlovniku = slovnik.pocetDvojic();
         System.out.println("Upozorneni: Pokud nebude program radne ukoncen tak provedene zmeny nebudou ulozeny.");
         while (true) {
@@ -183,7 +187,7 @@ public class Menu {
                     aj = sc.nextLine();
                     System.out.println("Zadejte jeho cesky preklad");
                     cj = sc.nextLine();
-                    slovnik.vlozNaKonec(aj, cj);
+                    slovnik.vlozNaKonec(aj, cj,0,0);
                     if (velikostSlovniku != slovnik.pocetDvojic()) {
                         velikostSlovniku++;
                         System.out.println("Pamatujte pri pristim spusteni se tato zmena projevy jen pokud bude program radne ukoncen.");
@@ -311,7 +315,7 @@ public class Menu {
                     break;
                 }
                 case 5: {
-                    slovnik.uloz(); // ulozeni seznamu
+                    slovnik.ulozSlovnik(); // ulozeni seznamu
                     System.exit(0);
                     break;
                 }
