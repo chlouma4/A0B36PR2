@@ -13,12 +13,16 @@ public class Slovo {
     private String cj;
     private  int  pocetSpravnychOdpovedi;
     private int    pocetSpatnychOdpovedi;
+    private int IDSlova;
+    private int IDSlovniku;
     
-        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi){
+        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi, int IDSlova,int IDSlovniku){
         this.aj=aj;
         this.cj=cj;
         this.pocetSpatnychOdpovedi=pocetSpatnychOdpovedi;
         this.pocetSpravnychOdpovedi=pocetSpravnychOdpovedi;
+        this.IDSlova=IDSlova;
+        this.IDSlovniku=IDSlovniku;
     }   
 
 
@@ -54,6 +58,23 @@ public class Slovo {
     public void setCj(String cj) {
         this.cj = cj;
     }
+
+    public int getIDSlova() {
+        return IDSlova;
+    }
+
+    public void setIDSlova(int IDSlova) {
+        this.IDSlova = IDSlova;
+    }
+
+    public int getIDSlovniku() {
+        return IDSlovniku;
+    }
+
+    public void setIDSlovniku(int IDSlovniku) {
+        this.IDSlovniku = IDSlovniku;
+    }
+    
 
     @Override
     public  String toString(){
