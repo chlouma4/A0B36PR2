@@ -78,11 +78,11 @@ public class Menu {
         int ukon, velikostSlovniku, z = 0, e, pom;
         ArrayList spatneOdpovedi = new ArrayList();
         
-      VyberUctu pri = new VyberUctu();
+      Prihlaseni pri= new Prihlaseni();
       pri.setVisible(true);
       pri.pack();
         Scanner sc = new Scanner(System.in);
-        slovnik=slovnik.nactiSlovnik();
+//        slovnik=slovnik.nactiSlovnik();
         velikostSlovniku = slovnik.pocetDvojic();
         System.out.println("Upozorneni: Pokud nebude program radne ukoncen tak provedene zmeny nebudou ulozeny.");
         while (true) {

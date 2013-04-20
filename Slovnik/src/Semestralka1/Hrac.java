@@ -24,13 +24,17 @@ public class Hrac {
     private int pokusy;
 
     /**
-     * Metoda vytvorHrace() ulozi noveho hrace do souboru. Jmeno hrace a jeho
+     * Metoda ulozNovehoHrace() ulozi noveho hrace do souboru. Jmeno hrace a jeho
      * heslo zaska z tridnich promenich.
      *
      */
-    public void vytvorHrace() {
+    public void ulozNovehoHrace() {
         ArrayList seznam = new ArrayList();
-        seznam = nactiHrace();
+        String[] seznam1=nactiHrace(3);
+      
+        for (int i = 0; i < seznam1.length; i++) {
+            seznam.add(seznam1[i]);
+        }
         seznam.add(this.jmeno);
         seznam.add(this.heslo);
         FileWriter out = null;
@@ -56,10 +60,10 @@ public class Hrac {
 
     /**
      * Metoda nactiHrace vráti seznam hráčů i s jejich hesly v ArrayListu.
-     *
+     *parametr urcuje co cheme nacist 1- Jmena hracu 2-hesla hracu 3 - nacte vse
      * @return
      */
-    public ArrayList nactiHrace() {
+    public String [] nactiHrace( int i) {
         ArrayList seznam = new ArrayList();
         String hrac;
         boolean test;
@@ -79,7 +83,21 @@ public class Hrac {
             }
 
         }
-        return seznam;
+        if(i==1){
+            for (int j = 1; j < seznam.size(); j=j+2) {
+                seznam.remove(j);
+            }
+        }else if (i==2){
+            for (int j = 0; j < seznam.size(); j=j+2) {
+                seznam.remove(j);
+        }
+        }
+         String[] pole;
+        pole = (String[]) seznam.toArray(new String[seznam.size()]);
+        return pole;
+    
+        
+        
     }
     
     /**Metoda vyberHrace() vybere hrace ,ktery chce hrat nebo vztvori novy ucet.
@@ -93,7 +111,7 @@ public class Hrac {
         String heslo0;
         int volba;
         ArrayList hraci = new ArrayList();
-        hraci = this.nactiHrace();
+      //  hraci = this.nactiHrace();
         System.out.println("Vyberte prosim svuj ucet");
         for (int i = 0; i <= (hraci.size() / 2); i = i + 2) {
             System.out.println((i / 2 + 1) + ". " + hraci.get(i));
@@ -104,7 +122,7 @@ public class Hrac {
             System.out.println("Zadejte sve jmeno.");
             this.jmeno = scan.next();
             nastavHeslo(0);
-            vytvorHrace();
+            ulozNovehoHrace();
             System.out.println("Ucet vytvoren");
             return (hraci.size()/2)+1;
         } else {
@@ -239,10 +257,68 @@ public class Hrac {
         }
     }
     
-  public String[] testetst(){
-         String items[] = {"Java", "JSP", "PHP", "C", "C++"};
-      
-        return items;
+    public boolean prihlaseni(String jmeno, String heslo1, int poradi){
+      //  System.out.println(jmeno +poradi);
+        //System.out.println(heslo1);
+     this.setJmeno(jmeno);
+     String []pole = nactiHrace(2);
+     this.setHeslo(pole[poradi]);
+     boolean spravne=overHeslo(heslo1);
+     return spravne;     
     }
+    
+    public boolean zkontrolujJmeno(String jmeno){
+        String []pole =nactiHrace(1);
+          ArrayList jmena = new ArrayList();
+          for (int i = 0; i < pole.length; i++) {
+            jmena.add(pole[i]);
+        }
+          boolean a = jmena.contains(jmeno);
+        
+        return a;
+        
+    }
+    
+    public int vytvorHrace(String jmeno,String heslo,String heslo1){
+        if(zkontrolujJmeno(jmeno)== true){
+            return 1;
+        }
+        if(heslo.equals(heslo1)== false){
+            return 2;
+        }
+        if(heslo.length()==4 | heslo.length()==6){
+            this.setJmeno(jmeno);
+        this.zasifrujHeslo(heslo);
+        this.ulozNovehoHrace();
+        return 0;
+        }
+    return 3;
+    }
+
+    public String getJmeno() {
+        return jmeno;
+    }
+
+    public void setJmeno(String jmeno) {
+        this.jmeno = jmeno;
+    }
+
+    public String getHeslo() {
+        return heslo;
+    }
+
+    public void setHeslo(String heslo) {
+        this.heslo = heslo;
+    }
+
+    public int getPokusy() {
+        return pokusy;
+    }
+
+    public void setPokusy(int pokusy) {
+        this.pokusy = pokusy;
+    }
+ 
+  
     
 }
