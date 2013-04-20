@@ -77,6 +77,10 @@ public class Menu {
         Slovník slovnik = new Slovník();
         int ukon, velikostSlovniku, z = 0, e, pom;
         ArrayList spatneOdpovedi = new ArrayList();
+        
+      VyberUctu pri = new VyberUctu();
+      pri.setVisible(true);
+      pri.pack();
         Scanner sc = new Scanner(System.in);
         slovnik=slovnik.nactiSlovnik();
         velikostSlovniku = slovnik.pocetDvojic();
@@ -187,7 +191,7 @@ public class Menu {
                     aj = sc.nextLine();
                     System.out.println("Zadejte jeho cesky preklad");
                     cj = sc.nextLine();
-                    slovnik.vlozNaKonec(aj, cj,0,0);
+               //     slovnik.vlozNaKonec(aj, cj,0,0);
                     if (velikostSlovniku != slovnik.pocetDvojic()) {
                         velikostSlovniku++;
                         System.out.println("Pamatujte pri pristim spusteni se tato zmena projevy jen pokud bude program radne ukoncen.");

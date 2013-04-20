@@ -14,9 +14,9 @@ public class Slovo {
     private  int  pocetSpravnychOdpovedi;
     private int    pocetSpatnychOdpovedi;
     private int IDSlova;
-    private int IDSlovniku;
+    private String IDSlovniku;
     
-        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi, int IDSlova,int IDSlovniku){
+        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi, int IDSlova,String IDSlovniku){
         this.aj=aj;
         this.cj=cj;
         this.pocetSpatnychOdpovedi=pocetSpatnychOdpovedi;
@@ -67,11 +67,11 @@ public class Slovo {
         this.IDSlova = IDSlova;
     }
 
-    public int getIDSlovniku() {
+    public String getIDSlovniku() {
         return IDSlovniku;
     }
 
-    public void setIDSlovniku(int IDSlovniku) {
+    public void setIDSlovniku(String IDSlovniku) {
         this.IDSlovniku = IDSlovniku;
     }
     

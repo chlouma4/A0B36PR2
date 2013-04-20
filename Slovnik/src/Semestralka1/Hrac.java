@@ -239,4 +239,10 @@ public class Hrac {
         }
     }
     
+  public String[] testetst(){
+         String items[] = {"Java", "JSP", "PHP", "C", "C++"};
+      
+        return items;
+    }
+    
 }

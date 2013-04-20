@@ -26,9 +26,9 @@ public class Slovník {
     public Slovník() {
     }
 
-    public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
+    public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, int IDSlova, String IDSlovniku) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
         if (cj != null && aj != null) {
-            Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi);
+            Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi,IDSlova, IDSlovniku);
             Bunka bunka = new Bunka(slovo, null);
             if (prvni == null) {
                 prvni = bunka;
@@ -105,6 +105,7 @@ public class Slovník {
         Scanner scan = new Scanner(System.in);
         seznam = nactiSeznam();
         while (true) {
+            
             System.out.println("Prosim vzberte slovnik s kterym chcete pracovat");
             for (int i = 0; i < seznam.size(); i++) {
                 System.out.println((i + 1) + ". " + seznam.get(i));
@@ -295,7 +296,7 @@ public class Slovník {
                     spatneOdpovedi = scan.nextInt();
                     i++;
                     }while(i==hrac);
-                    slovnik.vlozNaKonec(aj, cj, spravneOdpovedi, spatneOdpovedi);
+                   // slovnik.vlozNaKonec(aj, cj, spravneOdpovedi, spatneOdpovedi);
                 } catch (Exception e) {
                     System.out.println("Ze souboru nebylo mozne nacit data.Soubor je pravdepodobne pozkozen.");
                 }
