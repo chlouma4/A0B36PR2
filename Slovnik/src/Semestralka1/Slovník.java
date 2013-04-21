@@ -128,7 +128,6 @@ public class Slovník {
             pom = pom.dalsi;
 
         }
-        System.out.println("Dana dvojce byla smazana");
     }
 
     public void vyberSlovnik() {
@@ -223,8 +222,8 @@ public class Slovník {
      * Metoda vrátí jednu polozku z bunky. Proměnnou cisloBunky zvolíme ze které
      * bunky spojevého seznamu chceme vytáhnout data. Proměnnou polozka volíme
      * kterou plozku chceme z bunky vytáhnouta to tak že 1-vrátí cj výraz
-     * 2-vrátí anglický výraz 3- vrátí pocet spatnych odpovedi 4- vrátí pocet
-     * spravnych odpovedi 5- vrati IdSlova 6- vrati aktivitu slova
+     * 2-vrátí anglický výraz 3- vrátí pocet spravnych odpovedi 4- vrátí pocet
+     * spatnzch dpovedi 5- vrati IdSlova 6- vrati aktivitu slova
      */
     public String getObsahBunky(int cisloBunky, int polozka) {
         int citac = 0;
@@ -241,10 +240,10 @@ public class Slovník {
                     slovo = pom.slovicka.getAj(); 
                         break;
                     case 3:
-                  slovo = String.valueOf(pom.slovicka.getPocetSpatnychOdpovedi());  
+                  slovo = String.valueOf(pom.slovicka.getPocetSpravnychOdpovedi()); 
                         break;
                     case 4:
-                    slovo = String.valueOf(pom.slovicka.getPocetSpravnychOdpovedi()); 
+                    slovo = String.valueOf(pom.slovicka.getPocetSpatnychOdpovedi());  
                         break;
                     case 5:
                         slovo=pom.slovicka.getIDSlova();
@@ -329,11 +328,15 @@ public class Slovník {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
+          try{
+               this.setTvurceSlovniku(scanSlovnik.next());
+          }catch(Exception e){
+        System.out.println("Ze souboru nebylo mozne nacist data.Soubor je pravdepodobne pozkozen.");
+          }
         while (true) {
             test = scanSlovnik.hasNext();
             if (test == true) {
                 try {
-                    this.setTvurceSlovniku(scanSlovnik.next());
                     cj = scanSlovnik.next();
                     aj = scanSlovnik.next();
                     idSlova= scanSlovnik.next();
@@ -361,7 +364,10 @@ public class Slovník {
             }
         }
          this.setIdPoslednohoSlova(this.getObsahBunky(this.pocetDvojic(), 5));
-
+     /*   for (int j = 1; j <= this.pocetDvojic(); j++) {
+             System.out.println(getObsahBunky(j, 1) + " " + getObsahBunky(j, 2) + " " + getObsahBunky(j, 3) + " " + getObsahBunky(j, 4)+" "+ getObsahBunky(j, 5)+" " +getObsahBunky(j, 6));
+        }
+*/
     }
 
     public void ulozSlovnik() {  // Meotda ktera ulozi typSlovniku do souboru 
@@ -385,16 +391,24 @@ public class Slovník {
         }
         System.out.println("Ulozeno");
     }
-    
-    public void vymazNeaktivni(){
+    /**Tato metoda maze aktivni nebo Neaktivni slova posdle toho jakou ma hodnotu
+     * parametr smaz.
+     * Pro smaz = 1 vymaze aktivni slova.
+     * Pro smaz= 0 vymaze neaktivni slova.
+     * 
+     * @param smaz 
+     */
+    public void vymazNeaktivniNeboAktivni(int smaz){
         String test;
-        for (int i = 1; i < this.pocetDvojic(); i++) {
+        for (int i = 1; i <= this.pocetDvojic(); i++) {
          test=this.getObsahBunky(i, 6);
-         if(test.equals("0")){
+         if(test.equals(""+smaz)){
              this.smaz(i);
+             i--;
          }
         }
     }
+
 
     public String getIdPoslednohoSlova() {
         return idPoslednihoSlova;
