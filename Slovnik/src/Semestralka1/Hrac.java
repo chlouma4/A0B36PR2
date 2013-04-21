@@ -83,9 +83,11 @@ public class Hrac {
             }
 
         }
+        
         if(i==1){
-            for (int j = 1; j < seznam.size(); j=j+2) {
+            for (int j = 1; j < seznam.size(); j++) {
                 seznam.remove(j);
+               
             }
         }else if (i==2){
             for (int j = 0; j < seznam.size(); j=j+2) {
@@ -94,6 +96,7 @@ public class Hrac {
         }
          String[] pole;
         pole = (String[]) seznam.toArray(new String[seznam.size()]);
+
         return pole;
     
         

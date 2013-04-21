@@ -13,16 +13,16 @@ public class Slovo {
     private String cj;
     private  int  pocetSpravnychOdpovedi;
     private int    pocetSpatnychOdpovedi;
-    private int IDSlova;
-    private String IDSlovniku;
+    private String IDSlova;
+
     
-        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi, int IDSlova,String IDSlovniku){
+        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi, String IDSlova){
         this.aj=aj;
         this.cj=cj;
         this.pocetSpatnychOdpovedi=pocetSpatnychOdpovedi;
         this.pocetSpravnychOdpovedi=pocetSpravnychOdpovedi;
         this.IDSlova=IDSlova;
-        this.IDSlovniku=IDSlovniku;
+
     }   
 
 
@@ -59,21 +59,15 @@ public class Slovo {
         this.cj = cj;
     }
 
-    public int getIDSlova() {
+    public String getIDSlova() {
         return IDSlova;
     }
 
-    public void setIDSlova(int IDSlova) {
+    public void setIDSlova(String IDSlova) {
         this.IDSlova = IDSlova;
     }
 
-    public String getIDSlovniku() {
-        return IDSlovniku;
-    }
-
-    public void setIDSlovniku(String IDSlovniku) {
-        this.IDSlovniku = IDSlovniku;
-    }
+    
     
 
     @Override

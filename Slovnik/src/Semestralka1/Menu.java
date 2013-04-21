@@ -77,10 +77,9 @@ public class Menu {
         Slovník slovnik = new Slovník();
         int ukon, velikostSlovniku, z = 0, e, pom;
         ArrayList spatneOdpovedi = new ArrayList();
-        
-      Prihlaseni pri= new Prihlaseni();
-      pri.setVisible(true);
-      pri.pack();
+        Hrac hrac= new Hrac();
+
+
         Scanner sc = new Scanner(System.in);
 //        slovnik=slovnik.nactiSlovnik();
         velikostSlovniku = slovnik.pocetDvojic();
