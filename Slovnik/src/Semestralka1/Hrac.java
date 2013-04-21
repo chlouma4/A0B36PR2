@@ -297,6 +297,38 @@ public class Hrac {
         }
     return 3;
     }
+    /**Metoda ktera testuje jake ma hrac pravomoce.
+     * Parametr hrac je jmeno hrace ktery vytvoril prave spusteny slovnik.
+     * Parametrem testuj zvolime pravomoc kterou chceme testovat takto:
+     * 1 - zmena aktivity slova
+     * 2 - pridani slovicek.
+     * 3- vymayani slova
+     * 
+     * 
+     * @param testuj
+     * @return 
+     */
+   public boolean testPravomoc(String hrac,int testuj){
+        switch (testuj){
+            case 1:
+                if(hrac.equals(this.getJmeno()) | hrac.equals("Admin")){
+                    return true;
+                }
+                break;
+            case 2:
+                if(hrac.equals(this.getJmeno()) ){
+                    return true;
+                }
+                break;
+            case 3:
+                if(hrac.equals("Admin")){
+                    return true;
+                }
+        }
+        
+        return false;
+    }
+    
 
     public String getJmeno() {
         return jmeno;

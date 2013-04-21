@@ -23,13 +23,14 @@ public class Slovník {
     private Bunka volna;
    private  static String typSlovniku;
    private String idPoslednihoSlova;
+   private String tvurceSlovniku;
 
     public Slovník() {
     }
 
-    public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
+    public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova, int aktivita) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
         if (cj != null && aj != null) {
-            Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi,IDSlova);
+            Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi,IDSlova, aktivita);
             Bunka bunka = new Bunka(slovo, null);
             if (prvni == null) {
                 prvni = bunka;
@@ -223,7 +224,7 @@ public class Slovník {
      * bunky spojevého seznamu chceme vytáhnout data. Proměnnou polozka volíme
      * kterou plozku chceme z bunky vytáhnouta to tak že 1-vrátí cj výraz
      * 2-vrátí anglický výraz 3- vrátí pocet spatnych odpovedi 4- vrátí pocet
-     * spravnych odpovedi 5- vrati IdSlova
+     * spravnych odpovedi 5- vrati IdSlova 6- vrati aktivitu slova
      */
     public String getObsahBunky(int cisloBunky, int polozka) {
         int citac = 0;
@@ -247,6 +248,9 @@ public class Slovník {
                         break;
                     case 5:
                         slovo=pom.slovicka.getIDSlova();
+                        break;
+                    case 6:
+                        slovo=String.valueOf(pom.slovicka.getAktivita());
                 }
             }
             pom = pom.dalsi;
@@ -309,10 +313,10 @@ public class Slovník {
     }
 
     public void nactiSlovnik(String slovnik,String jmenoHrace) {
-        int spravneOdpovedi, spatneOdpovedi,hrac1,i=0;
+        int spravneOdpovedi, spatneOdpovedi,hrac1,i=0,aktivni;
         boolean test;
         this.setTypSlovniku(slovnik);
-        String cj, aj,idSlova,aktivni,test1;
+        String cj, aj,idSlova,test1;
         Scanner scanSlovnik = null;
           Scanner scanHrac = null;
         try {
@@ -329,10 +333,11 @@ public class Slovník {
             test = scanSlovnik.hasNext();
             if (test == true) {
                 try {
+                    this.setTvurceSlovniku(scanSlovnik.next());
                     cj = scanSlovnik.next();
                     aj = scanSlovnik.next();
                     idSlova= scanSlovnik.next();
-                    aktivni= scanSlovnik.next();
+                    aktivni= scanSlovnik.nextInt();
                     while(true){
                                 try{
                               do{
@@ -344,7 +349,7 @@ public class Slovník {
                                     spravneOdpovedi=0;       // coz skonci chybou a to znamena ze statistiky pro toto slovo nejsou a jsou nastavenz tedz na nula
                                      spatneOdpovedi=0;
                                 }
-                               this.vlozNaKonec(aj, cj, spravneOdpovedi, spatneOdpovedi, idSlova);
+                               this.vlozNaKonec(aj, cj, spravneOdpovedi, spatneOdpovedi, idSlova,aktivni);
                                 break;
                     }
                
@@ -380,6 +385,16 @@ public class Slovník {
         }
         System.out.println("Ulozeno");
     }
+    
+    public void vymazNeaktivni(){
+        String test;
+        for (int i = 1; i < this.pocetDvojic(); i++) {
+         test=this.getObsahBunky(i, 6);
+         if(test.equals("0")){
+             this.smaz(i);
+         }
+        }
+    }
 
     public String getIdPoslednohoSlova() {
         return idPoslednihoSlova;
@@ -388,6 +403,15 @@ public class Slovník {
     public void setIdPoslednohoSlova(String idSlovniku) {
         this.idPoslednihoSlova = idSlovniku;
     }
+
+    public String getTvurceSlovniku() {
+        return tvurceSlovniku;
+    }
+
+    public void setTvurceSlovniku(String tvurceSlovniku) {
+        this.tvurceSlovniku = tvurceSlovniku;
+    }
+    
     
    
     

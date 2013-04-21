@@ -14,14 +14,16 @@ public class Slovo {
     private  int  pocetSpravnychOdpovedi;
     private int    pocetSpatnychOdpovedi;
     private String IDSlova;
+    private int aktivita;
 
     
-        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi, String IDSlova){
+        public Slovo(String aj, String cj, int pocetSpravnychOdpovedi, int pocetSpatnychOdpovedi, String IDSlova, int aktivita){
         this.aj=aj;
         this.cj=cj;
         this.pocetSpatnychOdpovedi=pocetSpatnychOdpovedi;
         this.pocetSpravnychOdpovedi=pocetSpravnychOdpovedi;
         this.IDSlova=IDSlova;
+        this.aktivita=aktivita;
 
     }   
 
@@ -65,6 +67,14 @@ public class Slovo {
 
     public void setIDSlova(String IDSlova) {
         this.IDSlova = IDSlova;
+    }
+
+    public int getAktivita() {
+        return aktivita;
+    }
+
+    public void setAktivita(int aktivita) {
+        this.aktivita = aktivita;
     }
 
     
