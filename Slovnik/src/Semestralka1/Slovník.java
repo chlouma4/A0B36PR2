@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,7 @@ public class Slovník {
    private  static String typSlovniku;
    private String idPoslednihoSlova;
    private String tvurceSlovniku;
+   private LinkedList neaktivni;
 
     public Slovník() {
     }
@@ -129,7 +131,9 @@ public class Slovník {
 
         }
     }
-
+ public void vycistiSpojovySeznam(){
+       this.prvni=null;
+ }
     public void vyberSlovnik() {
         int volba;
         ArrayList seznam = new ArrayList();
@@ -370,45 +374,92 @@ public class Slovník {
 */
     }
 
-    public void ulozSlovnik() {  // Meotda ktera ulozi typSlovniku do souboru 
-        FileWriter out = null;
+    public void ulozSlovnik(String jmenoHrace) {  // Meotda ktera ulozi typSlovniku do souboru 
+        FileWriter outSlovnik = null;
+         FileWriter outHrac = null;
         try {
-            out = new FileWriter(getTypSlovniku()+ ".txt");
+            outSlovnik = new FileWriter(getTypSlovniku()+ ".txt");
         } catch (IOException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
-        for (int i = 1; i <= pocetDvojic(); i++) {
+          try {
+            outHrac = new FileWriter(jmenoHrace+ ".txt");
+        } catch (IOException ex) {
+            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+        }
             try {
-                out.write(getObsahBunky(i, 1) + " " + getObsahBunky(i, 2) + " " + getObsahBunky(i, 3) + " " + getObsahBunky(i, 4) + System.lineSeparator());
-            } catch (IOException ex) {
+                outSlovnik.write(this.getTvurceSlovniku()+System.lineSeparator());
+        for (int i = 1; i <= pocetDvojic(); i++) {
+                outSlovnik.write(getObsahBunky(i, 1) + " " + getObsahBunky(i, 2) + " " + getObsahBunky(i, 5) + " " + getObsahBunky(i, 6) + System.lineSeparator());
+                 outHrac.write(getObsahBunky(i, 5) + " " + getObsahBunky(i, 3) + " " + getObsahBunky(i, 4) + System.lineSeparator());
+        } 
+        } catch (IOException ex) {
                 Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        
         try {
-            out.close();
+            outSlovnik.close();
+            outHrac.close();
         } catch (IOException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Ulozeno");
     }
-    /**Tato metoda maze aktivni nebo Neaktivni slova posdle toho jakou ma hodnotu
+    /**PREPSAT"!!!  Tato metoda maze aktivni nebo Neaktivni slova posdle toho jakou ma hodnotu
      * parametr smaz.
      * Pro smaz = 1 vymaze aktivni slova.
      * Pro smaz= 0 vymaze neaktivni slova.
      * 
      * @param smaz 
      */
-    public void vymazNeaktivniNeboAktivni(int smaz){
+    public void odstranNeaktivni(){
         String test;
         for (int i = 1; i <= this.pocetDvojic(); i++) {
          test=this.getObsahBunky(i, 6);
-         if(test.equals(""+smaz)){
+         if(test.equals(""+0)){
+             this.neaktivni.add(new Slovo(this.getObsahBunky(i, 1),
+                     this.getObsahBunky(i, 2),
+                     Integer.valueOf(this.getObsahBunky(i, 3)),
+                     Integer.valueOf(this.getObsahBunky(i, 4)),
+                     this.getObsahBunky(i, 1), 
+                     Integer.valueOf(this.getObsahBunky(i, 1))));
              this.smaz(i);
              i--;
          }
         }
     }
+/**Metoda ktera aktivuje nbeo deaktivuke slovo.
+ * Parametrem poradi se urcuje poradi slova ve spojovem seznamu.
+ * Pokud bude porametr poradi 0 tak se operace provede pro vsechna slova.
+ * Parametrem operace se voli aktivace ne deaktivace slov takto:
+ * 0 - nastav na neaktivni
+ * 1-nastav na aktivni
+ * @param poradi
+ * @param operace 
+ */
+    public void aktivaceDeaktivaceSlova(int poradi, int operace){
+                int z = 0;
+        Bunka pom = prvni;
+        while (pom != null) {
+            
+            z = z + 1;
+            if (z == poradi && poradi == 1 | poradi==0) { 
+               pom.slovicka.setAktivita(operace);
+                break;
+            }
+            if (z == poradi - 1 && poradi != pocetDvojic()| poradi==0) {
+             pom.slovicka.setAktivita(operace);
+                break;
+            }
+            if (z == poradi - 1 && poradi == pocetDvojic()| poradi==0) { 
+                pom.slovicka.setAktivita(operace);
+                break;
+            }
+            pom = pom.dalsi;
 
+        }
+        
+        
+    }
 
     public String getIdPoslednohoSlova() {
         return idPoslednihoSlova;
@@ -424,6 +475,14 @@ public class Slovník {
 
     public void setTvurceSlovniku(String tvurceSlovniku) {
         this.tvurceSlovniku = tvurceSlovniku;
+    }
+
+    public String getIdPoslednihoSlova() {
+        return idPoslednihoSlova;
+    }
+
+    public void setIdPoslednihoSlova(String idPoslednihoSlova) {
+        this.idPoslednihoSlova = idPoslednihoSlova;
     }
     
     
