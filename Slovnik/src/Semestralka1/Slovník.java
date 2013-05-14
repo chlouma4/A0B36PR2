@@ -31,6 +31,7 @@ public class Slovník {
     }
 
     public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova, int aktivita) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
+        System.out.println("TEST ULOZ NA KONEC");
         if (cj != null && aj != null) {
             Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi,IDSlova, aktivita);
             Bunka bunka = new Bunka(slovo, null);
@@ -62,6 +63,10 @@ public class Slovník {
         int cislo1;
         String idSlova=this.getIdPoslednohoSlova();
         String slovnik=this.getTypSlovniku();
+        if(idSlova==null){
+            System.out.println(" RETURN nove ID");
+            return slovnik+"1";
+        }
         int delkaSlovnik=slovnik.length();
         int delkaIdSlova=idSlova.length();
         char [] pole =idSlova.toCharArray();
@@ -390,6 +395,7 @@ public class Slovník {
             try {
                 outSlovnik.write(this.getTvurceSlovniku()+System.lineSeparator());
         for (int i = 1; i <= pocetDvojic(); i++) {
+            System.out.println("ukladam " +getObsahBunky(i, 1) + "   " + getObsahBunky(i, 2) + "  " + getObsahBunky(i, 5) + "  " + getObsahBunky(i, 6));
                 outSlovnik.write(getObsahBunky(i, 1) + " " + getObsahBunky(i, 2) + " " + getObsahBunky(i, 5) + " " + getObsahBunky(i, 6) + System.lineSeparator());
                  outHrac.write(getObsahBunky(i, 5) + " " + getObsahBunky(i, 3) + " " + getObsahBunky(i, 4) + System.lineSeparator());
         } 

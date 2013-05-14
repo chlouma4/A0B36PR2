@@ -1465,9 +1465,10 @@ public class StareGui extends javax.swing.JFrame {
     }//GEN-LAST:event_ceskyVyraz1ActionPerformed
 
     private void Uloz1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Uloz1ActionPerformed
-        this.slovnik.vlozNaKonec(this.anglickyVyraz.getText(), this.ceskyVyraz.getText(), 0, 0, this.slovnik.vytvorNoveIdSlova(), 1);
-        this.pridaniSlovicekPanel.setVisible(false);
-        this.spravaSlovicek.setVisible(true);
+        this.slovnik.vlozNaKonec(this.anglickyVyraz1.getText(), this.ceskyVyraz1.getText(), 0, 0, this.slovnik.vytvorNoveIdSlova(), 1);
+        System.out.println("TEST ULOZ");
+        this.pridaniSlovicekPanel1.setVisible(false);
+        this.spravaSlovicek1.setVisible(true);
 
     }//GEN-LAST:event_Uloz1ActionPerformed
 

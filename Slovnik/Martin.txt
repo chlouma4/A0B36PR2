@@ -1,7 +1,1 @@
-Zakladni1 0 0
-Zakladni2 0 0
-Zakladni3 0 0
-Zakladni4 0 0
-Zakladni5 0 0
-Zakladni7 0 0
-Zakladni9 0 0
+muj1 0 0
