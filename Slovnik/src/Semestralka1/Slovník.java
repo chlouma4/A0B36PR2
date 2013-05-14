@@ -25,13 +25,12 @@ public class Slovník {
    private  static String typSlovniku;
    private String idPoslednihoSlova;
    private String tvurceSlovniku;
-   private LinkedList neaktivni;
+   private LinkedList neaktivni= new LinkedList();
 
     public Slovník() {
     }
 
     public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova, int aktivita) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
-        System.out.println("TEST ULOZ NA KONEC");
         if (cj != null && aj != null) {
             Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi,IDSlova, aktivita);
             Bunka bunka = new Bunka(slovo, null);
@@ -395,7 +394,6 @@ public class Slovník {
             try {
                 outSlovnik.write(this.getTvurceSlovniku()+System.lineSeparator());
         for (int i = 1; i <= pocetDvojic(); i++) {
-            System.out.println("ukladam " +getObsahBunky(i, 1) + "   " + getObsahBunky(i, 2) + "  " + getObsahBunky(i, 5) + "  " + getObsahBunky(i, 6));
                 outSlovnik.write(getObsahBunky(i, 1) + " " + getObsahBunky(i, 2) + " " + getObsahBunky(i, 5) + " " + getObsahBunky(i, 6) + System.lineSeparator());
                  outHrac.write(getObsahBunky(i, 5) + " " + getObsahBunky(i, 3) + " " + getObsahBunky(i, 4) + System.lineSeparator());
         } 
@@ -410,24 +408,22 @@ public class Slovník {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    /**PREPSAT"!!!  Tato metoda maze aktivni nebo Neaktivni slova posdle toho jakou ma hodnotu
-     * parametr smaz.
-     * Pro smaz = 1 vymaze aktivni slova.
-     * Pro smaz= 0 vymaze neaktivni slova.
+    /*Tato metoda presune neaktivni slova do Linked listu tridy neaktivni.
      * 
-     * @param smaz 
+     * 
      */
-    public void odstranNeaktivni(){
+    public void presunNeaktivni(){
         String test;
         for (int i = 1; i <= this.pocetDvojic(); i++) {
          test=this.getObsahBunky(i, 6);
          if(test.equals(""+0)){
-             this.neaktivni.add(new Slovo(this.getObsahBunky(i, 1),
-                     this.getObsahBunky(i, 2),
+             this.neaktivni.size();
+             this.neaktivni.add(new Slovo(this.getObsahBunky(i, 2),
+                     this.getObsahBunky(i, 1),
                      Integer.valueOf(this.getObsahBunky(i, 3)),
                      Integer.valueOf(this.getObsahBunky(i, 4)),
-                     this.getObsahBunky(i, 1), 
-                     Integer.valueOf(this.getObsahBunky(i, 1))));
+                     this.getObsahBunky(i, 5), 
+                     Integer.valueOf(this.getObsahBunky(i, 6))));
              this.smaz(i);
              i--;
          }

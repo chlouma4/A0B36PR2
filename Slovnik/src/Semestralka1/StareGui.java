@@ -5,6 +5,7 @@
 package Semestralka1;
 
 import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
 
 /**
  *
@@ -100,12 +101,12 @@ public class StareGui extends javax.swing.JFrame {
         vyberSlovo = new javax.swing.JTextField();
         mazaniSlovicekPanel = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        slovickoKeSmazani = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        Smaz = new javax.swing.JButton();
+        deaktivujDvojci = new javax.swing.JButton();
         uplneVymazani = new javax.swing.JButton();
         zpetMazaniSlovicek = new javax.swing.JButton();
+        cisloKeSmazani = new javax.swing.JSpinner();
         statistiky = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -699,10 +700,10 @@ public class StareGui extends javax.swing.JFrame {
 
         jLabel16.setText("Pred provedenim akce se dana dvojce slovicek zabrazi.");
 
-        Smaz.setText("Smaz");
-        Smaz.addActionListener(new java.awt.event.ActionListener() {
+        deaktivujDvojci.setText("deaktivivat dvojci");
+        deaktivujDvojci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SmazActionPerformed(evt);
+                deaktivujDvojciActionPerformed(evt);
             }
         });
 
@@ -720,6 +721,9 @@ public class StareGui extends javax.swing.JFrame {
             }
         });
 
+        cisloKeSmazani.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cisloKeSmazani.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+
         javax.swing.GroupLayout mazaniSlovicekPanelLayout = new javax.swing.GroupLayout(mazaniSlovicekPanel);
         mazaniSlovicekPanel.setLayout(mazaniSlovicekPanelLayout);
         mazaniSlovicekPanelLayout.setHorizontalGroup(
@@ -731,19 +735,20 @@ public class StareGui extends javax.swing.JFrame {
                         .addComponent(jLabel14))
                     .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel15)
                             .addComponent(jLabel16)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mazaniSlovicekPanelLayout.createSequentialGroup()
-                                .addComponent(slovickoKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(Smaz)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                                .addComponent(uplneVymazani))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mazaniSlovicekPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(zpetMazaniSlovicek)))
-                .addContainerGap())
+                            .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                                .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                                        .addGap(3, 3, 3)
+                                        .addComponent(zpetMazaniSlovicek))
+                                    .addComponent(cisloKeSmazani, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(deaktivujDvojci, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(uplneVymazani, javax.swing.GroupLayout.Alignment.TRAILING))))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         mazaniSlovicekPanelLayout.setVerticalGroup(
             mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -756,11 +761,12 @@ public class StareGui extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(slovickoKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Smaz)
-                    .addComponent(uplneVymazani))
-                .addGap(18, 18, 18)
-                .addComponent(zpetMazaniSlovicek)
+                    .addComponent(deaktivujDvojci)
+                    .addComponent(cisloKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uplneVymazani)
+                    .addComponent(zpetMazaniSlovicek))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -1129,8 +1135,8 @@ public class StareGui extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -1305,20 +1311,42 @@ public class StareGui extends javax.swing.JFrame {
     }//GEN-LAST:event_zpetMazaniSlovicekActionPerformed
 
     private void uplneVymazaniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uplneVymazaniActionPerformed
+       int volba;
         if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 3)) {
-            JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete smazat dvojci slovicek"
-                + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
-            // pokud bude stisknuto ok tak zavolat metodu slovnik.smaz(this.slovickoKeSmazani.getText())
+             if(((Integer)this.cisloKeSmazani.getValue())>slovnik.pocetDvojic()){
+             JOptionPane.showMessageDialog(rootPane,"Zadana dvojce neexistuje","Chyba",JOptionPane.WARNING_MESSAGE);
+        }else{
+            volba=JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete smazat dvojci slovicek"
+                + this.slovnik.vypisX((Integer)this.cisloKeSmazani.getValue()), "Chyba!", JOptionPane.YES_NO_OPTION);
+            if(volba==0){
+                this.slovnik.smaz((Integer)this.cisloKeSmazani.getValue());
+                JOptionPane.showMessageDialog(rootPane, "Dvojce byla smazana");
+            }else{
+              JOptionPane.showMessageDialog(rootPane, "Dvojce nebyla smazana");
+            }}
         } else {
-            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_uplneVymazaniActionPerformed
 
-    private void SmazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmazActionPerformed
-        JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete smazat dvojci slovicek"
-            + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
-        // pokud bude stisknuto ok tak zavolat metodu setAktivita(0)a spustit metodu vzmay neaktivni
-    }//GEN-LAST:event_SmazActionPerformed
+    private void deaktivujDvojciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deaktivujDvojciActionPerformed
+        int volba;
+        volba = 0;
+        if(((Integer)this.cisloKeSmazani.getValue())>slovnik.pocetDvojic()){
+             JOptionPane.showMessageDialog(rootPane,"Zadana dvojce neexistuje","Chyba",JOptionPane.WARNING_MESSAGE);
+        }else{
+       volba = JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete deaktivovat dvojci slovicek "
+            + this.slovnik.vypisX((Integer)this.cisloKeSmazani.getValue()), "Chyba!", JOptionPane.YES_NO_OPTION);
+        
+        if(volba==0){
+            this.slovnik.aktivaceDeaktivaceSlova((Integer)this.cisloKeSmazani.getValue(), volba);
+            this.slovnik.presunNeaktivni();
+            JOptionPane.showMessageDialog(rootPane,"Dvojce slovicek byla deaktivovana");
+        }else{
+       JOptionPane.showMessageDialog(rootPane,"Dvojce slovicek nebyla deaktivovana");
+        }  
+        }
+    }//GEN-LAST:event_deaktivujDvojciActionPerformed
 
     private void aktivovaniNeaktivnichSlovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlovActionPerformed
         if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
@@ -1378,9 +1406,7 @@ public class StareGui extends javax.swing.JFrame {
 
     private void potvrdSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potvrdSlovnikActionPerformed
         slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), uzivatel.getJmeno());
-        //  slovnik.odstranNeaktivni(0);
-        neaktivni.nactiSlovnik(this.slovnik.getTypSlovniku(), this.uzivatel.getJmeno());
-        //neaktivni.odstranNeaktivni(1);
+        this.slovnik.presunNeaktivni();
         this.setSize(330, 230);
         this.Menu.setVisible(true);
         this.vyberSlovnikPanel.setVisible(false);
@@ -1466,7 +1492,6 @@ public class StareGui extends javax.swing.JFrame {
 
     private void Uloz1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Uloz1ActionPerformed
         this.slovnik.vlozNaKonec(this.anglickyVyraz1.getText(), this.ceskyVyraz1.getText(), 0, 0, this.slovnik.vytvorNoveIdSlova(), 1);
-        System.out.println("TEST ULOZ");
         this.pridaniSlovicekPanel1.setVisible(false);
         this.spravaSlovicek1.setVisible(true);
 
@@ -1510,7 +1535,6 @@ public class StareGui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Menu;
     private javax.swing.JPanel Prihlaseni;
-    private javax.swing.JButton Smaz;
     private javax.swing.JButton Uloz;
     private javax.swing.JButton Uloz1;
     private javax.swing.JPanel aktivaceSlovicek;
@@ -1522,7 +1546,9 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JTextField anglickyVyraz1;
     private javax.swing.JTextField ceskyVyraz;
     private javax.swing.JTextField ceskyVyraz1;
+    private javax.swing.JSpinner cisloKeSmazani;
     private javax.swing.JTextField coAktovovat;
+    private javax.swing.JButton deaktivujDvojci;
     private javax.swing.JPasswordField hesloNovehoUctu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1572,7 +1598,6 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JPanel pridaniSlovicekPanel;
     private javax.swing.JPanel pridaniSlovicekPanel1;
     private javax.swing.JButton prihlas;
-    private javax.swing.JTextField slovickoKeSmazani;
     private javax.swing.JButton smazaniSlovicekButton;
     private javax.swing.JButton smazaniSlovicekButton1;
     private javax.swing.JPanel spravaSlovicek;

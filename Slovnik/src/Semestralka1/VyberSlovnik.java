@@ -103,7 +103,7 @@ private JFrame frame;
 
     private void potvrdSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potvrdSlovnikActionPerformed
         slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), hrac.getJmeno());
-        this.slovnik.odstranNeaktivni();
+        this.slovnik.presunNeaktivni();
         System.out.println("ok ");
 //        frame.setView(3);
       

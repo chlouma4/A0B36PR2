@@ -1,5 +1,4 @@
 Admin
-Dum House Zakladni1 1
 Ahoj Hello Zakladni2 1
 Zbran Gun Zakladni3 1
 Auto Car Zakladni4 1
