@@ -26,7 +26,8 @@ public class StareGui extends javax.swing.JFrame {
         this.novyUcet.setVisible(false);
         this.vyberSlovnikPanel.setVisible(false);
         this.mazaniSlovicekPanel.setVisible(false);
-        this.pridaniSlovicekPanel.setVisible(false);
+        this.pridaniSlovicekPanel1.setVisible(false);
+        this.spravaSlovicek1.setVisible(false);
         this.spravaSlovicek.setVisible(false);
         this.zobrazeniNeaktivnichSlovicek.setVisible(false);
         this.zobrazeniSlovicekPanel.setVisible(false);
@@ -97,13 +98,6 @@ public class StareGui extends javax.swing.JFrame {
         zobrazVse = new javax.swing.JButton();
         zobrazZvolenouDvojci = new javax.swing.JButton();
         vyberSlovo = new javax.swing.JTextField();
-        zobrazeniNeaktivnichSlovicek = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        zobrayVseNeaktivni = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        zobrayeniNeaktivnichSlov = new javax.swing.JTextArea();
-        zpetNeaktivni = new javax.swing.JButton();
-        prejitDoMenuNeaktivni = new javax.swing.JButton();
         mazaniSlovicekPanel = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         slovickoKeSmazani = new javax.swing.JTextField();
@@ -125,6 +119,28 @@ public class StareGui extends javax.swing.JFrame {
         aktivovatVse = new javax.swing.JButton();
         coAktovovat = new javax.swing.JTextField();
         aktivovatVybrane = new javax.swing.JButton();
+        spravaSlovicek1 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        pridaniSlovicekButton1 = new javax.swing.JButton();
+        smazaniSlovicekButton1 = new javax.swing.JButton();
+        zobrazeniSlovicekButton1 = new javax.swing.JButton();
+        zobrazeniNeaktivnichSlovicekButton1 = new javax.swing.JButton();
+        zpetSpravaSlovicek = new javax.swing.JButton();
+        aktivovaniNeaktivnichSlov1 = new javax.swing.JToggleButton();
+        pridaniSlovicekPanel1 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        ceskyVyraz1 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        anglickyVyraz1 = new javax.swing.JTextField();
+        Uloz1 = new javax.swing.JButton();
+        zobrazeniNeaktivnichSlovicek = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        zobrayVseNeaktivni = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        zobrayeniNeaktivnichSlov = new javax.swing.JTextArea();
+        zpetNeaktivni = new javax.swing.JButton();
+        prejitDoMenuNeaktivni = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -630,75 +646,6 @@ public class StareGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setText("Zobrazeni neaktivnich slovicek");
-
-        zobrayVseNeaktivni.setText("Zobraz vse");
-        zobrayVseNeaktivni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                zobrayVseNeaktivniActionPerformed(evt);
-            }
-        });
-
-        zobrayeniNeaktivnichSlov.setEditable(false);
-        zobrayeniNeaktivnichSlov.setColumns(20);
-        zobrayeniNeaktivnichSlov.setRows(5);
-        jScrollPane2.setViewportView(zobrayeniNeaktivnichSlov);
-
-        zpetNeaktivni.setText("Zpet");
-        zpetNeaktivni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                zpetNeaktivniActionPerformed(evt);
-            }
-        });
-
-        prejitDoMenuNeaktivni.setText("Prejit do Menu");
-        prejitDoMenuNeaktivni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prejitDoMenuNeaktivniActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout zobrazeniNeaktivnichSlovicekLayout = new javax.swing.GroupLayout(zobrazeniNeaktivnichSlovicek);
-        zobrazeniNeaktivnichSlovicek.setLayout(zobrazeniNeaktivnichSlovicekLayout);
-        zobrazeniNeaktivnichSlovicekLayout.setHorizontalGroup(
-            zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
-            .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel17)
-                        .addGap(0, 72, Short.MAX_VALUE))
-                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(zpetNeaktivni)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(prejitDoMenuNeaktivni)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(zobrayVseNeaktivni)
-                .addGap(24, 24, 24))
-        );
-        zobrazeniNeaktivnichSlovicekLayout.setVerticalGroup(
-            zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(zobrayVseNeaktivni)
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zpetNeaktivni)
-                    .addComponent(prejitDoMenuNeaktivni))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout zobrazeniSlovicekPanelLayout = new javax.swing.GroupLayout(zobrazeniSlovicekPanel);
         zobrazeniSlovicekPanel.setLayout(zobrazeniSlovicekPanelLayout);
         zobrazeniSlovicekPanelLayout.setHorizontalGroup(
@@ -724,9 +671,7 @@ public class StareGui extends javax.swing.JFrame {
                                 .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(zobrazZvolenouDvojci)
                                     .addComponent(vyberSlovo, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         zobrazeniSlovicekPanelLayout.setVerticalGroup(
             zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -737,7 +682,7 @@ public class StareGui extends javax.swing.JFrame {
                 .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(zobrazVse)
                     .addComponent(zobrazZvolenouDvojci))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(vyberSlovo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -746,9 +691,6 @@ public class StareGui extends javax.swing.JFrame {
                     .addComponent(jButton7)
                     .addComponent(jButton9))
                 .addGap(19, 19, 19))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel14.setText("Mazani Slovicek");
@@ -796,7 +738,7 @@ public class StareGui extends javax.swing.JFrame {
                                 .addComponent(slovickoKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(40, 40, 40)
                                 .addComponent(Smaz)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                                 .addComponent(uplneVymazani))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mazaniSlovicekPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -930,7 +872,7 @@ public class StareGui extends javax.swing.JFrame {
                             .addGroup(statistikyLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 47, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statistikyLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(aktivaceSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -948,6 +890,231 @@ public class StareGui extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        spravaSlovicek1.setBackground(new java.awt.Color(0, 102, 204));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel21.setText("Sprava Slovicek");
+
+        pridaniSlovicekButton1.setText("Pridani slovicek");
+        pridaniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pridaniSlovicekButton1ActionPerformed(evt);
+            }
+        });
+
+        smazaniSlovicekButton1.setText("Smazani slovicek");
+        smazaniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                smazaniSlovicekButton1ActionPerformed(evt);
+            }
+        });
+
+        zobrazeniSlovicekButton1.setText("Zobrazeni slovicek");
+        zobrazeniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zobrazeniSlovicekButton1ActionPerformed(evt);
+            }
+        });
+
+        zobrazeniNeaktivnichSlovicekButton1.setText("Zobrazeni neaktivnich slovicek");
+        zobrazeniNeaktivnichSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zobrazeniNeaktivnichSlovicekButton1ActionPerformed(evt);
+            }
+        });
+
+        zpetSpravaSlovicek.setText("Zpet");
+        zpetSpravaSlovicek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zpetSpravaSlovicekActionPerformed(evt);
+            }
+        });
+
+        aktivovaniNeaktivnichSlov1.setText("Aktivovat neaktivni slovicka");
+        aktivovaniNeaktivnichSlov1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aktivovaniNeaktivnichSlov1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout spravaSlovicek1Layout = new javax.swing.GroupLayout(spravaSlovicek1);
+        spravaSlovicek1.setLayout(spravaSlovicek1Layout);
+        spravaSlovicek1Layout.setHorizontalGroup(
+            spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                        .addComponent(pridaniSlovicekButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(smazaniSlovicekButton1)
+                        .addGap(39, 39, 39))
+                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                        .addComponent(zobrazeniSlovicekButton1)
+                        .addGap(33, 33, 33)
+                        .addComponent(zpetSpravaSlovicek)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                        .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(aktivovaniNeaktivnichSlov1)
+                            .addComponent(zobrazeniNeaktivnichSlovicekButton1))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, spravaSlovicek1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel21)
+                .addGap(78, 78, 78))
+        );
+        spravaSlovicek1Layout.setVerticalGroup(
+            spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel21)
+                .addGap(34, 34, 34)
+                .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pridaniSlovicekButton1)
+                    .addComponent(smazaniSlovicekButton1))
+                .addGap(18, 18, 18)
+                .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zobrazeniSlovicekButton1)
+                    .addComponent(zpetSpravaSlovicek))
+                .addGap(18, 18, 18)
+                .addComponent(zobrazeniNeaktivnichSlovicekButton1)
+                .addGap(18, 18, 18)
+                .addComponent(aktivovaniNeaktivnichSlov1)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jLabel22.setText("Pridani Slovicek");
+
+        jLabel23.setText("Zadejte cesky vyraz:");
+
+        ceskyVyraz1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ceskyVyraz1ActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setText("Zadejte jeho anglicky preklad:");
+
+        Uloz1.setText("Uloz");
+        Uloz1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Uloz1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pridaniSlovicekPanel1Layout = new javax.swing.GroupLayout(pridaniSlovicekPanel1);
+        pridaniSlovicekPanel1.setLayout(pridaniSlovicekPanel1Layout);
+        pridaniSlovicekPanel1Layout.setHorizontalGroup(
+            pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
+                .addGroup(pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ceskyVyraz1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                        .addComponent(anglickyVyraz1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pridaniSlovicekPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Uloz1))
+                    .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pridaniSlovicekPanel1Layout.setVerticalGroup(
+            pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addGroup(pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(ceskyVyraz1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(anglickyVyraz1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(Uloz1)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        jLabel17.setText("Zobrazeni neaktivnich slovicek");
+
+        zobrayVseNeaktivni.setText("Zobraz vse");
+        zobrayVseNeaktivni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zobrayVseNeaktivniActionPerformed(evt);
+            }
+        });
+
+        zobrayeniNeaktivnichSlov.setEditable(false);
+        zobrayeniNeaktivnichSlov.setColumns(20);
+        zobrayeniNeaktivnichSlov.setRows(5);
+        jScrollPane2.setViewportView(zobrayeniNeaktivnichSlov);
+
+        zpetNeaktivni.setText("Zpet");
+        zpetNeaktivni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zpetNeaktivniActionPerformed(evt);
+            }
+        });
+
+        prejitDoMenuNeaktivni.setText("Prejit do Menu");
+        prejitDoMenuNeaktivni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prejitDoMenuNeaktivniActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout zobrazeniNeaktivnichSlovicekLayout = new javax.swing.GroupLayout(zobrazeniNeaktivnichSlovicek);
+        zobrazeniNeaktivnichSlovicek.setLayout(zobrazeniNeaktivnichSlovicekLayout);
+        zobrazeniNeaktivnichSlovicekLayout.setHorizontalGroup(
+            zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+            .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel17)
+                        .addGap(0, 84, Short.MAX_VALUE))
+                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(zpetNeaktivni)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(prejitDoMenuNeaktivni)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(zobrayVseNeaktivni)
+                .addGap(24, 24, 24))
+        );
+        zobrazeniNeaktivnichSlovicekLayout.setVerticalGroup(
+            zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(zobrayVseNeaktivni)
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zpetNeaktivni)
+                    .addComponent(prejitDoMenuNeaktivni))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -955,23 +1122,28 @@ public class StareGui extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Prihlaseni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(novyUcet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(21, 21, 21)
-                        .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Prihlaseni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(novyUcet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1576, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(spravaSlovicek1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -986,15 +1158,19 @@ public class StareGui extends javax.swing.JFrame {
                                     .addComponent(Prihlaseni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(spravaSlovicek1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(247, 247, 247)
-                                .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(777, Short.MAX_VALUE))
+                                .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -1023,191 +1199,6 @@ public class StareGui extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Bylo zadano spatne heslo, zbavaji vam " + (3 - this.uzivatel.getPokusy()) + " pokusy", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_prihlasActionPerformed
-
-    private void potvrdSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potvrdSlovnikActionPerformed
-        slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), uzivatel.getJmeno());
-      //  slovnik.odstranNeaktivni(0);
-        neaktivni.nactiSlovnik(this.slovnik.getTypSlovniku(), this.uzivatel.getJmeno());
-        //neaktivni.odstranNeaktivni(1);
-        this.setSize(330, 230);
-        this.Menu.setVisible(true);
-        this.vyberSlovnikPanel.setVisible(false);
-
-    }//GEN-LAST:event_potvrdSlovnikActionPerformed
-
-    private void pridaniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButtonActionPerformed
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
-            this.spravaSlovicek.setVisible(false);
-            this.pridaniSlovicekPanel.setVisible(true);
-        } else {
-            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
-        }
-
-    }//GEN-LAST:event_pridaniSlovicekButtonActionPerformed
-
-    private void zobrazeniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniSlovicekButtonActionPerformed
-        this.spravaSlovicek.setVisible(false);
-        this.zobrazeniSlovicekPanel.setVisible(true);
-    }//GEN-LAST:event_zobrazeniSlovicekButtonActionPerformed
-
-    private void zobrazVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazVseActionPerformed
-        String[] slova = slovnik.vypis();
-        for (int i = 0; i < slova.length; i++) {
-            this.zobrayeniSlovicekText.append(slova[i] + "\n");
-        }
-    }//GEN-LAST:event_zobrazVseActionPerformed
-
-    private void zobrazZvolenouDvojciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazZvolenouDvojciActionPerformed
-        this.zobrayeniSlovicekText.setText(this.slovnik.vypisX(Integer.parseInt(this.vyberSlovo.getText())));
-    }//GEN-LAST:event_zobrazZvolenouDvojciActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        this.zobrazeniSlovicekPanel.setVisible(false);
-        this.spravaSlovicek.setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        this.zobrazeniSlovicekPanel.setVisible(false);
-        this.Menu.setVisible(true);
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void ceskyVyrazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceskyVyrazActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ceskyVyrazActionPerformed
-
-    private void UlozActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UlozActionPerformed
-        this.slovnik.vlozNaKonec(this.anglickyVyraz.getText(), this.ceskyVyraz.getText(), 0, 0, this.slovnik.vytvorNoveIdSlova(), 1);
-        this.pridaniSlovicekPanel.setVisible(false);
-        this.spravaSlovicek.setVisible(true);
-    }//GEN-LAST:event_UlozActionPerformed
-
-    private void smazaniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smazaniSlovicekButtonActionPerformed
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
-            this.spravaSlovicek.setVisible(false);
-            this.mazaniSlovicekPanel.setVisible(true);
-        } else {
-            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_smazaniSlovicekButtonActionPerformed
-
-    private void zpetMazaniSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetMazaniSlovicekActionPerformed
-        this.spravaSlovicek.setVisible(true);
-        this.mazaniSlovicekPanel.setVisible(false);
-    }//GEN-LAST:event_zpetMazaniSlovicekActionPerformed
-
-    private void SmazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmazActionPerformed
-        JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete smazat dvojci slovicek"
-                + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
-        // pokud bude stisknuto ok tak zavolat metodu setAktivita(0)a spustit metodu vzmay neaktivni
-
-    }//GEN-LAST:event_SmazActionPerformed
-
-    private void uplneVymazaniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uplneVymazaniActionPerformed
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 3)) {
-            JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete smazat dvojci slovicek"
-                    + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
-            // pokud bude stisknuto ok tak zavolat metodu slovnik.smaz(this.slovickoKeSmazani.getText())
-        } else {
-            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_uplneVymazaniActionPerformed
-
-    private void zpetNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetNeaktivniActionPerformed
-        this.spravaSlovicek.setVisible(true);
-        this.zobrazeniNeaktivnichSlovicek.setVisible(false);
-    }//GEN-LAST:event_zpetNeaktivniActionPerformed
-
-    private void prejitDoMenuNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prejitDoMenuNeaktivniActionPerformed
-        this.Menu.setVisible(true);
-        this.zobrazeniNeaktivnichSlovicek.setVisible(false);
-    }//GEN-LAST:event_prejitDoMenuNeaktivniActionPerformed
-
-    private void zobrayVseNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrayVseNeaktivniActionPerformed
-        String[] slova = this.neaktivni.vypis();
-        System.out.println(this.neaktivni.vypis());
-        for (int i = 0; i < slova.length; i++) {
-            this.zobrayeniNeaktivnichSlov.append(slova[i] + "\n");
-        }
-
-
-
-    }//GEN-LAST:event_zobrayVseNeaktivniActionPerformed
-
-    private void zobrazeniNeaktivnichSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniNeaktivnichSlovicekButtonActionPerformed
-        this.spravaSlovicek.setVisible(false);
-        this.zobrazeniNeaktivnichSlovicek.setVisible(true);
-    }//GEN-LAST:event_zobrazeniNeaktivnichSlovicekButtonActionPerformed
-
-    private void aktivovaniNeaktivnichSlovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlovActionPerformed
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
-            this.spravaSlovicek.setVisible(false);
-            this.mazaniSlovicekPanel.setVisible(true);
-            String[] slova = this.neaktivni.vypis();
-            for (int i = 0; i < slova.length; i++) {
-                this.zobrayeniAktivaceSlovicek.append(slova[i] + "\n");
-            }
-        } else {
-            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_aktivovaniNeaktivnichSlovActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        this.spravaSlovicek.setVisible(true);
-        this.aktivaceSlovicek.setVisible(false);
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        this.Menu.setVisible(true);
-        this.aktivaceSlovicek.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void aktivovatVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVseActionPerformed
-        this.slovnik.aktivaceDeaktivaceSlova(0, 1);
-        JOptionPane.showConfirmDialog(rootPane, "Aktivovano", "Ok!", JOptionPane.WARNING_MESSAGE);
-    }//GEN-LAST:event_aktivovatVseActionPerformed
-
-    private void aktivovatVybraneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVybraneActionPerformed
-        this.slovnik.aktivaceDeaktivaceSlova(Integer.valueOf(this.coAktovovat.getText()), 1);
-        JOptionPane.showConfirmDialog(rootPane, "Aktivovano", "Ok!", JOptionPane.WARNING_MESSAGE);
-    }//GEN-LAST:event_aktivovatVybraneActionPerformed
-
-    private void vyberSlovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vyberSlovoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vyberSlovoActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            this.spravaSlovicek.setVisible(false);
-            this.Menu.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void ukoncitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ukoncitProgramActionPerformed
-        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
-        this.slovnik.vycistiSpojovySeznam();
-        System.exit(0);
-    }//GEN-LAST:event_ukoncitProgramActionPerformed
-
-    private void odhlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasitSeActionPerformed
-        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
-        this.slovnik.vycistiSpojovySeznam();
-        this.Menu.setVisible(false);
-        this.Prihlaseni.setVisible(true);
-    }//GEN-LAST:event_odhlasitSeActionPerformed
-
-    private void zmenaSlovnikuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zmenaSlovnikuActionPerformed
-        this.slovnik.vycistiSpojovySeznam();
-        this.Menu.setVisible(false);
-        this.vyberSlovnikPanel.setVisible(true);
-    }//GEN-LAST:event_zmenaSlovnikuActionPerformed
-
-    private void spravaSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovicekButtonActionPerformed
-        this.Menu.setVisible(false);
-        this.spravaSlovicek.setBounds(0, 0, 330, 250);
-        this.spravaSlovicek.setVisible(true);
-    }//GEN-LAST:event_spravaSlovicekButtonActionPerformed
-
-    private void vyberSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vyberSlovnikActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vyberSlovnikActionPerformed
 
     private void zpetDoPrihlasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetDoPrihlasActionPerformed
         this.Prihlaseni.setVisible(true);
@@ -1243,6 +1234,242 @@ public class StareGui extends javax.swing.JFrame {
     private void jmenoUctuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenoUctuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmenoUctuActionPerformed
+
+    private void aktivovatVybraneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVybraneActionPerformed
+        this.slovnik.aktivaceDeaktivaceSlova(Integer.valueOf(this.coAktovovat.getText()), 1);
+        JOptionPane.showConfirmDialog(rootPane, "Aktivovano", "Ok!", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_aktivovatVybraneActionPerformed
+
+    private void aktivovatVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVseActionPerformed
+        this.slovnik.aktivaceDeaktivaceSlova(0, 1);
+        JOptionPane.showConfirmDialog(rootPane, "Aktivovano", "Ok!", JOptionPane.WARNING_MESSAGE);
+    }//GEN-LAST:event_aktivovatVseActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        this.Menu.setVisible(true);
+        this.aktivaceSlovicek.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        this.spravaSlovicek1.setVisible(true);
+        this.aktivaceSlovicek.setVisible(false);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void prejitDoMenuNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prejitDoMenuNeaktivniActionPerformed
+        this.Menu.setVisible(true);
+        this.zobrazeniNeaktivnichSlovicek.setVisible(false);
+    }//GEN-LAST:event_prejitDoMenuNeaktivniActionPerformed
+
+    private void zpetNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetNeaktivniActionPerformed
+        this.spravaSlovicek1.setVisible(true);
+        this.zobrazeniNeaktivnichSlovicek.setVisible(false);
+    }//GEN-LAST:event_zpetNeaktivniActionPerformed
+
+    private void zobrayVseNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrayVseNeaktivniActionPerformed
+        String[] slova = this.neaktivni.vypis();
+        System.out.println(this.neaktivni.vypis());
+        for (int i = 0; i < slova.length; i++) {
+            this.zobrayeniNeaktivnichSlov.append(slova[i] + "\n");
+        }
+
+    }//GEN-LAST:event_zobrayVseNeaktivniActionPerformed
+
+    private void vyberSlovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vyberSlovoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vyberSlovoActionPerformed
+
+    private void zobrazZvolenouDvojciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazZvolenouDvojciActionPerformed
+        this.zobrayeniSlovicekText.setText(this.slovnik.vypisX(Integer.parseInt(this.vyberSlovo.getText())));
+    }//GEN-LAST:event_zobrazZvolenouDvojciActionPerformed
+
+    private void zobrazVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazVseActionPerformed
+        String[] slova = slovnik.vypis();
+        for (int i = 0; i < slova.length; i++) {
+            this.zobrayeniSlovicekText.append(slova[i] + "\n");
+        }
+    }//GEN-LAST:event_zobrazVseActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        this.zobrazeniSlovicekPanel.setVisible(false);
+        this.Menu.setVisible(true);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        this.zobrazeniSlovicekPanel.setVisible(false);
+        this.spravaSlovicek1.setVisible(true);
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void zpetMazaniSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetMazaniSlovicekActionPerformed
+        this.spravaSlovicek1.setVisible(true);
+        this.mazaniSlovicekPanel.setVisible(false);
+    }//GEN-LAST:event_zpetMazaniSlovicekActionPerformed
+
+    private void uplneVymazaniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uplneVymazaniActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 3)) {
+            JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete smazat dvojci slovicek"
+                + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
+            // pokud bude stisknuto ok tak zavolat metodu slovnik.smaz(this.slovickoKeSmazani.getText())
+        } else {
+            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_uplneVymazaniActionPerformed
+
+    private void SmazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmazActionPerformed
+        JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete smazat dvojci slovicek"
+            + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
+        // pokud bude stisknuto ok tak zavolat metodu setAktivita(0)a spustit metodu vzmay neaktivni
+    }//GEN-LAST:event_SmazActionPerformed
+
+    private void aktivovaniNeaktivnichSlovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlovActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+            this.spravaSlovicek.setVisible(false);
+            this.mazaniSlovicekPanel.setVisible(true);
+            String[] slova = this.neaktivni.vypis();
+            for (int i = 0; i < slova.length; i++) {
+                this.zobrayeniAktivaceSlovicek.append(slova[i] + "\n");
+            }
+        } else {
+            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_aktivovaniNeaktivnichSlovActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.spravaSlovicek.setVisible(false);
+        this.Menu.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void zobrazeniNeaktivnichSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniNeaktivnichSlovicekButtonActionPerformed
+        this.spravaSlovicek.setVisible(false);
+        this.zobrazeniNeaktivnichSlovicek.setVisible(true);
+    }//GEN-LAST:event_zobrazeniNeaktivnichSlovicekButtonActionPerformed
+
+    private void zobrazeniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniSlovicekButtonActionPerformed
+        this.spravaSlovicek.setVisible(false);
+        this.zobrazeniSlovicekPanel.setVisible(true);
+    }//GEN-LAST:event_zobrazeniSlovicekButtonActionPerformed
+
+    private void smazaniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smazaniSlovicekButtonActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+            this.spravaSlovicek.setVisible(false);
+            this.mazaniSlovicekPanel.setVisible(true);
+        } else {
+            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_smazaniSlovicekButtonActionPerformed
+
+    private void pridaniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButtonActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
+            this.spravaSlovicek.setVisible(false);
+            this.pridaniSlovicekPanel.setVisible(true);
+        } else {
+            JOptionPane.showConfirmDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_pridaniSlovicekButtonActionPerformed
+
+    private void UlozActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UlozActionPerformed
+        this.slovnik.vlozNaKonec(this.anglickyVyraz.getText(), this.ceskyVyraz.getText(), 0, 0, this.slovnik.vytvorNoveIdSlova(), 1);
+        this.pridaniSlovicekPanel.setVisible(false);
+        this.spravaSlovicek.setVisible(true);
+    }//GEN-LAST:event_UlozActionPerformed
+
+    private void ceskyVyrazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceskyVyrazActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ceskyVyrazActionPerformed
+
+    private void potvrdSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potvrdSlovnikActionPerformed
+        slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), uzivatel.getJmeno());
+        //  slovnik.odstranNeaktivni(0);
+        neaktivni.nactiSlovnik(this.slovnik.getTypSlovniku(), this.uzivatel.getJmeno());
+        //neaktivni.odstranNeaktivni(1);
+        this.setSize(330, 230);
+        this.Menu.setVisible(true);
+        this.vyberSlovnikPanel.setVisible(false);
+    }//GEN-LAST:event_potvrdSlovnikActionPerformed
+
+    private void vyberSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vyberSlovnikActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vyberSlovnikActionPerformed
+
+    private void ukoncitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ukoncitProgramActionPerformed
+        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
+        this.slovnik.vycistiSpojovySeznam();
+        System.exit(0);
+    }//GEN-LAST:event_ukoncitProgramActionPerformed
+
+    private void odhlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasitSeActionPerformed
+        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
+        this.slovnik.vycistiSpojovySeznam();
+        this.Menu.setVisible(false);
+        this.Prihlaseni.setVisible(true);
+    }//GEN-LAST:event_odhlasitSeActionPerformed
+
+    private void zmenaSlovnikuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zmenaSlovnikuActionPerformed
+        this.slovnik.vycistiSpojovySeznam();
+        this.Menu.setVisible(false);
+        this.vyberSlovnikPanel.setVisible(true);
+    }//GEN-LAST:event_zmenaSlovnikuActionPerformed
+
+    private void spravaSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovicekButtonActionPerformed
+        this.Menu.setVisible(false);
+        this.spravaSlovicek.setBounds(0, 0, 330, 250);
+        this.spravaSlovicek1.setVisible(true);
+    }//GEN-LAST:event_spravaSlovicekButtonActionPerformed
+
+    private void pridaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButton1ActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
+            this.pridaniSlovicekPanel1.setVisible(true);
+            this.spravaSlovicek1.setVisible(false);
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_pridaniSlovicekButton1ActionPerformed
+
+    private void smazaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smazaniSlovicekButton1ActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+            this.mazaniSlovicekPanel.setVisible(true);
+            this.spravaSlovicek1.setVisible(false);
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_smazaniSlovicekButton1ActionPerformed
+
+    private void zobrazeniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniSlovicekButton1ActionPerformed
+            this.spravaSlovicek1.setVisible(false);
+            this.zobrazeniSlovicekPanel.setVisible(true);
+    }//GEN-LAST:event_zobrazeniSlovicekButton1ActionPerformed
+
+    private void zobrazeniNeaktivnichSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniNeaktivnichSlovicekButton1ActionPerformed
+            this.spravaSlovicek1.setVisible(false);
+            this.zobrazeniNeaktivnichSlovicek.setVisible(true);
+    }//GEN-LAST:event_zobrazeniNeaktivnichSlovicekButton1ActionPerformed
+
+    private void zpetSpravaSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetSpravaSlovicekActionPerformed
+            this.spravaSlovicek.setVisible(false);
+            this.Menu.setVisible(true);
+    }//GEN-LAST:event_zpetSpravaSlovicekActionPerformed
+
+    private void aktivovaniNeaktivnichSlov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlov1ActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+            this.spravaSlovicek1.setVisible(false);
+            this.aktivaceSlovicek.setVisible(true);
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_aktivovaniNeaktivnichSlov1ActionPerformed
+
+    private void ceskyVyraz1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceskyVyraz1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ceskyVyraz1ActionPerformed
+
+    private void Uloz1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Uloz1ActionPerformed
+        this.slovnik.vlozNaKonec(this.anglickyVyraz.getText(), this.ceskyVyraz.getText(), 0, 0, this.slovnik.vytvorNoveIdSlova(), 1);
+        this.pridaniSlovicekPanel.setVisible(false);
+        this.spravaSlovicek.setVisible(true);
+
+    }//GEN-LAST:event_Uloz1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1284,12 +1511,16 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JPanel Prihlaseni;
     private javax.swing.JButton Smaz;
     private javax.swing.JButton Uloz;
+    private javax.swing.JButton Uloz1;
     private javax.swing.JPanel aktivaceSlovicek;
     private javax.swing.JToggleButton aktivovaniNeaktivnichSlov;
+    private javax.swing.JToggleButton aktivovaniNeaktivnichSlov1;
     private javax.swing.JButton aktivovatVse;
     private javax.swing.JButton aktivovatVybrane;
     private javax.swing.JTextField anglickyVyraz;
+    private javax.swing.JTextField anglickyVyraz1;
     private javax.swing.JTextField ceskyVyraz;
+    private javax.swing.JTextField ceskyVyraz1;
     private javax.swing.JTextField coAktovovat;
     private javax.swing.JPasswordField hesloNovehoUctu;
     private javax.swing.JButton jButton1;
@@ -1312,6 +1543,10 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1332,11 +1567,15 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JButton potvrdSlovnik;
     private javax.swing.JButton prejitDoMenuNeaktivni;
     private javax.swing.JButton pridaniSlovicekButton;
+    private javax.swing.JButton pridaniSlovicekButton1;
     private javax.swing.JPanel pridaniSlovicekPanel;
+    private javax.swing.JPanel pridaniSlovicekPanel1;
     private javax.swing.JButton prihlas;
     private javax.swing.JTextField slovickoKeSmazani;
     private javax.swing.JButton smazaniSlovicekButton;
+    private javax.swing.JButton smazaniSlovicekButton1;
     private javax.swing.JPanel spravaSlovicek;
+    private javax.swing.JPanel spravaSlovicek1;
     private javax.swing.JButton spravaSlovicekButton;
     private javax.swing.JPanel statistiky;
     private javax.swing.JButton ukoncitProgram;
@@ -1357,10 +1596,13 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JButton zobrazZvolenouDvojci;
     private javax.swing.JPanel zobrazeniNeaktivnichSlovicek;
     private javax.swing.JButton zobrazeniNeaktivnichSlovicekButton;
+    private javax.swing.JButton zobrazeniNeaktivnichSlovicekButton1;
     private javax.swing.JButton zobrazeniSlovicekButton;
+    private javax.swing.JButton zobrazeniSlovicekButton1;
     private javax.swing.JPanel zobrazeniSlovicekPanel;
     private javax.swing.JButton zpetDoPrihlas;
     private javax.swing.JButton zpetMazaniSlovicek;
     private javax.swing.JButton zpetNeaktivni;
+    private javax.swing.JButton zpetSpravaSlovicek;
     // End of variables declaration//GEN-END:variables
 }

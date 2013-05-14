@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,21 +26,20 @@ public class Uzivatel {
 
     /**
      * Metoda ulozNovehoHrace() ulozi noveho hrace do souboru. Jmeno hrace a jeho
-     * heslo zaska z tridnich promenich.
+     * heslo ziska z tridnich promenich.
      *
      */
     public void ulozNovehoHrace() {
         ArrayList seznam = new ArrayList();
         String[] seznam1=nactiUdajeOHracich(3);
-      
-        for (int i = 0; i < seznam1.length; i++) {
-            seznam.add(seznam1[i]);
-        }
+        seznam.addAll(Arrays.asList(seznam1));
         seznam.add(this.jmeno);
         seznam.add(this.heslo);
         FileWriter out = null;
+        FileWriter novy= null;
         try {
             out = new FileWriter("Hraci.txt");
+            novy= new FileWriter(this.jmeno+".txt");
         } catch (IOException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -48,6 +48,7 @@ public class Uzivatel {
                 out.write(seznam.get(i) + "" + System.lineSeparator());
             }
             out.close();
+            novy.close();
         } catch (Exception e) {
             System.out.println("Chyba: Nebylo mozne provest yapis do souboru Hraci.txt");
         }
@@ -318,7 +319,7 @@ public class Uzivatel {
      * Parametrem testuj zvolime pravomoc kterou chceme testovat takto:
      * 1 - zmena aktivity slova
      * 2 - pridani slovicek.
-     * 3- vymayani slova
+     * 3- vymazani slova
      *  
      * 
      * @param testuj

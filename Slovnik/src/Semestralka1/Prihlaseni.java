@@ -45,7 +45,7 @@ Uzivatel hrac;
 
         jLabel2.setText("Zadejte své heslo");
 
-        vyberUcet.setModel(new javax.swing.DefaultComboBoxModel(hrac.nactiHrace(1)));
+        vyberUcet.setModel(new javax.swing.DefaultComboBoxModel(hrac.nactiUdajeOHracich(1)));
         vyberUcet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vyberUcetActionPerformed(evt);
