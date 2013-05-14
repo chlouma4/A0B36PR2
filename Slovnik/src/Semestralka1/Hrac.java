@@ -30,7 +30,7 @@ public class Hrac {
      */
     public void ulozNovehoHrace() {
         ArrayList seznam = new ArrayList();
-        String[] seznam1=nactiHrace(3);
+        String[] seznam1=nactiUdajeOHracich(3);
       
         for (int i = 0; i < seznam1.length; i++) {
             seznam.add(seznam1[i]);
@@ -59,11 +59,11 @@ public class Hrac {
     }
 
     /**
-     * Metoda nactiHrace vráti seznam hráčů i s jejich hesly v ArrayListu.
+     * Metoda nactiUdajeOHracich vráti seznam hráčů i s jejich hesly v ArrayListu.
      *parametr urcuje co cheme nacist 1- Jmena hracu 2-hesla hracu 3 - nacte vse
      * @return
      */
-    public String [] nactiHrace( int i) {
+    public String [] nactiUdajeOHracich( int udaj) {
         ArrayList seznam = new ArrayList();
         String hrac;
         boolean test;
@@ -82,18 +82,18 @@ public class Hrac {
                 break;
             }
 
-        }
-        
-        if(i==1){
+        } 
+        if(udaj==1){
             for (int j = 1; j < seznam.size(); j++) {
                 seznam.remove(j);
                
             }
-        }else if (i==2){
-            for (int j = 0; j < seznam.size(); j=j+2) {
+        }else if (udaj==2){
+            for (int j = 0; j < seznam.size(); j++) {
                 seznam.remove(j);
         }
         }
+         seznam.toString();
          String[] pole;
         pole = (String[]) seznam.toArray(new String[seznam.size()]);
 
@@ -114,7 +114,7 @@ public class Hrac {
         String heslo0;
         int volba;
         ArrayList hraci = new ArrayList();
-      //  hraci = this.nactiHrace();
+      //  hraci = this.nactiUdajeOHracich();
         System.out.println("Vyberte prosim svuj ucet");
         for (int i = 0; i <= (hraci.size() / 2); i = i + 2) {
             System.out.println((i / 2 + 1) + ". " + hraci.get(i));
@@ -260,18 +260,18 @@ public class Hrac {
         }
     }
     
-    public boolean prihlaseni(String jmeno, String heslo1, int poradi){
+    public boolean prihlaseni(String jmeno, String zadane, int poradi){
       //  System.out.println(jmeno +poradi);
         //System.out.println(heslo1);
      this.setJmeno(jmeno);
-     String []pole = nactiHrace(2);
-     this.setHeslo(pole[poradi]);
-     boolean spravne=overHeslo(heslo1);
+     String []hesla = nactiUdajeOHracich(2);
+     this.setHeslo(hesla[poradi]);
+     boolean spravne=overHeslo(zadane);
      return spravne;     
     }
     
     public boolean zkontrolujJmeno(String jmeno){
-        String []pole =nactiHrace(1);
+        String []pole =nactiUdajeOHracich(1);
           ArrayList jmena = new ArrayList();
           for (int i = 0; i < pole.length; i++) {
             jmena.add(pole[i]);
