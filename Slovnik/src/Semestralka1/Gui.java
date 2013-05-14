@@ -13,7 +13,7 @@ import java.awt.GridLayout;
 
 
 public class Gui extends javax.swing.JFrame  {
-     Hrac hrac = new Hrac();
+     Uzivatel hrac = new Uzivatel();
     Slovník slovnik = new Slovník();
      static Gui frame;
 

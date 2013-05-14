@@ -13,13 +13,13 @@ import javax.swing.JRootPane;
  */
 public class VyberSlovnik extends javax.swing.JPanel {
 Slovník slovnik;
-Hrac hrac;
+Uzivatel hrac;
 private JFrame frame;
 
     /**
      * Creates new form VyberSlovnik
      */
-    public VyberSlovnik(Slovník slovnik, Hrac hrac,JFrame frame) {
+    public VyberSlovnik(Slovník slovnik, Uzivatel hrac,JFrame frame) {
         this.slovnik=slovnik;
         this.hrac=hrac;
          this.frame=frame;

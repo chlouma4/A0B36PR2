@@ -12,13 +12,13 @@ import javax.swing.JOptionPane;
  */
 public class MazaniSlovicek extends javax.swing.JPanel {
     Slovník slovnik;
-Hrac hrac;
+Uzivatel hrac;
 private Gui gui;
 
     /**
      * Creates new form MazaniSlovicek
      */
-    public MazaniSlovicek(Slovník slovnik, Hrac hrac,Gui frame) {
+    public MazaniSlovicek(Slovník slovnik, Uzivatel hrac,Gui frame) {
              this.slovnik=slovnik;
         this.hrac=hrac;
         this.gui=frame;

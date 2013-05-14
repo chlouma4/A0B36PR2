@@ -15,7 +15,7 @@ import javax.swing.JRootPane;
  */
 public class Menu extends javax.swing.JPanel {
   private Gui frame;
-  Hrac hrac;
+  Uzivatel hrac;
     Slovník slovnik;
     /**
      * Creates new form Menu

@@ -13,11 +13,11 @@ import javax.swing.JOptionPane;
 public class Prihlaseni extends javax.swing.JPanel {
 private Gui gui;
 Slovník slovnik;
-Hrac hrac;
+Uzivatel hrac;
     /**
      * Creates new form Prihlaseni
      */
-    public Prihlaseni(Slovník slovnik, Hrac hrac,Gui frame) {
+    public Prihlaseni(Slovník slovnik, Uzivatel hrac,Gui frame) {
         this.slovnik=slovnik;
         this.hrac=hrac;
         this.gui=frame;

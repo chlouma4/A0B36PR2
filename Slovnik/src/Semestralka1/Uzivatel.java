@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  *
  * @author Marco
  */
-public class Hrac {
+public class Uzivatel {
 
     private String jmeno;
     private String heslo;
@@ -274,23 +274,39 @@ public class Hrac {
         String []pole =nactiUdajeOHracich(1);
           ArrayList jmena = new ArrayList();
           for (int i = 0; i < pole.length; i++) {
-            jmena.add(pole[i]);
+            jmena.add(pole[i].toLowerCase());
         }
-          boolean a = jmena.contains(jmeno);
+          boolean a = jmena.contains(jmeno.toLowerCase());
         
         return a;
         
     }
-    
-    public int vytvorHrace(String jmeno,String heslo,String heslo1){
+    /**Metoda vytvoří nového Hráče.Vstupem metody jsou tři parametry.
+     * První parametr je jméno uzivatele. Druhý paramatr je helo uzivatele a 
+     * třetí parametr je zopakovane heslo hráče.
+     * Pokud se podaří vytvořit hráče vrátí metoda 0.
+     * Pokud jméno uzivatele jiz existuje vrátí metoda 1.
+     * Pokud se neshodují zadaná hesla vrátí metoda 2.
+     * Pokud nemá heslo požadovanou délku vrátí metoda 3.
+     * Pokud  nebyl některý z údajů zadán metoda vrátí 4.
+     * @param jmeno
+     * @param heslo
+     * @param opakovaneHeslo
+     * @return 
+     */
+    public int vytvorUzivatele(String jmeno,String heslo,String opakovaneHeslo){
+        System.out.println("jmeno "+jmeno+" heslo "+heslo+" heslo opak"+opakovaneHeslo  );
+        if(jmeno.equals("") || heslo.equals("") || opakovaneHeslo.equals("")){
+              return 4;
+        }
         if(zkontrolujJmeno(jmeno)== true){
             return 1;
         }
-        if(heslo.equals(heslo1)== false){
+        if(heslo.equals(opakovaneHeslo)== false){
             return 2;
         }
         if(heslo.length()==4 | heslo.length()==6){
-            this.setJmeno(jmeno);
+        this.setJmeno(jmeno);
         this.zasifrujHeslo(heslo);
         this.ulozNovehoHrace();
         return 0;

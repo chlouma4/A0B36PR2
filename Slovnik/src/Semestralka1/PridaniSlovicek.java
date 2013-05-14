@@ -10,13 +10,13 @@ package Semestralka1;
  */
 public class PridaniSlovicek extends javax.swing.JPanel {
 Slovník slovnik;
-Hrac hrac;
+Uzivatel hrac;
 private Gui gui;
 
     /**
      * Creates new form PridaniSlovicek
      */
-    public PridaniSlovicek(Slovník slovnik, Hrac hrac,Gui frame) {
+    public PridaniSlovicek(Slovník slovnik, Uzivatel hrac,Gui frame) {
              this.slovnik=slovnik;
         this.hrac=hrac;
         this.gui=frame;

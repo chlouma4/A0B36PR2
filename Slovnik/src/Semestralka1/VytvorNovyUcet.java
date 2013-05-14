@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  */
 public class VytvorNovyUcet extends javax.swing.JPanel {
 Slovník slovnik;
-Hrac hrac;
+Uzivatel hrac;
 private Gui gui;
     /**
      * Creates new form VytvorNovyUcet
      */
-    public VytvorNovyUcet(Slovník slovnik, Hrac hrac,Gui frame) {
+    public VytvorNovyUcet(Slovník slovnik, Uzivatel hrac,Gui frame) {
         this.slovnik=slovnik;
         this.hrac=hrac;
         this.gui=frame;
@@ -143,7 +143,7 @@ private Gui gui;
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void vytvorUcetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vytvorUcetButtonActionPerformed
-        int uspesnost = hrac.vytvorHrace(this.jTextField1.getText(), this.jTextField2.getText(), this.jTextField3.getText());
+        int uspesnost = hrac.vytvorUzivatele(this.jTextField1.getText(), this.jTextField2.getText(), this.jTextField3.getText());
         switch (uspesnost) {
             case 0:
             JOptionPane.showConfirmDialog(gui, "Ucet byl uspesne zalozen", "Informace", JOptionPane.WARNING_MESSAGE);
