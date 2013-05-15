@@ -27,7 +27,7 @@ public class Slovník {
     private static String typSlovniku;
     private String idPoslednihoSlova;
     private String tvurceSlovniku;
-    private LinkedList neaktivni = new LinkedList();
+    public LinkedList neaktivni = new LinkedList();
     private JRootPane pane;
 
     public Slovník(JRootPane pane) {
@@ -60,7 +60,6 @@ public class Slovník {
         }
         return x;
     }
-
     
     public String vytvorNoveIdSlova() {
         String cislo = "";
@@ -445,7 +444,7 @@ public String[] vypisNeaktivni(){
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    /*Tato metoda presune neaktivni slova do Linked listu tridy neaktivni.
+    /**Tato metoda presune neaktivni slova do Linked listu tridy neaktivni.
      * 
      * 
      */
@@ -470,7 +469,7 @@ public String[] vypisNeaktivni(){
     /**
      * Metoda ktera aktivuje nbeo deaktivuke slovo. Parametrem poradi se urcuje
      * poradi slova ve spojovem seznamu. Pokud bude porametr poradi 0 tak se
-     * operace provede pro vsechna slova. Parametrem operace se voli aktivace ne
+     * operace provede pro vsechna slova. Parametrem operace se voli aktivace nebo
      * deaktivace slov takto: 0 - nastav na neaktivni 1-nastav na aktivni
      *
      * @param poradi
@@ -479,26 +478,42 @@ public String[] vypisNeaktivni(){
     public void aktivaceDeaktivaceSlova(int poradi, int operace) {
         int z = 0;
         Bunka pom = prvni;
+  
+         if( operace==1){
+             if(poradi==0){
+            for (int i = 0; i < this.neaktivni.size(); i++) {
+                Slovo slovo = (Slovo) this.neaktivni.get(i);
+                slovo.setAktivita(operace);
+                   this.vlozNaKonec(slovo.getAj(), slovo.getCj(), slovo.getPocetSpravnychOdpovedi(), slovo.getPocetSpatnychOdpovedi(), slovo.getIDSlova(), slovo.getAktivita());
+                   this.neaktivni.remove(i);
+                   i--;
+            }
+             }else{
+                 poradi--;
+                  Slovo slovo = (Slovo) this.neaktivni.get(poradi);
+                slovo.setAktivita(operace);
+                   this.vlozNaKonec(slovo.getAj(), slovo.getCj(), slovo.getPocetSpravnychOdpovedi(), slovo.getPocetSpatnychOdpovedi(), slovo.getIDSlova(), slovo.getAktivita());
+                       this.neaktivni.remove(poradi);
+             }
+        }else{
         while (pom != null) {
-
             z = z + 1;
-            if (z == poradi && poradi == 1 | poradi == 0) {
+            if ((z == poradi && poradi == 1) | poradi == 0) {
                 pom.slovicka.setAktivita(operace);
                 break;
             }
-            if (z == poradi - 1 && poradi != pocetDvojic() | poradi == 0) {
+            if ((z == poradi - 1 && poradi != pocetDvojic()) | poradi == 0) {
                 pom.slovicka.setAktivita(operace);
                 break;
             }
-            if (z == poradi - 1 && poradi == pocetDvojic() | poradi == 0) {
+            if ((z == poradi - 1 && poradi == pocetDvojic() )| poradi == 0) {
                 pom.slovicka.setAktivita(operace);
                 break;
             }
             pom = pom.dalsi;
-
         }
-
-
+        this.presunNeaktivni();
+        }
     }
 
     public String getIdPoslednohoSlova() {

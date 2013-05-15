@@ -32,7 +32,7 @@ public class StareGui extends javax.swing.JFrame {
         this.zobrazeniNeaktivnichSlovicek.setVisible(false);
         this.zobrazeniSlovicekPanel.setVisible(false);
         this.statistiky.setVisible(false);
-        this.aktivaceSlovicek.setVisible(false);
+        this.aktivaceSlovicek12.setVisible(false);
     }
 
     /**
@@ -108,15 +108,6 @@ public class StareGui extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        aktivaceSlovicek = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        zobrayeniAktivaceSlovicek = new javax.swing.JTextArea();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        aktivovatVse = new javax.swing.JButton();
-        coAktovovat = new javax.swing.JTextField();
-        aktivovatVybrane = new javax.swing.JButton();
         spravaSlovicek1 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         pridaniSlovicekButton1 = new javax.swing.JButton();
@@ -139,6 +130,17 @@ public class StareGui extends javax.swing.JFrame {
         zobrayeniNeaktivnichSlov = new javax.swing.JTextArea();
         zpetNeaktivni = new javax.swing.JButton();
         prejitDoMenuNeaktivni = new javax.swing.JButton();
+        aktivaceSlovicek12 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        zobrazeniAktivaceSlovicek = new javax.swing.JTextArea();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        aktivovatVse = new javax.swing.JButton();
+        aktivovatVybrane = new javax.swing.JButton();
+        coAktivovat = new javax.swing.JSpinner();
+        jButton4 = new javax.swing.JButton();
+        cleanAktivaceSlovicek = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -644,14 +646,12 @@ public class StareGui extends javax.swing.JFrame {
                         .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                                .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton9))
-                                    .addComponent(zobrazVse, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(9, 9, 9)))))
+                                .addGap(10, 10, 10)
+                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton9)
+                                .addGap(9, 9, 9))
+                            .addComponent(zobrazVse, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         zobrazeniSlovicekPanelLayout.setVerticalGroup(
@@ -659,9 +659,9 @@ public class StareGui extends javax.swing.JFrame {
             .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(12, 12, 12)
+                .addGap(7, 7, 7)
                 .addComponent(zobrazVse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -761,85 +761,6 @@ public class StareGui extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTable2);
 
-        jLabel18.setText("Aktivace slovicek");
-
-        zobrayeniAktivaceSlovicek.setColumns(20);
-        zobrayeniAktivaceSlovicek.setRows(5);
-        jScrollPane3.setViewportView(zobrayeniAktivaceSlovicek);
-
-        jButton5.setText("Zpet");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setText("Prejit do Menu");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        aktivovatVse.setText("Aktivovat vse");
-        aktivovatVse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aktivovatVseActionPerformed(evt);
-            }
-        });
-
-        aktivovatVybrane.setText("Aktivovat vybrane");
-        aktivovatVybrane.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aktivovatVybraneActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout aktivaceSlovicekLayout = new javax.swing.GroupLayout(aktivaceSlovicek);
-        aktivaceSlovicek.setLayout(aktivaceSlovicekLayout);
-        aktivaceSlovicekLayout.setHorizontalGroup(
-            aktivaceSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aktivaceSlovicekLayout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jLabel18)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(aktivaceSlovicekLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(aktivaceSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(aktivaceSlovicekLayout.createSequentialGroup()
-                        .addComponent(aktivovatVse)
-                        .addGap(42, 42, 42)
-                        .addComponent(coAktovovat)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(aktivovatVybrane))
-                    .addGroup(aktivaceSlovicekLayout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6))
-                    .addGroup(aktivaceSlovicekLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        aktivaceSlovicekLayout.setVerticalGroup(
-            aktivaceSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aktivaceSlovicekLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(aktivaceSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(aktivovatVse)
-                    .addComponent(coAktovovat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aktivovatVybrane))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(aktivaceSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
-                .addGap(20, 20, 20))
-        );
-
         javax.swing.GroupLayout statistikyLayout = new javax.swing.GroupLayout(statistiky);
         statistiky.setLayout(statistikyLayout);
         statistikyLayout.setHorizontalGroup(
@@ -847,18 +768,12 @@ public class StareGui extends javax.swing.JFrame {
             .addGroup(statistikyLayout.createSequentialGroup()
                 .addGroup(statistikyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(statistikyLayout.createSequentialGroup()
-                        .addGroup(statistikyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(statistikyLayout.createSequentialGroup()
-                                .addGap(156, 156, 156)
-                                .addComponent(jLabel19))
-                            .addGroup(statistikyLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statistikyLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(aktivaceSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel19))
+                    .addGroup(statistikyLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         statistikyLayout.setVerticalGroup(
             statistikyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -867,9 +782,7 @@ public class StareGui extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(aktivaceSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(418, 418, 418))
         );
 
         spravaSlovicek1.setBackground(new java.awt.Color(0, 102, 204));
@@ -1030,7 +943,7 @@ public class StareGui extends javax.swing.JFrame {
 
         jLabel17.setText("Zobrazeni neaktivnich slovicek");
 
-        zobrayVseNeaktivni.setText("Zobraz vse");
+        zobrayVseNeaktivni.setText("Zobraz ");
         zobrayVseNeaktivni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zobrayVseNeaktivniActionPerformed(evt);
@@ -1060,10 +973,6 @@ public class StareGui extends javax.swing.JFrame {
         zobrazeniNeaktivnichSlovicek.setLayout(zobrazeniNeaktivnichSlovicekLayout);
         zobrazeniNeaktivnichSlovicekLayout.setHorizontalGroup(
             zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
             .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
                 .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
@@ -1074,27 +983,139 @@ public class StareGui extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(zpetNeaktivni)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(prejitDoMenuNeaktivni)))
+                        .addComponent(prejitDoMenuNeaktivni))
+                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(zobrayVseNeaktivni)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(zobrayVseNeaktivni)
-                .addGap(24, 24, 24))
         );
         zobrazeniNeaktivnichSlovicekLayout.setVerticalGroup(
             zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(zobrayVseNeaktivni)
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(zpetNeaktivni)
                     .addComponent(prejitDoMenuNeaktivni))
                 .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jLabel18.setText("Aktivace slovicek");
+
+        zobrazeniAktivaceSlovicek.setEditable(false);
+        zobrazeniAktivaceSlovicek.setColumns(20);
+        zobrazeniAktivaceSlovicek.setRows(5);
+        jScrollPane3.setViewportView(zobrazeniAktivaceSlovicek);
+
+        jButton5.setText("Zpet");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Prejit do Menu");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        aktivovatVse.setText("Aktivovat vse");
+        aktivovatVse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aktivovatVseActionPerformed(evt);
+            }
+        });
+
+        aktivovatVybrane.setText("Aktivovat vybrane");
+        aktivovatVybrane.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aktivovatVybraneActionPerformed(evt);
+            }
+        });
+
+        coAktivovat.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+
+        jButton4.setText("Zobraz");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        cleanAktivaceSlovicek.setText("Vycisti");
+        cleanAktivaceSlovicek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cleanAktivaceSlovicekActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout aktivaceSlovicek12Layout = new javax.swing.GroupLayout(aktivaceSlovicek12);
+        aktivaceSlovicek12.setLayout(aktivaceSlovicek12Layout);
+        aktivaceSlovicek12Layout.setHorizontalGroup(
+            aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addComponent(cleanAktivaceSlovicek)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel18)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton4))
+                    .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addComponent(aktivovatVse)
+                        .addGap(18, 18, 18)
+                        .addComponent(coAktivovat)
+                        .addGap(18, 18, 18)
+                        .addComponent(aktivovatVybrane))
+                    .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton6))
+                    .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        aktivaceSlovicek12Layout.setVerticalGroup(
+            aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton4)
+                            .addComponent(cleanAktivaceSlovicek))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(aktivovatVse)
+                            .addComponent(aktivovatVybrane))
+                        .addGap(0, 14, Short.MAX_VALUE))
+                    .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(coAktivovat)))
+                .addGap(18, 18, 18)
+                .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1113,19 +1134,23 @@ public class StareGui extends javax.swing.JFrame {
                             .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(spravaSlovicek1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(spravaSlovicek1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(aktivaceSlovicek12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1152,7 +1177,9 @@ public class StareGui extends javax.swing.JFrame {
                                 .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(aktivaceSlovicek12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -1218,23 +1245,27 @@ public class StareGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jmenoUctuActionPerformed
 
     private void aktivovatVybraneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVybraneActionPerformed
-        this.slovnik.aktivaceDeaktivaceSlova(Integer.valueOf(this.coAktovovat.getText()), 1);
-        JOptionPane.showConfirmDialog(rootPane, "Aktivovano", "Ok!", JOptionPane.WARNING_MESSAGE);
+        if((Integer)this.coAktivovat.getValue()>this.slovnik.neaktivni.size()){
+              JOptionPane.showMessageDialog(rootPane, "Zadana dvojce slovicek neexistuje", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }else{
+        this.slovnik.aktivaceDeaktivaceSlova((Integer)this.coAktivovat.getValue(), 1);
+        JOptionPane.showMessageDialog(rootPane, "Aktivovano");
+        }
     }//GEN-LAST:event_aktivovatVybraneActionPerformed
 
     private void aktivovatVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVseActionPerformed
         this.slovnik.aktivaceDeaktivaceSlova(0, 1);
-        JOptionPane.showConfirmDialog(rootPane, "Aktivovano", "Ok!", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(rootPane, "Vsechna slova byla aktivovana");
     }//GEN-LAST:event_aktivovatVseActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         this.Menu.setVisible(true);
-        this.aktivaceSlovicek.setVisible(false);
+        this.aktivaceSlovicek12.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         this.spravaSlovicek1.setVisible(true);
-        this.aktivaceSlovicek.setVisible(false);
+        this.aktivaceSlovicek12.setVisible(false);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void prejitDoMenuNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prejitDoMenuNeaktivniActionPerformed
@@ -1444,7 +1475,7 @@ public class StareGui extends javax.swing.JFrame {
     private void aktivovaniNeaktivnichSlov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlov1ActionPerformed
         if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
             this.spravaSlovicek1.setVisible(false);
-            this.aktivaceSlovicek.setVisible(true);
+            this.aktivaceSlovicek12.setVisible(true);
 
         } else {
             JOptionPane.showMessageDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
@@ -1461,6 +1492,23 @@ public class StareGui extends javax.swing.JFrame {
         this.spravaSlovicek1.setVisible(true);
 
     }//GEN-LAST:event_Uloz1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    if(this.slovnik.neaktivni.isEmpty()){
+          JOptionPane.showMessageDialog(rootPane, "Nejsou zadna slova ktere by bylo mozne aktivovat"); 
+    }else{
+        String[] slova =this.slovnik.vypisNeaktivni();
+        int citac=1;
+     for (int i = 0; i < slova.length; i++) {
+            this.zobrazeniAktivaceSlovicek.append("("+(citac)+")"+slova[i] + "\n");
+            citac++;
+        }
+    }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void cleanAktivaceSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanAktivaceSlovicekActionPerformed
+        this.zobrazeniAktivaceSlovicek.setText("");
+    }//GEN-LAST:event_cleanAktivaceSlovicekActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1502,7 +1550,7 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JPanel Prihlaseni;
     private javax.swing.JButton Uloz;
     private javax.swing.JButton Uloz1;
-    private javax.swing.JPanel aktivaceSlovicek;
+    private javax.swing.JPanel aktivaceSlovicek12;
     private javax.swing.JToggleButton aktivovaniNeaktivnichSlov;
     private javax.swing.JToggleButton aktivovaniNeaktivnichSlov1;
     private javax.swing.JButton aktivovatVse;
@@ -1512,12 +1560,14 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JTextField ceskyVyraz;
     private javax.swing.JTextField ceskyVyraz1;
     private javax.swing.JSpinner cisloKeSmazani;
-    private javax.swing.JTextField coAktovovat;
+    private javax.swing.JButton cleanAktivaceSlovicek;
+    private javax.swing.JSpinner coAktivovat;
     private javax.swing.JButton deaktivujDvojci;
     private javax.swing.JPasswordField hesloNovehoUctu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -1579,10 +1629,10 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JButton vytvorUcetButton;
     private javax.swing.JButton zmenaSlovniku;
     private javax.swing.JButton zobrayVseNeaktivni;
-    private javax.swing.JTextArea zobrayeniAktivaceSlovicek;
     private javax.swing.JTextArea zobrayeniNeaktivnichSlov;
     private javax.swing.JTextArea zobrayeniSlovicekText;
     private javax.swing.JButton zobrazVse;
+    private javax.swing.JTextArea zobrazeniAktivaceSlovicek;
     private javax.swing.JPanel zobrazeniNeaktivnichSlovicek;
     private javax.swing.JButton zobrazeniNeaktivnichSlovicekButton;
     private javax.swing.JButton zobrazeniNeaktivnichSlovicekButton1;
