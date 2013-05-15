@@ -3,4 +3,4 @@ Obrazovka Screen Zakladni5 1
 Dům House Zakladni4 1
 Ahoj Hello Zakladni1 1
 Auto Car Zakladni2 1
-Film Movie Zakladni3 1
+Film Movie Zakladni3 0

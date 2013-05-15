@@ -515,6 +515,22 @@ public String[] vypisNeaktivni(){
         this.presunNeaktivni();
         }
     }
+    
+    /**Metoda vypocet uspesnost v procentech ze vstupnich parametru.
+     * Pokud nelze uspesnost vypocitat metoda vrati "---".
+     * @param spravneOdpovedi
+     * @param spatneOdpovedi
+     * @return 
+     */
+    public String vypoctiUspesnost(int spravneOdpovedi, int spatneOdpovedi){
+        if(spravneOdpovedi==0 && spatneOdpovedi==0){
+         return "---";   
+        }else{
+        int uspesnost=(100*spravneOdpovedi)/(spravneOdpovedi+spatneOdpovedi);
+        
+        return ""+uspesnost+"%";
+        }
+    }
 
     public String getIdPoslednohoSlova() {
         return idPoslednihoSlova;
