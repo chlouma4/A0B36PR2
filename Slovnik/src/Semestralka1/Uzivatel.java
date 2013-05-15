@@ -13,6 +13,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 
 /**
  *
@@ -23,13 +25,19 @@ public class Uzivatel {
     private String jmeno;
     private String heslo;
     private int pokusy;
+    private JRootPane pane;
+    
+    public Uzivatel(JRootPane pane){
+        this.pane=pane;
+    }
+    
 
     /**
-     * Metoda ulozNovehoHrace() ulozi noveho hrace do souboru. Jmeno hrace a jeho
+     * Metoda ulozNovehoUzivatele() ulozi noveho hrace do souboru. Jmeno hrace a jeho
      * heslo ziska z tridnich promenich.
      *
      */
-    public void ulozNovehoHrace() {
+    public void ulozNovehoUzivatele() {
         ArrayList seznam = new ArrayList();
         String[] seznam1=nactiUdajeOHracich(3);
         seznam.addAll(Arrays.asList(seznam1));
@@ -41,7 +49,9 @@ public class Uzivatel {
             out = new FileWriter("Hraci.txt");
             novy= new FileWriter(this.jmeno+".txt");
         } catch (IOException ex) {
-            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+              JOptionPane.showMessageDialog(this.pane, "System nemuze nalezt soubor Hraci.txt",
+                    "Error!", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
         }
         try {
             for (int i = 0; i < seznam.size(); i++) {
@@ -50,7 +60,9 @@ public class Uzivatel {
             out.close();
             novy.close();
         } catch (Exception e) {
-            System.out.println("Chyba: Nebylo mozne provest yapis do souboru Hraci.txt");
+      JOptionPane.showMessageDialog(this.pane, "System zapsat data do souboru Hraci.txt",
+                    "Error!", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
         }
 
     }
@@ -72,7 +84,9 @@ public class Uzivatel {
         try {
             scan = new Scanner(new FileReader("Hraci.txt"));
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(this.pane, "System nemuze nalezt soubor Hraci.txt",
+                    "Error!", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
         }
         while (true) {
             test = scan.hasNext();
@@ -126,7 +140,7 @@ public class Uzivatel {
             System.out.println("Zadejte sve jmeno.");
             this.jmeno = scan.next();
             nastavHeslo(0);
-            ulozNovehoHrace();
+            ulozNovehoUzivatele();
             System.out.println("Ucet vytvoren");
             return (hraci.size()/2)+1;
         } else {
@@ -309,7 +323,7 @@ public class Uzivatel {
         if(heslo.length()==4 | heslo.length()==6){
         this.setJmeno(jmeno);
         this.zasifrujHeslo(heslo);
-        this.ulozNovehoHrace();
+        this.ulozNovehoUzivatele();
         return 0;
         }
     return 3;
