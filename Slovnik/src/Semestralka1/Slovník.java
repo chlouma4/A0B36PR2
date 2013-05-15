@@ -39,6 +39,7 @@ public class Slovník {
                 volna = prvni;
 
             } else {
+                System.out.println("Vkladam na konec "+ aj+ " "+cj);
                 volna.dalsi = bunka;
                 volna = volna.dalsi;
             }
@@ -58,7 +59,7 @@ public class Slovník {
     }
 
     public String vytvorNoveIdSlova(){
-        String cislo=null;
+        String cislo="";
         int cislo1;
         String idSlova=this.getIdPoslednohoSlova();
         String slovnik=this.getTypSlovniku();
@@ -69,7 +70,7 @@ public class Slovník {
         int delkaSlovnik=slovnik.length();
         int delkaIdSlova=idSlova.length();
         char [] pole =idSlova.toCharArray();
-        for (int i = delkaSlovnik++; i <= delkaIdSlova; i++) {
+        for (int i = delkaSlovnik--; i <= delkaIdSlova--; i++) {
             cislo=cislo+pole[i];
         }
         cislo1=Integer.valueOf(cislo);
@@ -115,20 +116,26 @@ public class Slovník {
     }
 
     public void smaz(int x) { // tato metoda maze jednotlive bunky na pozici x.Ochrana na spatne vstupni metodz je v main
+        System.out.println("Mazu "+x);
         int z = 0;
         Bunka pom = prvni;
         while (pom != null) {
             z = z + 1;
             if (z == x && x == 1) { // pro smazani prvniho
+                System.out.println("Pomoci prvniho");
                 prvni = prvni.dalsi;
                 break;
             }
             if (z == x - 1 && x != pocetDvojic()) {
+                System.out.println("Pomoci prostredniho");
                 pom.dalsi = pom.dalsi.dalsi;
                 break;
             }
             if (z == x - 1 && x == pocetDvojic()) { // mazani posledniho 
+                System.out.println("Pomoci posledniho");
                 pom.dalsi = null;
+                volna.dalsi = pom;
+                volna = volna.dalsi;
                 break;
             }
             pom = pom.dalsi;
@@ -371,7 +378,8 @@ public class Slovník {
                 break;
             }
         }
-         this.setIdPoslednohoSlova(this.getObsahBunky(this.pocetDvojic(), 5));
+         this.setIdPoslednihoSlova(this.getTypSlovniku()+this.pocetDvojic());
+         System.out.println("posledni ma id "+this.getIdPoslednohoSlova());
      /*   for (int j = 1; j <= this.pocetDvojic(); j++) {
              System.out.println(getObsahBunky(j, 1) + " " + getObsahBunky(j, 2) + " " + getObsahBunky(j, 3) + " " + getObsahBunky(j, 4)+" "+ getObsahBunky(j, 5)+" " +getObsahBunky(j, 6));
         }
@@ -393,10 +401,20 @@ public class Slovník {
         }
             try {
                 outSlovnik.write(this.getTvurceSlovniku()+System.lineSeparator());
-        for (int i = 1; i <= pocetDvojic(); i++) {
+                if(!this.neaktivni.isEmpty()){
+                    System.out.println("pocet Dvojic"+this.pocetDvojic());
+                    for (int i = 0; i < this.neaktivni.size(); i++) {
+                        System.out.println("pridavam");
+                         Slovo slovo= (Slovo)this.neaktivni.get(i);
+                          this.vlozNaKonec(slovo.getAj(),slovo.getCj(), slovo.getPocetSpravnychOdpovedi(),slovo.getPocetSpatnychOdpovedi()
+                                  , slovo.getIDSlova(), slovo.getAktivita()); 
+                    }
+                }
+         System.out.println("pocet Dvojic"+this.pocetDvojic());
+        for (int i = 1; i <=this.pocetDvojic(); i++) {
                 outSlovnik.write(getObsahBunky(i, 1) + " " + getObsahBunky(i, 2) + " " + getObsahBunky(i, 5) + " " + getObsahBunky(i, 6) + System.lineSeparator());
                  outHrac.write(getObsahBunky(i, 5) + " " + getObsahBunky(i, 3) + " " + getObsahBunky(i, 4) + System.lineSeparator());
-        } 
+        }
         } catch (IOException ex) {
                 Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -417,14 +435,15 @@ public class Slovník {
         for (int i = 1; i <= this.pocetDvojic(); i++) {
          test=this.getObsahBunky(i, 6);
          if(test.equals(""+0)){
-             this.neaktivni.size();
+             System.out.println("Ukladam do neaktivni"+getObsahBunky(i, 1) + " " + getObsahBunky(i, 2) +
+                     " " + getObsahBunky(i, 3) + " " + getObsahBunky(i, 4) +" " + getObsahBunky(i, 5) + " " + getObsahBunky(i, 6));
              this.neaktivni.add(new Slovo(this.getObsahBunky(i, 2),
                      this.getObsahBunky(i, 1),
                      Integer.valueOf(this.getObsahBunky(i, 3)),
                      Integer.valueOf(this.getObsahBunky(i, 4)),
                      this.getObsahBunky(i, 5), 
                      Integer.valueOf(this.getObsahBunky(i, 6))));
-             this.smaz(i);
+                 this.smaz(i);    
              i--;
          }
         }
@@ -467,9 +486,6 @@ public class Slovník {
         return idPoslednihoSlova;
     }
 
-    public void setIdPoslednohoSlova(String idSlovniku) {
-        this.idPoslednihoSlova = idSlovniku;
-    }
 
     public String getTvurceSlovniku() {
         return tvurceSlovniku;

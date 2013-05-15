@@ -1,7 +1,6 @@
 Admin
-Ahoj Hello Zakladni2 1
-Zbran Gun Zakladni3 1
-Auto Car Zakladni4 1
-Kniha Book Zakladni5 1
-Strom Tree Zakladni7 1
-Slunce Sun Zakladni9 1
+Ahoj Hello Zakladni1 1
+Auto Car Zakladni2 1
+Dům House Zakladni4 1
+Obrazovka Screen Zakladni5 1
+Film Movie Zakladni3 0
