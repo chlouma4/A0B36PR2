@@ -531,6 +531,32 @@ public String[] vypisNeaktivni(){
         return ""+uspesnost+"%";
         }
     }
+    /**Tato metoda zvysi pocetSpravnyhOdpovedi nebo pocetSpatnychOdpovedi u slova.
+     * Parametrem poradi se urcuje , kteremu slovu ma byt zmenena statistika.
+     * Parametrem statistika se urcuje jestly ma byt zvysen pocetSpravnyhOdpovedi 
+     * nebo pocetSpatnychOdpovediu slova.Takto :
+     * 0- zvysi pocetSpravnyhOdpovedi
+     * 1- zvysi pocetSpatnychOdpovedi
+     * 
+     * @param poradi
+     * @param statistika 
+     */
+    public void upravStatistiku(int poradi,int statistika){
+        int z = 0;
+        Bunka pom = prvni;
+        while (pom != null) {
+            z = z + 1;
+            if (z == poradi) {
+               if(statistika==0){
+                   pom.slovicka.setPocetSpravnychOdpovedi(pom.slovicka.getPocetSpravnychOdpovedi()+1);
+               }else{
+                   pom.slovicka.setPocetSpatnychOdpovedi(pom.slovicka.getPocetSpatnychOdpovedi()+1);
+               }
+            }
+            pom = pom.dalsi;
+        }
+        
+    }
 
     public String getIdPoslednohoSlova() {
         return idPoslednihoSlova;
