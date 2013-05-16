@@ -4,11 +4,13 @@
  */
 package Semestralka1;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -272,15 +274,22 @@ public String[] vypisNeaktivni(){
         this.typSlovniku = typSlovniku;
     }
 
-    /**POZOR !!! metoda nebyla zatim predelana pro pouyiti s GUI.
+    /**
      * Meotda vytvori novy slovnik a ulozi jej do seznamu Slovniku.
      * 
      * @param novySlovnik 
      */
     public void vytvorNovySlovnik(String novySlovnik) {
         ArrayList seznam = new ArrayList();
-        //     seznam=getSeznamSlovniku();
-        seznam.add(novySlovnik);
+        String [] seznam0=this.getSeznamSlovniku();
+        seznam.addAll(Arrays.asList(seznam0));
+        boolean test=seznam.contains(novySlovnik);
+        if(test==true){
+            JOptionPane.showMessageDialog(pane, "Slovnik s timto nazvem je jiz vztvoren prosim zvolte jiny nazev",
+                    "Chyba!",JOptionPane.WARNING_MESSAGE );
+           
+        }else{
+            seznam.add(novySlovnik);
         FileWriter out = null;
         try {
             out = new FileWriter("Seznam.txt");
@@ -293,9 +302,17 @@ public String[] vypisNeaktivni(){
             }
             out.close();
         } catch (Exception e) {
-            System.out.println("Chyba: Nebylo mozne provest yapis do souboru Seznam.txt");
+            JOptionPane.showMessageDialog(pane, "System nemohl zapsat data do souboru Seznam.txt",
+                    "Error!",JOptionPane.ERROR_MESSAGE );
         }
-
+        try{
+        File soubor = new File(novySlovnik);
+        soubor.createNewFile();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(pane, "System nemohl vytvorit novy soubor pro slovnik "+novySlovnik,
+                    "Error!",JOptionPane.ERROR_MESSAGE );
+        }
+        }
     }
 /**POZOR!! dodelat chybove hlasky.
  * Meotda vrati seznam vsech slovniku.
