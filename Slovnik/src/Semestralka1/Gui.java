@@ -13,8 +13,8 @@ import java.awt.GridLayout;
 
 
 public class Gui extends javax.swing.JFrame  {
-     Uzivatel hrac = new Uzivatel();
-    Slovník slovnik = new Slovník();
+     Uzivatel hrac = new Uzivatel(this.rootPane);
+    Slovník slovnik = new Slovník(this.rootPane);
      static Gui frame;
 
     /**Metoda která přepíná jednotlivé Jpanely.

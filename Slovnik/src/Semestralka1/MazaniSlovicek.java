@@ -130,14 +130,14 @@ private Gui gui;
 
     private void SmazActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmazActionPerformed
         JOptionPane.showConfirmDialog(gui, "Opravdu chcete smazat dvojci slovicek"
-            + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
+            + this.slovnik.vypisXZeSpojovehoSeznamu(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
         // pokud bude stisknuto ok tak zavolat metodu setAktivita(0)a spustit metodu vzmay neaktivni
     }//GEN-LAST:event_SmazActionPerformed
 
     private void uplneVymazaniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uplneVymazaniActionPerformed
         if (this.hrac.testPravomoc(this.slovnik.getTvurceSlovniku(), 3)) {
             JOptionPane.showConfirmDialog(gui, "Opravdu chcete smazat dvojci slovicek"
-                + this.slovnik.vypisX(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
+                + this.slovnik.vypisXZeSpojovehoSeznamu(Integer.getInteger(this.slovickoKeSmazani.getText())), "Chyba!", JOptionPane.OK_CANCEL_OPTION);
             // pokud bude stisknuto ok tak zavolat metodu slovnik.smaz(this.slovickoKeSmazani.getText())
         } else {
             JOptionPane.showConfirmDialog(gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
