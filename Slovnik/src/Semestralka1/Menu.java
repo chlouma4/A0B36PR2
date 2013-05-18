@@ -117,7 +117,12 @@ public class Menu extends javax.swing.JPanel {
 
         spravaHracuButton.setBackground(new java.awt.Color(0, 0, 204));
         spravaHracuButton.setForeground(new java.awt.Color(0, 204, 0));
-        spravaHracuButton.setText("Sprava Hracu");
+        spravaHracuButton.setText("Sprava Uzivatelu");
+        spravaHracuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spravaHracuButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
@@ -212,8 +217,12 @@ public class Menu extends javax.swing.JPanel {
     }//GEN-LAST:event_ukoncitProgramActionPerformed
 
     private void spravaSlovnikuButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovnikuButonActionPerformed
-      
+      this.gui.setMyView(15);
     }//GEN-LAST:event_spravaSlovnikuButonActionPerformed
+
+    private void spravaHracuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaHracuButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spravaHracuButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Menu;

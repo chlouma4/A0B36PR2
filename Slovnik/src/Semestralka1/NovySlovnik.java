@@ -110,7 +110,7 @@ this.gui.setMyView(15);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void vytvorNovySlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vytvorNovySlovnikActionPerformed
-        this.gui.slovnik.vytvorNovySlovnik(this.nazevNovehoSlovniku.getText());
+        this.gui.slovnik.vytvorNovySlovnik(this.nazevNovehoSlovniku.getText(),this.gui.uzivatel.getJmeno());
     }//GEN-LAST:event_vytvorNovySlovnikActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

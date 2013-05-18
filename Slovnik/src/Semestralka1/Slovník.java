@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,7 +46,6 @@ public class Slovník {
      * @param aktivita 
      */
     public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova, int aktivita) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
-        System.out.println("vkladam na konec ... spravne odpovedi "+spravneOdpovedi+" spatne odpovedi"+spatneOdpovedi);
         if (cj != null && aj != null) {
             Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi, IDSlova, aktivita);
             Bunka bunka = new Bunka(slovo, null);
@@ -199,6 +197,30 @@ public String[] vypisNeaktivni(){
  * 
  */
     public void smazSlovnik(int cisloSlovniku) {
+        cisloSlovniku--;
+       ArrayList  seznamSlovniku= this.getSeznamSlovniku();
+       String Smazat=(String)seznamSlovniku.get(cisloSlovniku);
+      seznamSlovniku.remove(cisloSlovniku);
+        FileWriter outSeznam = null;
+         File smazat= null;
+        try {
+            outSeznam = new FileWriter("Seznam.txt");
+            smazat= new File(Smazat+".txt");
+        } catch (IOException ex) {
+            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            for (int i = 0; i < seznamSlovniku.size(); i++) {
+                outSeznam.write(seznamSlovniku.get(i) + "" + System.lineSeparator());
+            }
+            outSeznam.close();
+            smazat.delete();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(pane, "Systemu se nepodarilo vztvorit novy slovnik",
+                    "Error!",JOptionPane.ERROR_MESSAGE );
+        }
+       
+     
        
     }
 
@@ -255,10 +277,8 @@ public String[] vypisNeaktivni(){
      * 
      * @param novySlovnik 
      */
-    public void vytvorNovySlovnik(String novySlovnik) {
-        ArrayList seznam = new ArrayList();
-        String [] seznam0=this.getSeznamSlovniku();
-        seznam.addAll(Arrays.asList(seznam0));
+    public void vytvorNovySlovnik(String novySlovnik, String tvurce) {
+        ArrayList seznam =this.getSeznamSlovniku();
         boolean test=seznam.contains(novySlovnik);
         if(test==true){
             JOptionPane.showMessageDialog(pane, "Slovnik s timto nazvem je jiz vztvoren prosim zvolte jiny nazev",
@@ -266,36 +286,34 @@ public String[] vypisNeaktivni(){
            
         }else{
             seznam.add(novySlovnik);
-        FileWriter out = null;
+        FileWriter outSeznam = null;
+        FileWriter outSlovnik=null;
         try {
-            out = new FileWriter("Seznam.txt");
+            outSeznam = new FileWriter("Seznam.txt");
+            outSlovnik= new FileWriter(novySlovnik+".txt");
         } catch (IOException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             for (int i = 0; i < seznam.size(); i++) {
-                out.write(seznam.get(i) + "" + System.lineSeparator());
+                outSeznam.write(seznam.get(i) + "" + System.lineSeparator());
             }
-            out.close();
+            outSlovnik.write(tvurce);
+            outSlovnik.close();
+            outSeznam.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(pane, "System nemohl zapsat data do souboru Seznam.txt",
+            JOptionPane.showMessageDialog(pane, "Systemu se nepodarilo vztvorit novy slovnik",
                     "Error!",JOptionPane.ERROR_MESSAGE );
         }
-        try{
-        File soubor = new File(novySlovnik);
-        soubor.createNewFile();
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(pane, "System nemohl vytvorit novy soubor pro slovnik "+novySlovnik,
-                    "Error!",JOptionPane.ERROR_MESSAGE );
-        }
+        JOptionPane.showMessageDialog(pane, "Slovnik byl uspesne vytvoren" );
         }
     }
-/**POZOR!! dodelat chybove hlasky.
+/**
  * Meotda vrati seznam vsech slovniku.
  * 
  * @return 
  */
-    public String[] getSeznamSlovniku() {
+    public ArrayList getSeznamSlovniku() {
         ArrayList seznam = new ArrayList();
         Scanner scan = null;
         String nazev;
@@ -303,7 +321,8 @@ public String[] vypisNeaktivni(){
         try {
             scan = new Scanner(new FileReader("Seznam.txt"));
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(pane, "Systemu se nepodatilo najit soubor Seznam.txt",
+                    "Error!",JOptionPane.ERROR_MESSAGE );
         }
         while (true) {
             test = scan.hasNext();
@@ -314,10 +333,8 @@ public String[] vypisNeaktivni(){
                 break;
             }
         }
-        this.setPocetSlovniku(seznam.size());
-        String[] pole;
-        pole = (String[]) seznam.toArray(new String[seznam.size()]);
-        return pole;
+        
+        return seznam;
 
     }
 

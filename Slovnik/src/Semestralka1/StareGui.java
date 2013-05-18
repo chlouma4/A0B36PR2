@@ -235,7 +235,6 @@ public class StareGui extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         vyberSlovnikPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        vyberSlovnik = new javax.swing.JComboBox();
         potvrdSlovnik = new javax.swing.JButton();
         pridaniSlovicekPanel = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -535,13 +534,6 @@ public class StareGui extends javax.swing.JFrame {
 
         jLabel7.setText("Vyberte slonik s kterym chcete pacovat: ");
 
-        vyberSlovnik.setModel(new javax.swing.DefaultComboBoxModel(slovnik.getSeznamSlovniku()));
-        vyberSlovnik.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vyberSlovnikActionPerformed(evt);
-            }
-        });
-
         potvrdSlovnik.setText("Ok");
         potvrdSlovnik.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -721,8 +713,7 @@ public class StareGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(vyberSlovnikPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(vyberSlovnikPanelLayout.createSequentialGroup()
-                        .addComponent(vyberSlovnik, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(125, 125, 125)
                         .addComponent(potvrdSlovnik, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -733,9 +724,7 @@ public class StareGui extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(vyberSlovnikPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(potvrdSlovnik)
-                    .addComponent(vyberSlovnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(potvrdSlovnik)
                 .addGap(278, 278, 278)
                 .addComponent(pridaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2144,16 +2133,12 @@ public class StareGui extends javax.swing.JFrame {
     }//GEN-LAST:event_ceskyVyrazActionPerformed
 
     private void potvrdSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potvrdSlovnikActionPerformed
-        slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), uzivatel.getJmeno());
+//        slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), uzivatel.getJmeno());
         this.slovnik.presunNeaktivni();
         this.setSize(330, 230);
         this.Menu.setVisible(true);
         this.vyberSlovnikPanel.setVisible(false);
     }//GEN-LAST:event_potvrdSlovnikActionPerformed
-
-    private void vyberSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vyberSlovnikActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vyberSlovnikActionPerformed
 
     private void pridaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButton1ActionPerformed
         if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
@@ -2344,7 +2329,7 @@ public class StareGui extends javax.swing.JFrame {
         this.spravaSlovniku.setVisible(false);
         this.zobrazeniSlovniku.setVisible(true);
         String[] seznam = new String[this.slovnik.getPocetSlovniku()];
-        seznam = this.slovnik.getSeznamSlovniku();
+//        seznam = this.slovnik.getSeznamSlovniku();
         for (int i = 0; i < seznam.length; i++) {
             this.textAreaZobrazeniSlovniku.append("" + seznam[i] + "\n");
         }
@@ -2362,7 +2347,7 @@ public class StareGui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void vytvorNovySlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vytvorNovySlovnikActionPerformed
-        this.slovnik.vytvorNovySlovnik(this.nazevNovehoSlovniku.getText());
+//        this.slovnik.vytvorNovySlovnik(this.nazevNovehoSlovniku.getText());
     }//GEN-LAST:event_vytvorNovySlovnikActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -2370,7 +2355,7 @@ public class StareGui extends javax.swing.JFrame {
             this.spravaSlovniku.setVisible(false);
             this.smazaniSlovniku.setVisible(true);
             String[] seznam = new String[this.slovnik.getPocetSlovniku()];
-            seznam = this.slovnik.getSeznamSlovniku();
+          //  seznam = this.slovnik.getSeznamSlovniku();
             for (int i = 0; i < seznam.length; i++) {
                 this.textAreaSmazaniSlovniku.append("" + seznam[i] + "\n");
             }
@@ -2605,7 +2590,6 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JButton ukoncitProgram;
     private javax.swing.JButton uplneVymazani;
     private javax.swing.JPasswordField vstupHesla;
-    private javax.swing.JComboBox vyberSlovnik;
     private javax.swing.JPanel vyberSlovnikPanel;
     private javax.swing.JComboBox vyberUcet;
     private javax.swing.JPanel vyhodnoceniTestu;

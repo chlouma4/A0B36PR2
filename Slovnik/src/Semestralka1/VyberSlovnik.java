@@ -4,6 +4,8 @@
  */
 package Semestralka1;
 
+import java.util.ArrayList;
+
 
 
 /**
@@ -15,6 +17,15 @@ Slovník slovnik;
 Uzivatel uzivatel;
 private Gui gui;
 
+
+private String [] fromArrayListToArray(){
+    ArrayList seznam= this.gui.slovnik.getSeznamSlovniku();
+    String [] seznamX= new String[seznam.size()];
+    for (int i = 0; i < seznam.size(); i++) {
+       seznamX[i]=String.valueOf(seznam.get(i));
+    }
+    return seznamX;
+}
     /**
      * Creates new form VyberSlovnik
      */
@@ -50,7 +61,7 @@ private Gui gui;
             }
         });
 
-        vyberSlovnik.setModel(new javax.swing.DefaultComboBoxModel(slovnik.getSeznamSlovniku()));
+        vyberSlovnik.setModel(new javax.swing.DefaultComboBoxModel(this.fromArrayListToArray()));
         vyberSlovnik.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vyberSlovnikActionPerformed(evt);
@@ -81,7 +92,7 @@ private Gui gui;
                 .addGroup(vyberSlovnikPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(potvrdSlovnik)
                     .addComponent(vyberSlovnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

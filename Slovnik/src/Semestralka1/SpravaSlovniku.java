@@ -47,7 +47,7 @@ public class SpravaSlovniku extends javax.swing.JPanel {
             }
         });
 
-        jButton13.setText("Vytvorit Slovnik");
+        jButton13.setText("Novy Slovnik");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
@@ -119,23 +119,19 @@ this.gui.setMyView(16);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-
+this.gui.setMyView(17);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        if(this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 3)){
-      /*      String [] seznam =new String [this.slovnik.getPocetSlovniku()];
-            seznam=this.slovnik.getSeznamSlovniku();
-            for (int i = 0; i < seznam.length; i++) {
-                this.textAreaSmazaniSlovniku.append(""+seznam[i]+"\n");
-            }*/
+        if(this.gui.uzivatel.testPravomoc(this.gui.uzivatel.getJmeno(), 3)){
+             this.gui.setMyView(18);
         }else{
             JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void zpetDoMenuZSpravaSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetDoMenuZSpravaSlovicekActionPerformed
-
+this.gui.setMyView(3);
     }//GEN-LAST:event_zpetDoMenuZSpravaSlovicekActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

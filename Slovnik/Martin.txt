@@ -1,5 +1,1 @@
-Zakladni5 5 6
-Zakladni4 6 0
-Zakladni1 5 5
-Zakladni2 5 5
 Zakladni3 90 90

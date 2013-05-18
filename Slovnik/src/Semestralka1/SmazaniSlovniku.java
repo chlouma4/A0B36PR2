@@ -4,6 +4,7 @@
  */
 package Semestralka1;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,9 +16,17 @@ Gui gui;
     /**
      * Creates new form SmazaniSlovniku
      */
+
+private void  start(){
+    ArrayList seznam=this.gui.slovnik.getSeznamSlovniku();
+        for (int i = 0; i < seznam.size(); i++) {
+            this.textAreaSmazaniSlovniku.append(""+seznam.get(i) +"\n");
+}
+}
     public SmazaniSlovniku(Gui gui) {
+       this.gui=gui;
         initComponents();
-        this.gui=gui;
+        start();
     }
 
     /**
@@ -122,8 +131,8 @@ this.gui.setMyView(15);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void vymazatSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vymazatSlovnikActionPerformed
-        if(this.gui.slovnik.getPocetSlovniku()<=Integer.valueOf((String)this.spinnerSmazaniSlovniku.getValue())){
-
+        if(this.gui.slovnik.getPocetSlovniku()<=((Integer)this.spinnerSmazaniSlovniku.getValue())){
+           this.gui.slovnik.smazSlovnik((Integer)this.spinnerSmazaniSlovniku.getValue());
         }else{
             JOptionPane.showMessageDialog(this.gui, "Slovnik s timto cislem neexistuje!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }

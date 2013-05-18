@@ -4,6 +4,8 @@
  */
 package Semestralka1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Marco
@@ -61,12 +63,10 @@ Gui gui;
         zobrazeniSlovnikuLayout.setHorizontalGroup(
             zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6)
                     .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane6))
-                    .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(zpetZezobrazeniSlovnku)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -111,10 +111,9 @@ this.gui.setMyView(15);
     }//GEN-LAST:event_zpetZezobrazeniSlovnkuActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String [] seznam =new String [this.gui.slovnik.getPocetSlovniku()];
-        seznam=this.gui.slovnik.getSeznamSlovniku();
-        for (int i = 0; i < seznam.length; i++) {
-            this.textAreaZobrazeniSlovniku.append(""+seznam[i]+"\n");
+      ArrayList seznam=this.gui.slovnik.getSeznamSlovniku();
+        for (int i = 0; i < seznam.size(); i++) {
+            this.textAreaZobrazeniSlovniku.append(""+seznam.get(i) +"\n");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
