@@ -4,8 +4,7 @@
  */
 package Semestralka1;
 
-import javax.swing.JFrame;
-import javax.swing.JRootPane;
+
 
 /**
  *
@@ -13,16 +12,16 @@ import javax.swing.JRootPane;
  */
 public class VyberSlovnik extends javax.swing.JPanel {
 Slovník slovnik;
-Uzivatel hrac;
-private JFrame frame;
+Uzivatel uzivatel;
+private Gui gui;
 
     /**
      * Creates new form VyberSlovnik
      */
-    public VyberSlovnik(Slovník slovnik, Uzivatel hrac,JFrame frame) {
+    public VyberSlovnik(Slovník slovnik, Uzivatel hrac,Gui frame) {
         this.slovnik=slovnik;
-        this.hrac=hrac;
-         this.frame=frame;
+        this.uzivatel=hrac;
+         this.gui=frame;
         initComponents();
     }
 
@@ -37,24 +36,24 @@ private JFrame frame;
 
         vyberSlovnikPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        vyberSlovnik = new javax.swing.JComboBox();
         potvrdSlovnik = new javax.swing.JButton();
+        vyberSlovnik = new javax.swing.JComboBox();
 
         setPreferredSize(new java.awt.Dimension(234, 120));
 
         jLabel7.setText("Vyberte slonik s kterym chcete pacovat: ");
 
-        vyberSlovnik.setModel(new javax.swing.DefaultComboBoxModel(slovnik.nactiSeznam()));
-        vyberSlovnik.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vyberSlovnikActionPerformed(evt);
-            }
-        });
-
         potvrdSlovnik.setText("Ok");
         potvrdSlovnik.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 potvrdSlovnikActionPerformed(evt);
+            }
+        });
+
+        vyberSlovnik.setModel(new javax.swing.DefaultComboBoxModel(slovnik.getSeznamSlovniku()));
+        vyberSlovnik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vyberSlovnikActionPerformed(evt);
             }
         });
 
@@ -89,23 +88,18 @@ private JFrame frame;
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+            .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+            .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void potvrdSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potvrdSlovnikActionPerformed
-        slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), hrac.getJmeno());
+        slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), uzivatel.getJmeno());
         this.slovnik.presunNeaktivni();
-        System.out.println("ok ");
-//        frame.setView(3);
+        gui.setMyView(3);
       
     }//GEN-LAST:event_potvrdSlovnikActionPerformed
 

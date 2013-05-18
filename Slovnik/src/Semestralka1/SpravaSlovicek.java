@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class SpravaSlovicek extends javax.swing.JPanel {
     Slovník slovnik;
-Uzivatel hrac;
+Uzivatel uzivatel;
 private Gui gui;
 
     /**
@@ -20,7 +20,7 @@ private Gui gui;
      */
     public SpravaSlovicek(Slovník slovnik, Uzivatel hrac,Gui frame) {
          this.slovnik=slovnik;
-        this.hrac=hrac;
+        this.uzivatel=hrac;
         this.gui=frame;
         initComponents();
     }
@@ -34,105 +34,106 @@ private Gui gui;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        spravaSlovicek = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        pridaniSlovicekButton = new javax.swing.JButton();
-        smazaniSlovicekButton = new javax.swing.JButton();
-        zobrazeniSlovicekButton = new javax.swing.JButton();
-        zobrazeniNeaktivnichSlovicekButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        aktivovaniNeaktivnichSlov = new javax.swing.JToggleButton();
+        spravaSlovicek1 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        pridaniSlovicekButton1 = new javax.swing.JButton();
+        smazaniSlovicekButton1 = new javax.swing.JButton();
+        zobrazeniSlovicekButton1 = new javax.swing.JButton();
+        zobrazeniNeaktivnichSlovicekButton1 = new javax.swing.JButton();
+        zpetSpravaSlovicek = new javax.swing.JButton();
+        aktivovaniNeaktivnichSlov1 = new javax.swing.JToggleButton();
 
-        spravaSlovicek.setBackground(new java.awt.Color(0, 102, 204));
+        spravaSlovicek1.setBackground(new java.awt.Color(0, 102, 204));
 
-        jLabel9.setText("Sprava Slovicek");
+        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel21.setText("Sprava Slovicek");
 
-        pridaniSlovicekButton.setText("Pridani slovicek");
-        pridaniSlovicekButton.addActionListener(new java.awt.event.ActionListener() {
+        pridaniSlovicekButton1.setText("Pridani slovicek");
+        pridaniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pridaniSlovicekButtonActionPerformed(evt);
+                pridaniSlovicekButton1ActionPerformed(evt);
             }
         });
 
-        smazaniSlovicekButton.setText("Smazani slovicek");
-        smazaniSlovicekButton.addActionListener(new java.awt.event.ActionListener() {
+        smazaniSlovicekButton1.setText("Smazani slovicek");
+        smazaniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                smazaniSlovicekButtonActionPerformed(evt);
+                smazaniSlovicekButton1ActionPerformed(evt);
             }
         });
 
-        zobrazeniSlovicekButton.setText("Zobrazeni slovicek");
-        zobrazeniSlovicekButton.addActionListener(new java.awt.event.ActionListener() {
+        zobrazeniSlovicekButton1.setText("Zobrazeni slovicek");
+        zobrazeniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                zobrazeniSlovicekButtonActionPerformed(evt);
+                zobrazeniSlovicekButton1ActionPerformed(evt);
             }
         });
 
-        zobrazeniNeaktivnichSlovicekButton.setText("Zobrazeni neaktivnich slovicek");
-        zobrazeniNeaktivnichSlovicekButton.addActionListener(new java.awt.event.ActionListener() {
+        zobrazeniNeaktivnichSlovicekButton1.setText("Zobrazeni neaktivnich slovicek");
+        zobrazeniNeaktivnichSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                zobrazeniNeaktivnichSlovicekButtonActionPerformed(evt);
+                zobrazeniNeaktivnichSlovicekButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Zpet");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        zpetSpravaSlovicek.setText("Zpet");
+        zpetSpravaSlovicek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                zpetSpravaSlovicekActionPerformed(evt);
             }
         });
 
-        aktivovaniNeaktivnichSlov.setText("Aktivovat neaktivni slovicka");
-        aktivovaniNeaktivnichSlov.addActionListener(new java.awt.event.ActionListener() {
+        aktivovaniNeaktivnichSlov1.setText("Aktivovat neaktivni slovicka");
+        aktivovaniNeaktivnichSlov1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aktivovaniNeaktivnichSlovActionPerformed(evt);
+                aktivovaniNeaktivnichSlov1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout spravaSlovicekLayout = new javax.swing.GroupLayout(spravaSlovicek);
-        spravaSlovicek.setLayout(spravaSlovicekLayout);
-        spravaSlovicekLayout.setHorizontalGroup(
-            spravaSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(spravaSlovicekLayout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addComponent(jLabel9)
-                .addContainerGap())
-            .addGroup(spravaSlovicekLayout.createSequentialGroup()
+        javax.swing.GroupLayout spravaSlovicek1Layout = new javax.swing.GroupLayout(spravaSlovicek1);
+        spravaSlovicek1.setLayout(spravaSlovicek1Layout);
+        spravaSlovicek1Layout.setHorizontalGroup(
+            spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(spravaSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(spravaSlovicekLayout.createSequentialGroup()
-                        .addComponent(pridaniSlovicekButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addComponent(smazaniSlovicekButton)
-                        .addGap(39, 39, 39))
-                    .addGroup(spravaSlovicekLayout.createSequentialGroup()
-                        .addComponent(zobrazeniSlovicekButton)
+                .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                        .addComponent(pridaniSlovicekButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(smazaniSlovicekButton1)
+                        .addGap(630, 630, 630))
+                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                        .addComponent(zobrazeniSlovicekButton1)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton2)
+                        .addComponent(zpetSpravaSlovicek)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(spravaSlovicekLayout.createSequentialGroup()
-                        .addGroup(spravaSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(aktivovaniNeaktivnichSlov)
-                            .addComponent(zobrazeniNeaktivnichSlovicekButton))
+                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                        .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(aktivovaniNeaktivnichSlov1)
+                            .addComponent(zobrazeniNeaktivnichSlovicekButton1))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel21)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        spravaSlovicekLayout.setVerticalGroup(
-            spravaSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(spravaSlovicekLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel9)
-                .addGap(31, 31, 31)
-                .addGroup(spravaSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pridaniSlovicekButton)
-                    .addComponent(smazaniSlovicekButton))
+        spravaSlovicek1Layout.setVerticalGroup(
+            spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel21)
+                .addGap(36, 36, 36)
+                .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pridaniSlovicekButton1)
+                    .addComponent(smazaniSlovicekButton1))
                 .addGap(18, 18, 18)
-                .addGroup(spravaSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zobrazeniSlovicekButton)
-                    .addComponent(jButton2))
+                .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zobrazeniSlovicekButton1)
+                    .addComponent(zpetSpravaSlovicek))
                 .addGap(18, 18, 18)
-                .addComponent(zobrazeniNeaktivnichSlovicekButton)
+                .addComponent(zobrazeniNeaktivnichSlovicekButton1)
                 .addGap(18, 18, 18)
-                .addComponent(aktivovaniNeaktivnichSlov)
+                .addComponent(aktivovaniNeaktivnichSlov1)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -140,60 +141,60 @@ private Gui gui;
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spravaSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(spravaSlovicek1, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spravaSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(spravaSlovicek1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pridaniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButtonActionPerformed
-        if (this.hrac.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
-            
-            
-        } else {
-            JOptionPane.showConfirmDialog(gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_pridaniSlovicekButtonActionPerformed
-
-    private void smazaniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smazaniSlovicekButtonActionPerformed
-        if (this.hrac.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+    private void pridaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButton1ActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
           
+
         } else {
-            JOptionPane.showConfirmDialog(gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_smazaniSlovicekButtonActionPerformed
+    }//GEN-LAST:event_pridaniSlovicekButton1ActionPerformed
 
-    private void zobrazeniSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniSlovicekButtonActionPerformed
-       
-    }//GEN-LAST:event_zobrazeniSlovicekButtonActionPerformed
+    private void smazaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smazaniSlovicekButton1ActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+        this.gui.setMyView(7);
 
-    private void zobrazeniNeaktivnichSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniNeaktivnichSlovicekButtonActionPerformed
-      
-    }//GEN-LAST:event_zobrazeniNeaktivnichSlovicekButtonActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void aktivovaniNeaktivnichSlovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlovActionPerformed
-        if (this.hrac.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
-          
-           
         } else {
-            JOptionPane.showConfirmDialog(gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_aktivovaniNeaktivnichSlovActionPerformed
+    }//GEN-LAST:event_smazaniSlovicekButton1ActionPerformed
+
+    private void zobrazeniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniSlovicekButton1ActionPerformed
+ this.gui.setMyView(8);        
+    }//GEN-LAST:event_zobrazeniSlovicekButton1ActionPerformed
+
+    private void zobrazeniNeaktivnichSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniNeaktivnichSlovicekButton1ActionPerformed
+this.gui.setMyView(9);     
+    }//GEN-LAST:event_zobrazeniNeaktivnichSlovicekButton1ActionPerformed
+
+    private void zpetSpravaSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetSpravaSlovicekActionPerformed
+this.gui.setMyView(3);     
+    }//GEN-LAST:event_zpetSpravaSlovicekActionPerformed
+
+    private void aktivovaniNeaktivnichSlov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlov1ActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+            this.gui.setMyView(10);
+        } else {
+            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_aktivovaniNeaktivnichSlov1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton aktivovaniNeaktivnichSlov;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JButton pridaniSlovicekButton;
-    private javax.swing.JButton smazaniSlovicekButton;
-    private javax.swing.JPanel spravaSlovicek;
-    private javax.swing.JButton zobrazeniNeaktivnichSlovicekButton;
-    private javax.swing.JButton zobrazeniSlovicekButton;
+    private javax.swing.JToggleButton aktivovaniNeaktivnichSlov1;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JButton pridaniSlovicekButton1;
+    private javax.swing.JButton smazaniSlovicekButton1;
+    private javax.swing.JPanel spravaSlovicek1;
+    private javax.swing.JButton zobrazeniNeaktivnichSlovicekButton1;
+    private javax.swing.JButton zobrazeniSlovicekButton1;
+    private javax.swing.JButton zpetSpravaSlovicek;
     // End of variables declaration//GEN-END:variables
 }

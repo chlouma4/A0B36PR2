@@ -309,24 +309,28 @@ public class Uzivatel {
      * @param opakovaneHeslo
      * @return 
      */
-    public int vytvorUzivatele(String jmeno,String heslo,String opakovaneHeslo){
-        System.out.println("jmeno "+jmeno+" heslo "+heslo+" heslo opak"+opakovaneHeslo  );
+    public boolean vytvorUzivatele(String jmeno,String heslo,String opakovaneHeslo){
         if(jmeno.equals("") || heslo.equals("") || opakovaneHeslo.equals("")){
-              return 4;
+           JOptionPane.showMessageDialog(this.pane, "Některý z údajů nebyl zadán", "Chyba!", JOptionPane.WARNING_MESSAGE);
+           return false;
         }
         if(zkontrolujJmeno(jmeno)== true){
-            return 1;
+     JOptionPane.showMessageDialog(this.pane, "Jmeno je jiz obsazene prosim vyberte si jine", "Chyba!", JOptionPane.WARNING_MESSAGE);
+       return false;
         }
         if(heslo.equals(opakovaneHeslo)== false){
-            return 2;
+          JOptionPane.showMessageDialog(this.pane, "Hesla se neshoduji", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        return false;
         }
         if(heslo.length()==4 | heslo.length()==6){
         this.setJmeno(jmeno);
         this.zasifrujHeslo(heslo);
         this.ulozNovehoUzivatele();
-        return 0;
+        return true;
+        }else{
+             JOptionPane.showMessageDialog(this.pane, "Heslo nema predepsanou delku", "Chyba!", JOptionPane.WARNING_MESSAGE);
+             return false;
         }
-    return 3;
     }
     /**Metoda ktera testuje jake ma hrac pravomoce.
      * Parametr hrac je jmeno hrace ktery vytvoril prave spusteny slovnik.

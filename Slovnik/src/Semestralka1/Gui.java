@@ -10,57 +10,98 @@ import java.awt.GridLayout;
  *
  * @author Marco
  */
-
-
-public class Gui extends javax.swing.JFrame  {
-     Uzivatel hrac = new Uzivatel(this.rootPane);
+public class Gui extends javax.swing.JFrame {
+    public int [] nasatveniTestu_spatneOdpovedi;
+    Uzivatel uzivatel = new Uzivatel(this.rootPane);
     Slovník slovnik = new Slovník(this.rootPane);
-     static Gui frame;
+    static Gui myFrame;
 
-    /**Metoda která přepíná jednotlivé Jpanely.
-     * Parametrem panel se určuje jaký panel se má zobrazit takto:
-     * 1- Prihlaseni; 2- VyberSlovnik; 3- Menu;
-     * 
-     * @param panel 
+    /**
+     * Metoda která přepíná jednotlivé Jpanely. Parametrem panel se urci ktery 
+     * panel se ma nastavit.
+     *
+     * @param panel
+     * 1- Prihlaseni; 2- VyberSlovnik; 3- Menu; 4- VytvorNovyUcet;
+     * 5- SpravaSlovicek; 6- PridaniSlovicek; 7- SmazaniSlovicek;
+     * 8- ZobrazeniSlovicek; 9- ZobrazeniNeaktivnichSlovicek;
+     * 10-AktivaceNeaktivnichSlov; 11- Statistiky; 
+     * 12- NastaveniTestu; 13- Test; 14- VyhodnoceniTestu;
+     * 15- SpravaSlovniku; 16- ZobrazeniSlovniku;
+     * 17 - NovySlovnik; 18- SmazaniSlovniku;
      */
- 
- public   void  setView(int panel){
+    public void setMyView(int panel) {
         this.getContentPane().removeAll();
-        this.getContentPane().setLayout(new GridLayout(1,1,1,1));
-        switch(panel){
+        this.getContentPane().setLayout(new GridLayout(1, 1, 1, 1));
+        switch (panel) {
             case 1:
-                this.jPanel1=new Prihlaseni(slovnik,hrac,frame);
+                this.jPanel1 = new Prihlaseni(slovnik, uzivatel, myFrame);
                 break;
             case 2:
-                this.jPanel1= new VyberSlovnik(this.slovnik,this.hrac,frame);
+                this.jPanel1 = new VyberSlovnik(this.slovnik, this.uzivatel, myFrame);
                 break;
             case 3:
-                this.jPanel1= new Menu(frame);
+                this.jPanel1 = new Menu(myFrame);
+                break;
+            case 4:
+                this.jPanel1= new VytvorNovyUcet(this.slovnik, this.uzivatel, myFrame);
+                break;
+            case 5:
+                this.jPanel1 = new SpravaSlovicek(this.slovnik, this.uzivatel, myFrame);
+                break;
+            case 6:
+                this.jPanel1= new PridaniSlovicek(this.slovnik, this.uzivatel, myFrame);
+                break;
+            case 7:
+                this.jPanel1= new SmazaniSlovicek(this.slovnik, this.uzivatel, myFrame);
+                break;
+            case 8:
+                this.jPanel1 = new ZobrazeniSlovicek(this.slovnik,myFrame);
+                break;
+            case 9:
+                this.jPanel1=new ZobrazeniNeaktivnichSlovicek(this.slovnik,myFrame);
+                break;
+            case 10:
+                this.jPanel1=new AktivaceNeaktivnichSlov(this.slovnik,myFrame);
+                break;
+            case 11:
+                this.jPanel1= new Statistiky(myFrame);
+                break;
+            case 12:
+                this.jPanel1= new NastaveniTestu(myFrame);
+                break;
+            case 13:
+                this.jPanel1= new Test(this.slovnik,myFrame);
+                break;
+            case 14 :
+                this.jPanel1= new VyhodnoceniTestu(this.slovnik,myFrame);
+                break;
+            case 15:
+                this.jPanel1= new SpravaSlovniku(myFrame);
+                break;
+            case 16:
+                this.jPanel1= new ZobrazeniSlovniku(myFrame);
+                break;
+            case 17:
+                this.jPanel1= new NovySlovnik(myFrame);
+                break;
+            case 18:
+                this.jPanel1= new SmazaniSlovniku(myFrame);
                 break;
         }
         jPanel1.setSize(jPanel1.getPreferredSize());
         this.getContentPane().add(jPanel1);
         this.getContentPane().setSize(jPanel1.getPreferredSize());
         pack();
-        
-}
+
+    }
 
     /**
      * Creates new form Gui
      */
     public Gui() {
-        
-         
+        this.setTitle("Slovnik");
         initComponents();
-        this.setView(1);
-       /* this.getContentPane().removeAll();
-        this.getContentPane().setLayout(new GridLayout(1,1,1,1));
-        jPanel1=new Menu();
-        jPanel1.setSize(jPanel1.getPreferredSize());
-        this.getContentPane().add(jPanel1);
-        this.getContentPane().setSize(jPanel1.getPreferredSize());
-        pack();
-    */}
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -79,27 +120,27 @@ public class Gui extends javax.swing.JFrame  {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 356, Short.MAX_VALUE)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
+            .addGap(0, 336, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(31, 31, 31))
         );
 
@@ -110,7 +151,7 @@ public class Gui extends javax.swing.JFrame  {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -138,9 +179,10 @@ public class Gui extends javax.swing.JFrame  {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-             frame=new Gui();
-             frame.setVisible(true);
-             
+                Gui.myFrame = new Gui();
+                Gui.myFrame.setMyView(1);
+                Gui.myFrame.setVisible(true);
+
             }
         });
     }

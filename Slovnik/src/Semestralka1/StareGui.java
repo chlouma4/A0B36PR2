@@ -188,6 +188,8 @@ public class StareGui extends javax.swing.JFrame {
         this.test.setVisible(false);
         this.vyhodnoceniTestu.setVisible(false);
         this.test.setVisible(false);
+        this.vytvoreniSlovniku.setVisible(false);
+        this.smazaniSlovniku.setVisible(false);
         table.getColumnModel().getColumn(0).setPreferredWidth(250);
         table.getColumnModel().getColumn(1).setPreferredWidth(140);
         table.getColumnModel().getColumn(2).setPreferredWidth(140);
@@ -206,6 +208,13 @@ public class StareGui extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         Prihlaseni = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -344,6 +353,27 @@ public class StareGui extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
         vytvorNovySlovnik = new javax.swing.JButton();
+        smazaniSlovniku = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        textAreaSmazaniSlovniku = new javax.swing.JTextArea();
+        jButton16 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        spinnerSmazaniSlovniku = new javax.swing.JSpinner();
+        vymazatSlovnik = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+
+        jTabbedPane2.addTab("tab1", jTabbedPane3);
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("jMenu5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1562,6 +1592,11 @@ public class StareGui extends javax.swing.JFrame {
         });
 
         jButton14.setText("Smazat Slovnik");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         zpetDoMenuZSpravaSlovicek.setText("Zpet");
         zpetDoMenuZSpravaSlovicek.addActionListener(new java.awt.event.ActionListener() {
@@ -1709,6 +1744,84 @@ public class StareGui extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
+        jLabel35.setText("Smazani Slovniku");
+
+        textAreaSmazaniSlovniku.setEditable(false);
+        textAreaSmazaniSlovniku.setColumns(20);
+        textAreaSmazaniSlovniku.setRows(5);
+        jScrollPane7.setViewportView(textAreaSmazaniSlovniku);
+
+        jButton16.setText("Zpet");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setText("Vybetre slovnik ke smazani:");
+
+        spinnerSmazaniSlovniku.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+
+        vymazatSlovnik.setText("Vymazat");
+        vymazatSlovnik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vymazatSlovnikActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout smazaniSlovnikuLayout = new javax.swing.GroupLayout(smazaniSlovniku);
+        smazaniSlovniku.setLayout(smazaniSlovnikuLayout);
+        smazaniSlovnikuLayout.setHorizontalGroup(
+            smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                .addGroup(smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton16)
+                        .addGap(26, 26, 26)
+                        .addComponent(spinnerSmazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(vymazatSlovnik))
+                    .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jLabel35))
+                    .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smazaniSlovnikuLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel36)
+                .addGap(57, 57, 57))
+        );
+        smazaniSlovnikuLayout.setVerticalGroup(
+            smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spinnerSmazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton16)
+                    .addComponent(vymazatSlovnik))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 602, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 419, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1737,8 +1850,8 @@ public class StareGui extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -1756,7 +1869,11 @@ public class StareGui extends javax.swing.JFrame {
                                 .addComponent(spravaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(zobrazeniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(vytvoreniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(vytvoreniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(smazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(1548, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -1771,9 +1888,9 @@ public class StareGui extends javax.swing.JFrame {
                         .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pridaniSlovicekPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(23, 23, 23)
                         .addComponent(aktivaceSlovicek12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -1789,13 +1906,16 @@ public class StareGui extends javax.swing.JFrame {
                                         .addComponent(zobrazeniNeaktivnichSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(spravaSlovicek1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(zobrazeniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(spravaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(zobrazeniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spravaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(vytvoreniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vytvoreniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(smazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(48, 48, 48)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1840,28 +1960,28 @@ public class StareGui extends javax.swing.JFrame {
     }//GEN-LAST:event_zpetDoPrihlasActionPerformed
 
     private void vytvorUcetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vytvorUcetButtonActionPerformed
-        int uspesnost = uzivatel.vytvorUzivatele(this.jmenoUctu.getText(),
-                String.valueOf(this.hesloNovehoUctu.getPassword()),
-                String.valueOf(this.opakovaneHesloNovehoUctu.getPassword()));
-        switch (uspesnost) {
-            case 0:
-                JOptionPane.showMessageDialog(rootPane, "Ucet byl uspesne zalozen");
-                this.novyUcet.setVisible(false);
-                this.Prihlaseni.setVisible(true);
-                this.setSize(250, 200);
-                break;
-            case 1:
-                JOptionPane.showMessageDialog(rootPane, "Jmeno je jiz obsazene prosim vyberte si jine", "Chyba!", JOptionPane.WARNING_MESSAGE);
-                break;
-            case 2:
-                JOptionPane.showMessageDialog(rootPane, "Hesla se neshoduji", "Chyba!", JOptionPane.WARNING_MESSAGE);
-                break;
-            case 3:
-                JOptionPane.showMessageDialog(rootPane, "Heslo nema predepsanou delku", "Chyba!", JOptionPane.WARNING_MESSAGE);
-                break;
-            case 4:
-                JOptionPane.showMessageDialog(rootPane, "Některý z údajů nebyl zadán", "Chyba!", JOptionPane.WARNING_MESSAGE);
-        }
+        /*        int uspesnost = uzivatel.vytvorUzivatele(this.jmenoUctu.getText(),
+         String.valueOf(this.hesloNovehoUctu.getPassword()),
+         String.valueOf(this.opakovaneHesloNovehoUctu.getPassword()));
+         switch (uspesnost) {
+         case 0:
+         JOptionPane.showMessageDialog(rootPane, "Ucet byl uspesne zalozen");
+         this.novyUcet.setVisible(false);
+         this.Prihlaseni.setVisible(true);
+         this.setSize(250, 200);
+         break;
+         case 1:
+         JOptionPane.showMessageDialog(rootPane, "Jmeno je jiz obsazene prosim vyberte si jine", "Chyba!", JOptionPane.WARNING_MESSAGE);
+         break;
+         case 2:
+         JOptionPane.showMessageDialog(rootPane, "Hesla se neshoduji", "Chyba!", JOptionPane.WARNING_MESSAGE);
+         break;
+         case 3:
+         JOptionPane.showMessageDialog(rootPane, "Heslo nema predepsanou delku", "Chyba!", JOptionPane.WARNING_MESSAGE);
+         break;
+         case 4:
+         JOptionPane.showMessageDialog(rootPane, "Některý z údajů nebyl zadán", "Chyba!", JOptionPane.WARNING_MESSAGE);
+         }*/
     }//GEN-LAST:event_vytvorUcetButtonActionPerformed
 
     private void jmenoUctuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenoUctuActionPerformed
@@ -1954,12 +2074,10 @@ public class StareGui extends javax.swing.JFrame {
     }//GEN-LAST:event_uplneVymazaniActionPerformed
 
     private void deaktivujDvojciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deaktivujDvojciActionPerformed
-        int volba;
-        volba = 0;
         if (((Integer) this.cisloKeSmazani.getValue()) > slovnik.getPocetBunek()) {
             JOptionPane.showMessageDialog(rootPane, "Zadana dvojce neexistuje", "Chyba", JOptionPane.WARNING_MESSAGE);
         } else {
-            volba = JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete deaktivovat dvojci slovicek "
+            int volba = JOptionPane.showConfirmDialog(rootPane, "Opravdu chcete deaktivovat dvojci slovicek "
                     + this.slovnik.vypisXZeSpojovehoSeznamu((Integer) this.cisloKeSmazani.getValue()), "Chyba!", JOptionPane.YES_NO_OPTION);
 
             if (volba == 0) {
@@ -2037,31 +2155,6 @@ public class StareGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_vyberSlovnikActionPerformed
 
-    private void ukoncitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ukoncitProgramActionPerformed
-        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
-        this.slovnik.vycistiSpojovySeznam();
-        System.exit(0);
-    }//GEN-LAST:event_ukoncitProgramActionPerformed
-
-    private void odhlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasitSeActionPerformed
-        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
-        this.slovnik.vycistiSpojovySeznam();
-        this.Menu.setVisible(false);
-        this.Prihlaseni.setVisible(true);
-    }//GEN-LAST:event_odhlasitSeActionPerformed
-
-    private void zmenaSlovnikuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zmenaSlovnikuActionPerformed
-        this.slovnik.vycistiSpojovySeznam();
-        this.Menu.setVisible(false);
-        this.vyberSlovnikPanel.setVisible(true);
-    }//GEN-LAST:event_zmenaSlovnikuActionPerformed
-
-    private void spravaSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovicekButtonActionPerformed
-        this.Menu.setVisible(false);
-        this.spravaSlovicek.setBounds(0, 0, 330, 250);
-        this.spravaSlovicek1.setVisible(true);
-    }//GEN-LAST:event_spravaSlovicekButtonActionPerformed
-
     private void pridaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButton1ActionPerformed
         if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
             this.pridaniSlovicekPanel1.setVisible(true);
@@ -2135,20 +2228,6 @@ public class StareGui extends javax.swing.JFrame {
         this.zobrazeniAktivaceSlovicek.setText("");
     }//GEN-LAST:event_cleanAktivaceSlovicekActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (this.slovnik.getPocetBunek() == 0 && this.slovnik.neaktivni.isEmpty() == true) {
-            JOptionPane.showMessageDialog(rootPane, "Nejsou zadna slova k zobrazeni");
-        } else if (this.slovnik.getPocetBunek() == 0 && this.slovnik.neaktivni.isEmpty() == false) {
-            this.table.setModel(this.dataModelNeaktivni);
-            this.jButton8.setText("Zobrazit statistiku pro aktivni slova");
-            this.Menu.setVisible(false);
-            this.statistiky.setVisible(true);
-        } else {
-            this.Menu.setVisible(false);
-            this.statistiky.setVisible(true);
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         if (this.jButton8.getText().equals("Zobrazit statistiku pro aktivni slova")) {
             if (this.slovnik.getPocetBunek() == 0) {
@@ -2172,11 +2251,6 @@ public class StareGui extends javax.swing.JFrame {
         this.Menu.setVisible(true);
     }//GEN-LAST:event_statistikyZpetActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.Menu.setVisible(false);
-        this.nastaveniTestu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void kamPrekladatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kamPrekladatActionPerformed
         if (this.kamPrekladat.getText().equals("Cestiny")) {
             this.kamPrekladat.setText("Anglictiny");
@@ -2194,72 +2268,67 @@ public class StareGui extends javax.swing.JFrame {
 
         this.nastaveniTestu.setVisible(false);
         this.test.setVisible(true);
-      generovanaCisla = new Integer[(Integer) this.pocetOtazek.getValue()];
+        generovanaCisla = new Integer[(Integer) this.pocetOtazek.getValue()];
         generovanaCisla = generatorNahodnychCisel((Integer) this.pocetOtazek.getValue(),
                 this.slovnik.getPocetBunek(),
-                this.slovnik.sNejvissimPocetemSpatnychOdpovedi(((Integer) this.pocetOtazek.getValue())/2));
+                this.slovnik.sNejvissimPocetemSpatnychOdpovedi(((Integer) this.pocetOtazek.getValue()) / 2));
         this.spatneOdpovedi.clear();
-        if(this.kamPrekladat.getText().equals("Cestiny")){
-            preklad=1;
-        }else{
-            preklad=2;
+        if (this.kamPrekladat.getText().equals("Cestiny")) {
+            preklad = 1;
+        } else {
+            preklad = 2;
         }
-        this.citac=0;
+        this.citac = 0;
         this.kPrekladu1.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], preklad));
-        this.progresTest.setMaximum((Integer)this.pocetOtazek.getValue());
-        this.progresTest.setValue(citac+1);
+        this.progresTest.setMaximum((Integer) this.pocetOtazek.getValue());
+        this.progresTest.setValue(citac + 1);
 
 
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void okTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okTestActionPerformed
-     if(this.kPrekladu2.getText().equals("")){
-         JOptionPane.showMessageDialog(rootPane, "Neviplnili jste policko","Chyba!",JOptionPane.WARNING_MESSAGE);
-     }else if(this.generovanaCisla.length==citac){
-        this.test.setVisible(false);
-        this.vyhodnoceniTestu.setVisible(true);
-        if(this.spatneOdpovedi.isEmpty()){
-            this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " + this.generovanaCisla.length + " slovicek  \n z nichz jste na"
-                    + "vsechny  odpovedel/a spravne. \n Gratuluji! - Congratulations!");
-        }else{
-            this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " +this.generovanaCisla.length  + " slovicek  \n z nichz jste na " + spatneOdpovedi.size() + ""
-                            + " odpovedel/a spatne");
-              int procenta = (100 * (this.generovanaCisla.length - spatneOdpovedi.size())) / this.generovanaCisla.length;
-            this.textAreaVyhodnoceniTestu.append("Vase uspesnost je"+procenta+"% \n Slovicka ktera jste zodpovedel/a spatne ve spravnem prekladu");
+        if (this.kPrekladu2.getText().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Neviplnili jste policko", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        } else if (this.generovanaCisla.length == citac) {
+            this.test.setVisible(false);
+            this.vyhodnoceniTestu.setVisible(true);
+            if (this.spatneOdpovedi.isEmpty()) {
+                this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " + this.generovanaCisla.length + " slovicek  \n z nichz jste na"
+                        + "vsechny  odpovedel/a spravne. \n Gratuluji! - Congratulations!");
+            } else {
+                this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " + this.generovanaCisla.length + " slovicek  \n z nichz jste na " + spatneOdpovedi.size() + ""
+                        + " odpovedel/a spatne");
+                int procenta = (100 * (this.generovanaCisla.length - spatneOdpovedi.size())) / this.generovanaCisla.length;
+                this.textAreaVyhodnoceniTestu.append("Vase uspesnost je" + procenta + "% \n Slovicka ktera jste zodpovedel/a spatne ve spravnem prekladu");
+            }
+            for (int i = 0; i < this.spatneOdpovedi.size(); i++) {
+                this.textAreaVyhodnoceniTestu.append("" + this.slovnik.vypisXZeSpojovehoSeznamu(Integer.valueOf((String) this.spatneOdpovedi.get(i))));
+            }
+
+
         }
-         for (int i = 0; i < this.spatneOdpovedi.size(); i++) {
-           this.textAreaVyhodnoceniTestu.append(""+this.slovnik.vypisXZeSpojovehoSeznamu(Integer.valueOf((String)this.spatneOdpovedi.get(i))));    
-         }
-        
-        
-     }
-     citac=citac+1;
-     boolean testOdpovedi;
-     String prelozeno;
-     this.kPrekladu1.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], preklad));
-     this.progresTest.setValue(citac+1);
-      prelozeno=this.kPrekladu2.getText();
-        prelozeno=prelozeno.toLowerCase();
-         testOdpovedi=prelozeno.equals(this.slovnik.getObsahBunky(this.generovanaCisla[citac], preklad));
-         if(testOdpovedi==true){
-             this.slovnik.upravStatistiku(this.generovanaCisla[citac], 0);
-         }else{
-             this.slovnik.upravStatistiku(this.generovanaCisla[citac], 1);
-             this.spatneOdpovedi.add(this.generovanaCisla[citac]);
-         }
-     
-      
+        citac = citac + 1;
+        boolean testOdpovedi;
+        String prelozeno;
+        this.kPrekladu1.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], preklad));
+        this.progresTest.setValue(citac + 1);
+        prelozeno = this.kPrekladu2.getText();
+        prelozeno = prelozeno.toLowerCase();
+        testOdpovedi = prelozeno.equals(this.slovnik.getObsahBunky(this.generovanaCisla[citac], preklad));
+        if (testOdpovedi == true) {
+            this.slovnik.upravStatistiku(this.generovanaCisla[citac], 0);
+        } else {
+            this.slovnik.upravStatistiku(this.generovanaCisla[citac], 1);
+            this.spatneOdpovedi.add(this.generovanaCisla[citac]);
+        }
+
+
     }//GEN-LAST:event_okTestActionPerformed
 
     private void doMenuZVyhodnoceniTestuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doMenuZVyhodnoceniTestuActionPerformed
         this.vyhodnoceniTestu.setVisible(false);
         this.Menu.setVisible(true);
     }//GEN-LAST:event_doMenuZVyhodnoceniTestuActionPerformed
-
-    private void spravaSlovnikuButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovnikuButonActionPerformed
-        this.Menu.setVisible(false);
-        this.spravaSlovniku.setVisible(true);
-    }//GEN-LAST:event_spravaSlovnikuButonActionPerformed
 
     private void zpetDoMenuZSpravaSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetDoMenuZSpravaSlovicekActionPerformed
         this.spravaSlovniku.setVisible(false);
@@ -2274,12 +2343,12 @@ public class StareGui extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         this.spravaSlovniku.setVisible(false);
         this.zobrazeniSlovniku.setVisible(true);
-        String [] seznam =new String [this.slovnik.getPocetSlovniku()];
-        seznam=this.slovnik.getSeznamSlovniku();
+        String[] seznam = new String[this.slovnik.getPocetSlovniku()];
+        seznam = this.slovnik.getSeznamSlovniku();
         for (int i = 0; i < seznam.length; i++) {
-             this.textAreaZobrazeniSlovniku.append(""+seznam[i]+"\n");
+            this.textAreaZobrazeniSlovniku.append("" + seznam[i] + "\n");
         }
-       
+
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -2295,6 +2364,81 @@ public class StareGui extends javax.swing.JFrame {
     private void vytvorNovySlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vytvorNovySlovnikActionPerformed
         this.slovnik.vytvorNovySlovnik(this.nazevNovehoSlovniku.getText());
     }//GEN-LAST:event_vytvorNovySlovnikActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 3)) {
+            this.spravaSlovniku.setVisible(false);
+            this.smazaniSlovniku.setVisible(true);
+            String[] seznam = new String[this.slovnik.getPocetSlovniku()];
+            seznam = this.slovnik.getSeznamSlovniku();
+            for (int i = 0; i < seznam.length; i++) {
+                this.textAreaSmazaniSlovniku.append("" + seznam[i] + "\n");
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        this.smazaniSlovniku.setVisible(false);
+        this.spravaSlovniku.setVisible(false);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void vymazatSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vymazatSlovnikActionPerformed
+        if (this.slovnik.getPocetSlovniku() <= Integer.valueOf((String) this.cisloKeSmazani.getValue())) {
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Slovnik s timto cislem neexistuje!", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_vymazatSlovnikActionPerformed
+
+    private void spravaSlovnikuButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovnikuButonActionPerformed
+        this.Menu.setVisible(false);
+        this.spravaSlovniku.setVisible(true);
+    }//GEN-LAST:event_spravaSlovnikuButonActionPerformed
+
+    private void ukoncitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ukoncitProgramActionPerformed
+        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
+        this.slovnik.vycistiSpojovySeznam();
+        System.exit(0);
+    }//GEN-LAST:event_ukoncitProgramActionPerformed
+
+    private void odhlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasitSeActionPerformed
+        this.slovnik.ulozSlovnik(this.uzivatel.getJmeno());
+        this.slovnik.vycistiSpojovySeznam();
+        this.Menu.setVisible(false);
+        this.Prihlaseni.setVisible(true);
+    }//GEN-LAST:event_odhlasitSeActionPerformed
+
+    private void zmenaSlovnikuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zmenaSlovnikuActionPerformed
+        this.slovnik.vycistiSpojovySeznam();
+        this.Menu.setVisible(false);
+        this.vyberSlovnikPanel.setVisible(true);
+    }//GEN-LAST:event_zmenaSlovnikuActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (this.slovnik.getPocetBunek() == 0 && this.slovnik.neaktivni.isEmpty() == true) {
+            JOptionPane.showMessageDialog(rootPane, "Nejsou zadna slova k zobrazeni");
+        } else if (this.slovnik.getPocetBunek() == 0 && this.slovnik.neaktivni.isEmpty() == false) {
+            this.table.setModel(this.dataModelNeaktivni);
+            this.jButton8.setText("Zobrazit statistiku pro aktivni slova");
+            this.Menu.setVisible(false);
+            this.statistiky.setVisible(true);
+        } else {
+            this.Menu.setVisible(false);
+            this.statistiky.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void spravaSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovicekButtonActionPerformed
+        this.Menu.setVisible(false);
+        this.spravaSlovicek.setBounds(0, 0, 330, 250);
+        this.spravaSlovicek1.setVisible(true);
+    }//GEN-LAST:event_spravaSlovicekButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.Menu.setVisible(false);
+        this.nastaveniTestu.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2361,6 +2505,7 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2397,18 +2542,29 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTextField jmenoUctu;
     private javax.swing.JTextField kPrekladu1;
     private javax.swing.JTextField kPrekladu2;
@@ -2431,6 +2587,8 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JProgressBar progresTest;
     private javax.swing.JButton smazaniSlovicekButton;
     private javax.swing.JButton smazaniSlovicekButton1;
+    private javax.swing.JPanel smazaniSlovniku;
+    private javax.swing.JSpinner spinnerSmazaniSlovniku;
     private javax.swing.JButton spravaHracuButton;
     private javax.swing.JPanel spravaSlovicek;
     private javax.swing.JPanel spravaSlovicek1;
@@ -2441,6 +2599,7 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JButton statistikyZpet;
     private javax.swing.JTable table;
     private javax.swing.JPanel test;
+    private javax.swing.JTextArea textAreaSmazaniSlovniku;
     private javax.swing.JTextArea textAreaVyhodnoceniTestu;
     private javax.swing.JTextArea textAreaZobrazeniSlovniku;
     private javax.swing.JButton ukoncitProgram;
@@ -2450,6 +2609,7 @@ public class StareGui extends javax.swing.JFrame {
     private javax.swing.JPanel vyberSlovnikPanel;
     private javax.swing.JComboBox vyberUcet;
     private javax.swing.JPanel vyhodnoceniTestu;
+    private javax.swing.JButton vymazatSlovnik;
     private javax.swing.JButton vytvorNovySlovnik;
     private javax.swing.JButton vytvorNovyUcet;
     private javax.swing.JButton vytvorUcetButton;

@@ -4,24 +4,21 @@
  */
 package Semestralka1;
 
-import java.awt.GridLayout;
-import java.lang.reflect.Method;
-import javax.swing.JFrame;
-import javax.swing.JRootPane;
+
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Marco
  */
 public class Menu extends javax.swing.JPanel {
-  private Gui frame;
-  Uzivatel hrac;
-    Slovník slovnik;
+  private Gui gui;
     /**
      * Creates new form Menu
      */
     public Menu(Gui frame) {
-        this.frame=frame;
+        this.gui=frame;
         initComponents();
     }
 
@@ -35,23 +32,24 @@ public class Menu extends javax.swing.JPanel {
     private void initComponents() {
 
         Menu = new javax.swing.JPanel();
-        Zkouseni = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         spravaSlovicekButton = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         zmenaSlovniku = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         odhlasitSe = new javax.swing.JButton();
         ukoncitProgram = new javax.swing.JButton();
+        spravaSlovnikuButon = new javax.swing.JButton();
+        spravaHracuButton = new javax.swing.JButton();
 
         Menu.setBackground(new java.awt.Color(0, 102, 204));
-        Menu.setPreferredSize(new java.awt.Dimension(370, 310));
 
-        Zkouseni.setBackground(new java.awt.Color(0, 0, 204));
-        Zkouseni.setForeground(new java.awt.Color(0, 204, 0));
-        Zkouseni.setText("Zkouseni");
-        Zkouseni.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setForeground(new java.awt.Color(0, 204, 0));
+        jButton1.setText("Zkouseni");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZkouseniActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -69,6 +67,11 @@ public class Menu extends javax.swing.JPanel {
         jButton3.setText("Statistiky");
         jButton3.setMaximumSize(new java.awt.Dimension(146, 46));
         jButton3.setMinimumSize(new java.awt.Dimension(146, 46));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         zmenaSlovniku.setBackground(new java.awt.Color(0, 0, 204));
         zmenaSlovniku.setForeground(new java.awt.Color(0, 204, 0));
@@ -103,6 +106,19 @@ public class Menu extends javax.swing.JPanel {
             }
         });
 
+        spravaSlovnikuButon.setBackground(new java.awt.Color(0, 0, 204));
+        spravaSlovnikuButon.setForeground(new java.awt.Color(0, 204, 0));
+        spravaSlovnikuButon.setText("Sprava slovniku");
+        spravaSlovnikuButon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spravaSlovnikuButonActionPerformed(evt);
+            }
+        });
+
+        spravaHracuButton.setBackground(new java.awt.Color(0, 0, 204));
+        spravaHracuButton.setForeground(new java.awt.Color(0, 204, 0));
+        spravaHracuButton.setText("Sprava Hracu");
+
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
         MenuLayout.setHorizontalGroup(
@@ -110,39 +126,45 @@ public class Menu extends javax.swing.JPanel {
             .addGroup(MenuLayout.createSequentialGroup()
                 .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MenuLayout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel8))
+                    .addGroup(MenuLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Zkouseni, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(spravaSlovicekButton, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(odhlasitSe, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(odhlasitSe, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spravaSlovnikuButon, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(62, 62, 62)
                         .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(zmenaSlovniku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ukoncitProgram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(MenuLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jLabel8)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                            .addComponent(ukoncitProgram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(spravaHracuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
                 .addComponent(jLabel8)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Zkouseni, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(spravaSlovicekButton, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(zmenaSlovniku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spravaSlovicekButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(zmenaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(odhlasitSe, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(ukoncitProgram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(spravaHracuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spravaSlovnikuButon, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(odhlasitSe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ukoncitProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -157,41 +179,51 @@ public class Menu extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void spravaSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovicekButtonActionPerformed
-        this.Menu.setVisible(false);
-      
+          this.gui.setMyView(5);
     }//GEN-LAST:event_spravaSlovicekButtonActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (this.gui.slovnik.getPocetBunek() == 0 && this.gui.slovnik.neaktivni.isEmpty() == true) {
+            JOptionPane.showMessageDialog(this.gui, "Nejsou zadna slova k zobrazeni");
+        } else {
+      this.gui.setMyView(11);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     private void zmenaSlovnikuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zmenaSlovnikuActionPerformed
-        this.slovnik.vycistiSpojovySeznam();
-        this.Menu.setVisible(false);
+        this.gui.slovnik.vycistiSpojovySeznam();
+       this.gui.setMyView(2);
     }//GEN-LAST:event_zmenaSlovnikuActionPerformed
 
     private void odhlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasitSeActionPerformed
-        this.slovnik.ulozSlovnik(this.hrac.getJmeno());
-        this.slovnik.vycistiSpojovySeznam();
-        this.Menu.setVisible(false);
-
+        this.gui.slovnik.ulozSlovnik(this.gui.uzivatel.getJmeno());
+        this.gui.slovnik.vycistiSpojovySeznam();
     }//GEN-LAST:event_odhlasitSeActionPerformed
 
     private void ukoncitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ukoncitProgramActionPerformed
-        this.slovnik.ulozSlovnik(this.hrac.getJmeno());
-        this.slovnik.vycistiSpojovySeznam();
+        this.gui.slovnik.ulozSlovnik(this.gui.uzivatel.getJmeno());
+        this.gui.slovnik.vycistiSpojovySeznam();
         System.exit(0);
     }//GEN-LAST:event_ukoncitProgramActionPerformed
 
-    private void ZkouseniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZkouseniActionPerformed
-           
-        
-    }//GEN-LAST:event_ZkouseniActionPerformed
+    private void spravaSlovnikuButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovnikuButonActionPerformed
+      
+    }//GEN-LAST:event_spravaSlovnikuButonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Menu;
-    private javax.swing.JButton Zkouseni;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JButton odhlasitSe;
+    private javax.swing.JButton spravaHracuButton;
     private javax.swing.JButton spravaSlovicekButton;
+    private javax.swing.JButton spravaSlovnikuButon;
     private javax.swing.JButton ukoncitProgram;
     private javax.swing.JButton zmenaSlovniku;
     // End of variables declaration//GEN-END:variables
