@@ -10,7 +10,7 @@ package Semestralka1;
  */
 public class VyhodnoceniTestu extends javax.swing.JPanel {
         Slovník slovnik;
-    Gui gui;
+         Gui gui;
 
     /**
      * Creates new form VyhodnoceniTestu
@@ -18,29 +18,33 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
     
     
     private void  vyhodnot (){
-           if (this.gui.nasatveniTestu_spatneOdpovedi.length==1) {
+           if (this.gui.spatneOdpovedi.length==1) {
                 this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " + 
-                        this.gui.nasatveniTestu_spatneOdpovedi[this.gui.nasatveniTestu_spatneOdpovedi.length-1] + 
-                        " slovicek  \n z nichz jste na"
+                        this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1] + 
+                        " slovicek   z nichz jste na"
                         + "vsechny  odpovedel/a spravne. \n Gratuluji! - Congratulations!");
             } else {
                 this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " + 
-                        this.gui.nasatveniTestu_spatneOdpovedi[this.gui.nasatveniTestu_spatneOdpovedi.length-1]+ 
-                        " slovicek  \n z nichz jste na " + (this.gui.nasatveniTestu_spatneOdpovedi.length-1) + ""
-                        + " odpovedel/a spatne");
-                int procenta = (100 * ( this.gui.nasatveniTestu_spatneOdpovedi[this.gui.nasatveniTestu_spatneOdpovedi.length-1]
-                        - (this.gui.nasatveniTestu_spatneOdpovedi.length-1))) /
-                     this.gui.nasatveniTestu_spatneOdpovedi[this.gui.nasatveniTestu_spatneOdpovedi.length-1];
-                this.textAreaVyhodnoceniTestu.append("Vase uspesnost je" + procenta + "% \n Slovicka ktera jste zodpovedel/a spatne ve spravnem prekladu");
+                        this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1]+ 
+                        " slovicek  \n z nichz jste na " + (this.gui.spatneOdpovedi.length-1) + ""
+                        + " odpovedel/a spatne\n");
+                
+                System.out.println("pocet otazek "+ this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1]);
+                System.out.println("pocet spatnzch odpovedi "+(this.gui.spatneOdpovedi.length-1));
+                int procenta = (100 * ( this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1]
+                        - (this.gui.spatneOdpovedi.length-1))) /
+                     this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1];
+                this.textAreaVyhodnoceniTestu.append("Vase uspesnost je " + procenta + "% \n Slovicka ktera jste zodpovedel/a spatne ve spravnem prekladu\n");
             }
-            for (int i = 0; i < this.gui.nasatveniTestu_spatneOdpovedi.length-1; i++) {
-                this.textAreaVyhodnoceniTestu.append("" + this.slovnik.vypisXZeSpojovehoSeznamu(this.gui.nasatveniTestu_spatneOdpovedi[i]));
+            for (int i = 0; i < this.gui.spatneOdpovedi.length-1; i++) {
+                this.textAreaVyhodnoceniTestu.append("" + this.slovnik.vypisXZeSpojovehoSeznamu(this.gui.spatneOdpovedi[i])+"\n");
             }
     }
     public VyhodnoceniTestu(Slovník slovnik, Gui gui) {
-                this.slovnik = slovnik;
+        this.slovnik = slovnik;
         this.gui = gui;
         initComponents();
+        vyhodnot();
     }
 
     /**
@@ -76,40 +80,40 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
         vyhodnoceniTestu.setLayout(vyhodnoceniTestuLayout);
         vyhodnoceniTestuLayout.setHorizontalGroup(
             vyhodnoceniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vyhodnoceniTestuLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel30)
+                .addGap(196, 196, 196))
             .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
-                .addGroup(vyhodnoceniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel30))
-                    .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(doMenuZVyhodnoceniTestu)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane5)
+                .addContainerGap())
+            .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
+                .addGap(198, 198, 198)
+                .addComponent(doMenuZVyhodnoceniTestu)
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         vyhodnoceniTestuLayout.setVerticalGroup(
             vyhodnoceniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel30)
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(doMenuZVyhodnoceniTestu)
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(vyhodnoceniTestu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(vyhodnoceniTestu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(vyhodnoceniTestu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(vyhodnoceniTestu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

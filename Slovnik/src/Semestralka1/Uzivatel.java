@@ -276,8 +276,6 @@ public class Uzivatel {
     }
     
     public boolean prihlaseni(String jmeno, String zadane, int poradi){
-      //  System.out.println(jmeno +poradi);
-        //System.out.println(heslo1);
      this.setJmeno(jmeno);
      String []hesla = nactiUdajeOHracich(2);
      this.setHeslo(hesla[poradi]);

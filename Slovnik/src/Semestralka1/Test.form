@@ -48,13 +48,13 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="okTest" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Component id="kPrekladu1" min="-2" pref="91" max="-2" attributes="0"/>
+                                          <Component id="otazka" min="-2" pref="91" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                           <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="kPrekladu2" min="-2" pref="91" max="-2" attributes="0"/>
+                                  <Component id="odpoved" min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
@@ -73,9 +73,9 @@
                   <Component id="progresTest" min="-2" pref="28" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="kPrekladu1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="otazka" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="kPrekladu2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="odpoved" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="okTest" min="-2" max="-2" attributes="0"/>
@@ -100,7 +100,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okTestActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="kPrekladu1">
+        <Component class="javax.swing.JTextField" name="otazka">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
@@ -110,7 +110,7 @@
             <Property name="text" type="java.lang.String" value="prelozte"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="kPrekladu2">
+        <Component class="javax.swing.JTextField" name="odpoved">
         </Component>
       </SubComponents>
     </Container>

@@ -47,6 +47,7 @@ public class Slovník {
      * @param aktivita 
      */
     public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova, int aktivita) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
+        System.out.println("vkladam na konec ... spravne odpovedi "+spravneOdpovedi+" spatne odpovedi"+spatneOdpovedi);
         if (cj != null && aj != null) {
             Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi, IDSlova, aktivita);
             Bunka bunka = new Bunka(slovo, null);
@@ -99,8 +100,6 @@ public class Slovník {
 
         return slovnik + cislo1;
     }
-
-    
    
     /**Tato metoda vrati vypisSpojovySeznam vsech neaktivnich slov v poli typu String.
      * 
@@ -330,7 +329,7 @@ public String[] vypisNeaktivni(){
      * @param jmenoUzivatele 
      */
     public void nactiSlovnik(String slovnik, String jmenoUzivatele) {
-        int spravneOdpovedi, spatneOdpovedi, hrac1, i = 0, aktivni;
+        int spravneOdpovedi = 0, spatneOdpovedi = 0, hrac1, i = 0, aktivni;
         boolean test;
         this.setTypSlovniku(slovnik);
         String cj, aj, idSlova, test1;
@@ -369,9 +368,12 @@ public String[] vypisNeaktivni(){
                         try {
                             do {
                                 test1 = scanHrac.next();
-                            } while (idSlova.equals(test1));    // tento cyklus pobezi dokud nenajde pozadovane slovo ve zvolenem slovniku.
-                            spravneOdpovedi = scanHrac.nextInt();   // pokud slovo najde 
-                            spatneOdpovedi = scanHrac.nextInt();    // naskenuje tyto hodnoty.
+                                if(test1.equals(idSlova)){
+                                     spravneOdpovedi = scanHrac.nextInt();   // pokud slovo najde 
+                                         spatneOdpovedi = scanHrac.nextInt();
+                                         break;
+                                }
+                            } while (true);    // tento cyklus pobezi dokud nenarazi na posledni slovo v souboru ktere je konec.
                         } catch (Exception e) {         // pokud cyklud slovo nenajde tak dojde na konec souboru kde se potom pokusi o scan prazdneho mista
                             spravneOdpovedi = 0;       // coz skonci chybou a to znamena ze statistiky pro toto slovo nejsou a jsou nastavenz tedz na nula
                             spatneOdpovedi = 0;
@@ -561,16 +563,17 @@ public String[] vypisNeaktivni(){
      */
     public ArrayList sNejvissimPocetemSpatnychOdpovedi(int pocet){
         ArrayList odpoved= new  ArrayList();
-        ArrayList spatneOdpovedi= new ArrayList();
-        for (int i = 0; i < this.getPocetBunek(); i++) {
-            spatneOdpovedi.add(Integer.valueOf(this.getObsahBunky(i, 4)));
+        ArrayList<Integer> spatneOdpovedi= new ArrayList<>();
+        for (int i = 1; i <= this.getPocetBunek(); i++) {
+            spatneOdpovedi.add((Integer.valueOf(this.getObsahBunky(i, 4))));
         }
         for (int j = 0; j < pocet; j++) {
         int max=0;
         int pozice=0;
         for (int i = 0; i < spatneOdpovedi.size(); i++) {
-            if(Integer.valueOf((String)spatneOdpovedi.get(i)) >max){
-                max=Integer.valueOf((String)spatneOdpovedi.get(i));
+            int pom=(Integer.valueOf(spatneOdpovedi.get(i)));
+            if(pom > max){
+                max=pom;
                 pozice=i;
             }
         }

@@ -180,7 +180,7 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     
+     this.gui.setMyView(12);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void spravaSlovicekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaSlovicekButtonActionPerformed

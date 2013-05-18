@@ -21,10 +21,11 @@ public class Test extends javax.swing.JPanel {
     private int citac;
     Slovník slovnik;
     Gui gui;
-    Integer [] generovanaCisla;
+    Integer[] generovanaCisla;
     int pocetOtazek;
-    int preklad;
-      ArrayList spatneOdpovedi = new ArrayList();
+    int prekladOdkud;
+    int prekladKam;
+    ArrayList spatneOdpovedi = new ArrayList();
 
     /**
      * Creates new form Test
@@ -74,16 +75,38 @@ public class Test extends javax.swing.JPanel {
     }
 
     private void start() {
-        this.preklad=this.gui.nasatveniTestu_spatneOdpovedi[0];
-        this.pocetOtazek=this.gui.nasatveniTestu_spatneOdpovedi[1];
+        this.prekladOdkud = this.gui.nasatveniTestu[0];
+        if(this.prekladOdkud==1){
+            this.prekladKam=2;
+        }else{
+            this.prekladKam=1;
+        }
+        this.pocetOtazek = this.gui.nasatveniTestu[1];
         generovanaCisla = new Integer[this.pocetOtazek];
         generovanaCisla = generatorNahodnychCisel(this.pocetOtazek,
                 this.slovnik.getPocetBunek(),
                 this.slovnik.sNejvissimPocetemSpatnychOdpovedi(this.pocetOtazek / 2));
         this.citac = 0;
-        this.kPrekladu1.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], preklad));
+        this.otazka.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], prekladOdkud));
         this.progresTest.setMaximum(this.pocetOtazek);
-        this.progresTest.setValue(citac + 1);
+        this.progresTest.setValue(citac+1);
+    }
+    
+    private void kontrola(){
+        System.out.println("Kontroluji");
+            boolean testOdpovedi;
+            String prelozeno;
+            prelozeno = this.odpoved.getText();
+            prelozeno = prelozeno.toLowerCase();
+            testOdpovedi = prelozeno.equals(this.slovnik.getObsahBunky(this.generovanaCisla[citac], prekladKam).toLowerCase());
+            System.out.println("vysledek "+ testOdpovedi);
+            if (testOdpovedi == true) {
+                this.slovnik.upravStatistiku(this.generovanaCisla[citac], 0);
+            } else {
+                this.slovnik.upravStatistiku(this.generovanaCisla[citac], 1);
+                this.spatneOdpovedi.add(this.generovanaCisla[citac]);
+                System.out.println("pocet spatnych odpovedi "+spatneOdpovedi.size());
+            }
     }
 
     public Test(Slovník slovnik, Gui gui) {
@@ -106,9 +129,9 @@ public class Test extends javax.swing.JPanel {
         jLabel28 = new javax.swing.JLabel();
         progresTest = new javax.swing.JProgressBar();
         okTest = new javax.swing.JButton();
-        kPrekladu1 = new javax.swing.JTextField();
+        otazka = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        kPrekladu2 = new javax.swing.JTextField();
+        odpoved = new javax.swing.JTextField();
 
         jLabel28.setText("Test");
 
@@ -119,7 +142,7 @@ public class Test extends javax.swing.JPanel {
             }
         });
 
-        kPrekladu1.setEditable(false);
+        otazka.setEditable(false);
 
         jLabel29.setText("prelozte");
 
@@ -142,11 +165,11 @@ public class Test extends javax.swing.JPanel {
                                 .addGroup(testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(okTest)
                                     .addGroup(testLayout.createSequentialGroup()
-                                        .addComponent(kPrekladu1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(otazka, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(36, 36, 36)
                                         .addComponent(jLabel29)))
                                 .addGap(38, 38, 38)
-                                .addComponent(kPrekladu2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(odpoved, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 27, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -159,9 +182,9 @@ public class Test extends javax.swing.JPanel {
                 .addComponent(progresTest, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kPrekladu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(otazka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29)
-                    .addComponent(kPrekladu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(odpoved, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(okTest)
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -180,40 +203,40 @@ public class Test extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okTestActionPerformed
-        if (this.kPrekladu2.getText().equals("")) {
+        if (this.odpoved.getText().equals("")) {
             JOptionPane.showMessageDialog(this.gui, "Neviplnili jste policko", "Chyba!", JOptionPane.WARNING_MESSAGE);
-        } else if (this.generovanaCisla.length == citac) {
-            this.gui.setMyView(14);
-             this.gui.nasatveniTestu_spatneOdpovedi= new int[this.spatneOdpovedi.size()];
-             for (int i = 0; i < this.spatneOdpovedi.size(); i++) {
-                this.gui.nasatveniTestu_spatneOdpovedi[i]=(int) this.spatneOdpovedi.get(i);
-            }
-             this.gui.nasatveniTestu_spatneOdpovedi[this.spatneOdpovedi.size()]=this.generovanaCisla.length;
-         
-
-        }
-        citac = citac + 1;
-        boolean testOdpovedi;
-        String prelozeno;
-        this.kPrekladu1.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], preklad));
-        this.progresTest.setValue(citac + 1);
-        prelozeno = this.kPrekladu2.getText();
-        prelozeno = prelozeno.toLowerCase();
-        testOdpovedi = prelozeno.equals(this.slovnik.getObsahBunky(this.generovanaCisla[citac], preklad));
-        if (testOdpovedi == true) {
-            this.slovnik.upravStatistiku(this.generovanaCisla[citac], 0);
         } else {
-            this.slovnik.upravStatistiku(this.generovanaCisla[citac], 1);
-            this.spatneOdpovedi.add(this.generovanaCisla[citac]);
+            this.kontrola();
+            if (this.generovanaCisla.length-1== citac) {
+                if(!this.spatneOdpovedi.isEmpty()){
+                    System.out.println("Prosel jsem testem ");
+                this.gui.spatneOdpovedi = new int[this.spatneOdpovedi.size()+1];
+                for (int i = 0; i < this.spatneOdpovedi.size(); i++) {
+                    this.gui.spatneOdpovedi[i] = (int) this.spatneOdpovedi.get(i);
+                }
+                this.gui.spatneOdpovedi[this.spatneOdpovedi.size()] = this.generovanaCisla.length;
+                    this.gui.setMyView(14);
+                }else{
+                      System.out.println("Neprosel sem testem");
+                    this.gui.spatneOdpovedi= new int [1];
+                    this.gui.spatneOdpovedi[0]=this.generovanaCisla.length;
+                }
+                  this.gui.setMyView(14);
+            } else {
+                System.out.println("Davam dalsi otazku");
+                citac = citac + 1;
+               this.progresTest.setValue(citac+1);
+                this.otazka.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], prekladOdkud));
+                this.odpoved.setText("");
+            }
         }
-
     }//GEN-LAST:event_okTestActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JTextField kPrekladu1;
-    private javax.swing.JTextField kPrekladu2;
+    private javax.swing.JTextField odpoved;
     private javax.swing.JButton okTest;
+    private javax.swing.JTextField otazka;
     private javax.swing.JProgressBar progresTest;
     private javax.swing.JPanel test;
     // End of variables declaration//GEN-END:variables

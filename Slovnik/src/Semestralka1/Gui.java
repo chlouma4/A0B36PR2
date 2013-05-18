@@ -11,7 +11,8 @@ import java.awt.GridLayout;
  * @author Marco
  */
 public class Gui extends javax.swing.JFrame {
-    public int [] nasatveniTestu_spatneOdpovedi;
+    public int [] nasatveniTestu;
+    public int [] spatneOdpovedi;
     Uzivatel uzivatel = new Uzivatel(this.rootPane);
     Slovník slovnik = new Slovník(this.rootPane);
     static Gui myFrame;

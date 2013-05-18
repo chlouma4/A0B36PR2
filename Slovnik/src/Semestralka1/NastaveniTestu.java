@@ -4,12 +4,17 @@
  */
 package Semestralka1;
 
+import javax.swing.JOptionPane;
+
+
+
 /**
  *
  * @author Marco
  */
 public class NastaveniTestu extends javax.swing.JPanel {
 Gui gui;
+    
     /**
      * Creates new form NastaveniTestu
      */
@@ -17,7 +22,7 @@ Gui gui;
         this.gui=gui;
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,21 +75,20 @@ Gui gui;
         nastaveniTestuLayout.setHorizontalGroup(
             nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(nastaveniTestuLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
                         .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(nastaveniTestuLayout.createSequentialGroup()
                                 .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pocetOtazek, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pocetOtazek, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(kamPrekladat)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jButton11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton12)))
@@ -141,20 +145,29 @@ Gui gui;
     }//GEN-LAST:event_kamPrekladatActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
- 
+this.gui.setMyView(3); 
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-         int preklad;
+  if(this.gui.slovnik.getPocetBunek()>=((Integer)this.pocetOtazek.getValue())){
+        int preklad;
         if(this.kamPrekladat.getText().equals("Cestiny")){
             preklad=1;
         }else{
             preklad=2;
         }
-        this.gui.nasatveniTestu_spatneOdpovedi=new int [2];
-        this.gui.nasatveniTestu_spatneOdpovedi[0]=preklad;
-        this.gui.nasatveniTestu_spatneOdpovedi[1]=Integer.valueOf((String)this.pocetOtazek.getValue());
-
+        this.gui.nasatveniTestu=new int [2];
+        this.gui.nasatveniTestu[0]=preklad;
+        if((Integer)this.pocetOtazek.getValue()==1){
+            JOptionPane.showMessageDialog(this.gui, "Test o jedne otazce je jednoduchy test nastavuji pocet otazek na maximum :D");
+             this.gui.nasatveniTestu[1]=this.gui.slovnik.getPocetBunek();
+        }else{
+         this.gui.nasatveniTestu[1]=((Integer)this.pocetOtazek.getValue());   
+        }
+        this.gui.setMyView(13);
+}else{
+     JOptionPane.showMessageDialog(this.gui, "Takovy pocet slov  slovnik "+this.gui.slovnik.getTypSlovniku()+" neobsahuje", "Chyba!", JOptionPane.WARNING_MESSAGE);
+}
     }//GEN-LAST:event_jButton12ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
