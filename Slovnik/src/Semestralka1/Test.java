@@ -148,8 +148,16 @@ public class Test extends javax.swing.JPanel {
         jLabel29 = new javax.swing.JLabel();
         odpoved = new javax.swing.JTextField();
 
+        test.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 204, 0));
         jLabel28.setText("Test");
 
+        progresTest.setForeground(new java.awt.Color(255, 51, 51));
+
+        okTest.setBackground(new java.awt.Color(0, 0, 204));
+        okTest.setForeground(new java.awt.Color(0, 204, 0));
         okTest.setText("OK");
         okTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,35 +166,38 @@ public class Test extends javax.swing.JPanel {
         });
 
         otazka.setEditable(false);
+        otazka.setBackground(new java.awt.Color(0, 0, 204));
+        otazka.setForeground(new java.awt.Color(0, 204, 0));
 
-        jLabel29.setText("prelozte");
+        jLabel29.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel29.setText("přeložte");
+
+        odpoved.setBackground(new java.awt.Color(0, 0, 204));
+        odpoved.setForeground(new java.awt.Color(0, 204, 0));
 
         javax.swing.GroupLayout testLayout = new javax.swing.GroupLayout(test);
         test.setLayout(testLayout);
         testLayout.setHorizontalGroup(
             testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(testLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(progresTest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(testLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(progresTest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(testLayout.createSequentialGroup()
+                        .addComponent(otazka, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
                         .addGroup(testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(okTest)
                             .addGroup(testLayout.createSequentialGroup()
-                                .addGap(180, 180, 180)
-                                .addComponent(jLabel28))
-                            .addGroup(testLayout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(okTest)
-                                    .addGroup(testLayout.createSequentialGroup()
-                                        .addComponent(otazka, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(jLabel29)))
-                                .addGap(38, 38, 38)
+                                .addComponent(jLabel29)
+                                .addGap(57, 57, 57)
                                 .addComponent(odpoved, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 27, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(testLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabel28)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         testLayout.setVerticalGroup(
             testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,7 +213,7 @@ public class Test extends javax.swing.JPanel {
                     .addComponent(odpoved, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(okTest)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

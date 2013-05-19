@@ -33,34 +33,44 @@ private Gui gui;
         mazaniSlovicekPanel = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         deaktivujDvojci = new javax.swing.JButton();
         uplneVymazani = new javax.swing.JButton();
         zpetMazaniSlovicek = new javax.swing.JButton();
         cisloKeSmazani = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
-        jLabel14.setText("Mazani Slovicek");
+        mazaniSlovicekPanel.setBackground(new java.awt.Color(51, 102, 255));
 
-        jLabel15.setText("Cislem vyberete dvojci slovicek ke smazani.");
+        jLabel14.setBackground(new java.awt.Color(51, 102, 255));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel14.setText("Mazání slovíček");
 
-        jLabel16.setText("Pred provedenim akce se dana dvojce slovicek zabrazi.");
+        jLabel15.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel15.setText("Číslem vyberte dvojci slovíček ke smazání :");
 
-        deaktivujDvojci.setText("deaktivivat dvojci");
+        deaktivujDvojci.setBackground(new java.awt.Color(0, 0, 204));
+        deaktivujDvojci.setForeground(new java.awt.Color(0, 204, 0));
+        deaktivujDvojci.setText("Deaktivivat dvojci");
         deaktivujDvojci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deaktivujDvojciActionPerformed(evt);
             }
         });
 
-        uplneVymazani.setText("Uplne Vymazani");
+        uplneVymazani.setBackground(new java.awt.Color(0, 0, 204));
+        uplneVymazani.setForeground(new java.awt.Color(0, 204, 0));
+        uplneVymazani.setText("Úplné vymazání");
         uplneVymazani.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uplneVymazaniActionPerformed(evt);
             }
         });
 
-        zpetMazaniSlovicek.setText("Zpet");
+        zpetMazaniSlovicek.setBackground(new java.awt.Color(0, 0, 204));
+        zpetMazaniSlovicek.setForeground(new java.awt.Color(0, 204, 0));
+        zpetMazaniSlovicek.setText("Zpět");
         zpetMazaniSlovicek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zpetMazaniSlovicekActionPerformed(evt);
@@ -70,12 +80,13 @@ private Gui gui;
         cisloKeSmazani.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cisloKeSmazani.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
-        jButton1.setText("Preji do Menu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 204));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 204, 0));
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout mazaniSlovicekPanelLayout = new javax.swing.GroupLayout(mazaniSlovicekPanel);
         mazaniSlovicekPanel.setLayout(mazaniSlovicekPanelLayout);
@@ -85,24 +96,27 @@ private Gui gui;
                 .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel16)
-                            .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
-                                    .addComponent(cisloKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(deaktivujDvojci))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mazaniSlovicekPanelLayout.createSequentialGroup()
-                                    .addComponent(zpetMazaniSlovicek)
-                                    .addGap(19, 19, 19)
-                                    .addComponent(jButton1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(uplneVymazani)))))
+                        .addComponent(jLabel15)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel14)))
+                        .addContainerGap()
+                        .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                                .addComponent(cisloKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                                .addComponent(deaktivujDvojci)
+                                .addGap(18, 18, 18)
+                                .addComponent(uplneVymazani)))))
+                .addContainerGap())
+            .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(zpetMazaniSlovicek)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mazaniSlovicekPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14)
+                .addGap(87, 87, 87))
         );
         mazaniSlovicekPanelLayout.setVerticalGroup(
             mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,29 +125,27 @@ private Gui gui;
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deaktivujDvojci)
                     .addComponent(cisloKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deaktivujDvojci))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zpetMazaniSlovicek)
-                    .addComponent(jButton1)
                     .addComponent(uplneVymazani))
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(zpetMazaniSlovicek)
+                .addGap(31, 31, 31))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mazaniSlovicekPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -179,17 +191,13 @@ private Gui gui;
         this.gui.setMyView(5);
     }//GEN-LAST:event_zpetMazaniSlovicekActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       this.gui.setMyView(3);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSpinner cisloKeSmazani;
     private javax.swing.JButton deaktivujDvojci;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel mazaniSlovicekPanel;
     private javax.swing.JButton uplneVymazani;
     private javax.swing.JButton zpetMazaniSlovicek;

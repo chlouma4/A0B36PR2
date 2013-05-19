@@ -34,9 +34,12 @@ private Gui gui;
         jScrollPane2 = new javax.swing.JScrollPane();
         zobrayeniNeaktivnichSlov = new javax.swing.JTextArea();
         zpetNeaktivni = new javax.swing.JButton();
-        prejitDoMenuNeaktivni = new javax.swing.JButton();
 
-        jLabel17.setText("Zobrazeni neaktivnich slovicek");
+        zobrazeniNeaktivnichSlovicek.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel17.setText("Zobrazení neaktivních slovíček");
 
         zobrayVseNeaktivni.setText("Zobraz ");
         zobrayVseNeaktivni.addActionListener(new java.awt.event.ActionListener() {
@@ -46,21 +49,19 @@ private Gui gui;
         });
 
         zobrayeniNeaktivnichSlov.setEditable(false);
+        zobrayeniNeaktivnichSlov.setBackground(new java.awt.Color(0, 0, 204));
         zobrayeniNeaktivnichSlov.setColumns(20);
+        zobrayeniNeaktivnichSlov.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        zobrayeniNeaktivnichSlov.setForeground(new java.awt.Color(0, 204, 0));
         zobrayeniNeaktivnichSlov.setRows(5);
         jScrollPane2.setViewportView(zobrayeniNeaktivnichSlov);
 
-        zpetNeaktivni.setText("Zpet");
+        zpetNeaktivni.setBackground(new java.awt.Color(0, 0, 204));
+        zpetNeaktivni.setForeground(new java.awt.Color(0, 204, 0));
+        zpetNeaktivni.setText("Zpět");
         zpetNeaktivni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zpetNeaktivniActionPerformed(evt);
-            }
-        });
-
-        prejitDoMenuNeaktivni.setText("Prejit do Menu");
-        prejitDoMenuNeaktivni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prejitDoMenuNeaktivniActionPerformed(evt);
             }
         });
 
@@ -69,37 +70,30 @@ private Gui gui;
         zobrazeniNeaktivnichSlovicekLayout.setHorizontalGroup(
             zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel17)
-                        .addGap(0, 84, Short.MAX_VALUE))
-                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(zpetNeaktivni)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(prejitDoMenuNeaktivni))
-                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(zobrayVseNeaktivni)))
+                        .addComponent(zobrayVseNeaktivni))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
+            .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel17)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         zobrazeniNeaktivnichSlovicekLayout.setVerticalGroup(
             zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(zobrayVseNeaktivni)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(zpetNeaktivni)
-                    .addComponent(prejitDoMenuNeaktivni))
+                    .addComponent(zobrayVseNeaktivni))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -126,14 +120,9 @@ private Gui gui;
  this.gui.setMyView(5);     
     }//GEN-LAST:event_zpetNeaktivniActionPerformed
 
-    private void prejitDoMenuNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prejitDoMenuNeaktivniActionPerformed
-this.gui.setMyView(3);     
-    }//GEN-LAST:event_prejitDoMenuNeaktivniActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel17;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton prejitDoMenuNeaktivni;
     private javax.swing.JButton zobrayVseNeaktivni;
     private javax.swing.JTextArea zobrayeniNeaktivnichSlov;
     private javax.swing.JPanel zobrazeniNeaktivnichSlovicek;

@@ -38,30 +38,42 @@ public class SpravaSlovniku extends javax.swing.JPanel {
         jButton14 = new javax.swing.JButton();
         zpetDoMenuZSpravaSlovicek = new javax.swing.JButton();
 
-        jLabel31.setText("Sprava slovniku");
+        spravaSlovniku.setBackground(new java.awt.Color(51, 102, 255));
 
-        jButton10.setText("Zobrazit Slovniky");
+        jLabel31.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel31.setText("Správa slovníku");
+
+        jButton10.setBackground(new java.awt.Color(0, 0, 204));
+        jButton10.setForeground(new java.awt.Color(0, 204, 0));
+        jButton10.setText("Zobrazit slovníky");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
 
-        jButton13.setText("Novy Slovnik");
+        jButton13.setBackground(new java.awt.Color(0, 0, 204));
+        jButton13.setForeground(new java.awt.Color(0, 204, 0));
+        jButton13.setText("Nový slovník");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
             }
         });
 
-        jButton14.setText("Smazat Slovnik");
+        jButton14.setBackground(new java.awt.Color(0, 0, 204));
+        jButton14.setForeground(new java.awt.Color(0, 204, 0));
+        jButton14.setText("Smazat slovník");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
             }
         });
 
-        zpetDoMenuZSpravaSlovicek.setText("Zpet");
+        zpetDoMenuZSpravaSlovicek.setBackground(new java.awt.Color(0, 0, 204));
+        zpetDoMenuZSpravaSlovicek.setForeground(new java.awt.Color(0, 204, 0));
+        zpetDoMenuZSpravaSlovicek.setText("Zpět");
         zpetDoMenuZSpravaSlovicek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zpetDoMenuZSpravaSlovicekActionPerformed(evt);
@@ -72,45 +84,48 @@ public class SpravaSlovniku extends javax.swing.JPanel {
         spravaSlovniku.setLayout(spravaSlovnikuLayout);
         spravaSlovnikuLayout.setHorizontalGroup(
             spravaSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, spravaSlovnikuLayout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(jLabel31)
+                .addGap(36, 36, 36))
             .addGroup(spravaSlovnikuLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
                 .addGroup(spravaSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(spravaSlovnikuLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jLabel31))
-                    .addGroup(spravaSlovnikuLayout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(spravaSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(zpetDoMenuZSpravaSlovicek, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(zpetDoMenuZSpravaSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         spravaSlovnikuLayout.setVerticalGroup(
             spravaSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(spravaSlovnikuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel31)
+                .addGap(27, 27, 27)
+                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(zpetDoMenuZSpravaSlovicek)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(zpetDoMenuZSpravaSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spravaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(spravaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spravaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(spravaSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

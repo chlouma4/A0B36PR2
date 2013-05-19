@@ -38,8 +38,12 @@ private Gui gui;
         prihlas = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
+        prihlaseniPanel.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel1.setForeground(new java.awt.Color(0, 204, 0));
         jLabel1.setText("Vyberte svůj účet :");
 
+        vyberUcet.setForeground(new java.awt.Color(0, 204, 0));
         vyberUcet.setModel(new javax.swing.DefaultComboBoxModel(gui.uzivatel.nactiUdajeOHracich(1)));
         vyberUcet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,80 +51,89 @@ private Gui gui;
             }
         });
 
-        jLabel2.setText("Zadejte své heslo");
+        jLabel2.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel2.setText("Zadejte své heslo :");
 
-        vytvorNovyUcet.setText("Vytvorit novy ucet");
+        vstupHesla.setBackground(new java.awt.Color(0, 0, 204));
+        vstupHesla.setForeground(new java.awt.Color(0, 204, 0));
+
+        vytvorNovyUcet.setBackground(new java.awt.Color(0, 0, 204));
+        vytvorNovyUcet.setForeground(new java.awt.Color(0, 204, 0));
+        vytvorNovyUcet.setText("Vytvořit nový účet");
         vytvorNovyUcet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vytvorNovyUcetActionPerformed(evt);
             }
         });
 
-        prihlas.setText("Prihlas");
+        prihlas.setBackground(new java.awt.Color(0, 0, 204));
+        prihlas.setForeground(new java.awt.Color(0, 204, 0));
+        prihlas.setText("Přihlaš");
         prihlas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prihlasActionPerformed(evt);
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 204, 0));
         jLabel3.setText("Přihlášení");
 
         javax.swing.GroupLayout prihlaseniPanelLayout = new javax.swing.GroupLayout(prihlaseniPanel);
         prihlaseniPanel.setLayout(prihlaseniPanelLayout);
         prihlaseniPanelLayout.setHorizontalGroup(
             prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(prihlaseniPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(prihlaseniPanelLayout.createSequentialGroup()
-                        .addComponent(vytvorNovyUcet)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(prihlas))
-                    .addGroup(prihlaseniPanelLayout.createSequentialGroup()
-                        .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                        .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(vstupHesla, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vyberUcet, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prihlaseniPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(115, 115, 115))
+                .addGap(80, 80, 80))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prihlaseniPanelLayout.createSequentialGroup()
+                .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(prihlaseniPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(vytvorNovyUcet)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addComponent(prihlas))
+                    .addGroup(prihlaseniPanelLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(vstupHesla)
+                            .addComponent(vyberUcet, 0, 98, Short.MAX_VALUE))))
+                .addGap(21, 21, 21))
         );
         prihlaseniPanelLayout.setVerticalGroup(
             prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(prihlaseniPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(vyberUcet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
+                .addGap(18, 18, 18)
                 .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(vstupHesla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prihlas)
                     .addComponent(vytvorNovyUcet))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(prihlaseniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(prihlaseniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(prihlaseniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(prihlaseniPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -5,6 +5,7 @@
 package Semestralka1;
 
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 
@@ -42,11 +43,11 @@ public class Menu extends javax.swing.JPanel {
         spravaSlovnikuButon = new javax.swing.JButton();
         spravaHracuButton = new javax.swing.JButton();
 
-        Menu.setBackground(new java.awt.Color(0, 102, 204));
+        Menu.setBackground(new java.awt.Color(51, 102, 255));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setForeground(new java.awt.Color(0, 204, 0));
-        jButton1.setText("Zkouseni");
+        jButton1.setText("Zkoušení");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

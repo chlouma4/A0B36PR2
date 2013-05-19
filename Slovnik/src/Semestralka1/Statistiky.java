@@ -30,13 +30,13 @@ public class Statistiky extends javax.swing.JPanel  {
         public String getColumnName(int i) {
             switch (i) {
                 case 0:
-                    return "Preklad";
+                    return "Překlad";
                 case 1:
-                    return "Spravne zodpovezeno";
+                    return "Správně zodpovězeno";
                 case 2:
-                    return "Spatne zodpovezeno";
+                    return "Špatně zodpovězeno";
                 case 3:
-                    return "Uspesnost";
+                    return "Úspěšnost";
             }
             return "Chyba!";
 
@@ -75,13 +75,13 @@ public class Statistiky extends javax.swing.JPanel  {
         public String getColumnName(int i) {
             switch (i) {
                 case 0:
-                    return "Preklad";
+                    return "Překlad";
                 case 1:
-                    return "Spravne zodpovezeno";
+                    return "Správně zodpovězeno";
                 case 2:
-                    return "Spatne zodpovezeno";
+                    return "Špatně zodpovězeno";
                 case 3:
-                    return "Uspesnost";
+                    return "Úspěšnost";
             }
             return "Chyba!";
 
@@ -146,20 +146,28 @@ public class Statistiky extends javax.swing.JPanel  {
         jButton8 = new javax.swing.JButton();
         statistikyZpet = new javax.swing.JButton();
 
+        statistiky.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 204, 0));
         jLabel19.setText("Statistiky");
 
         table.setModel(this.dataModelAktivni);
         table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jScrollPane4.setViewportView(table);
 
-        jButton8.setText("Zobraz statistiku pro neaktivni slova");
+        jButton8.setBackground(new java.awt.Color(0, 0, 204));
+        jButton8.setForeground(new java.awt.Color(0, 204, 0));
+        jButton8.setText("Zobraz statistiku pro neaktivní slova");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
-        statistikyZpet.setText("Zpet");
+        statistikyZpet.setBackground(new java.awt.Color(0, 0, 204));
+        statistikyZpet.setForeground(new java.awt.Color(0, 204, 0));
+        statistikyZpet.setText("Zpět");
         statistikyZpet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 statistikyZpetActionPerformed(evt);
@@ -191,37 +199,35 @@ public class Statistiky extends javax.swing.JPanel  {
             .addGroup(statistikyLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel19)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(statistikyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(statistikyZpet))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(statistikyZpet)
+                    .addComponent(jButton8))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+            .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(statistiky, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        if (this.jButton8.getText().equals("Zobrazit statistiku pro aktivni slova")) {
+        if (this.jButton8.getText().equals("Zobrazit statistiku pro aktivní slova")) {
             if (this.gui.slovnik.getPocetBunek() == 0) {
                 JOptionPane.showMessageDialog(this.gui, "Nejsou zadna slova k zobrazeni");
             } else {
                 this.table.setModel(this.dataModelAktivni);
                 this.setWidth();
-                this.jButton8.setText("Zobraz statistiku pro neaktivni slova");
+                this.jButton8.setText("Zobraz statistiku pro neaktivní slova");
             }
         } else {
             if (this.gui.slovnik.neaktivni.isEmpty()) {
@@ -229,7 +235,7 @@ public class Statistiky extends javax.swing.JPanel  {
             } else {
                 this.table.setModel(this.dataModelNeaktivni);
                 this.setWidth();
-                this.jButton8.setText("Zobrazit statistiku pro aktivni slova");
+                this.jButton8.setText("Zobrazit statistiku pro aktivní slova");
             }
         }
     }//GEN-LAST:event_jButton8ActionPerformed

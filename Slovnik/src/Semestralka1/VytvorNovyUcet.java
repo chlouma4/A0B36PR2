@@ -41,12 +41,19 @@ private Gui gui;
         opakovaneHesloNovehoUctu = new javax.swing.JPasswordField();
         jLabel20 = new javax.swing.JLabel();
 
-        jLabel3.setText("Zadejte jmeno uctu:");
+        novyUcet.setBackground(new java.awt.Color(51, 102, 255));
 
-        jLabel4.setText("Zadejte heslo pro ucet*:");
+        jLabel3.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel3.setText("Zadej jméno účtu :");
 
-        jLabel5.setText("Opakujte heslo zadani uctu:");
+        jLabel4.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel4.setText("Zadejte jméno pro svůj účet* :");
 
+        jLabel5.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel5.setText("Opakujte zadáni hesla účtu :");
+
+        vytvorUcetButton.setBackground(new java.awt.Color(0, 0, 204));
+        vytvorUcetButton.setForeground(new java.awt.Color(0, 204, 0));
         vytvorUcetButton.setText("Vytvor");
         vytvorUcetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,8 +61,11 @@ private Gui gui;
             }
         });
 
-        jLabel6.setText("* Heslo musi mit delku 4 nebo 6 znaku.");
+        jLabel6.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel6.setText("* Heslo musí mít délku 4 nebo 6 znaků.");
 
+        zpetDoPrihlas.setBackground(new java.awt.Color(0, 0, 204));
+        zpetDoPrihlas.setForeground(new java.awt.Color(0, 204, 0));
         zpetDoPrihlas.setText("Zpet");
         zpetDoPrihlas.setMaximumSize(new java.awt.Dimension(65, 23));
         zpetDoPrihlas.setMinimumSize(new java.awt.Dimension(65, 23));
@@ -65,49 +75,63 @@ private Gui gui;
             }
         });
 
+        jmenoUctu.setBackground(new java.awt.Color(0, 0, 204));
+        jmenoUctu.setForeground(new java.awt.Color(0, 204, 0));
         jmenoUctu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmenoUctuActionPerformed(evt);
             }
         });
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        hesloNovehoUctu.setBackground(new java.awt.Color(0, 0, 204));
+        hesloNovehoUctu.setForeground(new java.awt.Color(0, 204, 0));
+
+        opakovaneHesloNovehoUctu.setBackground(new java.awt.Color(0, 0, 204));
+        opakovaneHesloNovehoUctu.setForeground(new java.awt.Color(0, 204, 0));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 204, 0));
         jLabel20.setText("Vytvoření nového účtu");
 
         javax.swing.GroupLayout novyUcetLayout = new javax.swing.GroupLayout(novyUcet);
         novyUcet.setLayout(novyUcetLayout);
         novyUcetLayout.setHorizontalGroup(
             novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, novyUcetLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5)
-                    .addComponent(zpetDoPrihlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jmenoUctu, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                    .addComponent(hesloNovehoUctu)
-                    .addComponent(opakovaneHesloNovehoUctu)
-                    .addComponent(vytvorUcetButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(novyUcetLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(novyUcetLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel6))
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel20)
+                        .addContainerGap(20, Short.MAX_VALUE))
                     .addGroup(novyUcetLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel20)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(novyUcetLayout.createSequentialGroup()
+                                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jmenoUctu, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                    .addComponent(hesloNovehoUctu)
+                                    .addComponent(opakovaneHesloNovehoUctu)))
+                            .addGroup(novyUcetLayout.createSequentialGroup()
+                                .addComponent(zpetDoPrihlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(vytvorUcetButton)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(novyUcetLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel6)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         novyUcetLayout.setVerticalGroup(
             novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(novyUcetLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jmenoUctu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -120,23 +144,23 @@ private Gui gui;
                     .addComponent(jLabel5)
                     .addComponent(opakovaneHesloNovehoUctu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(vytvorUcetButton)
                     .addComponent(zpetDoPrihlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(novyUcet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(novyUcet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(novyUcet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(novyUcet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

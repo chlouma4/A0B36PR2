@@ -47,24 +47,36 @@ private void  start(){
         spinnerSmazaniSlovniku = new javax.swing.JSpinner();
         vymazatSlovnik = new javax.swing.JButton();
 
-        jLabel35.setText("Smazani Slovniku");
+        smazaniSlovniku.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel35.setText("Smazání slovníku");
 
         textAreaSmazaniSlovniku.setEditable(false);
+        textAreaSmazaniSlovniku.setBackground(new java.awt.Color(0, 0, 204));
         textAreaSmazaniSlovniku.setColumns(20);
+        textAreaSmazaniSlovniku.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        textAreaSmazaniSlovniku.setForeground(new java.awt.Color(0, 204, 0));
         textAreaSmazaniSlovniku.setRows(5);
         jScrollPane7.setViewportView(textAreaSmazaniSlovniku);
 
-        jButton16.setText("Zpet");
+        jButton16.setBackground(new java.awt.Color(0, 0, 204));
+        jButton16.setForeground(new java.awt.Color(0, 204, 0));
+        jButton16.setText("Zpět");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
             }
         });
 
-        jLabel36.setText("Vybetre slovnik ke smazani:");
+        jLabel36.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel36.setText("Číslem vyberte slovník ke smazání :");
 
         spinnerSmazaniSlovniku.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
+        vymazatSlovnik.setBackground(new java.awt.Color(0, 0, 204));
+        vymazatSlovnik.setForeground(new java.awt.Color(0, 204, 0));
         vymazatSlovnik.setText("Vymazat");
         vymazatSlovnik.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,25 +89,25 @@ private void  start(){
         smazaniSlovnikuLayout.setHorizontalGroup(
             smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7)
                     .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton16)
-                        .addGap(26, 26, 26)
-                        .addComponent(spinnerSmazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(vymazatSlovnik))
-                    .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(jLabel35))
-                    .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                                .addComponent(jButton16)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smazaniSlovnikuLayout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addComponent(spinnerSmazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(vymazatSlovnik)))
+                .addContainerGap())
+            .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jLabel35)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, smazaniSlovnikuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel36)
-                .addGap(57, 57, 57))
         );
         smazaniSlovnikuLayout.setVerticalGroup(
             smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,26 +115,28 @@ private void  start(){
                 .addContainerGap()
                 .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel36)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(spinnerSmazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton16)
-                    .addComponent(vymazatSlovnik))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(smazaniSlovnikuLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel36)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton16))
+                    .addGroup(smazaniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(spinnerSmazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vymazatSlovnik)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(smazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(smazaniSlovniku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(smazaniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(smazaniSlovniku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

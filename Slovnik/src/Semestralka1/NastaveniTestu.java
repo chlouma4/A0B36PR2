@@ -41,11 +41,18 @@ private Gui gui;
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
 
-        jLabel25.setText("Nastaveni testu");
+        nastaveniTestu.setBackground(new java.awt.Color(51, 102, 255));
 
-        jLabel26.setText("Chci prekladat do");
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel25.setText("Nastavení testu");
 
-        kamPrekladat.setText("Cestiny");
+        jLabel26.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel26.setText("Chci překládat do :");
+
+        kamPrekladat.setBackground(new java.awt.Color(0, 0, 204));
+        kamPrekladat.setForeground(new java.awt.Color(0, 204, 0));
+        kamPrekladat.setText("Češtiny");
         kamPrekladat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kamPrekladatActionPerformed(evt);
@@ -54,15 +61,20 @@ private Gui gui;
 
         pocetOtazek.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
-        jLabel27.setText("Zadejte pocet otazek testu");
+        jLabel27.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel27.setText("Zadejte počet otázek testu :");
 
-        jButton11.setText("Zpet");
+        jButton11.setBackground(new java.awt.Color(0, 0, 204));
+        jButton11.setForeground(new java.awt.Color(0, 204, 0));
+        jButton11.setText("Zpět");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
 
+        jButton12.setBackground(new java.awt.Color(0, 0, 204));
+        jButton12.setForeground(new java.awt.Color(0, 204, 0));
         jButton12.setText("Spustit test");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,32 +90,29 @@ private Gui gui;
                 .addContainerGap()
                 .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                        .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                                .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(pocetOtazek, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(kamPrekladat)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(nastaveniTestuLayout.createSequentialGroup()
                         .addComponent(jButton11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton12)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, nastaveniTestuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton12))
+                    .addGroup(nastaveniTestuLayout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(kamPrekladat))
+                    .addGroup(nastaveniTestuLayout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pocetOtazek, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(nastaveniTestuLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addComponent(jLabel25)
-                .addGap(68, 68, 68))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         nastaveniTestuLayout.setVerticalGroup(
             nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel25)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(nastaveniTestuLayout.createSequentialGroup()
                         .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -126,9 +135,7 @@ private Gui gui;
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(nastaveniTestu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+            .addComponent(nastaveniTestu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,10 +144,10 @@ private Gui gui;
     }// </editor-fold>//GEN-END:initComponents
 
     private void kamPrekladatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kamPrekladatActionPerformed
-        if (this.kamPrekladat.getText().equals("Cestiny")) {
-            this.kamPrekladat.setText("Anglictiny");
+        if (this.kamPrekladat.getText().equals("Češtiny")) {
+            this.kamPrekladat.setText("Angličtiny");
         } else {
-            this.kamPrekladat.setText("Cestiny");
+            this.kamPrekladat.setText("Češtiny");
         }
     }//GEN-LAST:event_kamPrekladatActionPerformed
 
@@ -151,7 +158,7 @@ this.gui.setMyView(3);
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
   if(this.gui.slovnik.getPocetBunek()>=((Integer)this.pocetOtazek.getValue())){
         int preklad;
-        if(this.kamPrekladat.getText().equals("Cestiny")){
+        if(this.kamPrekladat.getText().equals("Češtiny")){
             preklad=1;
         }else{
             preklad=2;

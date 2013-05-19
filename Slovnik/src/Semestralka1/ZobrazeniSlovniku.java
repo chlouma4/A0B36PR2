@@ -36,14 +36,23 @@ private Gui gui;
         zpetZezobrazeniSlovnku = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        jLabel32.setText("Zobrazeni Slovniku");
+        zobrazeniSlovniku.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel32.setText("Zobrazení slovníků");
 
         textAreaZobrazeniSlovniku.setEditable(false);
+        textAreaZobrazeniSlovniku.setBackground(new java.awt.Color(0, 0, 204));
         textAreaZobrazeniSlovniku.setColumns(20);
+        textAreaZobrazeniSlovniku.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        textAreaZobrazeniSlovniku.setForeground(new java.awt.Color(0, 204, 0));
         textAreaZobrazeniSlovniku.setRows(5);
         jScrollPane6.setViewportView(textAreaZobrazeniSlovniku);
 
-        zpetZezobrazeniSlovnku.setText("Zpet");
+        zpetZezobrazeniSlovnku.setBackground(new java.awt.Color(0, 0, 204));
+        zpetZezobrazeniSlovnku.setForeground(new java.awt.Color(0, 204, 0));
+        zpetZezobrazeniSlovnku.setText("Zpět");
         zpetZezobrazeniSlovnku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zpetZezobrazeniSlovnkuActionPerformed(evt);
@@ -67,29 +76,25 @@ private Gui gui;
                     .addComponent(jScrollPane6)
                     .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
                         .addComponent(zpetZezobrazeniSlovnku)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovnikuLayout.createSequentialGroup()
-                .addGap(0, 94, Short.MAX_VALUE)
-                .addGroup(zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovnikuLayout.createSequentialGroup()
-                        .addComponent(jLabel32)
-                        .addGap(79, 79, 79))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovnikuLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addContainerGap())))
+            .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel32)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         zobrazeniSlovnikuLayout.setVerticalGroup(
             zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel32)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(zpetZezobrazeniSlovnku)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zpetZezobrazeniSlovnku)
+                    .addComponent(jButton1))
                 .addGap(16, 16, 16))
         );
 

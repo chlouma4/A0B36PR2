@@ -38,38 +38,45 @@ private Gui gui;
         anglickyVyraz1 = new javax.swing.JTextField();
         Uloz1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
 
-        jLabel22.setText("Pridani Slovicek");
+        pridaniSlovicekPanel1.setBackground(new java.awt.Color(51, 102, 255));
 
-        jLabel23.setText("Zadejte cesky vyraz:");
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel22.setText("Přídání slovíček");
 
+        jLabel23.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel23.setText("Zadejte český výraz :");
+
+        ceskyVyraz1.setBackground(new java.awt.Color(0, 0, 204));
+        ceskyVyraz1.setForeground(new java.awt.Color(0, 204, 0));
         ceskyVyraz1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ceskyVyraz1ActionPerformed(evt);
             }
         });
 
-        jLabel24.setText("Zadejte jeho anglicky preklad:");
+        jLabel24.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel24.setText("Zadejte jeho anglický překlad :");
 
-        Uloz1.setText("Uloz");
+        anglickyVyraz1.setBackground(new java.awt.Color(0, 0, 204));
+        anglickyVyraz1.setForeground(new java.awt.Color(0, 204, 0));
+
+        Uloz1.setBackground(new java.awt.Color(0, 0, 204));
+        Uloz1.setForeground(new java.awt.Color(0, 204, 0));
+        Uloz1.setText("Ulož");
         Uloz1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Uloz1ActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Zpet");
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setForeground(new java.awt.Color(0, 204, 0));
+        jButton1.setText("Zpět");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Prejit do Menu");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -89,18 +96,16 @@ private Gui gui;
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addComponent(anglickyVyraz1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pridaniSlovicekPanel1Layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Uloz1)))
                 .addContainerGap())
+            .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pridaniSlovicekPanel1Layout.setVerticalGroup(
             pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,9 +123,8 @@ private Gui gui;
                 .addGap(18, 18, 18)
                 .addGroup(pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Uloz1)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(jButton1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -151,16 +155,11 @@ private Gui gui;
   this.gui.setMyView(5);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.gui.setMyView(3);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Uloz1;
     private javax.swing.JTextField anglickyVyraz1;
     private javax.swing.JTextField ceskyVyraz1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;

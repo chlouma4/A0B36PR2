@@ -32,27 +32,25 @@ private Gui gui;
         jScrollPane1 = new javax.swing.JScrollPane();
         zobrayeniSlovicekText = new javax.swing.JTextArea();
         jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         zobrazVse = new javax.swing.JButton();
 
-        jLabel10.setText("Zobrazeni slovicek");
+        zobrazeniSlovicekPanel.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel10.setText("Zobrazení slovíček");
 
         zobrayeniSlovicekText.setEditable(false);
         zobrayeniSlovicekText.setColumns(20);
         zobrayeniSlovicekText.setRows(5);
         jScrollPane1.setViewportView(zobrayeniSlovicekText);
 
-        jButton7.setText("Zpet");
+        jButton7.setBackground(new java.awt.Color(0, 0, 204));
+        jButton7.setForeground(new java.awt.Color(0, 204, 0));
+        jButton7.setText("Zpět");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton9.setText("Prejit do Menu");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
             }
         });
 
@@ -68,36 +66,30 @@ private Gui gui;
         zobrazeniSlovicekPanelLayout.setHorizontalGroup(
             zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel10))
-                    .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton9)
-                                .addGap(9, 9, 9))
-                            .addComponent(zobrazVse, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(zobrazVse))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovicekPanelLayout.createSequentialGroup()
+                .addGap(0, 107, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(83, 83, 83))
         );
         zobrazeniSlovicekPanelLayout.setVerticalGroup(
             zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(7, 7, 7)
-                .addComponent(zobrazVse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(6, 6, Short.MAX_VALUE)
                 .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7)
-                    .addComponent(jButton9))
+                    .addComponent(zobrazVse))
                 .addGap(19, 19, 19))
         );
 
@@ -105,7 +97,7 @@ private Gui gui;
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(zobrazeniSlovicekPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,10 +109,6 @@ private Gui gui;
 this.gui.setMyView(5);       
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-this.gui.setMyView(3);     
-    }//GEN-LAST:event_jButton9ActionPerformed
-
     private void zobrazVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazVseActionPerformed
         String[] slova = gui.slovnik.vypisSpojovySeznam();
         for (int i = 0; i < slova.length; i++) {
@@ -130,7 +118,6 @@ this.gui.setMyView(3);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea zobrayeniSlovicekText;

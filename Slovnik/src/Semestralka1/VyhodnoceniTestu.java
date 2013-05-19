@@ -63,14 +63,23 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
         textAreaVyhodnoceniTestu = new javax.swing.JTextArea();
         doMenuZVyhodnoceniTestu = new javax.swing.JButton();
 
-        jLabel30.setText("Vyhodnoceni Testu");
+        vyhodnoceniTestu.setBackground(new java.awt.Color(51, 102, 255));
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel30.setText("Vyhodnocení testu");
 
         textAreaVyhodnoceniTestu.setEditable(false);
+        textAreaVyhodnoceniTestu.setBackground(new java.awt.Color(0, 0, 204));
         textAreaVyhodnoceniTestu.setColumns(20);
+        textAreaVyhodnoceniTestu.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        textAreaVyhodnoceniTestu.setForeground(new java.awt.Color(0, 204, 0));
         textAreaVyhodnoceniTestu.setRows(5);
         jScrollPane5.setViewportView(textAreaVyhodnoceniTestu);
 
-        doMenuZVyhodnoceniTestu.setText("Navrat do menu");
+        doMenuZVyhodnoceniTestu.setBackground(new java.awt.Color(0, 0, 204));
+        doMenuZVyhodnoceniTestu.setForeground(new java.awt.Color(0, 204, 0));
+        doMenuZVyhodnoceniTestu.setText("Návrat do menu");
         doMenuZVyhodnoceniTestu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doMenuZVyhodnoceniTestuActionPerformed(evt);
@@ -81,10 +90,6 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
         vyhodnoceniTestu.setLayout(vyhodnoceniTestuLayout);
         vyhodnoceniTestuLayout.setHorizontalGroup(
             vyhodnoceniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vyhodnoceniTestuLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel30)
-                .addGap(196, 196, 196))
             .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane5)
@@ -93,14 +98,18 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
                 .addGap(198, 198, 198)
                 .addComponent(doMenuZVyhodnoceniTestu)
                 .addContainerGap(205, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vyhodnoceniTestuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel30)
+                .addGap(143, 143, 143))
         );
         vyhodnoceniTestuLayout.setVerticalGroup(
             vyhodnoceniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel30)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(doMenuZVyhodnoceniTestu)
                 .addGap(18, 18, 18))
