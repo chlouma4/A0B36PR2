@@ -9,39 +9,40 @@ package Semestralka1;
  * @author Marco
  */
 public class VyhodnoceniTestu extends javax.swing.JPanel {
-        Slovník slovnik;
-         Gui gui;
+    private Gui gui;
 
     /**
      * Creates new form VyhodnoceniTestu
      */
-    
-    
-    private void  vyhodnot (){
-           if (this.gui.spatneOdpovedi.length==1) {
-                this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " + 
-                        this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1] + 
-                        " slovicek   z nichz jste na"
-                        + "vsechny  odpovedel/a spravne. \n Gratuluji! - Congratulations!");
-            } else {
-                this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z " + 
-                        this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1]+ 
-                        " slovicek  \n z nichz jste na " + (this.gui.spatneOdpovedi.length-1) + ""
-                        + " odpovedel/a spatne\n");
-                
-                System.out.println("pocet otazek "+ this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1]);
-                System.out.println("pocet spatnzch odpovedi "+(this.gui.spatneOdpovedi.length-1));
-                int procenta = (100 * ( this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1]
-                        - (this.gui.spatneOdpovedi.length-1))) /
-                     this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length-1];
-                this.textAreaVyhodnoceniTestu.append("Vase uspesnost je " + procenta + "% \n Slovicka ktera jste zodpovedel/a spatne ve spravnem prekladu\n");
-            }
-            for (int i = 0; i < this.gui.spatneOdpovedi.length-1; i++) {
-                this.textAreaVyhodnoceniTestu.append("" + this.slovnik.vypisXZeSpojovehoSeznamu(this.gui.spatneOdpovedi[i])+"\n");
-            }
+    /**Metoda vypisuje uspesnost uzivatele v testu.
+     * 
+     * 
+     */
+    private void vyhodnot() {
+        if (this.gui.spatneOdpovedi.length == 1) {
+            this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z "
+                    + this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1]
+                    + " slovicek   z nichz jste na"
+                    + "vsechny  odpovedel/a spravne. \n Gratuluji! - Congratulations!");
+        } else {
+            this.textAreaVyhodnoceniTestu.append("Byl/a jste vzykousen/a z "
+                    + this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1]
+                    + " slovicek  \n z nichz jste na " + (this.gui.spatneOdpovedi.length - 1) + ""
+                    + " odpovedel/a spatne\n");
+
+            System.out.println("pocet otazek " + this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1]);
+            System.out.println("pocet spatnzch odpovedi " + (this.gui.spatneOdpovedi.length - 1));
+            int procenta = (100 * (this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1]
+                    - (this.gui.spatneOdpovedi.length - 1)))
+                    / this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1];
+            this.textAreaVyhodnoceniTestu.append("Vase uspesnost je " + procenta + "% \n Slovicka ktera jste zodpovedel/a spatne ve spravnem prekladu\n");
+        }
+        for (int i = 0; i < this.gui.spatneOdpovedi.length - 1; i++) {
+            this.textAreaVyhodnoceniTestu.append("" + this.gui.slovnik.getObsahBunky(this.gui.spatneOdpovedi[i],7) + "\n");
+        }
     }
-    public VyhodnoceniTestu(Slovník slovnik, Gui gui) {
-        this.slovnik = slovnik;
+
+    public VyhodnoceniTestu(Gui gui) {
         this.gui = gui;
         initComponents();
         vyhodnot();
@@ -118,9 +119,8 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void doMenuZVyhodnoceniTestuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doMenuZVyhodnoceniTestuActionPerformed
-this.gui.setMyView(3);
+        this.gui.setMyView(3);
     }//GEN-LAST:event_doMenuZVyhodnoceniTestuActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton doMenuZVyhodnoceniTestu;
     private javax.swing.JLabel jLabel30;

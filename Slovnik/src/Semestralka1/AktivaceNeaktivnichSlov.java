@@ -11,15 +11,13 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
-Slovník slovnik;
-Gui gui;
+private Gui gui;
 
 
     /**
      * Creates new form AktivaceNeaktivnichSlov
      */
-    public AktivaceNeaktivnichSlov(Slovník slovnik, Gui gui) {
-this.slovnik=slovnik;
+    public AktivaceNeaktivnichSlov(Gui gui) {
 this.gui=gui;
         initComponents();
     }
@@ -177,24 +175,24 @@ this.gui.setMyView(3);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void aktivovatVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVseActionPerformed
-        this.slovnik.aktivaceDeaktivaceSlova(0, 1);
+        this.gui.slovnik.aktivaceDeaktivaceSlova(0, 1);
         JOptionPane.showMessageDialog(this.gui, "Vsechna slova byla aktivovana");
     }//GEN-LAST:event_aktivovatVseActionPerformed
 
     private void aktivovatVybraneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovatVybraneActionPerformed
-        if ((Integer) this.coAktivovat.getValue() > this.slovnik.neaktivni.size()) {
+        if ((Integer) this.coAktivovat.getValue() > this.gui.slovnik.neaktivni.size()) {
             JOptionPane.showMessageDialog(this.gui, "Zadana dvojce slovicek neexistuje", "Chyba!", JOptionPane.WARNING_MESSAGE);
         } else {
-            this.slovnik.aktivaceDeaktivaceSlova((Integer) this.coAktivovat.getValue(), 1);
+            this.gui.slovnik.aktivaceDeaktivaceSlova((Integer) this.coAktivovat.getValue(), 1);
             JOptionPane.showMessageDialog(this.gui, "Aktivovano");
         }
     }//GEN-LAST:event_aktivovatVybraneActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (this.slovnik.neaktivni.isEmpty()) {
+        if (this.gui.slovnik.neaktivni.isEmpty()) {
             JOptionPane.showMessageDialog(this.gui, "Nejsou zadna slova ktere by bylo mozne aktivovat");
         } else {
-            String[] slova = this.slovnik.vypisNeaktivni();
+            String[] slova = this.gui.slovnik.vypisNeaktivni();
             int citac = 1;
             for (int i = 0; i < slova.length; i++) {
                 this.zobrazeniAktivaceSlovicek.append("(" + (citac) + ")" + slova[i] + "\n");

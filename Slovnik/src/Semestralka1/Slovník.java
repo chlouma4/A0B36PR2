@@ -10,7 +10,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -38,12 +37,12 @@ public class Slovník {
 
     /**Metoda vklada na konec spojoveho seznamu to co dostane v argumentu.
      * 
-     * @param aj
-     * @param cj
-     * @param spravneOdpovedi
-     * @param spatneOdpovedi
-     * @param IDSlova
-     * @param aktivita 
+     * @param aj -Anglicky vyraz.
+     * @param cj - Cesky vyraz.
+     * @param spravneOdpovedi - Spravne odpovedi na preklad.
+     * @param spatneOdpovedi - Spatne odpovedi na preklad.
+     * @param IDSlova - ID slova.
+     * @param aktivita  - Aktivita  1- aktivni , 0- neaktivni
      */
     public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova, int aktivita) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
         if (cj != null && aj != null) {
@@ -130,29 +129,6 @@ public String[] vypisNeaktivni(){
         }
         return slova;
     }
-/**Metoda navrati ve Stringu vypis jedne bunky Spojoveho seznamu.
- * To ktera bunka se vypise se nastavuje parametem  x.
- * DULEZITE: Pro vypis celeho spojoveho seznamu pouzite metodu vypisSpojovySeznam
- * Ukazka vypisu jedne bunky v poli :
- * Hello prelozeno do cestiny Ahoj
- * 
- * 
- * @param x
- * @return 
- */
-    public String vypisXZeSpojovehoSeznamu(int x) { 
-        int z = 0;
-        String slovo = null;
-        Bunka pom = prvni;
-        while (pom != null) {
-            z = z + 1;
-            if (z == x) {
-                slovo = "(" + x + ") " + pom.slovicka.toString();
-            }
-            pom = pom.dalsi;
-        }
-        return slovo;
-    }
 
     /**Metoda vymaze bunku ze spojoveho seznamu.
      * To ktera bunka ma byt vymazana se nastavuje pomoci argumentu x.
@@ -183,7 +159,7 @@ public String[] vypisNeaktivni(){
         }
     }
 
-    /**Metoda smaze vsechen obsach spojoveho seznamu.
+    /**Metoda smaze vsechen obsah spojoveho seznamu.
      * 
      */
     public void vycistiSpojovySeznam() {
@@ -191,7 +167,7 @@ public String[] vypisNeaktivni(){
     }
 
   
-/** POYOR !!!! metoda zatim nebyla predelana pro pouyiti s GUI
+/** 
  * Metoda vymaze slovnik. Parametrem  x se urcuje ktery slovnik
  * ma byt vymazan.
  * 
@@ -224,13 +200,22 @@ public String[] vypisNeaktivni(){
        
     }
 
-    /**
-     * Metoda vrátí jednu polozku z bunky. Proměnnou cisloBunky zvolíme ze které
-     * bunky spojevého seznamu chceme vytáhnout data. Proměnnou polozka volíme
-     * kterou plozku chceme z bunky vytáhnouta to tak že 1-vrátí cj výraz
-     * 2-vrátí anglický výraz 3- vrátí pocet spravnych odpovedi 4- vrátí pocet
-     * spatnch dpovedi 5- vrati IdSlova 6- vrati aktivitu slova
-     */
+   /**Metoda vrátí jednu polozku z bunky.
+    * @param cisloBunky - poradove cislo bunky ve spojovem seznamu  
+    * z ktere chceme  data
+    * @param polozka
+    * 1-vrátí cj výraz
+     * 2-vrátí anglický výraz
+     * 3- vrátí pocet spravnych odpovedi 
+     * 4- vrátí pocet spatnch dpovedi 
+     * 5- vrati IdSlova 
+     * 6- vrati aktivitu slova
+     * 7-  Vypise dvojci slov 
+     * Ukazka vypisu jedne bunky v poli :
+     * Hello prelozeno do cestiny Ahoj
+     *  DULEZITE: Pro vypis celeho spojoveho seznamu pouzite metodu vypisSpojovySeznam
+    * @return 
+    */
     public String getObsahBunky(int cisloBunky, int polozka) {
         int citac = 0;
         String slovo = null;
@@ -256,6 +241,10 @@ public String[] vypisNeaktivni(){
                         break;
                     case 6:
                         slovo = String.valueOf(pom.slovicka.getAktivita());
+                        break;
+                    case 7:
+                        slovo=pom.slovicka.toString();
+                        break;
                 }
             }
             pom = pom.dalsi;
@@ -269,11 +258,10 @@ public String[] vypisNeaktivni(){
     }
 
     public void setTypSlovniku(String typSlovniku) {
-        this.typSlovniku = typSlovniku;
+        Slovník.typSlovniku = typSlovniku;
     }
 
-    /**
-     * Meotda vytvori novy slovnik a ulozi jej do seznamu Slovniku.
+    /**Meotda vytvori novy slovnik a ulozi jej do seznamu Slovniku.
      * 
      * @param novySlovnik 
      */

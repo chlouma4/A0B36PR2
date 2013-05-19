@@ -11,16 +11,12 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class VytvorNovyUcet extends javax.swing.JPanel {
-Slovník slovnik;
-Uzivatel uzivatel;
 private Gui gui;
     /**
      * Creates new form VytvorNovyUcet
      */
-    public VytvorNovyUcet(Slovník slovnik, Uzivatel hrac,Gui frame) {
-        this.slovnik=slovnik;
-        this.uzivatel=hrac;
-        this.gui=frame;
+    public VytvorNovyUcet(Gui gui) {
+        this.gui=gui;
         initComponents();
     }
 
@@ -145,11 +141,10 @@ private Gui gui;
     }// </editor-fold>//GEN-END:initComponents
 
     private void vytvorUcetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vytvorUcetButtonActionPerformed
-        boolean uspesnost = uzivatel.vytvorUzivatele(this.jmenoUctu.getText(),
+        boolean uspesnost = gui.uzivatel.vytvorNeboZmenUzivatele(1,this.jmenoUctu.getText(),
             String.valueOf(this.hesloNovehoUctu.getPassword()),
             String.valueOf(this.opakovaneHesloNovehoUctu.getPassword()));
              if(uspesnost){
-                 JOptionPane.showMessageDialog(this.gui, "Ucet byl uspesne zalozen");
                  this.gui.setMyView(1);
              }
     }//GEN-LAST:event_vytvorUcetButtonActionPerformed

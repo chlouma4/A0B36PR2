@@ -11,17 +11,13 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class SmazaniSlovicek extends javax.swing.JPanel {
-Slovník slovnik;
-Uzivatel uzivatel;
 private Gui gui;
 
     /**
      * Creates new form SmazaniSlovicek
      */
-    public SmazaniSlovicek(Slovník slovnik, Uzivatel hrac,Gui frame) {
-           this.slovnik=slovnik;
-        this.uzivatel=hrac;
-        this.gui=frame;
+    public SmazaniSlovicek(Gui gui) {
+        this.gui=gui;
         initComponents();
     }
 
@@ -143,16 +139,15 @@ private Gui gui;
 
     private void deaktivujDvojciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deaktivujDvojciActionPerformed
         int volba;
-        volba = 0;
-        if (((Integer) this.cisloKeSmazani.getValue()) > slovnik.getPocetBunek()) {
+        if (((Integer) this.cisloKeSmazani.getValue()) > gui.slovnik.getPocetBunek()) {
             JOptionPane.showMessageDialog(this.gui, "Zadana dvojce neexistuje", "Chyba", JOptionPane.WARNING_MESSAGE);
         } else {
             volba = JOptionPane.showConfirmDialog(this.gui, "Opravdu chcete deaktivovat dvojci slovicek "
-                + this.slovnik.vypisXZeSpojovehoSeznamu((Integer) this.cisloKeSmazani.getValue()), "Chyba!", JOptionPane.YES_NO_OPTION);
+                + this.gui.slovnik.getObsahBunky((Integer) this.cisloKeSmazani.getValue(),7), "Chyba!", JOptionPane.YES_NO_OPTION);
 
             if (volba == 0) {
-                this.slovnik.aktivaceDeaktivaceSlova((Integer) this.cisloKeSmazani.getValue(), volba);
-                this.slovnik.presunNeaktivni();
+                this.gui.slovnik.aktivaceDeaktivaceSlova((Integer) this.cisloKeSmazani.getValue(), volba);
+                this.gui.slovnik.presunNeaktivni();
                 JOptionPane.showMessageDialog(this.gui, "Dvojce slovicek byla deaktivovana");
             } else {
                 JOptionPane.showMessageDialog(this.gui, "Dvojce slovicek nebyla deaktivovana");
@@ -162,14 +157,14 @@ private Gui gui;
 
     private void uplneVymazaniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uplneVymazaniActionPerformed
         int volba;
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 3)) {
-            if (((Integer) this.cisloKeSmazani.getValue()) > slovnik.getPocetBunek()) {
+        if (this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 3)) {
+            if (((Integer) this.cisloKeSmazani.getValue()) > gui.slovnik.getPocetBunek()) {
                 JOptionPane.showMessageDialog(this.gui, "Zadana dvojce neexistuje", "Chyba", JOptionPane.WARNING_MESSAGE);
             } else {
                 volba = JOptionPane.showConfirmDialog(this.gui, "Opravdu chcete smazat dvojci slovicek"
-                    + this.slovnik.vypisXZeSpojovehoSeznamu((Integer) this.cisloKeSmazani.getValue()), "Chyba!", JOptionPane.YES_NO_OPTION);
+                    + this.gui.slovnik.getObsahBunky((Integer) this.cisloKeSmazani.getValue(),7), "Chyba!", JOptionPane.YES_NO_OPTION);
                 if (volba == 0) {
-                    this.slovnik.smaz((Integer) this.cisloKeSmazani.getValue());
+                    this.gui.slovnik.smaz((Integer) this.cisloKeSmazani.getValue());
                     JOptionPane.showMessageDialog(this.gui, "Dvojce byla smazana");
                 } else {
                     JOptionPane.showMessageDialog(this.gui, "Dvojce nebyla smazana");

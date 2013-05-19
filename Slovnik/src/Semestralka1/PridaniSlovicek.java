@@ -11,17 +11,13 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class PridaniSlovicek extends javax.swing.JPanel {
-Slovník slovnik;
-Uzivatel uzivatel;
 private Gui gui;
 
     /**
      * Creates new form PridaniSlovicek
      */
-    public PridaniSlovicek(Slovník slovnik, Uzivatel hrac,Gui frame) {
-             this.slovnik=slovnik;
-        this.uzivatel=hrac;
-        this.gui=frame;
+    public PridaniSlovicek(Gui gui) {
+        this.gui=gui;
         initComponents();
     }
 
@@ -144,7 +140,9 @@ private Gui gui;
     }//GEN-LAST:event_ceskyVyraz1ActionPerformed
 
     private void Uloz1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Uloz1ActionPerformed
-        this.slovnik.vlozNaKonec(this.anglickyVyraz1.getText(), this.ceskyVyraz1.getText(), 0, 0, this.slovnik.vytvorNoveIdSlova(), 1);
+        this.gui.slovnik.vlozNaKonec(this.anglickyVyraz1.getText(), 
+                this.ceskyVyraz1.getText(), 0, 0, 
+                this.gui.slovnik.vytvorNoveIdSlova(), 1);
              JOptionPane.showMessageDialog(this.gui, "Vyraz byl ulozen");
         
     }//GEN-LAST:event_Uloz1ActionPerformed

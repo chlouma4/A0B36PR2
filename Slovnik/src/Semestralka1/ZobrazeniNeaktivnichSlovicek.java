@@ -9,14 +9,12 @@ package Semestralka1;
  * @author Marco
  */
 public class ZobrazeniNeaktivnichSlovicek extends javax.swing.JPanel {
-    Slovník slovnik;
-Gui gui;
+private Gui gui;
 
     /**
      * Creates new form ZobrazeniNeaktivnichSlovicek
      */
-    public ZobrazeniNeaktivnichSlovicek(Slovník slovnik, Gui gui) {
-        this.slovnik=slovnik;
+    public ZobrazeniNeaktivnichSlovicek(Gui gui) {
         this.gui=gui;
         initComponents();
     }
@@ -118,11 +116,10 @@ Gui gui;
     }// </editor-fold>//GEN-END:initComponents
 
     private void zobrayVseNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrayVseNeaktivniActionPerformed
-        String[] slova = this.slovnik.vypisNeaktivni();
+        String[] slova = this.gui.slovnik.vypisNeaktivni();
         for (int i = 0; i < slova.length; i++) {
             this.zobrayeniNeaktivnichSlov.append(slova[i] + "\n");
         }
-
     }//GEN-LAST:event_zobrayVseNeaktivniActionPerformed
 
     private void zpetNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetNeaktivniActionPerformed

@@ -19,16 +19,24 @@ import javax.swing.JOptionPane;
 public class Test extends javax.swing.JPanel {
 
     private int citac;
-    Slovník slovnik;
-    Gui gui;
-    Integer[] generovanaCisla;
-    int pocetOtazek;
-    int prekladOdkud;
-    int prekladKam;
-    ArrayList spatneOdpovedi = new ArrayList();
+    private Gui gui;
+    private Integer[] generovanaCisla;
+    private int pocetOtazek;
+    private int prekladOdkud;
+    private int prekladKam;
+    private ArrayList spatneOdpovedi = new ArrayList();
 
     /**
      * Creates new form Test
+     */
+    /**Metoda  generuje nahodna cisla.Podle zadanych parametru
+     * 
+     * @param pocet - Pocet cisel ktere metoda navrati
+     * @param max - Maximalni velikost cisla  ktere metoda navrati
+     * @param arrayA - Vsechny cisla v tomto poli budou mezi generovanymi
+     * cisli.Pokud bude  parametr pocet mensi nez pocet cisel v tomto poli.
+     * Tak metoda navrati nahodne cisla z tohoto pole.
+     * @return 
      */
     private Integer[] generatorNahodnychCisel(int pocet, int max, ArrayList arrayA) { // (Integer je zde pouzit misto int protoze int je promitivni datovy typ a s nim by tato metoda nefungovala)
         //Tato metoda generuje  cisla v zavislosti na promench pocet(udava kolik cisel chceme navratit), max (udava jake nejvissi cislo muze byt navraceno), arrayA(rikame generatoru ze tato cisla museji
@@ -74,43 +82,50 @@ public class Test extends javax.swing.JPanel {
 
     }
 
+    /**Metoda ktera se vola jen v konstruktoru tridy Test.
+     *Nastavi prvni otazku a tridni promene.
+     * 
+     */
     private void start() {
         this.prekladOdkud = this.gui.nasatveniTestu[0];
-        if(this.prekladOdkud==1){
-            this.prekladKam=2;
-        }else{
-            this.prekladKam=1;
+        if (this.prekladOdkud == 1) {
+            this.prekladKam = 2;
+        } else {
+            this.prekladKam = 1;
         }
         this.pocetOtazek = this.gui.nasatveniTestu[1];
         generovanaCisla = new Integer[this.pocetOtazek];
         generovanaCisla = generatorNahodnychCisel(this.pocetOtazek,
-                this.slovnik.getPocetBunek(),
-                this.slovnik.sNejvissimPocetemSpatnychOdpovedi(this.pocetOtazek / 2));
+                this.gui.slovnik.getPocetBunek(),
+                this.gui.slovnik.sNejvissimPocetemSpatnychOdpovedi(this.pocetOtazek / 2));
         this.citac = 0;
-        this.otazka.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], prekladOdkud));
+        this.otazka.setText(this.gui.slovnik.getObsahBunky(generovanaCisla[citac], prekladOdkud));
         this.progresTest.setMaximum(this.pocetOtazek);
-        this.progresTest.setValue(citac+1);
-    }
-    
-    private void kontrola(){
-        System.out.println("Kontroluji");
-            boolean testOdpovedi;
-            String prelozeno;
-            prelozeno = this.odpoved.getText();
-            prelozeno = prelozeno.toLowerCase();
-            testOdpovedi = prelozeno.equals(this.slovnik.getObsahBunky(this.generovanaCisla[citac], prekladKam).toLowerCase());
-            System.out.println("vysledek "+ testOdpovedi);
-            if (testOdpovedi == true) {
-                this.slovnik.upravStatistiku(this.generovanaCisla[citac], 0);
-            } else {
-                this.slovnik.upravStatistiku(this.generovanaCisla[citac], 1);
-                this.spatneOdpovedi.add(this.generovanaCisla[citac]);
-                System.out.println("pocet spatnych odpovedi "+spatneOdpovedi.size());
-            }
+        this.progresTest.setValue(citac + 1);
     }
 
-    public Test(Slovník slovnik, Gui gui) {
-        this.slovnik = slovnik;
+    /**Metoda kontroluje odpoved uzivatele.
+     * Podle vysledku upravi statistiku uzivatele.
+     * 
+     */
+    private void kontrola() {
+        System.out.println("Kontroluji");
+        boolean testOdpovedi;
+        String prelozeno;
+        prelozeno = this.odpoved.getText();
+        prelozeno = prelozeno.toLowerCase();
+        testOdpovedi = prelozeno.equals(this.gui.slovnik.getObsahBunky(this.generovanaCisla[citac], prekladKam).toLowerCase());
+        System.out.println("vysledek " + testOdpovedi);
+        if (testOdpovedi == true) {
+            this.gui.slovnik.upravStatistiku(this.generovanaCisla[citac], 0);
+        } else {
+            this.gui.slovnik.upravStatistiku(this.generovanaCisla[citac], 1);
+            this.spatneOdpovedi.add(this.generovanaCisla[citac]);
+            System.out.println("pocet spatnych odpovedi " + spatneOdpovedi.size());
+        }
+    }
+
+    public Test(Gui gui) {
         this.gui = gui;
         initComponents();
         start();
@@ -207,26 +222,23 @@ public class Test extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this.gui, "Neviplnili jste policko", "Chyba!", JOptionPane.WARNING_MESSAGE);
         } else {
             this.kontrola();
-            if (this.generovanaCisla.length-1== citac) {
-                if(!this.spatneOdpovedi.isEmpty()){
-                    System.out.println("Prosel jsem testem ");
-                this.gui.spatneOdpovedi = new int[this.spatneOdpovedi.size()+1];
-                for (int i = 0; i < this.spatneOdpovedi.size(); i++) {
-                    this.gui.spatneOdpovedi[i] = (int) this.spatneOdpovedi.get(i);
-                }
-                this.gui.spatneOdpovedi[this.spatneOdpovedi.size()] = this.generovanaCisla.length;
+            if (this.generovanaCisla.length - 1 == citac) {
+                if (!this.spatneOdpovedi.isEmpty()) {
+                    this.gui.spatneOdpovedi = new int[this.spatneOdpovedi.size() + 1];
+                    for (int i = 0; i < this.spatneOdpovedi.size(); i++) {
+                        this.gui.spatneOdpovedi[i] = (int) this.spatneOdpovedi.get(i);
+                    }
+                    this.gui.spatneOdpovedi[this.spatneOdpovedi.size()] = this.generovanaCisla.length;
                     this.gui.setMyView(14);
-                }else{
-                      System.out.println("Neprosel sem testem");
-                    this.gui.spatneOdpovedi= new int [1];
-                    this.gui.spatneOdpovedi[0]=this.generovanaCisla.length;
+                } else {
+                    this.gui.spatneOdpovedi = new int[1];
+                    this.gui.spatneOdpovedi[0] = this.generovanaCisla.length;
                 }
-                  this.gui.setMyView(14);
+                this.gui.setMyView(14);
             } else {
-                System.out.println("Davam dalsi otazku");
                 citac = citac + 1;
-               this.progresTest.setValue(citac+1);
-                this.otazka.setText(this.slovnik.getObsahBunky(generovanaCisla[citac], prekladOdkud));
+                this.progresTest.setValue(citac + 1);
+                this.otazka.setText(this.gui.slovnik.getObsahBunky(generovanaCisla[citac], prekladOdkud));
                 this.odpoved.setText("");
             }
         }

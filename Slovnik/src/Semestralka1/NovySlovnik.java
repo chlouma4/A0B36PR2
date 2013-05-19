@@ -9,7 +9,7 @@ package Semestralka1;
  * @author Marco
  */
 public class NovySlovnik extends javax.swing.JPanel {
-Gui gui;
+private Gui gui;
     /**
      * Creates new form NovySlovnik
      */

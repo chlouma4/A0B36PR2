@@ -11,13 +11,12 @@ import java.util.ArrayList;
  * @author Marco
  */
 public class ZobrazeniSlovniku extends javax.swing.JPanel {
-Gui gui;
+private Gui gui;
     /**
      * Creates new form ZobrazeniSlovniku
      */
     public ZobrazeniSlovniku(Gui gui) {
         this.gui=gui;
-    
         initComponents();
     }
 

@@ -15,7 +15,7 @@ public class Gui extends javax.swing.JFrame {
     public int [] spatneOdpovedi;
     Uzivatel uzivatel = new Uzivatel(this.rootPane);
     Slovník slovnik = new Slovník(this.rootPane);
-    static Gui myFrame;
+    private static Gui myFrame;
 
     /**
      * Metoda která přepíná jednotlivé Jpanely. Parametrem panel se urci ktery 
@@ -30,41 +30,41 @@ public class Gui extends javax.swing.JFrame {
      * 15- SpravaSlovniku; 16- ZobrazeniSlovniku;
      * 17 - NovySlovnik; 18- SmazaniSlovniku;
      * 19-SpravaUzivatelu; 20 -ZmenaHesla;
-     * 21-smazaniUzivatele;
+     * 21-SmazaniUzivatele;
      */
     public void setMyView(int panel) {
         this.getContentPane().removeAll();
         this.getContentPane().setLayout(new GridLayout(1, 1, 1, 1));
         switch (panel) {
             case 1:
-                this.jPanel1 = new Prihlaseni(slovnik, uzivatel, myFrame);
+                this.jPanel1 = new Prihlaseni(myFrame);
                 break;
             case 2:
-                this.jPanel1 = new VyberSlovnik(this.slovnik, this.uzivatel, myFrame);
+                this.jPanel1 = new VyberSlovnik(myFrame);
                 break;
             case 3:
                 this.jPanel1 = new Menu(myFrame);
                 break;
             case 4:
-                this.jPanel1= new VytvorNovyUcet(this.slovnik, this.uzivatel, myFrame);
+                this.jPanel1= new VytvorNovyUcet(myFrame);
                 break;
             case 5:
-                this.jPanel1 = new SpravaSlovicek(this.slovnik, this.uzivatel, myFrame);
+                this.jPanel1 = new SpravaSlovicek(myFrame);
                 break;
             case 6:
-                this.jPanel1= new PridaniSlovicek(this.slovnik, this.uzivatel, myFrame);
+                this.jPanel1= new PridaniSlovicek(myFrame);
                 break;
             case 7:
-                this.jPanel1= new SmazaniSlovicek(this.slovnik, this.uzivatel, myFrame);
+                this.jPanel1= new SmazaniSlovicek(myFrame);
                 break;
             case 8:
-                this.jPanel1 = new ZobrazeniSlovicek(this.slovnik,myFrame);
+                this.jPanel1 = new ZobrazeniSlovicek(myFrame);
                 break;
             case 9:
-                this.jPanel1=new ZobrazeniNeaktivnichSlovicek(this.slovnik,myFrame);
+                this.jPanel1=new ZobrazeniNeaktivnichSlovicek(myFrame);
                 break;
             case 10:
-                this.jPanel1=new AktivaceNeaktivnichSlov(this.slovnik,myFrame);
+                this.jPanel1=new AktivaceNeaktivnichSlov(myFrame);
                 break;
             case 11:
                 this.jPanel1= new Statistiky(myFrame);
@@ -73,10 +73,10 @@ public class Gui extends javax.swing.JFrame {
                 this.jPanel1= new NastaveniTestu(myFrame);
                 break;
             case 13:
-                this.jPanel1= new Test(this.slovnik,myFrame);
+                this.jPanel1= new Test(myFrame);
                 break;
             case 14 :
-                this.jPanel1= new VyhodnoceniTestu(this.slovnik,myFrame);
+                this.jPanel1= new VyhodnoceniTestu(myFrame);
                 break;
             case 15:
                 this.jPanel1= new SpravaSlovniku(myFrame);
@@ -97,7 +97,7 @@ public class Gui extends javax.swing.JFrame {
                 this.jPanel1= new ZmenaHesla(myFrame);
                 break;
             case 21:
-                this.jPanel1= new smazaniUzivatele(myFrame);
+                this.jPanel1= new SmazaniUzivatele(myFrame);
                 break;
                 
         }
@@ -177,13 +177,7 @@ public class Gui extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Gui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Gui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Gui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Gui.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>

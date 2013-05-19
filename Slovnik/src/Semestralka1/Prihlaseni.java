@@ -12,15 +12,11 @@ import javax.swing.JOptionPane;
  */
 public class Prihlaseni extends javax.swing.JPanel {
 private Gui gui;
-Slovník slovnik;
-Uzivatel uzivatel;
     /**
      * Creates new form Prihlaseni
      */
-    public Prihlaseni(Slovník slovnik, Uzivatel hrac,Gui frame) {
-        this.slovnik=slovnik;
-        this.uzivatel=hrac;
-        this.gui=frame;
+    public Prihlaseni(Gui gui) {
+        this.gui=gui;
         initComponents();
     }
 
@@ -44,7 +40,7 @@ Uzivatel uzivatel;
 
         jLabel1.setText("Vyberte svůj účet :");
 
-        vyberUcet.setModel(new javax.swing.DefaultComboBoxModel(uzivatel.nactiUdajeOHracich(1)));
+        vyberUcet.setModel(new javax.swing.DefaultComboBoxModel(gui.uzivatel.nactiUdajeOHracich(1)));
         vyberUcet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vyberUcetActionPerformed(evt);
@@ -137,12 +133,12 @@ Uzivatel uzivatel;
     }//GEN-LAST:event_vytvorNovyUcetActionPerformed
 
     private void prihlasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prihlasActionPerformed
-        boolean spravne = uzivatel.prihlaseni(this.vyberUcet.getSelectedItem().toString(), 
+        boolean spravne = gui.uzivatel.prihlaseni(this.vyberUcet.getSelectedItem().toString(), 
                 String.valueOf(this.vstupHesla.getPassword()), this.vyberUcet.getSelectedIndex());
         if (spravne) {
            this.gui.setMyView(2);
         } else {
-            JOptionPane.showMessageDialog(this.gui, "Bylo zadano spatne heslo, zbavaji vam " + (3 - this.uzivatel.getPokusy()) + " pokusy",
+            JOptionPane.showMessageDialog(this.gui, "Bylo zadano spatne heslo, zbavaji vam " + (3 - this.gui.uzivatel.getPokusy()) + " pokusy",
                     "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_prihlasActionPerformed

@@ -11,17 +11,13 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class SpravaSlovicek extends javax.swing.JPanel {
-    Slovník slovnik;
-Uzivatel uzivatel;
 private Gui gui;
 
     /**
      * Creates new form SpravaSlovicek
      */
-    public SpravaSlovicek(Slovník slovnik, Uzivatel hrac,Gui frame) {
-         this.slovnik=slovnik;
-        this.uzivatel=hrac;
-        this.gui=frame;
+    public SpravaSlovicek(Gui gui) {
+        this.gui=gui;
         initComponents();
     }
 
@@ -150,16 +146,15 @@ private Gui gui;
     }// </editor-fold>//GEN-END:initComponents
 
     private void pridaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButton1ActionPerformed
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 2)) {
-          
-
+        if (this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 2)) {
+          this.gui.setMyView(6);
         } else {
             JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_pridaniSlovicekButton1ActionPerformed
 
     private void smazaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smazaniSlovicekButton1ActionPerformed
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+        if (this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 1)) {
         this.gui.setMyView(7);
 
         } else {
@@ -180,7 +175,7 @@ this.gui.setMyView(3);
     }//GEN-LAST:event_zpetSpravaSlovicekActionPerformed
 
     private void aktivovaniNeaktivnichSlov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlov1ActionPerformed
-        if (this.uzivatel.testPravomoc(this.slovnik.getTvurceSlovniku(), 1)) {
+        if (this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 1)) {
             this.gui.setMyView(10);
         } else {
             JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);

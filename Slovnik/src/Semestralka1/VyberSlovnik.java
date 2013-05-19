@@ -13,11 +13,13 @@ import java.util.ArrayList;
  * @author Marco
  */
 public class VyberSlovnik extends javax.swing.JPanel {
-Slovník slovnik;
-Uzivatel uzivatel;
 private Gui gui;
 
-
+/**Metoda prevadi ArrayList do pole.
+ * 
+ * 
+ * @return 
+ */
 private String [] fromArrayListToArray(){
     ArrayList seznam= this.gui.slovnik.getSeznamSlovniku();
     String [] seznamX= new String[seznam.size()];
@@ -29,10 +31,8 @@ private String [] fromArrayListToArray(){
     /**
      * Creates new form VyberSlovnik
      */
-    public VyberSlovnik(Slovník slovnik, Uzivatel hrac,Gui frame) {
-        this.slovnik=slovnik;
-        this.uzivatel=hrac;
-         this.gui=frame;
+    public VyberSlovnik(Gui gui) {
+         this.gui=gui;
         initComponents();
     }
 
@@ -108,8 +108,8 @@ private String [] fromArrayListToArray(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void potvrdSlovnikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potvrdSlovnikActionPerformed
-        slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), uzivatel.getJmeno());
-        this.slovnik.presunNeaktivni();
+        gui.slovnik.nactiSlovnik(this.vyberSlovnik.getSelectedItem().toString(), gui.uzivatel.getJmeno());
+        this.gui.slovnik.presunNeaktivni();
         gui.setMyView(3);
       
     }//GEN-LAST:event_potvrdSlovnikActionPerformed

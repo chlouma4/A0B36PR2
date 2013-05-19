@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class SpravaUzivatelu extends javax.swing.JPanel {
-Gui gui;
+private Gui gui;
     /**
      * Creates new form SpravaUzivatelu
      */

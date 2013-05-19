@@ -4,12 +4,8 @@
  */
 package Semestralka1;
 
-import java.util.Enumeration;
 import javax.swing.JOptionPane;
-import javax.swing.ListSelectionModel;
-import javax.swing.event.TableColumnModelListener;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 
 /**
@@ -17,9 +13,9 @@ import javax.swing.table.TableModel;
  * @author Marco
  */
 public class Statistiky extends javax.swing.JPanel  {
-    Gui gui;
+     private Gui gui;
  
-    TableModel dataModelAktivni = new AbstractTableModel() {
+    private TableModel dataModelAktivni = new AbstractTableModel() {
         @Override
         public int getColumnCount() {
             return 4;
@@ -51,7 +47,7 @@ public class Statistiky extends javax.swing.JPanel  {
             rowIndex++;
             switch (columnIndex) {
                 case 0:
-                    return gui.slovnik.vypisXZeSpojovehoSeznamu(rowIndex);
+                    return gui.slovnik.getObsahBunky(rowIndex,7);
                 case 1:
                     return gui.slovnik.getObsahBunky(rowIndex, 3);
                 case 2:
@@ -64,7 +60,7 @@ public class Statistiky extends javax.swing.JPanel  {
             return "Chyba!";
         }
     };
-    TableModel dataModelNeaktivni = new AbstractTableModel() {
+   private  TableModel dataModelNeaktivni = new AbstractTableModel() {
         @Override
         public int getColumnCount() {
             return 4;
@@ -219,7 +215,6 @@ public class Statistiky extends javax.swing.JPanel  {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-
         if (this.jButton8.getText().equals("Zobrazit statistiku pro aktivni slova")) {
             if (this.gui.slovnik.getPocetBunek() == 0) {
                 JOptionPane.showMessageDialog(this.gui, "Nejsou zadna slova k zobrazeni");

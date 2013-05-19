@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class SmazaniSlovniku extends javax.swing.JPanel {
-Gui gui;
+private Gui gui;
     /**
      * Creates new form SmazaniSlovniku
      */

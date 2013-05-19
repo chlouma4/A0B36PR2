@@ -9,13 +9,11 @@ package Semestralka1;
  * @author Marco
  */
 public class ZobrazeniSlovicek extends javax.swing.JPanel {
-Slovník slovnik;
-Gui gui;
+private Gui gui;
     /**
      * Creates new form ZobrazeniSlovicek
      */
-    public ZobrazeniSlovicek(Slovník slovnik, Gui gui) {
-        this.slovnik=slovnik;
+    public ZobrazeniSlovicek(Gui gui) {
         this.gui=gui;
         initComponents();
     }
@@ -124,7 +122,7 @@ this.gui.setMyView(3);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void zobrazVseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazVseActionPerformed
-        String[] slova = slovnik.vypisSpojovySeznam();
+        String[] slova = gui.slovnik.vypisSpojovySeznam();
         for (int i = 0; i < slova.length; i++) {
             this.zobrayeniSlovicekText.append(slova[i] + "\n");
         }

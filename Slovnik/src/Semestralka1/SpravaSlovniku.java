@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class SpravaSlovniku extends javax.swing.JPanel {
-    Gui gui;
+ private Gui gui;
  
 
     /**

@@ -9,7 +9,7 @@ package Semestralka1;
  * @author Marco
  */
 public class ZmenaHesla extends javax.swing.JPanel {
-Gui gui;
+private Gui gui;
     /**
      * Creates new form ZmenaHesla
      */
@@ -136,8 +136,11 @@ Gui gui;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.gui.uzivatel.zmenHeslo(String.valueOf(this.stareHeslo.getPassword()),String.valueOf(this.noveHeslo.getPassword()),
-               String.valueOf(this.noveHesloOpakovane.getPassword()));
+      if(this.gui.uzivatel.vytvorNeboZmenUzivatele(2,String.valueOf(this.stareHeslo.getPassword()),
+              String.valueOf(this.noveHeslo.getPassword()),
+               String.valueOf(this.noveHesloOpakovane.getPassword()))){
+          this.gui.setMyView(19);
+      }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
