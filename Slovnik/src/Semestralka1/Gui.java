@@ -97,7 +97,7 @@ public class Gui extends javax.swing.JFrame {
                 this.jPanel1= new ZmenaHesla(myFrame);
                 break;
             case 21:
-                this.jPanel1= new SmazaniUzivatele(myFrame);
+                this.jPanel1= new SmazaniUzivatelu(myFrame);
                 break;
                 
         }
