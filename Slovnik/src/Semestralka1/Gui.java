@@ -29,6 +29,8 @@ public class Gui extends javax.swing.JFrame {
      * 12- NastaveniTestu; 13- Test; 14- VyhodnoceniTestu;
      * 15- SpravaSlovniku; 16- ZobrazeniSlovniku;
      * 17 - NovySlovnik; 18- SmazaniSlovniku;
+     * 19-SpravaUzivatelu; 20 -ZmenaHesla;
+     * 21-smazaniUzivatele;
      */
     public void setMyView(int panel) {
         this.getContentPane().removeAll();
@@ -88,6 +90,16 @@ public class Gui extends javax.swing.JFrame {
             case 18:
                 this.jPanel1= new SmazaniSlovniku(myFrame);
                 break;
+            case 19 :
+                this.jPanel1= new SpravaUzivatelu(myFrame);
+                break;
+            case 20:
+                this.jPanel1= new ZmenaHesla(myFrame);
+                break;
+            case 21:
+                this.jPanel1= new smazaniUzivatele(myFrame);
+                break;
+                
         }
         jPanel1.setSize(jPanel1.getPreferredSize());
         this.getContentPane().add(jPanel1);

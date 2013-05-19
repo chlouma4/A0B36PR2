@@ -4,6 +4,7 @@
  */
 package Semestralka1;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -26,28 +27,53 @@ public class Uzivatel {
     private String heslo;
     private int pokusy;
     private JRootPane pane;
+    private ArrayList seznamX;
     
     public Uzivatel(JRootPane pane){
         this.pane=pane;
     }
-    
 
-    /**
-     * Metoda ulozNovehoUzivatele() ulozi noveho hrace do souboru. Jmeno hrace a jeho
-     * heslo ziska z tridnich promenich.
-     *
+    /**Metoda ulozUzivatele() ulozi  uzivatele do souboru.
+     *Parametrem nastaveni se urcuje jak bude metoda pracovat.
+     * 
+     * @param nastaveni 
+     *  1- metoda uklada noveho uzivatele jeho jmeno a hesllo si vezme
+     * z tridnich promenich.
+     * 2- metoda zmeni heslo hrace. nove heslo ziska z promene tridy.
+     * 3- metoda slouzi metode smazUzivatele pro ulozeni zmen.
      */
-    public void ulozNovehoUzivatele() {
+    public void ulozUzivatele(int nastaveni) {
+    String smazat="";
         ArrayList seznam = new ArrayList();
+        if(nastaveni==3){
+          seznam=this.seznamX;
+           smazat= (String)this.seznamX.get(this.seznamX.size()-1);
+          this.seznamX.remove(this.seznamX.size()-1);
+        }else{
         String[] seznam1=nactiUdajeOHracich(3);
         seznam.addAll(Arrays.asList(seznam1));
+        if(nastaveni==1){
         seznam.add(this.jmeno);
         seznam.add(this.heslo);
+        }
+        if (nastaveni==2){
+          int index=seznam.indexOf(this.jmeno);
+          seznam.remove(index+1);
+            seznam.add(this.heslo);
+        }
+        }
         FileWriter out = null;
-        FileWriter novy= null;
+        File novy= null;
+        File uzivatel=null;
         try {
             out = new FileWriter("Hraci.txt");
-            novy= new FileWriter(this.jmeno+".txt");
+            if(nastaveni==1){
+           novy= new File(this.jmeno+".txt");
+            }     
+            if(nastaveni==3){
+               uzivatel= new File(smazat+".txt");
+            
+            }
         } catch (IOException ex) {
               JOptionPane.showMessageDialog(this.pane, "System nemuze nalezt soubor Hraci.txt",
                     "Error!", JOptionPane.ERROR_MESSAGE);
@@ -58,17 +84,32 @@ public class Uzivatel {
                 out.write(seznam.get(i) + "" + System.lineSeparator());
             }
             out.close();
-            novy.close();
+            if(nastaveni==1){
+            novy.createNewFile();
+            }
+            if(nastaveni==3){
+                uzivatel.delete();
+            }
         } catch (Exception e) {
-      JOptionPane.showMessageDialog(this.pane, "System zapsat data do souboru Hraci.txt",
+      JOptionPane.showMessageDialog(this.pane, "System nemuze zapsat data do souboru Hraci.txt",
                     "Error!", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }
 
     }
 
-    public void smazHrace() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void smazUzivatele(int uzivatel) {
+        String [] udaje=this.nactiUdajeOHracich(3);
+        ArrayList seznam= new ArrayList();
+        seznam.addAll(Arrays.asList(udaje));
+        uzivatel=(uzivatel-1)*2;
+        String jmeno=(String)seznam.get(uzivatel);
+        seznam.remove(uzivatel);
+        seznam.remove(uzivatel);
+        seznam.add(jmeno);
+        this.seznamX=seznam;
+        this.ulozUzivatele(3);
+        
     }
 
     /**
@@ -140,7 +181,7 @@ public class Uzivatel {
             System.out.println("Zadejte sve jmeno.");
             this.jmeno = scan.next();
             nastavHeslo(0);
-            ulozNovehoUzivatele();
+            ulozUzivatele(1);
             System.out.println("Ucet vytvoren");
             return (hraci.size()/2)+1;
         } else {
@@ -323,7 +364,7 @@ public class Uzivatel {
         if(heslo.length()==4 | heslo.length()==6){
         this.setJmeno(jmeno);
         this.zasifrujHeslo(heslo);
-        this.ulozNovehoUzivatele();
+        this.ulozUzivatele(1);
         return true;
         }else{
              JOptionPane.showMessageDialog(this.pane, "Heslo nema predepsanou delku", "Chyba!", JOptionPane.WARNING_MESSAGE);
@@ -364,6 +405,32 @@ public class Uzivatel {
     }
     
 
+   public boolean zmenHeslo(String stareHeslo,String noveHeslo,String noveHesloOpakovane){
+           if(stareHeslo.equals("") || noveHeslo.equals("") || noveHesloOpakovane.equals("")){
+           JOptionPane.showMessageDialog(this.pane, "Některý z údajů nebyl zadán", "Chyba!", JOptionPane.WARNING_MESSAGE);
+           return false;
+        }
+       boolean test=this.overHeslo(stareHeslo);
+       if(test){
+         if(noveHeslo.equals(noveHesloOpakovane)== false){
+          JOptionPane.showMessageDialog(this.pane, "Hesla se neshoduji", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        return false;
+        }
+                 if(noveHeslo.length()==4 | noveHeslo.length()==6){
+                     this.zasifrujHeslo(noveHeslo);
+                     this.ulozUzivatele(2);
+          
+        return true;
+        }else{
+             JOptionPane.showMessageDialog(this.pane, "Heslo nema predepsanou delku", "Chyba!", JOptionPane.WARNING_MESSAGE);
+             return false;
+        }
+           
+       }
+       JOptionPane.showMessageDialog(this.pane, "Spatne heslo", "Chyba!", JOptionPane.WARNING_MESSAGE);
+        return false;
+       
+   }
     public String getJmeno() {
         return jmeno;
     }

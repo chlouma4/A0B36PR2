@@ -208,6 +208,7 @@ public class Menu extends javax.swing.JPanel {
     private void odhlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasitSeActionPerformed
         this.gui.slovnik.ulozSlovnik(this.gui.uzivatel.getJmeno());
         this.gui.slovnik.vycistiSpojovySeznam();
+        this.gui.setMyView(1);
     }//GEN-LAST:event_odhlasitSeActionPerformed
 
     private void ukoncitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ukoncitProgramActionPerformed
@@ -221,7 +222,7 @@ public class Menu extends javax.swing.JPanel {
     }//GEN-LAST:event_spravaSlovnikuButonActionPerformed
 
     private void spravaHracuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spravaHracuButtonActionPerformed
-        // TODO add your handling code here:
+     this.gui.setMyView(19);
     }//GEN-LAST:event_spravaHracuButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
