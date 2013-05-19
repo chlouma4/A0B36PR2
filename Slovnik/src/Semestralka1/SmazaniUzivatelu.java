@@ -25,7 +25,7 @@ private void vypis(){
     String [] uzivatele= this.gui.uzivatel.nactiUdajeOHracich(1);
    pocetUzivatelu=uzivatele.length;
     for (int i = 0; i < uzivatele.length; i++) {
-        this.textArea.append(uzivatele[i]+"\n");
+        this.textArea.append("("+i+") "+uzivatele[i]+"\n");
     }
 }
   

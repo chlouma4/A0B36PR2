@@ -15,9 +15,17 @@ private Gui gui;
     /**
      * Creates new form ZobrazeniSlovniku
      */
+
+private void zobrazSlovniky(){
+     ArrayList seznam=this.gui.slovnik.getSeznamSlovniku();
+        for (int i = 0; i < seznam.size(); i++) {
+            this.textAreaZobrazeniSlovniku.append("("+i+") "+ seznam.get(i)+"\n");
+        }
+}
     public ZobrazeniSlovniku(Gui gui) {
         this.gui=gui;
         initComponents();
+        this.zobrazSlovniky();
     }
 
     /**
@@ -34,7 +42,6 @@ private Gui gui;
         jScrollPane6 = new javax.swing.JScrollPane();
         textAreaZobrazeniSlovniku = new javax.swing.JTextArea();
         zpetZezobrazeniSlovnku = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         zobrazeniSlovniku.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -59,13 +66,6 @@ private Gui gui;
             }
         });
 
-        jButton1.setText("Zobraz");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout zobrazeniSlovnikuLayout = new javax.swing.GroupLayout(zobrazeniSlovniku);
         zobrazeniSlovniku.setLayout(zobrazeniSlovnikuLayout);
         zobrazeniSlovnikuLayout.setHorizontalGroup(
@@ -76,8 +76,7 @@ private Gui gui;
                     .addComponent(jScrollPane6)
                     .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
                         .addComponent(zpetZezobrazeniSlovnku)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
@@ -92,9 +91,7 @@ private Gui gui;
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zpetZezobrazeniSlovnku)
-                    .addComponent(jButton1))
+                .addComponent(zpetZezobrazeniSlovnku)
                 .addGap(16, 16, 16))
         );
 
@@ -114,15 +111,7 @@ private Gui gui;
 this.gui.setMyView(15);
     }//GEN-LAST:event_zpetZezobrazeniSlovnkuActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      ArrayList seznam=this.gui.slovnik.getSeznamSlovniku();
-        for (int i = 0; i < seznam.size(); i++) {
-            this.textAreaZobrazeniSlovniku.append(""+seznam.get(i) +"\n");
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea textAreaZobrazeniSlovniku;

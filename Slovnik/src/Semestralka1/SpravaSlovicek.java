@@ -110,25 +110,22 @@ private Gui gui;
                 .addContainerGap()
                 .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, spravaSlovicek1Layout.createSequentialGroup()
-                        .addGroup(spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
-                                .addComponent(zobrazeniSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                                .addComponent(aktivovaniNeaktivnichSlov1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
-                                .addComponent(pridaniSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(zobrazeniNeaktivnichSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
-                        .addComponent(zpetSpravaSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(zobrazeniSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(aktivovaniNeaktivnichSlov1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, spravaSlovicek1Layout.createSequentialGroup()
+                        .addComponent(pridaniSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(smazaniSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, spravaSlovicek1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(zobrazeniNeaktivnichSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                        .addComponent(zpetSpravaSlovicek, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(smazaniSlovicekButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(spravaSlovicek1Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
                 .addComponent(jLabel21)
-                .addGap(125, 125, 125))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         spravaSlovicek1Layout.setVerticalGroup(
             spravaSlovicek1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,22 +162,21 @@ private Gui gui;
     private void pridaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pridaniSlovicekButton1ActionPerformed
         if (this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 2)) {
           this.gui.setMyView(6);
-        } else {
-            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_pridaniSlovicekButton1ActionPerformed
 
     private void smazaniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_smazaniSlovicekButton1ActionPerformed
         if (this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 1)) {
         this.gui.setMyView(7);
-
-        } else {
-            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_smazaniSlovicekButton1ActionPerformed
 
     private void zobrazeniSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniSlovicekButton1ActionPerformed
- this.gui.setMyView(8);        
+if(this.gui.slovnik.getPocetBunek()==0){
+     JOptionPane.showMessageDialog(this.gui, "Nejsou zadna slova k zobrazeni");
+}else{
+     this.gui.setMyView(8);  
+}    
     }//GEN-LAST:event_zobrazeniSlovicekButton1ActionPerformed
 
     private void zobrazeniNeaktivnichSlovicekButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrazeniNeaktivnichSlovicekButton1ActionPerformed

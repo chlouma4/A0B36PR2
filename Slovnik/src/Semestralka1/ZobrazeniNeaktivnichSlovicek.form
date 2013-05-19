@@ -41,8 +41,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="zpetNeaktivni" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="zobrayVseNeaktivni" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -63,10 +62,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="289" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="zpetNeaktivni" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="zobrayVseNeaktivni" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="zpetNeaktivni" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="28" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -83,14 +79,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Zobrazen&#xed; neaktivn&#xed;ch slov&#xed;&#x10d;ek"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="zobrayVseNeaktivni">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Zobraz "/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="zobrayVseNeaktivniActionPerformed"/>
-          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>

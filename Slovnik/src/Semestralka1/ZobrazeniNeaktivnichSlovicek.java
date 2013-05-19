@@ -14,9 +14,17 @@ private Gui gui;
     /**
      * Creates new form ZobrazeniNeaktivnichSlovicek
      */
+
+private void zobrazNeaktivni(){
+       String[] slova = this.gui.slovnik.vypisNeaktivni();
+        for (int i = 0; i < slova.length; i++) {
+            this.zobrayeniNeaktivnichSlov.append("("+i+")"+slova[i] + "\n");
+        }
+}
     public ZobrazeniNeaktivnichSlovicek(Gui gui) {
         this.gui=gui;
         initComponents();
+        this.zobrazNeaktivni();
     }
 
     /**
@@ -30,7 +38,6 @@ private Gui gui;
 
         zobrazeniNeaktivnichSlovicek = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        zobrayVseNeaktivni = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         zobrayeniNeaktivnichSlov = new javax.swing.JTextArea();
         zpetNeaktivni = new javax.swing.JButton();
@@ -40,13 +47,6 @@ private Gui gui;
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 204, 0));
         jLabel17.setText("Zobrazení neaktivních slovíček");
-
-        zobrayVseNeaktivni.setText("Zobraz ");
-        zobrayVseNeaktivni.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                zobrayVseNeaktivniActionPerformed(evt);
-            }
-        });
 
         zobrayeniNeaktivnichSlov.setEditable(false);
         zobrayeniNeaktivnichSlov.setBackground(new java.awt.Color(0, 0, 204));
@@ -74,8 +74,7 @@ private Gui gui;
                 .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
                         .addComponent(zpetNeaktivni)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(zobrayVseNeaktivni))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2))
                 .addContainerGap())
             .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
@@ -91,9 +90,7 @@ private Gui gui;
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(zpetNeaktivni)
-                    .addComponent(zobrayVseNeaktivni))
+                .addComponent(zpetNeaktivni)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
@@ -109,13 +106,6 @@ private Gui gui;
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void zobrayVseNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zobrayVseNeaktivniActionPerformed
-        String[] slova = this.gui.slovnik.vypisNeaktivni();
-        for (int i = 0; i < slova.length; i++) {
-            this.zobrayeniNeaktivnichSlov.append(slova[i] + "\n");
-        }
-    }//GEN-LAST:event_zobrayVseNeaktivniActionPerformed
-
     private void zpetNeaktivniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zpetNeaktivniActionPerformed
  this.gui.setMyView(5);     
     }//GEN-LAST:event_zpetNeaktivniActionPerformed
@@ -123,7 +113,6 @@ private Gui gui;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel17;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton zobrayVseNeaktivni;
     private javax.swing.JTextArea zobrayeniNeaktivnichSlov;
     private javax.swing.JPanel zobrazeniNeaktivnichSlovicek;
     private javax.swing.JButton zpetNeaktivni;

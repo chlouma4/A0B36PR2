@@ -16,9 +16,18 @@ private Gui gui;
     /**
      * Creates new form SmazaniSlovicek
      */
+
+private void vypisSlova(){
+    String[] slova = gui.slovnik.vypisSpojovySeznam();
+        for (int i = 0; i < slova.length; i++) {
+            this.jTextArea1.append("("+i+")"+slova[i] + "\n");
+        }
+    
+}
     public SmazaniSlovicek(Gui gui) {
         this.gui=gui;
         initComponents();
+        vypisSlova();
     }
 
     /**
@@ -39,6 +48,7 @@ private Gui gui;
         cisloKeSmazani = new javax.swing.JSpinner();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
 
         mazaniSlovicekPanel.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -88,45 +98,53 @@ private Gui gui;
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setForeground(new java.awt.Color(0, 204, 0));
+        jButton1.setText("Zobrazit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout mazaniSlovicekPanelLayout = new javax.swing.GroupLayout(mazaniSlovicekPanel);
         mazaniSlovicekPanel.setLayout(mazaniSlovicekPanelLayout);
         mazaniSlovicekPanelLayout.setHorizontalGroup(
             mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
-                .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel15)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
-                                .addComponent(cisloKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(deaktivujDvojci)
-                                .addGap(18, 18, 18)
-                                .addComponent(uplneVymazani)))))
-                .addContainerGap())
-            .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(zpetMazaniSlovicek)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mazaniSlovicekPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(87, 87, 87))
+            .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                        .addComponent(cisloKeSmazani, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addComponent(deaktivujDvojci)
+                        .addGap(18, 18, 18)
+                        .addComponent(uplneVymazani))
+                    .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                        .addComponent(zpetMazaniSlovicek)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addContainerGap())
         );
         mazaniSlovicekPanelLayout.setVerticalGroup(
             mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mazaniSlovicekPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel15)
+                .addGap(23, 23, 23)
+                .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mazaniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deaktivujDvojci)
@@ -191,9 +209,14 @@ private Gui gui;
         this.gui.setMyView(5);
     }//GEN-LAST:event_zpetMazaniSlovicekActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.vypisSlova();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSpinner cisloKeSmazani;
     private javax.swing.JButton deaktivujDvojci;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JScrollPane jScrollPane1;

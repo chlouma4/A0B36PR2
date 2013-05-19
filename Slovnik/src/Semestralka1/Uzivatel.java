@@ -337,6 +337,7 @@ public class Uzivatel {
                 }
                 break;
         }
+         JOptionPane.showMessageDialog(this.pane, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         return false;
     }
     
