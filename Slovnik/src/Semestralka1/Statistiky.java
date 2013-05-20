@@ -139,12 +139,19 @@ public class Statistiky extends javax.swing.JPanel  {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         statistiky = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
         jButton8 = new javax.swing.JButton();
         statistikyZpet = new javax.swing.JButton();
+        jLabel4 = new MyLabel(this.gui,3);
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new MyLabel(this.gui,11);
+
+        jLabel1.setText("-->");
 
         statistiky.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -174,6 +181,12 @@ public class Statistiky extends javax.swing.JPanel  {
             }
         });
 
+        jLabel4.setText("Menu");
+
+        jLabel2.setText("-->");
+
+        jLabel3.setText("Statistiky");
+
         javax.swing.GroupLayout statistikyLayout = new javax.swing.GroupLayout(statistiky);
         statistiky.setLayout(statistikyLayout);
         statistikyLayout.setHorizontalGroup(
@@ -192,7 +205,14 @@ public class Statistiky extends javax.swing.JPanel  {
                         .addComponent(statistikyZpet)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton8)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(statistikyLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         statistikyLayout.setVerticalGroup(
             statistikyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,11 +220,16 @@ public class Statistiky extends javax.swing.JPanel  {
                 .addContainerGap()
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(statistikyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(statistikyZpet)
                     .addComponent(jButton8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(statistikyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
                 .addContainerGap())
         );
 
@@ -216,7 +241,7 @@ public class Statistiky extends javax.swing.JPanel  {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(statistiky, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(statistiky, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -245,7 +270,12 @@ public class Statistiky extends javax.swing.JPanel  {
     }//GEN-LAST:event_statistikyZpetActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton8;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPanel statistiky;
     private javax.swing.JButton statistikyZpet;

@@ -42,6 +42,11 @@ private void zobrazSlovniky(){
         jScrollPane6 = new javax.swing.JScrollPane();
         textAreaZobrazeniSlovniku = new javax.swing.JTextArea();
         zpetZezobrazeniSlovnku = new javax.swing.JButton();
+        jLabel3 = new MyLabel(this.gui,3);
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new MyLabel(this.gui,15);
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new MyLabel(this.gui,16);
 
         zobrazeniSlovniku.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -66,22 +71,45 @@ private void zobrazSlovniky(){
             }
         });
 
+        jLabel3.setText("Menu");
+
+        jLabel4.setText("-->");
+
+        jLabel1.setText("Správa slovníků");
+
+        jLabel5.setText("-->");
+
+        jLabel2.setText("Zobrazení slovníků");
+
         javax.swing.GroupLayout zobrazeniSlovnikuLayout = new javax.swing.GroupLayout(zobrazeniSlovniku);
         zobrazeniSlovniku.setLayout(zobrazeniSlovnikuLayout);
         zobrazeniSlovnikuLayout.setHorizontalGroup(
             zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovnikuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel32)
+                .addGap(47, 47, 47))
             .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6)
+                    .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
+                        .addGroup(zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6)
+                            .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2)
+                                .addGap(0, 39, Short.MAX_VALUE)))
+                        .addContainerGap())
                     .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
                         .addComponent(zpetZezobrazeniSlovnku)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(zobrazeniSlovnikuLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel32)
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         zobrazeniSlovnikuLayout.setVerticalGroup(
             zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,10 +117,17 @@ private void zobrazSlovniky(){
                 .addContainerGap()
                 .addComponent(jLabel32)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(zpetZezobrazeniSlovnku)
-                .addGap(16, 16, 16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(zobrazeniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -103,7 +138,9 @@ private void zobrazSlovniky(){
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(zobrazeniSlovniku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(zobrazeniSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -112,7 +149,12 @@ this.gui.setMyView(15);
     }//GEN-LAST:event_zpetZezobrazeniSlovnkuActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea textAreaZobrazeniSlovniku;
     private javax.swing.JPanel zobrazeniSlovniku;

@@ -33,6 +33,11 @@ private Gui gui;
         jLabel34 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
         vytvorNovySlovnik = new javax.swing.JButton();
+        jLabel3 = new MyLabel(this.gui,3);
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new MyLabel(this.gui,15);
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new MyLabel(this.gui,17);
 
         vytvoreniSlovniku.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -64,23 +69,48 @@ private Gui gui;
             }
         });
 
+        jLabel3.setText("Menu");
+
+        jLabel4.setText("-->");
+
+        jLabel1.setText("Správa slovníků");
+
+        jLabel5.setText("-->");
+
+        jLabel2.setText("Vytvoření slovníku");
+
         javax.swing.GroupLayout vytvoreniSlovnikuLayout = new javax.swing.GroupLayout(vytvoreniSlovniku);
         vytvoreniSlovniku.setLayout(vytvoreniSlovnikuLayout);
         vytvoreniSlovnikuLayout.setHorizontalGroup(
             vytvoreniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(vytvoreniSlovnikuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(vytvorNovySlovnik)
-                .addContainerGap())
-            .addGroup(vytvoreniSlovnikuLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
                 .addGroup(vytvoreniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nazevNovehoSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34)
-                    .addComponent(jLabel33))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(vytvoreniSlovnikuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(vytvorNovySlovnik))
+                    .addGroup(vytvoreniSlovnikuLayout.createSequentialGroup()
+                        .addGroup(vytvoreniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(vytvoreniSlovnikuLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addGroup(vytvoreniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nazevNovehoSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel34)
+                                    .addComponent(jLabel33)))
+                            .addGroup(vytvoreniSlovnikuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         vytvoreniSlovnikuLayout.setVerticalGroup(
             vytvoreniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,11 +121,18 @@ private Gui gui;
                 .addComponent(jLabel34)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nazevNovehoSlovniku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(vytvoreniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton15)
                     .addComponent(vytvorNovySlovnik))
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(vytvoreniSlovnikuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel2))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -124,8 +161,13 @@ this.gui.setMyView(15);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton15;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nazevNovehoSlovniku;
     private javax.swing.JButton vytvorNovySlovnik;
     private javax.swing.JPanel vytvoreniSlovniku;

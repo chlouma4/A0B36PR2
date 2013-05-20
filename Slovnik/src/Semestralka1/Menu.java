@@ -42,12 +42,13 @@ public class Menu extends javax.swing.JPanel {
         ukoncitProgram = new javax.swing.JButton();
         spravaSlovnikuButon = new javax.swing.JButton();
         spravaHracuButton = new javax.swing.JButton();
+        jLabel3 = new MyLabel(this.gui,3);
 
         Menu.setBackground(new java.awt.Color(51, 102, 255));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setForeground(new java.awt.Color(0, 204, 0));
-        jButton1.setText("Zkoušení");
+        jButton1.setText("Test");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -56,7 +57,7 @@ public class Menu extends javax.swing.JPanel {
 
         spravaSlovicekButton.setBackground(new java.awt.Color(0, 0, 204));
         spravaSlovicekButton.setForeground(new java.awt.Color(0, 204, 0));
-        spravaSlovicekButton.setText("Sprava slovicek");
+        spravaSlovicekButton.setText("Správa slovíček");
         spravaSlovicekButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 spravaSlovicekButtonActionPerformed(evt);
@@ -76,7 +77,7 @@ public class Menu extends javax.swing.JPanel {
 
         zmenaSlovniku.setBackground(new java.awt.Color(0, 0, 204));
         zmenaSlovniku.setForeground(new java.awt.Color(0, 204, 0));
-        zmenaSlovniku.setText("Zmena slovniku");
+        zmenaSlovniku.setText("Změna slovníku");
         zmenaSlovniku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 zmenaSlovnikuActionPerformed(evt);
@@ -89,7 +90,7 @@ public class Menu extends javax.swing.JPanel {
 
         odhlasitSe.setBackground(new java.awt.Color(0, 0, 204));
         odhlasitSe.setForeground(new java.awt.Color(0, 204, 0));
-        odhlasitSe.setText("Odhlsit se");
+        odhlasitSe.setText("Odhlásit se");
         odhlasitSe.setMaximumSize(new java.awt.Dimension(107, 23));
         odhlasitSe.setMinimumSize(new java.awt.Dimension(107, 23));
         odhlasitSe.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +101,7 @@ public class Menu extends javax.swing.JPanel {
 
         ukoncitProgram.setBackground(new java.awt.Color(0, 0, 204));
         ukoncitProgram.setForeground(new java.awt.Color(0, 204, 0));
-        ukoncitProgram.setText("Ukoncit program");
+        ukoncitProgram.setText("Ukončit program");
         ukoncitProgram.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ukoncitProgramActionPerformed(evt);
@@ -109,7 +110,7 @@ public class Menu extends javax.swing.JPanel {
 
         spravaSlovnikuButon.setBackground(new java.awt.Color(0, 0, 204));
         spravaSlovnikuButon.setForeground(new java.awt.Color(0, 204, 0));
-        spravaSlovnikuButon.setText("Sprava slovniku");
+        spravaSlovnikuButon.setText("Správa slovníků");
         spravaSlovnikuButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 spravaSlovnikuButonActionPerformed(evt);
@@ -118,12 +119,14 @@ public class Menu extends javax.swing.JPanel {
 
         spravaHracuButton.setBackground(new java.awt.Color(0, 0, 204));
         spravaHracuButton.setForeground(new java.awt.Color(0, 204, 0));
-        spravaHracuButton.setText("Sprava Uzivatelu");
+        spravaHracuButton.setText("Správa Uživatelů");
         spravaHracuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 spravaHracuButtonActionPerformed(evt);
             }
         });
+
+        jLabel3.setText("Menu");
 
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
@@ -146,8 +149,11 @@ public class Menu extends javax.swing.JPanel {
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(zmenaSlovniku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(ukoncitProgram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(spravaHracuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                            .addComponent(spravaHracuButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(MenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +176,9 @@ public class Menu extends javax.swing.JPanel {
                 .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(odhlasitSe, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ukoncitProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -181,7 +189,7 @@ public class Menu extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -230,6 +238,7 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JPanel Menu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JButton odhlasitSe;
     private javax.swing.JButton spravaHracuButton;

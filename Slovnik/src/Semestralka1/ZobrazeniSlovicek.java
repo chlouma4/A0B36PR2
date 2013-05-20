@@ -32,6 +32,11 @@ private Gui gui;
         jScrollPane1 = new javax.swing.JScrollPane();
         zobrayeniSlovicekText = new javax.swing.JTextArea();
         jButton7 = new javax.swing.JButton();
+        jLabel4 = new MyLabel(this.gui,3);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new MyLabel(this.gui,5);
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new MyLabel(this.gui,9);
 
         zobrazeniSlovicekPanel.setBackground(new java.awt.Color(51, 102, 255));
 
@@ -55,22 +60,43 @@ private Gui gui;
             }
         });
 
+        jLabel4.setText("Menu");
+
+        jLabel1.setText("-->");
+
+        jLabel2.setText("Správa slovíček");
+
+        jLabel3.setText("-->");
+
+        jLabel5.setText("Zobrazení slovíček");
+
         javax.swing.GroupLayout zobrazeniSlovicekPanelLayout = new javax.swing.GroupLayout(zobrazeniSlovicekPanel);
         zobrazeniSlovicekPanel.setLayout(zobrazeniSlovicekPanelLayout);
         zobrazeniSlovicekPanelLayout.setHorizontalGroup(
             zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovicekPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(92, 92, 92))
             .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
                     .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(zobrazeniSlovicekPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniSlovicekPanelLayout.createSequentialGroup()
-                .addGap(0, 107, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addGap(83, 83, 83))
         );
         zobrazeniSlovicekPanelLayout.setVerticalGroup(
             zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +107,14 @@ private Gui gui;
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                 .addGap(6, 6, Short.MAX_VALUE)
                 .addComponent(jButton7)
-                .addGap(19, 19, 19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(zobrazeniSlovicekPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -102,7 +135,12 @@ this.gui.setMyView(5);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea zobrayeniSlovicekText;
     private javax.swing.JPanel zobrazeniSlovicekPanel;

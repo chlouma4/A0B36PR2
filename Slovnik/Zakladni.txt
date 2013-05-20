@@ -1,2 +1,5 @@
 ﻿Admin
+Myš Mouse Zakladni1 1
+Tlačítko Button Zakladni4 1
 Film Movie Zakladni3 0
+klávesnice Keyboard Zakladni2 1

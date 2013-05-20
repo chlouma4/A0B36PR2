@@ -4,7 +4,6 @@
  */
 package Semestralka1;
 
-import java.awt.Font;
 import java.awt.GridLayout;
 
 /**
@@ -17,9 +16,6 @@ public class Gui extends javax.swing.JFrame {
     Uzivatel uzivatel = new Uzivatel(this.rootPane);
     Slovník slovnik = new Slovník(this.rootPane);
     private static Gui myFrame;
-    public Font font= new Font(null,Font.BOLD,13);
-    public Font fontZpet= new Font(null,Font.PLAIN,11);
-    
 
     /**
      * Metoda která přepíná jednotlivé Jpanely. Parametrem panel se urci ktery 

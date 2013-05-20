@@ -1,1 +1,2 @@
-Zakladni3 90 90
+Zakladni1 0 0
+Zakladni2 0 0

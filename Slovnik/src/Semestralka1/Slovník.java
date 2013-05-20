@@ -22,6 +22,7 @@ import javax.swing.JRootPane;
  * @author Marco
  */
 public class Slovník {
+
     private int pocetSlovniku;
     private Bunka prvni;
     private Bunka volna;
@@ -35,36 +36,35 @@ public class Slovník {
         this.pane = pane;
     }
 
-    /**Metoda vklada na konec spojoveho seznamu to co dostane v argumentu.
-     * 
+    /**
+     * Metoda vklada na konec spojoveho seznamu to co dostane v argumentu.
+     *
      * @param aj -Anglicky vyraz.
      * @param cj - Cesky vyraz.
      * @param spravneOdpovedi - Spravne odpovedi na preklad.
      * @param spatneOdpovedi - Spatne odpovedi na preklad.
      * @param IDSlova - ID slova.
-     * @param aktivita  - Aktivita  1- aktivni , 0- neaktivni
+     * @param aktivita - Aktivita 1- aktivni , 0- neaktivni
      */
     public void vlozNaKonec(String aj, String cj, int spravneOdpovedi, int spatneOdpovedi, String IDSlova, int aktivita) {  // metoda ktera vklada vstupni promene cj aj na konec spojoveho sezamu, pokud jsou promene praydne ulozeni se neprovede
-        if (cj != null && aj != null) {
-            Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi, IDSlova, aktivita);
-            Bunka bunka = new Bunka(slovo, null);
-            if (prvni == null) {
-                prvni = bunka;
-                volna = prvni;
+        Slovo slovo = new Slovo(aj, cj, spravneOdpovedi, spatneOdpovedi, IDSlova, aktivita);
+        Bunka bunka = new Bunka(slovo, null);
+        if (prvni == null) {
+            prvni = bunka;
+            volna = prvni;
 
-            } else {
-                volna.dalsi = bunka;
-                volna = volna.dalsi;
-            }
         } else {
-            System.out.println("Chyba!: Jedno ze slovicek nebo obe nebyla zadana.");
+            volna.dalsi = bunka;
+            volna = volna.dalsi;
         }
     }
-/**Metoda vrati pocet bunek spojoveho seznamu.
- * 
- * @return 
- */
-    public int getPocetBunek() { 
+
+    /**
+     * Metoda vrati pocet bunek spojoveho seznamu.
+     *
+     * @return
+     */
+    public int getPocetBunek() {
         int x = 0;
         Bunka pom = prvni;
         while (pom != null) {
@@ -73,19 +73,17 @@ public class Slovník {
         }
         return x;
     }
-    
-    /**Metoda vytvori nove ID slova a to navrati v typu String.
-     * 
-     * @return 
+
+    /**
+     * Metoda vytvori nove ID slova a to navrati v typu String.
+     *
+     * @return
      */
     public String vytvorNoveIdSlova() {
         String cislo = "";
         int cislo1;
         String idSlova = this.getIdPoslednohoSlova();
         String slovnik = this.getTypSlovniku();
-        if (idSlova == null) {
-            return slovnik + "1";
-        }
         int delkaSlovnik = slovnik.length();
         int delkaIdSlova = idSlova.length();
         char[] pole = idSlova.toCharArray();
@@ -97,27 +95,58 @@ public class Slovník {
 
         return slovnik + cislo1;
     }
-   
-    /**Tato metoda vrati vypisSpojovySeznam vsech neaktivnich slov v poli typu String.
-     * 
-     * @return 
-     */
-public String[] vypisNeaktivni(){
-    String[] slova = new String[this.neaktivni.size()];
-    for (int i = 0; i < this.neaktivni.size(); i++) {
-           Slovo slovo = (Slovo) this.neaktivni.get(i);
-        slova[i]=slovo.toString();
-    }
-    return slova;
-}
-    
-/**Metoda vrati v poli typu String vypisSpojovySeznam vsech slov ve spojovem seznamu.
- * Ukazka vypisu jedne bunky v poli :
- * Hello prelozeno do cestiny Ahoj
+/**Metoda najde ID posledniho slova.
  * 
  * @return 
  */
-    public String[] vypisSpojovySeznam() {   
+    public String najdiIdPoslednihoSlova() {
+        int maxCislo = 0;
+       String slovnik = this.getTypSlovniku();
+        Bunka pom = prvni;
+        while (pom != null) {
+            int delkaSlovnik = slovnik.length();
+             String cislo = "";
+            String idSlova = pom.slovicka.getIDSlova();
+            if (this.getPocetBunek() == 0) {
+                return slovnik + "1";
+            }
+            int delkaIdSlova = idSlova.length();
+            char[] pole = idSlova.toCharArray();
+            for (int i = delkaSlovnik--; i <= delkaIdSlova--; i++) {
+                cislo = cislo + pole[i];
+                if ((Integer.valueOf(cislo)) > maxCislo) {
+                    maxCislo = Integer.valueOf(cislo);
+                }
+            }
+            pom = pom.dalsi;
+        }
+
+        return slovnik+""+maxCislo;
+    }
+
+    /**
+     * Tato metoda vrati vypisSpojovySeznam vsech neaktivnich slov v poli typu
+     * String.
+     *
+     * @return
+     */
+    public String[] vypisNeaktivni() {
+        String[] slova = new String[this.neaktivni.size()];
+        for (int i = 0; i < this.neaktivni.size(); i++) {
+            Slovo slovo = (Slovo) this.neaktivni.get(i);
+            slova[i] = slovo.toString();
+        }
+        return slova;
+    }
+
+    /**
+     * Metoda vrati v poli typu String vypisSpojovySeznam vsech slov ve spojovem
+     * seznamu. Ukazka vypisu jedne bunky v poli : Hello prelozeno do cestiny
+     * Ahoj
+     *
+     * @return
+     */
+    public String[] vypisSpojovySeznam() {
         int g = 1;
         Bunka pom = prvni;
         String[] slova = new String[getPocetBunek()];
@@ -130,12 +159,13 @@ public String[] vypisNeaktivni(){
         return slova;
     }
 
-    /**Metoda vymaze bunku ze spojoveho seznamu.
-     * To ktera bunka ma byt vymazana se nastavuje pomoci argumentu x.
-     * 
-     * @param x 
+    /**
+     * Metoda vymaze bunku ze spojoveho seznamu. To ktera bunka ma byt vymazana
+     * se nastavuje pomoci argumentu x.
+     *
+     * @param x
      */
-    public void smaz(int x) { 
+    public void smaz(int x) {
         int z = 0;
         Bunka pom = prvni;
         while (pom != null) {
@@ -159,29 +189,29 @@ public String[] vypisNeaktivni(){
         }
     }
 
-    /**Metoda smaze vsechen obsah spojoveho seznamu.
-     * 
+    /**
+     * Metoda smaze vsechen obsah spojoveho seznamu.
+     *
      */
     public void vycistiSpojovySeznam() {
         this.prvni = null;
     }
 
-  
-/** 
- * Metoda vymaze slovnik. Parametrem  x se urcuje ktery slovnik
- * ma byt vymazan.
- * 
- */
+    /**
+     * Metoda vymaze slovnik. Parametrem x se urcuje ktery slovnik ma byt
+     * vymazan.
+     *
+     */
     public void smazSlovnik(int cisloSlovniku) {
         cisloSlovniku--;
-       ArrayList  seznamSlovniku= this.getSeznamSlovniku();
-       String Smazat=(String)seznamSlovniku.get(cisloSlovniku);
-      seznamSlovniku.remove(cisloSlovniku);
+        ArrayList seznamSlovniku = this.getSeznamSlovniku();
+        String Smazat = (String) seznamSlovniku.get(cisloSlovniku);
+        seznamSlovniku.remove(cisloSlovniku);
         FileWriter outSeznam = null;
-         File smazat= null;
+        File smazat = null;
         try {
             outSeznam = new FileWriter("Seznam.txt");
-            smazat= new File(Smazat+".txt");
+            smazat = new File(Smazat + ".txt");
         } catch (IOException ex) {
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -193,29 +223,25 @@ public String[] vypisNeaktivni(){
             smazat.delete();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(pane, "Systemu se nepodarilo vztvorit novy slovnik",
-                    "Error!",JOptionPane.ERROR_MESSAGE );
+                    "Error!", JOptionPane.ERROR_MESSAGE);
         }
-       
-     
-       
+
+
+
     }
 
-   /**Metoda vrátí jednu polozku z bunky.
-    * @param cisloBunky - poradove cislo bunky ve spojovem seznamu  
-    * z ktere chceme  data
-    * @param polozka
-    * 1-vrátí cj výraz
-     * 2-vrátí anglický výraz
-     * 3- vrátí pocet spravnych odpovedi 
-     * 4- vrátí pocet spatnch dpovedi 
-     * 5- vrati IdSlova 
-     * 6- vrati aktivitu slova
-     * 7-  Vypise dvojci slov 
-     * Ukazka vypisu jedne bunky v poli :
-     * Hello prelozeno do cestiny Ahoj
-     *  DULEZITE: Pro vypis celeho spojoveho seznamu pouzite metodu vypisSpojovySeznam
-    * @return 
-    */
+    /**
+     * Metoda vrátí jednu polozku z bunky.
+     *
+     * @param cisloBunky - poradove cislo bunky ve spojovem seznamu z ktere
+     * chceme data
+     * @param polozka 1-vrátí cj výraz 2-vrátí anglický výraz 3- vrátí pocet
+     * spravnych odpovedi 4- vrátí pocet spatnch dpovedi 5- vrati IdSlova 6-
+     * vrati aktivitu slova 7- Vypise dvojci slov Ukazka vypisu jedne bunky v
+     * poli : Hello prelozeno do cestiny Ahoj DULEZITE: Pro vypis celeho
+     * spojoveho seznamu pouzite metodu vypisSpojovySeznam
+     * @return
+     */
     public String getObsahBunky(int cisloBunky, int polozka) {
         int citac = 0;
         String slovo = null;
@@ -243,7 +269,7 @@ public String[] vypisNeaktivni(){
                         slovo = String.valueOf(pom.slovicka.getAktivita());
                         break;
                     case 7:
-                        slovo=pom.slovicka.toString();
+                        slovo = pom.slovicka.toString();
                         break;
                 }
             }
@@ -261,46 +287,48 @@ public String[] vypisNeaktivni(){
         Slovník.typSlovniku = typSlovniku;
     }
 
-    /**Meotda vytvori novy slovnik a ulozi jej do seznamu Slovniku.
-     * 
-     * @param novySlovnik 
+    /**
+     * Meotda vytvori novy slovnik a ulozi jej do seznamu Slovniku.
+     *
+     * @param novySlovnik
      */
     public void vytvorNovySlovnik(String novySlovnik, String tvurce) {
-        ArrayList seznam =this.getSeznamSlovniku();
-        boolean test=seznam.contains(novySlovnik);
-        if(test==true){
+        ArrayList seznam = this.getSeznamSlovniku();
+        boolean test = seznam.contains(novySlovnik);
+        if (test == true) {
             JOptionPane.showMessageDialog(pane, "Slovnik s timto nazvem je jiz vztvoren prosim zvolte jiny nazev",
-                    "Chyba!",JOptionPane.WARNING_MESSAGE );
-           
-        }else{
+                    "Chyba!", JOptionPane.WARNING_MESSAGE);
+
+        } else {
             seznam.add(novySlovnik);
-        FileWriter outSeznam = null;
-        FileWriter outSlovnik=null;
-        try {
-            outSeznam = new FileWriter("Seznam.txt");
-            outSlovnik= new FileWriter(novySlovnik+".txt");
-        } catch (IOException ex) {
-            Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            for (int i = 0; i < seznam.size(); i++) {
-                outSeznam.write(seznam.get(i) + "" + System.lineSeparator());
+            FileWriter outSeznam = null;
+            FileWriter outSlovnik = null;
+            try {
+                outSeznam = new FileWriter("Seznam.txt");
+                outSlovnik = new FileWriter(novySlovnik + ".txt");
+            } catch (IOException ex) {
+                Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
             }
-            outSlovnik.write(tvurce);
-            outSlovnik.close();
-            outSeznam.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(pane, "Systemu se nepodarilo vztvorit novy slovnik",
-                    "Error!",JOptionPane.ERROR_MESSAGE );
-        }
-        JOptionPane.showMessageDialog(pane, "Slovnik byl uspesne vytvoren" );
+            try {
+                for (int i = 0; i < seznam.size(); i++) {
+                    outSeznam.write(seznam.get(i) + "" + System.lineSeparator());
+                }
+                outSlovnik.write(tvurce);
+                outSlovnik.close();
+                outSeznam.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(pane, "Systemu se nepodarilo vztvorit novy slovnik",
+                        "Error!", JOptionPane.ERROR_MESSAGE);
+            }
+            JOptionPane.showMessageDialog(pane, "Slovnik byl uspesne vytvoren");
         }
     }
-/**
- * Meotda vrati seznam vsech slovniku.
- * 
- * @return 
- */
+
+    /**
+     * Meotda vrati seznam vsech slovniku.
+     *
+     * @return
+     */
     public ArrayList getSeznamSlovniku() {
         ArrayList seznam = new ArrayList();
         Scanner scan = null;
@@ -309,8 +337,8 @@ public String[] vypisNeaktivni(){
         try {
             scan = new Scanner(new FileReader("Seznam.txt"));
         } catch (FileNotFoundException ex) {
-        JOptionPane.showMessageDialog(pane, "Systemu se nepodatilo najit soubor Seznam.txt",
-                    "Error!",JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog(pane, "Systemu se nepodatilo najit soubor Seznam.txt",
+                    "Error!", JOptionPane.ERROR_MESSAGE);
         }
         while (true) {
             test = scan.hasNext();
@@ -321,17 +349,18 @@ public String[] vypisNeaktivni(){
                 break;
             }
         }
-        
+
         return seznam;
 
     }
 
-    /**Metoda nacte slova ze slovniku do Spojoveho seznamu.
-     * Parametrem slovnik se urci ktery slovnik ma nacist.
-     * Parametrem jmenoUzivatele se urci ci statistiky se maji nacist.
-     * 
+    /**
+     * Metoda nacte slova ze slovniku do Spojoveho seznamu. Parametrem slovnik
+     * se urci ktery slovnik ma nacist. Parametrem jmenoUzivatele se urci ci
+     * statistiky se maji nacist.
+     *
      * @param slovnik
-     * @param jmenoUzivatele 
+     * @param jmenoUzivatele
      */
     public void nactiSlovnik(String slovnik, String jmenoUzivatele) {
         int spravneOdpovedi = 0, spatneOdpovedi = 0, hrac1, i = 0, aktivni;
@@ -373,10 +402,10 @@ public String[] vypisNeaktivni(){
                         try {
                             do {
                                 test1 = scanHrac.next();
-                                if(test1.equals(idSlova)){
-                                     spravneOdpovedi = scanHrac.nextInt();   // pokud slovo najde 
-                                         spatneOdpovedi = scanHrac.nextInt();
-                                         break;
+                                if (test1.equals(idSlova)) {
+                                    spravneOdpovedi = scanHrac.nextInt();   // pokud slovo najde 
+                                    spatneOdpovedi = scanHrac.nextInt();
+                                    break;
                                 }
                             } while (true);    // tento cyklus pobezi dokud nenarazi na posledni slovo v souboru ktere je konec.
                         } catch (Exception e) {         // pokud cyklud slovo nenajde tak dojde na konec souboru kde se potom pokusi o scan prazdneho mista
@@ -388,23 +417,26 @@ public String[] vypisNeaktivni(){
                     }
 
                 } catch (Exception e) {
-                   JOptionPane.showMessageDialog(this.pane, "System nemuze nacist data ze souboru" + this.getTypSlovniku() + ".txt",
-                    "Error!", JOptionPane.ERROR_MESSAGE);
-                   System.exit(1);
+                    JOptionPane.showMessageDialog(this.pane, "System nemuze nacist data ze souboru" + this.getTypSlovniku() + ".txt",
+                            "Error!", JOptionPane.ERROR_MESSAGE);
+                    System.exit(1);
                 }
             } else {
                 break;
             }
         }
-        this.setIdPoslednihoSlova(this.getTypSlovniku() + this.getPocetBunek());
+        this.setIdPoslednihoSlova(this.najdiIdPoslednihoSlova());
 
     }
-/**Metoda ulozi Obsah spojoveho seznamu a obsah LinkedListu neaktivni do prislusneho souboru.
- * Parametrem jmenoUzivatele se urci kteremu hraci se maji zapsat nove statistiky.
- * 
- * @param jmenoUzivatele 
- */
-    public void ulozSlovnik(String jmenoUzivatele) {  
+
+    /**
+     * Metoda ulozi Obsah spojoveho seznamu a obsah LinkedListu neaktivni do
+     * prislusneho souboru. Parametrem jmenoUzivatele se urci kteremu hraci se
+     * maji zapsat nove statistiky.
+     *
+     * @param jmenoUzivatele
+     */
+    public void ulozSlovnik(String jmenoUzivatele) {
         FileWriter outSlovnik = null;
         FileWriter outHrac = null;
         try {
@@ -417,7 +449,7 @@ public String[] vypisNeaktivni(){
         try {
             outHrac = new FileWriter(jmenoUzivatele + ".txt");
         } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(this.pane, "System nemuze ukladat data do souboru" + jmenoUzivatele + ".txt",
+            JOptionPane.showMessageDialog(this.pane, "System nemuze ukladat data do souboru" + jmenoUzivatele + ".txt",
                     "Error!", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }
@@ -434,7 +466,7 @@ public String[] vypisNeaktivni(){
                 outHrac.write(getObsahBunky(i, 5) + " " + getObsahBunky(i, 3) + " " + getObsahBunky(i, 4) + System.lineSeparator());
             }
         } catch (IOException ex) {
-        JOptionPane.showMessageDialog(this.pane, "Pri ukladani dat do souboru doslo k chybe",
+            JOptionPane.showMessageDialog(this.pane, "Pri ukladani dat do souboru doslo k chybe",
                     "Error!", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }
@@ -446,16 +478,18 @@ public String[] vypisNeaktivni(){
             Logger.getLogger(Slovník.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    /**Tato metoda presune neaktivni slova do Linked listu tridy neaktivni.
-     * 
-     * 
-     */
 
+    /**
+     * Tato metoda presune neaktivni slova do Linked listu tridy neaktivni.
+     *
+     *
+     */
     public void presunNeaktivni() {
         String test;
         for (int i = 1; i <= this.getPocetBunek(); i++) {
             test = this.getObsahBunky(i, 6);
             if (test.equals("" + 0)) {
+                System.out.println("presouvam " + this.getObsahBunky(i, 2));
                 this.neaktivni.add(new Slovo(this.getObsahBunky(i, 2),
                         this.getObsahBunky(i, 1),
                         Integer.valueOf(this.getObsahBunky(i, 3)),
@@ -471,8 +505,8 @@ public String[] vypisNeaktivni(){
     /**
      * Metoda ktera aktivuje nbeo deaktivuke slovo. Parametrem poradi se urcuje
      * poradi slova ve spojovem seznamu. Pokud bude porametr poradi 0 tak se
-     * operace provede pro vsechna slova. Parametrem operace se voli aktivace nebo
-     * deaktivace slov takto: 0 - nastav na neaktivni 1-nastav na aktivni
+     * operace provede pro vsechna slova. Parametrem operace se voli aktivace
+     * nebo deaktivace slov takto: 0 - nastav na neaktivni 1-nastav na aktivni
      *
      * @param poradi
      * @param operace
@@ -480,110 +514,115 @@ public String[] vypisNeaktivni(){
     public void aktivaceDeaktivaceSlova(int poradi, int operace) {
         int z = 0;
         Bunka pom = prvni;
-  
-         if( operace==1){
-             if(poradi==0){
-            for (int i = 0; i < this.neaktivni.size(); i++) {
-                Slovo slovo = (Slovo) this.neaktivni.get(i);
+
+        if (operace == 1) {
+            if (poradi == 0) {
+                for (int i = 0; i < this.neaktivni.size(); i++) {
+                    Slovo slovo = (Slovo) this.neaktivni.get(i);
+                    slovo.setAktivita(operace);
+                    this.vlozNaKonec(slovo.getAj(), slovo.getCj(), slovo.getPocetSpravnychOdpovedi(), slovo.getPocetSpatnychOdpovedi(), slovo.getIDSlova(), slovo.getAktivita());
+                    this.neaktivni.remove(i);
+                    i--;
+                }
+            } else {
+                poradi--;
+                Slovo slovo = (Slovo) this.neaktivni.get(poradi);
                 slovo.setAktivita(operace);
-                   this.vlozNaKonec(slovo.getAj(), slovo.getCj(), slovo.getPocetSpravnychOdpovedi(), slovo.getPocetSpatnychOdpovedi(), slovo.getIDSlova(), slovo.getAktivita());
-                   this.neaktivni.remove(i);
-                   i--;
+                this.vlozNaKonec(slovo.getAj(), slovo.getCj(), slovo.getPocetSpravnychOdpovedi(), slovo.getPocetSpatnychOdpovedi(), slovo.getIDSlova(), slovo.getAktivita());
+                this.neaktivni.remove(poradi);
             }
-             }else{
-                 poradi--;
-                  Slovo slovo = (Slovo) this.neaktivni.get(poradi);
-                slovo.setAktivita(operace);
-                   this.vlozNaKonec(slovo.getAj(), slovo.getCj(), slovo.getPocetSpravnychOdpovedi(), slovo.getPocetSpatnychOdpovedi(), slovo.getIDSlova(), slovo.getAktivita());
-                       this.neaktivni.remove(poradi);
-             }
-        }else{
-        while (pom != null) {
-            z = z + 1;
-            if ((z == poradi && poradi == 1) | poradi == 0) {
-                pom.slovicka.setAktivita(operace);
-                break;
+        } else {
+            while (pom != null) {
+                z = z + 1;
+                if ((z == poradi && poradi == 1) | poradi == 0) {
+                    pom.slovicka.setAktivita(operace);
+                    break;
+                }
+                if ((z == poradi - 1 && poradi != getPocetBunek()) | poradi == 0) {
+                    pom.slovicka.setAktivita(operace);
+                    break;
+                }
+                if ((z == poradi - 1 && poradi == getPocetBunek()) | poradi == 0) {
+                    pom.slovicka.setAktivita(operace);
+                    break;
+                }
+                pom = pom.dalsi;
             }
-            if ((z == poradi - 1 && poradi != getPocetBunek()) | poradi == 0) {
-                pom.slovicka.setAktivita(operace);
-                break;
-            }
-            if ((z == poradi - 1 && poradi == getPocetBunek() )| poradi == 0) {
-                pom.slovicka.setAktivita(operace);
-                break;
-            }
-            pom = pom.dalsi;
-        }
-        this.presunNeaktivni();
+            this.presunNeaktivni();
         }
     }
-    
-    /**Metoda vypocet uspesnost v procentech ze vstupnich parametru.
-     * Pokud nelze uspesnost vypocitat metoda vrati "---".
+
+    /**
+     * Metoda vypocet uspesnost v procentech ze vstupnich parametru. Pokud nelze
+     * uspesnost vypocitat metoda vrati "---".
+     *
      * @param spravneOdpovedi
      * @param spatneOdpovedi
-     * @return 
+     * @return
      */
-    public String vypoctiUspesnost(int spravneOdpovedi, int spatneOdpovedi){
-        if(spravneOdpovedi==0 && spatneOdpovedi==0){
-         return "---";   
-        }else{
-        int uspesnost=(100*spravneOdpovedi)/(spravneOdpovedi+spatneOdpovedi);
-        
-        return ""+uspesnost+"%";
+    public String vypoctiUspesnost(int spravneOdpovedi, int spatneOdpovedi) {
+        if (spravneOdpovedi == 0 && spatneOdpovedi == 0) {
+            return "---";
+        } else {
+            int uspesnost = (100 * spravneOdpovedi) / (spravneOdpovedi + spatneOdpovedi);
+
+            return "" + uspesnost + "%";
         }
     }
-    /**Tato metoda zvysi pocetSpravnyhOdpovedi nebo pocetSpatnychOdpovedi u slova.
-     * Parametrem poradi se urcuje , kteremu slovu ma byt zmenena statistika.
-     * Parametrem statistika se urcuje jestly ma byt zvysen pocetSpravnyhOdpovedi 
-     * nebo pocetSpatnychOdpovediu slova.Takto :
-     * 0- zvysi pocetSpravnyhOdpovedi
-     * 1- zvysi pocetSpatnychOdpovedi
-     * 
+
+    /**
+     * Tato metoda zvysi pocetSpravnyhOdpovedi nebo pocetSpatnychOdpovedi u
+     * slova. Parametrem poradi se urcuje , kteremu slovu ma byt zmenena
+     * statistika. Parametrem statistika se urcuje jestly ma byt zvysen
+     * pocetSpravnyhOdpovedi nebo pocetSpatnychOdpovediu slova.Takto : 0- zvysi
+     * pocetSpravnyhOdpovedi 1- zvysi pocetSpatnychOdpovedi
+     *
      * @param poradi
-     * @param statistika 
+     * @param statistika
      */
-    public void upravStatistiku(int poradi,int statistika){
+    public void upravStatistiku(int poradi, int statistika) {
         int z = 0;
         Bunka pom = prvni;
         while (pom != null) {
             z = z + 1;
             if (z == poradi) {
-               if(statistika==0){
-                   pom.slovicka.setPocetSpravnychOdpovedi(pom.slovicka.getPocetSpravnychOdpovedi()+1);
-               }else{
-                   pom.slovicka.setPocetSpatnychOdpovedi(pom.slovicka.getPocetSpatnychOdpovedi()+1);
-               }
+                if (statistika == 0) {
+                    pom.slovicka.setPocetSpravnychOdpovedi(pom.slovicka.getPocetSpravnychOdpovedi() + 1);
+                } else {
+                    pom.slovicka.setPocetSpatnychOdpovedi(pom.slovicka.getPocetSpatnychOdpovedi() + 1);
+                }
             }
             pom = pom.dalsi;
         }
-        
+
     }
-    /**Metoda vrati v poli cisla slov (jejich poradi ve spojovem seznamu) 
-     * s nejvyssim poctem spatnych odpovedi. Parametrem pocet se nastavuje kolik 
-     * slov  s nejvyssim poctem spatnych odpovedi chceme vratit chceme vratit.
-     * 
+
+    /**
+     * Metoda vrati v poli cisla slov (jejich poradi ve spojovem seznamu) s
+     * nejvyssim poctem spatnych odpovedi. Parametrem pocet se nastavuje kolik
+     * slov s nejvyssim poctem spatnych odpovedi chceme vratit chceme vratit.
+     *
      * @param pocet
-     * @return 
+     * @return
      */
-    public ArrayList sNejvissimPocetemSpatnychOdpovedi(int pocet){
-        ArrayList odpoved= new  ArrayList();
-        ArrayList<Integer> spatneOdpovedi= new ArrayList<>();
+    public ArrayList sNejvissimPocetemSpatnychOdpovedi(int pocet) {
+        ArrayList odpoved = new ArrayList();
+        ArrayList<Integer> spatneOdpovedi = new ArrayList<>();
         for (int i = 1; i <= this.getPocetBunek(); i++) {
             spatneOdpovedi.add((Integer.valueOf(this.getObsahBunky(i, 4))));
         }
         for (int j = 0; j < pocet; j++) {
-        int max=0;
-        int pozice=0;
-        for (int i = 0; i < spatneOdpovedi.size(); i++) {
-            int pom=(Integer.valueOf(spatneOdpovedi.get(i)));
-            if(pom > max){
-                max=pom;
-                pozice=i;
+            int max = 0;
+            int pozice = 0;
+            for (int i = 0; i < spatneOdpovedi.size(); i++) {
+                int pom = (Integer.valueOf(spatneOdpovedi.get(i)));
+                if (pom > max) {
+                    max = pom;
+                    pozice = i;
+                }
             }
-        }
-        odpoved.add(max);
-        spatneOdpovedi.remove(pozice);
+            odpoved.add(max);
+            spatneOdpovedi.remove(pozice);
         }
         return odpoved;
     }
