@@ -40,6 +40,7 @@ private Gui gui;
 
         prihlaseniPanel.setBackground(new java.awt.Color(51, 102, 255));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 204, 0));
         jLabel1.setText("Vyberte svůj účet :");
 
@@ -51,13 +52,16 @@ private Gui gui;
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 204, 0));
         jLabel2.setText("Zadejte své heslo :");
 
         vstupHesla.setBackground(new java.awt.Color(0, 0, 204));
+        vstupHesla.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         vstupHesla.setForeground(new java.awt.Color(0, 204, 0));
 
         vytvorNovyUcet.setBackground(new java.awt.Color(0, 0, 204));
+        vytvorNovyUcet.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         vytvorNovyUcet.setForeground(new java.awt.Color(0, 204, 0));
         vytvorNovyUcet.setText("Vytvořit nový účet");
         vytvorNovyUcet.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +71,7 @@ private Gui gui;
         });
 
         prihlas.setBackground(new java.awt.Color(0, 0, 204));
+        prihlas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         prihlas.setForeground(new java.awt.Color(0, 204, 0));
         prihlas.setText("Přihlaš");
         prihlas.addActionListener(new java.awt.event.ActionListener() {
@@ -84,15 +89,11 @@ private Gui gui;
         prihlaseniPanelLayout.setHorizontalGroup(
             prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prihlaseniPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(80, 80, 80))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, prihlaseniPanelLayout.createSequentialGroup()
                 .addGroup(prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(prihlaseniPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(vytvorNovyUcet)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                         .addComponent(prihlas))
                     .addGroup(prihlaseniPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -104,6 +105,10 @@ private Gui gui;
                             .addComponent(vstupHesla)
                             .addComponent(vyberUcet, 0, 98, Short.MAX_VALUE))))
                 .addGap(21, 21, 21))
+            .addGroup(prihlaseniPanelLayout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         prihlaseniPanelLayout.setVerticalGroup(
             prihlaseniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

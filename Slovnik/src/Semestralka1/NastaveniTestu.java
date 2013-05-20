@@ -53,10 +53,12 @@ private Gui gui;
         jLabel25.setForeground(new java.awt.Color(0, 204, 0));
         jLabel25.setText("Nastavení testu");
 
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(0, 204, 0));
         jLabel26.setText("Chci překládat do :");
 
         kamPrekladat.setBackground(new java.awt.Color(0, 0, 204));
+        kamPrekladat.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         kamPrekladat.setForeground(new java.awt.Color(0, 204, 0));
         kamPrekladat.setText("Češtiny");
         kamPrekladat.addActionListener(new java.awt.event.ActionListener() {
@@ -67,10 +69,12 @@ private Gui gui;
 
         pocetOtazek.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 204, 0));
         jLabel27.setText("Zadejte počet otázek testu :");
 
         jButton11.setBackground(new java.awt.Color(0, 0, 204));
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton11.setForeground(new java.awt.Color(0, 204, 0));
         jButton11.setText("Zpět");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +84,7 @@ private Gui gui;
         });
 
         jButton12.setBackground(new java.awt.Color(0, 0, 204));
+        jButton12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton12.setForeground(new java.awt.Color(0, 204, 0));
         jButton12.setText("Spustit test");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -104,21 +109,21 @@ private Gui gui;
                         .addContainerGap()
                         .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                                .addComponent(jButton11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton12))
-                            .addGroup(nastaveniTestuLayout.createSequentialGroup()
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(kamPrekladat))
-                            .addGroup(nastaveniTestuLayout.createSequentialGroup()
                                 .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                .addComponent(pocetOtazek, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(nastaveniTestuLayout.createSequentialGroup()
+                                .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton11)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pocetOtazek, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(nastaveniTestuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(kamPrekladat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(nastaveniTestuLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jLabel25)
-                        .addGap(0, 29, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(19, 19, 19))
             .addGroup(nastaveniTestuLayout.createSequentialGroup()
                 .addContainerGap()

@@ -54,10 +54,12 @@ private String [] fromArrayListToArray(){
 
         vyberSlovnikPanel.setBackground(new java.awt.Color(51, 102, 255));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 204, 0));
         jLabel7.setText("Vyberte slovník s kterým chcete pracovat : ");
 
         potvrdSlovnik.setBackground(new java.awt.Color(0, 0, 204));
+        potvrdSlovnik.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         potvrdSlovnik.setForeground(new java.awt.Color(0, 204, 0));
         potvrdSlovnik.setText("Ok");
         potvrdSlovnik.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +87,7 @@ private String [] fromArrayListToArray(){
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(potvrdSlovnik, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel7))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         vyberSlovnikPanelLayout.setVerticalGroup(
             vyberSlovnikPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +98,7 @@ private String [] fromArrayListToArray(){
                 .addGroup(vyberSlovnikPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(potvrdSlovnik)
                     .addComponent(vyberSlovnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

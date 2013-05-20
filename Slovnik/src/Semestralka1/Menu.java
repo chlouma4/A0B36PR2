@@ -47,6 +47,7 @@ public class Menu extends javax.swing.JPanel {
         Menu.setBackground(new java.awt.Color(51, 102, 255));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 204, 0));
         jButton1.setText("Test");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +57,7 @@ public class Menu extends javax.swing.JPanel {
         });
 
         spravaSlovicekButton.setBackground(new java.awt.Color(0, 0, 204));
+        spravaSlovicekButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         spravaSlovicekButton.setForeground(new java.awt.Color(0, 204, 0));
         spravaSlovicekButton.setText("Správa slovíček");
         spravaSlovicekButton.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +67,7 @@ public class Menu extends javax.swing.JPanel {
         });
 
         jButton3.setBackground(new java.awt.Color(0, 0, 204));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 204, 0));
         jButton3.setText("Statistiky");
         jButton3.setMaximumSize(new java.awt.Dimension(146, 46));
@@ -76,6 +79,7 @@ public class Menu extends javax.swing.JPanel {
         });
 
         zmenaSlovniku.setBackground(new java.awt.Color(0, 0, 204));
+        zmenaSlovniku.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zmenaSlovniku.setForeground(new java.awt.Color(0, 204, 0));
         zmenaSlovniku.setText("Změna slovníku");
         zmenaSlovniku.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +93,7 @@ public class Menu extends javax.swing.JPanel {
         jLabel8.setText("Menu");
 
         odhlasitSe.setBackground(new java.awt.Color(0, 0, 204));
+        odhlasitSe.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         odhlasitSe.setForeground(new java.awt.Color(0, 204, 0));
         odhlasitSe.setText("Odhlásit se");
         odhlasitSe.setMaximumSize(new java.awt.Dimension(107, 23));
@@ -100,6 +105,7 @@ public class Menu extends javax.swing.JPanel {
         });
 
         ukoncitProgram.setBackground(new java.awt.Color(0, 0, 204));
+        ukoncitProgram.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         ukoncitProgram.setForeground(new java.awt.Color(0, 204, 0));
         ukoncitProgram.setText("Ukončit program");
         ukoncitProgram.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +115,7 @@ public class Menu extends javax.swing.JPanel {
         });
 
         spravaSlovnikuButon.setBackground(new java.awt.Color(0, 0, 204));
+        spravaSlovnikuButon.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         spravaSlovnikuButon.setForeground(new java.awt.Color(0, 204, 0));
         spravaSlovnikuButon.setText("Správa slovníků");
         spravaSlovnikuButon.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +125,7 @@ public class Menu extends javax.swing.JPanel {
         });
 
         spravaHracuButton.setBackground(new java.awt.Color(0, 0, 204));
+        spravaHracuButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         spravaHracuButton.setForeground(new java.awt.Color(0, 204, 0));
         spravaHracuButton.setText("Správa Uživatelů");
         spravaHracuButton.addActionListener(new java.awt.event.ActionListener() {

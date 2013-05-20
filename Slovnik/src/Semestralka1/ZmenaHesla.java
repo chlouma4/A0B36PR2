@@ -50,16 +50,20 @@ private Gui gui;
         jLabel1.setForeground(new java.awt.Color(0, 204, 0));
         jLabel1.setText("Změna hesla");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 204, 0));
         jLabel2.setText("Zadejte své staré heslo :");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 204, 0));
-        jLabel3.setText("Zadejte své nové hodelo* :");
+        jLabel3.setText("Zadejte své nové heslo* :");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 204, 0));
         jLabel4.setText("Opakujte zadání nového hesla :");
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 204, 0));
         jButton1.setText("Zpět");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -69,6 +73,7 @@ private Gui gui;
         });
 
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 204, 0));
         jButton2.setText("Uložit");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,14 +83,18 @@ private Gui gui;
         });
 
         stareHeslo.setBackground(new java.awt.Color(0, 0, 204));
+        stareHeslo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         stareHeslo.setForeground(new java.awt.Color(0, 204, 0));
 
         noveHeslo.setBackground(new java.awt.Color(0, 0, 204));
+        noveHeslo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         noveHeslo.setForeground(new java.awt.Color(0, 204, 0));
 
         noveHesloOpakovane.setBackground(new java.awt.Color(0, 0, 204));
+        noveHesloOpakovane.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         noveHesloOpakovane.setForeground(new java.awt.Color(0, 204, 0));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 0));
         jLabel6.setText("* Heslo musí mít délku 4 nebo 6 znaků.");
 

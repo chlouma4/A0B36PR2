@@ -46,12 +46,15 @@ private Gui gui;
         jLabel33.setText("Vytvoření slovníku");
 
         nazevNovehoSlovniku.setBackground(new java.awt.Color(0, 0, 204));
+        nazevNovehoSlovniku.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         nazevNovehoSlovniku.setForeground(new java.awt.Color(0, 204, 0));
 
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(0, 204, 0));
         jLabel34.setText("Zadejte jméno slovníku :");
 
         jButton15.setBackground(new java.awt.Color(0, 0, 204));
+        jButton15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton15.setForeground(new java.awt.Color(0, 204, 0));
         jButton15.setText("Zpět");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +64,7 @@ private Gui gui;
         });
 
         vytvorNovySlovnik.setBackground(new java.awt.Color(0, 0, 204));
+        vytvorNovySlovnik.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         vytvorNovySlovnik.setForeground(new java.awt.Color(0, 204, 0));
         vytvorNovySlovnik.setText("Vytvořit");
         vytvorNovySlovnik.addActionListener(new java.awt.event.ActionListener() {

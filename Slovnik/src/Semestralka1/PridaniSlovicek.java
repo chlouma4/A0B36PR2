@@ -50,10 +50,12 @@ private Gui gui;
         jLabel22.setForeground(new java.awt.Color(0, 204, 0));
         jLabel22.setText("Přídání slovíček");
 
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 204, 0));
         jLabel23.setText("Zadejte český výraz :");
 
         ceskyVyraz1.setBackground(new java.awt.Color(0, 0, 204));
+        ceskyVyraz1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         ceskyVyraz1.setForeground(new java.awt.Color(0, 204, 0));
         ceskyVyraz1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,13 +63,16 @@ private Gui gui;
             }
         });
 
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 204, 0));
         jLabel24.setText("Zadejte jeho anglický překlad :");
 
         anglickyVyraz1.setBackground(new java.awt.Color(0, 0, 204));
+        anglickyVyraz1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         anglickyVyraz1.setForeground(new java.awt.Color(0, 204, 0));
 
         Uloz1.setBackground(new java.awt.Color(0, 0, 204));
+        Uloz1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Uloz1.setForeground(new java.awt.Color(0, 204, 0));
         Uloz1.setText("Ulož");
         Uloz1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +82,7 @@ private Gui gui;
         });
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 204, 0));
         jButton1.setText("Zpět");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -117,23 +123,22 @@ private Gui gui;
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Uloz1))))
                     .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
-                        .addGroup(pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pridaniSlovicekPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addGap(0, 101, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pridaniSlovicekPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
         pridaniSlovicekPanel1Layout.setVerticalGroup(
             pridaniSlovicekPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

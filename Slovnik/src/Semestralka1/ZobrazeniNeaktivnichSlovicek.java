@@ -59,12 +59,13 @@ private void zobrazNeaktivni(){
         zobrayeniNeaktivnichSlov.setEditable(false);
         zobrayeniNeaktivnichSlov.setBackground(new java.awt.Color(0, 0, 204));
         zobrayeniNeaktivnichSlov.setColumns(20);
-        zobrayeniNeaktivnichSlov.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        zobrayeniNeaktivnichSlov.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zobrayeniNeaktivnichSlov.setForeground(new java.awt.Color(0, 204, 0));
         zobrayeniNeaktivnichSlov.setRows(5);
         jScrollPane2.setViewportView(zobrayeniNeaktivnichSlov);
 
         zpetNeaktivni.setBackground(new java.awt.Color(0, 0, 204));
+        zpetNeaktivni.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zpetNeaktivni.setForeground(new java.awt.Color(0, 204, 0));
         zpetNeaktivni.setText("Zpět");
         zpetNeaktivni.addActionListener(new java.awt.event.ActionListener() {
@@ -88,25 +89,22 @@ private void zobrazNeaktivni(){
         zobrazeniNeaktivnichSlovicekLayout.setHorizontalGroup(
             zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
                     .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(zobrazeniNeaktivnichSlovicekLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(zpetNeaktivni)
                             .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                                .addComponent(zpetNeaktivni)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane2)))
-                    .addGroup(zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel6)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel6)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, zobrazeniNeaktivnichSlovicekLayout.createSequentialGroup()

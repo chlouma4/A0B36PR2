@@ -49,6 +49,7 @@ private Gui gui;
         jLabel21.setText("Správa slovíček");
 
         pridaniSlovicekButton1.setBackground(new java.awt.Color(0, 0, 204));
+        pridaniSlovicekButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         pridaniSlovicekButton1.setForeground(new java.awt.Color(0, 204, 0));
         pridaniSlovicekButton1.setText("Přídaní slovíček");
         pridaniSlovicekButton1.setMaximumSize(new java.awt.Dimension(75, 23));
@@ -61,6 +62,7 @@ private Gui gui;
         });
 
         smazaniSlovicekButton1.setBackground(new java.awt.Color(0, 0, 204));
+        smazaniSlovicekButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         smazaniSlovicekButton1.setForeground(new java.awt.Color(0, 204, 0));
         smazaniSlovicekButton1.setText("Mazání slovíček");
         smazaniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +72,7 @@ private Gui gui;
         });
 
         zobrazeniSlovicekButton1.setBackground(new java.awt.Color(0, 0, 204));
+        zobrazeniSlovicekButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zobrazeniSlovicekButton1.setForeground(new java.awt.Color(0, 204, 0));
         zobrazeniSlovicekButton1.setText("Zobrazení slovíček");
         zobrazeniSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +82,7 @@ private Gui gui;
         });
 
         zobrazeniNeaktivnichSlovicekButton1.setBackground(new java.awt.Color(0, 0, 204));
+        zobrazeniNeaktivnichSlovicekButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zobrazeniNeaktivnichSlovicekButton1.setForeground(new java.awt.Color(0, 204, 0));
         zobrazeniNeaktivnichSlovicekButton1.setText("Zobrazení neaktivních slovíček");
         zobrazeniNeaktivnichSlovicekButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +92,7 @@ private Gui gui;
         });
 
         zpetSpravaSlovicek.setBackground(new java.awt.Color(0, 0, 204));
+        zpetSpravaSlovicek.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zpetSpravaSlovicek.setForeground(new java.awt.Color(0, 204, 0));
         zpetSpravaSlovicek.setText("Zpět");
         zpetSpravaSlovicek.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +102,7 @@ private Gui gui;
         });
 
         aktivovaniNeaktivnichSlov1.setBackground(new java.awt.Color(0, 0, 204));
+        aktivovaniNeaktivnichSlov1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         aktivovaniNeaktivnichSlov1.setForeground(new java.awt.Color(0, 204, 0));
         aktivovaniNeaktivnichSlov1.setText("Aktivace  slovíček");
         aktivovaniNeaktivnichSlov1.addActionListener(new java.awt.event.ActionListener() {

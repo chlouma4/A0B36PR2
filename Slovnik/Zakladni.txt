@@ -1,5 +1,5 @@
 ﻿Admin
-Myš Mouse Zakladni1 1
-Tlačítko Button Zakladni4 1
+Tlačítko Button Zakladni4 0
+Myš Mouse Zakladni1 0
 Film Movie Zakladni3 0
-klávesnice Keyboard Zakladni2 1
+klávesnice Keyboard Zakladni2 0

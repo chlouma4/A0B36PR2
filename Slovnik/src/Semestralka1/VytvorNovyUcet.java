@@ -43,16 +43,20 @@ private Gui gui;
 
         novyUcet.setBackground(new java.awt.Color(51, 102, 255));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 204, 0));
         jLabel3.setText("Zadej jméno účtu :");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 204, 0));
         jLabel4.setText("Zadejte heslo pro svůj účet* :");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 204, 0));
         jLabel5.setText("Opakujte zadáni hesla účtu :");
 
         vytvorUcetButton.setBackground(new java.awt.Color(0, 0, 204));
+        vytvorUcetButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         vytvorUcetButton.setForeground(new java.awt.Color(0, 204, 0));
         vytvorUcetButton.setText("Vytvor");
         vytvorUcetButton.addActionListener(new java.awt.event.ActionListener() {
@@ -61,10 +65,12 @@ private Gui gui;
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 204, 0));
         jLabel6.setText("* Heslo musí mít délku 4 nebo 6 znaků.");
 
         zpetDoPrihlas.setBackground(new java.awt.Color(0, 0, 204));
+        zpetDoPrihlas.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zpetDoPrihlas.setForeground(new java.awt.Color(0, 204, 0));
         zpetDoPrihlas.setText("Zpet");
         zpetDoPrihlas.setMaximumSize(new java.awt.Dimension(65, 23));
@@ -76,6 +82,7 @@ private Gui gui;
         });
 
         jmenoUctu.setBackground(new java.awt.Color(0, 0, 204));
+        jmenoUctu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jmenoUctu.setForeground(new java.awt.Color(0, 204, 0));
         jmenoUctu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,9 +91,11 @@ private Gui gui;
         });
 
         hesloNovehoUctu.setBackground(new java.awt.Color(0, 0, 204));
+        hesloNovehoUctu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         hesloNovehoUctu.setForeground(new java.awt.Color(0, 204, 0));
 
         opakovaneHesloNovehoUctu.setBackground(new java.awt.Color(0, 0, 204));
+        opakovaneHesloNovehoUctu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         opakovaneHesloNovehoUctu.setForeground(new java.awt.Color(0, 204, 0));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -99,28 +108,28 @@ private Gui gui;
             novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(novyUcetLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(novyUcetLayout.createSequentialGroup()
+                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, novyUcetLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel20)
-                        .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(38, Short.MAX_VALUE))
                     .addGroup(novyUcetLayout.createSequentialGroup()
                         .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(novyUcetLayout.createSequentialGroup()
+                                .addComponent(zpetDoPrihlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(vytvorUcetButton))
                             .addGroup(novyUcetLayout.createSequentialGroup()
                                 .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jmenoUctu, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                                    .addComponent(hesloNovehoUctu)
-                                    .addComponent(opakovaneHesloNovehoUctu)))
-                            .addGroup(novyUcetLayout.createSequentialGroup()
-                                .addComponent(zpetDoPrihlas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(vytvorUcetButton)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(novyUcetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(hesloNovehoUctu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jmenoUctu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(opakovaneHesloNovehoUctu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(22, 22, 22))))
             .addGroup(novyUcetLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(jLabel6)

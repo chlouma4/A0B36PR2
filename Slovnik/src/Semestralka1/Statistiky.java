@@ -165,6 +165,7 @@ public class Statistiky extends javax.swing.JPanel  {
         jScrollPane4.setViewportView(table);
 
         jButton8.setBackground(new java.awt.Color(0, 0, 204));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton8.setForeground(new java.awt.Color(0, 204, 0));
         jButton8.setText("Zobraz statistiku pro neaktivní slova");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +175,7 @@ public class Statistiky extends javax.swing.JPanel  {
         });
 
         statistikyZpet.setBackground(new java.awt.Color(0, 0, 204));
+        statistikyZpet.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         statistikyZpet.setForeground(new java.awt.Color(0, 204, 0));
         statistikyZpet.setText("Zpět");
         statistikyZpet.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +207,7 @@ public class Statistiky extends javax.swing.JPanel  {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statistikyLayout.createSequentialGroup()
                         .addComponent(statistikyZpet)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(statistikyLayout.createSequentialGroup()
                         .addComponent(jLabel4)

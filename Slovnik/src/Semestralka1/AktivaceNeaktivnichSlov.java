@@ -59,12 +59,13 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
         zobrazeniAktivaceSlovicek.setEditable(false);
         zobrazeniAktivaceSlovicek.setBackground(new java.awt.Color(0, 0, 204));
         zobrazeniAktivaceSlovicek.setColumns(20);
-        zobrazeniAktivaceSlovicek.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        zobrazeniAktivaceSlovicek.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         zobrazeniAktivaceSlovicek.setForeground(new java.awt.Color(0, 204, 0));
         zobrazeniAktivaceSlovicek.setRows(5);
         jScrollPane3.setViewportView(zobrazeniAktivaceSlovicek);
 
         jButton5.setBackground(new java.awt.Color(0, 0, 204));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 204, 0));
         jButton5.setText("Zpět");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +75,7 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
         });
 
         aktivovatVse.setBackground(new java.awt.Color(0, 0, 204));
+        aktivovatVse.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         aktivovatVse.setForeground(new java.awt.Color(0, 204, 0));
         aktivovatVse.setText("Aktivovat vše");
         aktivovatVse.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +85,7 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
         });
 
         aktivovatVybrane.setBackground(new java.awt.Color(0, 0, 204));
+        aktivovatVybrane.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         aktivovatVybrane.setForeground(new java.awt.Color(0, 204, 0));
         aktivovatVybrane.setText("Aktivovat vybrané");
         aktivovatVybrane.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +97,7 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
         coAktivovat.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 204));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 204, 0));
         jButton4.setText("Zobrazit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {

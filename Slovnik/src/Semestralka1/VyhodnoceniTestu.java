@@ -69,12 +69,13 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
         textAreaVyhodnoceniTestu.setEditable(false);
         textAreaVyhodnoceniTestu.setBackground(new java.awt.Color(0, 0, 204));
         textAreaVyhodnoceniTestu.setColumns(20);
-        textAreaVyhodnoceniTestu.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        textAreaVyhodnoceniTestu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         textAreaVyhodnoceniTestu.setForeground(new java.awt.Color(0, 204, 0));
         textAreaVyhodnoceniTestu.setRows(5);
         jScrollPane5.setViewportView(textAreaVyhodnoceniTestu);
 
         doMenuZVyhodnoceniTestu.setBackground(new java.awt.Color(0, 0, 204));
+        doMenuZVyhodnoceniTestu.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         doMenuZVyhodnoceniTestu.setForeground(new java.awt.Color(0, 204, 0));
         doMenuZVyhodnoceniTestu.setText("Návrat do menu");
         doMenuZVyhodnoceniTestu.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +95,7 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
             .addGroup(vyhodnoceniTestuLayout.createSequentialGroup()
                 .addGap(198, 198, 198)
                 .addComponent(doMenuZVyhodnoceniTestu)
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vyhodnoceniTestuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel30)

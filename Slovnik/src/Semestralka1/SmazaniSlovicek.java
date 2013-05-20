@@ -63,10 +63,12 @@ private void vypisSlova(){
         jLabel14.setForeground(new java.awt.Color(0, 204, 0));
         jLabel14.setText("Mazání slovíček");
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 204, 0));
         jLabel15.setText("Číslem vyberte dvojci slovíček ke smazání :");
 
         deaktivujDvojci.setBackground(new java.awt.Color(0, 0, 204));
+        deaktivujDvojci.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         deaktivujDvojci.setForeground(new java.awt.Color(0, 204, 0));
         deaktivujDvojci.setText("Deaktivivat dvojci");
         deaktivujDvojci.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +78,7 @@ private void vypisSlova(){
         });
 
         uplneVymazani.setBackground(new java.awt.Color(0, 0, 204));
+        uplneVymazani.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         uplneVymazani.setForeground(new java.awt.Color(0, 204, 0));
         uplneVymazani.setText("Úplné vymazání");
         uplneVymazani.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +88,7 @@ private void vypisSlova(){
         });
 
         zpetMazaniSlovicek.setBackground(new java.awt.Color(0, 0, 204));
+        zpetMazaniSlovicek.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zpetMazaniSlovicek.setForeground(new java.awt.Color(0, 204, 0));
         zpetMazaniSlovicek.setText("Zpět");
         zpetMazaniSlovicek.addActionListener(new java.awt.event.ActionListener() {
@@ -99,12 +103,13 @@ private void vypisSlova(){
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(0, 0, 204));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(0, 204, 0));
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 204, 0));
         jButton1.setText("Zobrazit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

@@ -55,12 +55,13 @@ private void vypis(){
         zobrayeniSlovicekText.setEditable(false);
         zobrayeniSlovicekText.setBackground(new java.awt.Color(0, 0, 204));
         zobrayeniSlovicekText.setColumns(20);
-        zobrayeniSlovicekText.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        zobrayeniSlovicekText.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zobrayeniSlovicekText.setForeground(new java.awt.Color(0, 204, 0));
         zobrayeniSlovicekText.setRows(5);
         jScrollPane1.setViewportView(zobrayeniSlovicekText);
 
         jButton7.setBackground(new java.awt.Color(0, 0, 204));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 204, 0));
         jButton7.setText("Zpět");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
