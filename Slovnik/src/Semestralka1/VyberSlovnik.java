@@ -50,9 +50,11 @@ private String [] fromArrayListToArray(){
         potvrdSlovnik = new javax.swing.JButton();
         vyberSlovnik = new javax.swing.JComboBox();
 
-        setPreferredSize(new java.awt.Dimension(234, 120));
+        setPreferredSize(new java.awt.Dimension(280, 120));
 
         vyberSlovnikPanel.setBackground(new java.awt.Color(51, 102, 255));
+        vyberSlovnikPanel.setMinimumSize(new java.awt.Dimension(300, 120));
+        vyberSlovnikPanel.setPreferredSize(new java.awt.Dimension(300, 120));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 204, 0));
@@ -87,7 +89,7 @@ private String [] fromArrayListToArray(){
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(potvrdSlovnik, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel7))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         vyberSlovnikPanelLayout.setVerticalGroup(
             vyberSlovnikPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,11 +107,11 @@ private String [] fromArrayListToArray(){
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(vyberSlovnikPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

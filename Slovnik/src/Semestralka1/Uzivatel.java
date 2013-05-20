@@ -57,7 +57,7 @@ public class Uzivatel {
         if (nastaveni==2){
           int index=seznam.indexOf(this.jmeno);
           seznam.remove(index+1);
-            seznam.add(this.heslo);
+            seznam.add(index+1,this.heslo);
         }
         }
         FileWriter out = null;
@@ -269,35 +269,39 @@ public class Uzivatel {
     }
     /**Metoda vytvoří nového Uzivatele nebo zmeni heslo uyivatele.
      * Pokud se nepodari noveho uzivatele vytvorit vrati false
-     * @param jmeno - jmeno  noveho uzivatele.
-     * @param heslo - heslo noveho Uzivatele
+     * @param jmenoNeboHeslo - jmeno  noveho uzivatele nebo stare heslo uzivatele.
+     * @param noveHeslo - heslo noveho Uzivatele
      * @param opakovaneHeslo - opakovane heslo noveho uzivatele
      * @param  nastaveni - 
-     * 1- metoda vytvori noveho uzivatele
-     * 2- metoda zmeni heslo uzivatele
+     * 1- metoda vytvori noveho uzivatele.V tomto pripade je 2 argument jmeno uzivatele
+     * 2- metoda zmeni heslo uzivatele.V tomto pripade je 2 argument stare heslo uzivatele
      * @return 
      */
-    public boolean vytvorNeboZmenUzivatele(int nastaveni,String jmeno,String heslo,String opakovaneHeslo){
-        if(jmeno.equals("") || heslo.equals("") || opakovaneHeslo.equals("")){
+    public boolean vytvorNeboZmenUzivatele(int nastaveni,String jmenoNeboHeslo,String noveHeslo,String opakovaneHeslo){
+        if(jmenoNeboHeslo.equals("") || noveHeslo.equals("") || opakovaneHeslo.equals("")){
            JOptionPane.showMessageDialog(this.pane, "Některý z údajů nebyl zadán", "Chyba!", JOptionPane.WARNING_MESSAGE);
            return false;
         }
-        if(zkontrolujJmeno(jmeno)== true){
-     JOptionPane.showMessageDialog(this.pane, "Jmeno je jiz obsazene prosim vyberte si jine", "Chyba!", JOptionPane.WARNING_MESSAGE);
-       return false;
-        }
-        if(heslo.equals(opakovaneHeslo)== false){
+          if(noveHeslo.equals(opakovaneHeslo)== false){
           JOptionPane.showMessageDialog(this.pane, "Hesla se neshoduji", "Chyba!", JOptionPane.WARNING_MESSAGE);
         return false;
         }
-        if(heslo.length()==4 | heslo.length()==6){
+        if(nastaveni ==1 && zkontrolujJmeno(jmenoNeboHeslo)== true){
+     JOptionPane.showMessageDialog(this.pane, "Jmeno je jiz obsazene prosim vyberte si jine", "Chyba!", JOptionPane.WARNING_MESSAGE);
+       return false;
+        }
+        if(nastaveni==2 && !this.overHeslo(jmenoNeboHeslo)){
+             JOptionPane.showMessageDialog(this.pane, "Zadano spatne stare heslo", "Chyba!", JOptionPane.WARNING_MESSAGE);
+       return false;
+        }
+        if(noveHeslo.length()==4 | noveHeslo.length()==6){
             if(nastaveni==1){
-        this.setJmeno(jmeno);
-        this.zasifrujHeslo(heslo);
+        this.setJmeno(jmenoNeboHeslo);
+        this.zasifrujHeslo(noveHeslo);
         this.ulozUzivatele(1);
           JOptionPane.showMessageDialog(this.pane, "Ucet byl uspesne vytvoren");
             }else{
-                this.zasifrujHeslo(heslo);
+                this.zasifrujHeslo(noveHeslo);
                      this.ulozUzivatele(2);
                       JOptionPane.showMessageDialog(this.pane, "Heslo bylo uspesne zmeneno");
             }

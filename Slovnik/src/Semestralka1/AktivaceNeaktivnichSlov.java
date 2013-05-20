@@ -42,7 +42,6 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
         coAktivovat = new javax.swing.JSpinner();
         jButton4 = new javax.swing.JButton();
         jLabel4 = new MyLabel(this.gui,3);
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new MyLabel(this.gui,5);
         jLabel6 = new javax.swing.JLabel();
@@ -59,7 +58,7 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
         zobrazeniAktivaceSlovicek.setEditable(false);
         zobrazeniAktivaceSlovicek.setBackground(new java.awt.Color(0, 0, 204));
         zobrazeniAktivaceSlovicek.setColumns(20);
-        zobrazeniAktivaceSlovicek.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        zobrazeniAktivaceSlovicek.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         zobrazeniAktivaceSlovicek.setForeground(new java.awt.Color(0, 204, 0));
         zobrazeniAktivaceSlovicek.setRows(5);
         jScrollPane3.setViewportView(zobrazeniAktivaceSlovicek);
@@ -108,8 +107,6 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
 
         jLabel4.setText("Menu");
 
-        jLabel2.setText("-->");
-
         jLabel3.setText("-->");
 
         jLabel5.setText("Správa slovíček");
@@ -154,11 +151,6 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
                                 .addComponent(jLabel7)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
-                    .addGap(200, 200, 200)
-                    .addComponent(jLabel2)
-                    .addContainerGap(200, Short.MAX_VALUE)))
         );
         aktivaceSlovicek12Layout.setVerticalGroup(
             aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,11 +176,6 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
-                    .addGap(204, 204, 204)
-                    .addComponent(jLabel2)
-                    .addContainerGap(205, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -245,7 +232,6 @@ public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

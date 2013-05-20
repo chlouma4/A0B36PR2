@@ -82,7 +82,7 @@ public class Slovo {
 
     @Override
     public  String toString(){
-        String format =getAj()+" prelozeno do cestiny "+getCj();
+        String format =getAj()+" přeloženo do češtiny "+getCj();
         return format;
     
 }  

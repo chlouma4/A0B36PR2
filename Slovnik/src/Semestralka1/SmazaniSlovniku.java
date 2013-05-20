@@ -20,7 +20,7 @@ private Gui gui;
 private void  vypisSlovniky(){
     ArrayList seznam=this.gui.slovnik.getSeznamSlovniku();
         for (int i = 0; i < seznam.size(); i++) {
-            this.textAreaSmazaniSlovniku.append("("+i+") "+seznam.get(i) +"\n");
+            this.textAreaSmazaniSlovniku.append("("+(i+1)+") "+seznam.get(i) +"\n");
 }
 }
     public SmazaniSlovniku(Gui gui) {

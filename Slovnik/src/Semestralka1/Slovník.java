@@ -92,7 +92,7 @@ public class Slovník {
         }
         cislo1 = Integer.valueOf(cislo);
         cislo1++;
-
+         this.setIdPoslednihoSlova(slovnik+cislo1);
         return slovnik + cislo1;
     }
 /**Metoda najde ID posledniho slova.
@@ -625,7 +625,7 @@ public class Slovník {
                     pozice = i;
                 }
             }
-            odpoved.add(max);
+            odpoved.add(pozice+1);
             spatneOdpovedi.remove(pozice);
         }
         return odpoved;

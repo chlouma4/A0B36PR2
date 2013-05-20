@@ -113,7 +113,7 @@ private Gui gui;
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel2)))
-                        .addGap(10, 10, 10)))
+                        .addGap(20, 20, 20)))
                 .addContainerGap())
         );
         vytvoreniSlovnikuLayout.setVerticalGroup(

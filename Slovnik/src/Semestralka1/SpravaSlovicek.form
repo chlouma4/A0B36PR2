@@ -40,22 +40,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="zobrazeniSlovicekButton1" min="-2" pref="195" max="-2" attributes="0"/>
-                                  <EmptySpace pref="55" max="32767" attributes="0"/>
-                                  <Component id="aktivovaniNeaktivnichSlov1" min="-2" pref="195" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="pridaniSlovicekButton1" min="-2" pref="195" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="zobrazeniNeaktivnichSlovicekButton1" min="-2" pref="195" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="zpetSpravaSlovicek" min="-2" pref="195" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="smazaniSlovicekButton1" min="-2" pref="195" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="pridaniSlovicekButton1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="zobrazeniSlovicekButton1" alignment="0" pref="207" max="32767" attributes="0"/>
+                              <Component id="zpetSpravaSlovicek" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="73" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="smazaniSlovicekButton1" max="32767" attributes="0"/>
+                              <Component id="aktivovaniNeaktivnichSlov1" max="32767" attributes="0"/>
+                              <Component id="zobrazeniNeaktivnichSlovicekButton1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">

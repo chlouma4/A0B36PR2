@@ -39,7 +39,7 @@ public class MyLabel extends JLabel {
 
              @Override
         public void mouseEntered(MouseEvent e) {
-       setForeground(Color.red);
+       setForeground(Color.white);
                  setFont(new Font(null,Font.BOLD,12));
           
         }
