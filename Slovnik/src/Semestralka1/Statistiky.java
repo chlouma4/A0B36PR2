@@ -116,6 +116,7 @@ public class Statistiky extends javax.swing.JPanel  {
     private void  start(){
         if(this.gui.slovnik.getPocetBunek()==0){
             this.table.setModel(this.dataModelNeaktivni);
+            this.jButton8.setText("Zobrazit statistiku pro aktivní slova");
         }else{
             this.table.setModel(this.dataModelAktivni);
         }

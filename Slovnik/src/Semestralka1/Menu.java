@@ -153,7 +153,7 @@ public class Menu extends javax.swing.JPanel {
                     .addGroup(MenuLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +185,9 @@ public class Menu extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,19 +212,20 @@ public class Menu extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void zmenaSlovnikuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zmenaSlovnikuActionPerformed
-        this.gui.slovnik.vycistiSpojovySeznam();
+        this.gui.slovnik.ulozSlovnik(this.gui.uzivatel.getJmeno());
+        this.gui.slovnik.vymazVse();
        this.gui.setMyView(2);
     }//GEN-LAST:event_zmenaSlovnikuActionPerformed
 
     private void odhlasitSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_odhlasitSeActionPerformed
         this.gui.slovnik.ulozSlovnik(this.gui.uzivatel.getJmeno());
-        this.gui.slovnik.vycistiSpojovySeznam();
+        this.gui.slovnik.vymazVse();
         this.gui.setMyView(1);
     }//GEN-LAST:event_odhlasitSeActionPerformed
 
     private void ukoncitProgramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ukoncitProgramActionPerformed
         this.gui.slovnik.ulozSlovnik(this.gui.uzivatel.getJmeno());
-        this.gui.slovnik.vycistiSpojovySeznam();
+        this.gui.slovnik.vymazVse();
         System.exit(0);
     }//GEN-LAST:event_ukoncitProgramActionPerformed
 

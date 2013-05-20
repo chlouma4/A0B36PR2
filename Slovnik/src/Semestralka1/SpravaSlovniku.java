@@ -159,8 +159,6 @@ this.gui.setMyView(17);
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         if(this.gui.uzivatel.testPravomoc(this.gui.uzivatel.getJmeno(), 3)){
              this.gui.setMyView(18);
-        }else{
-            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton14ActionPerformed
 

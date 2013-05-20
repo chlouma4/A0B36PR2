@@ -109,19 +109,16 @@ public class Test extends javax.swing.JPanel {
      * 
      */
     private void kontrola() {
-        System.out.println("Kontroluji");
         boolean testOdpovedi;
         String prelozeno;
         prelozeno = this.odpoved.getText();
         prelozeno = prelozeno.toLowerCase();
         testOdpovedi = prelozeno.equals(this.gui.slovnik.getObsahBunky(this.generovanaCisla[citac], prekladKam).toLowerCase());
-        System.out.println("vysledek " + testOdpovedi);
         if (testOdpovedi == true) {
             this.gui.slovnik.upravStatistiku(this.generovanaCisla[citac], 0);
         } else {
             this.gui.slovnik.upravStatistiku(this.generovanaCisla[citac], 1);
             this.spatneOdpovedi.add(this.generovanaCisla[citac]);
-            System.out.println("pocet spatnych odpovedi " + spatneOdpovedi.size());
         }
     }
 

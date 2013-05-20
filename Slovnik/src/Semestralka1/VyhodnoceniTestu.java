@@ -29,9 +29,6 @@ public class VyhodnoceniTestu extends javax.swing.JPanel {
                     + this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1]
                     + " slovicek  \n z nichz jste na " + (this.gui.spatneOdpovedi.length - 1) + ""
                     + " odpovedel/a spatne\n");
-
-            System.out.println("pocet otazek " + this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1]);
-            System.out.println("pocet spatnzch odpovedi " + (this.gui.spatneOdpovedi.length - 1));
             int procenta = (100 * (this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1]
                     - (this.gui.spatneOdpovedi.length - 1)))
                     / this.gui.spatneOdpovedi[this.gui.spatneOdpovedi.length - 1];

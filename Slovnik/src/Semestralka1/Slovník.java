@@ -193,8 +193,13 @@ public class Slovník {
      * Metoda smaze vsechen obsah spojoveho seznamu.
      *
      */
-    public void vycistiSpojovySeznam() {
+    public void vymazVse() {
         this.prvni = null;
+        this.volna=null;
+        for (int i = 0; i <this.neaktivni.size(); i++) {
+            this.neaktivni.remove(i);
+            i--;
+        }
     }
 
     /**
@@ -489,7 +494,6 @@ public class Slovník {
         for (int i = 1; i <= this.getPocetBunek(); i++) {
             test = this.getObsahBunky(i, 6);
             if (test.equals("" + 0)) {
-                System.out.println("presouvam " + this.getObsahBunky(i, 2));
                 this.neaktivni.add(new Slovo(this.getObsahBunky(i, 2),
                         this.getObsahBunky(i, 1),
                         Integer.valueOf(this.getObsahBunky(i, 3)),

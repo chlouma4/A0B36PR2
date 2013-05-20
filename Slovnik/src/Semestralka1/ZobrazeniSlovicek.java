@@ -13,9 +13,17 @@ private Gui gui;
     /**
      * Creates new form ZobrazeniSlovicek
      */
+private void vypis(){
+    String vypis []=this.gui.slovnik.vypisSpojovySeznam();
+    for (int i = 0; i < vypis.length; i++) {
+        this.zobrayeniSlovicekText.append(""+vypis[i]+"\n");
+    }
+}
+
     public ZobrazeniSlovicek(Gui gui) {
         this.gui=gui;
         initComponents();
+        this.vypis();
     }
 
     /**
@@ -44,6 +52,7 @@ private Gui gui;
         jLabel10.setForeground(new java.awt.Color(0, 204, 0));
         jLabel10.setText("Zobrazení slovíček");
 
+        zobrayeniSlovicekText.setEditable(false);
         zobrayeniSlovicekText.setBackground(new java.awt.Color(0, 0, 204));
         zobrayeniSlovicekText.setColumns(20);
         zobrayeniSlovicekText.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N

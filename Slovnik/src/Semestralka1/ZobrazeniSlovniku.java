@@ -19,7 +19,7 @@ private Gui gui;
 private void zobrazSlovniky(){
      ArrayList seznam=this.gui.slovnik.getSeznamSlovniku();
         for (int i = 0; i < seznam.size(); i++) {
-            this.textAreaZobrazeniSlovniku.append("("+i+") "+ seznam.get(i)+"\n");
+            this.textAreaZobrazeniSlovniku.append("("+(i+1)+") "+ seznam.get(i)+"\n");
         }
 }
     public ZobrazeniSlovniku(Gui gui) {

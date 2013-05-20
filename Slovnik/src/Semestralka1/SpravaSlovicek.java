@@ -221,8 +221,6 @@ this.gui.setMyView(3);
     private void aktivovaniNeaktivnichSlov1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aktivovaniNeaktivnichSlov1ActionPerformed
         if (this.gui.uzivatel.testPravomoc(this.gui.slovnik.getTvurceSlovniku(), 1)) {
             this.gui.setMyView(10);
-        } else {
-            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_aktivovaniNeaktivnichSlov1ActionPerformed
 

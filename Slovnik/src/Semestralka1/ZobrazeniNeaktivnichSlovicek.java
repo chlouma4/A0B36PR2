@@ -18,7 +18,7 @@ private Gui gui;
 private void zobrazNeaktivni(){
        String[] slova = this.gui.slovnik.vypisNeaktivni();
         for (int i = 0; i < slova.length; i++) {
-            this.zobrayeniNeaktivnichSlov.append("("+(i+1)+")"+slova[i] + "\n");
+            this.zobrayeniNeaktivnichSlov.append("("+(i+1)+") "+slova[i] + "\n");
         }
 }
     public ZobrazeniNeaktivnichSlovicek(Gui gui) {

@@ -188,7 +188,7 @@ this.gui.setMyView(3);
         this.gui.nasatveniTestu=new int [2];
         this.gui.nasatveniTestu[0]=preklad;
         if((Integer)this.pocetOtazek.getValue()==1){
-            JOptionPane.showMessageDialog(this.gui, "Test o jedne otazce je jednoduchy test nastavuji pocet otazek na maximum :D");
+            JOptionPane.showMessageDialog(this.gui, "Test o jedne otazce je jednoduchy  nastavuji pocet otazek na maximum :D");
              this.gui.nasatveniTestu[1]=this.gui.slovnik.getPocetBunek();
         }else{
          this.gui.nasatveniTestu[1]=((Integer)this.pocetOtazek.getValue());   

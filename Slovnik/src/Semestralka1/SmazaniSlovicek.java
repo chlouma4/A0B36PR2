@@ -236,8 +236,6 @@ private void vypisSlova(){
                     JOptionPane.showMessageDialog(this.gui, "Dvojce nebyla smazana");
                 }
             }
-        } else {
-            JOptionPane.showMessageDialog(this.gui, "Na tuto akci nemate pravomoc!", "Chyba!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_uplneVymazaniActionPerformed
 
@@ -246,7 +244,11 @@ private void vypisSlova(){
     }//GEN-LAST:event_zpetMazaniSlovicekActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.vypisSlova();
+        if(this.gui.slovnik.getPocetBunek()==0){
+            JOptionPane.showMessageDialog(this.gui, "Nejsou zasna slovicka k zobrazeni", "Chyba", JOptionPane.WARNING_MESSAGE);
+        }else{
+           this.vypisSlova();    
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -47,7 +47,7 @@ private Gui gui;
         jLabel3.setText("Zadej jméno účtu :");
 
         jLabel4.setForeground(new java.awt.Color(0, 204, 0));
-        jLabel4.setText("Zadejte jméno pro svůj účet* :");
+        jLabel4.setText("Zadejte heslo pro svůj účet* :");
 
         jLabel5.setForeground(new java.awt.Color(0, 204, 0));
         jLabel5.setText("Opakujte zadáni hesla účtu :");

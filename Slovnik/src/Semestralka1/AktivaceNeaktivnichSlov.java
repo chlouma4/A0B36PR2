@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  * @author Marco
  */
 public class AktivaceNeaktivnichSlov extends javax.swing.JPanel {
-private Gui gui;
 
+    private Gui gui;
 
     /**
      * Creates new form AktivaceNeaktivnichSlov
      */
     public AktivaceNeaktivnichSlov(Gui gui) {
-this.gui=gui;
+        this.gui = gui;
         initComponents();
     }
 
@@ -41,7 +41,6 @@ this.gui=gui;
         aktivovatVybrane = new javax.swing.JButton();
         coAktivovat = new javax.swing.JSpinner();
         jButton4 = new javax.swing.JButton();
-        cleanAktivaceSlovicek = new javax.swing.JButton();
         jLabel4 = new MyLabel(this.gui,3);
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -103,15 +102,6 @@ this.gui=gui;
             }
         });
 
-        cleanAktivaceSlovicek.setBackground(new java.awt.Color(0, 0, 204));
-        cleanAktivaceSlovicek.setForeground(new java.awt.Color(0, 204, 0));
-        cleanAktivaceSlovicek.setText("Vyčisti");
-        cleanAktivaceSlovicek.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cleanAktivaceSlovicekActionPerformed(evt);
-            }
-        });
-
         jLabel4.setText("Menu");
 
         jLabel2.setText("-->");
@@ -136,8 +126,7 @@ this.gui=gui;
                 .addContainerGap()
                 .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
-                        .addComponent(cleanAktivaceSlovicek)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton4))
                     .addGroup(aktivaceSlovicek12Layout.createSequentialGroup()
                         .addComponent(aktivovatVse)
@@ -173,9 +162,7 @@ this.gui=gui;
                 .addContainerGap()
                 .addComponent(jLabel18)
                 .addGap(13, 13, 13)
-                .addGroup(aktivaceSlovicek12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cleanAktivaceSlovicek)
-                    .addComponent(jButton4))
+                .addComponent(jButton4)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -233,6 +220,7 @@ this.gui=gui;
     }//GEN-LAST:event_aktivovatVybraneActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        this.zobrazeniAktivaceSlovicek.setText("");
         if (this.gui.slovnik.neaktivni.isEmpty()) {
             JOptionPane.showMessageDialog(this.gui, "Nejsou zadna slova ktere by bylo mozne aktivovat");
         } else {
@@ -244,16 +232,10 @@ this.gui=gui;
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void cleanAktivaceSlovicekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanAktivaceSlovicekActionPerformed
-        this.zobrazeniAktivaceSlovicek.setText("");
-    }//GEN-LAST:event_cleanAktivaceSlovicekActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel aktivaceSlovicek12;
     private javax.swing.JButton aktivovatVse;
     private javax.swing.JButton aktivovatVybrane;
-    private javax.swing.JButton cleanAktivaceSlovicek;
     private javax.swing.JSpinner coAktivovat;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
